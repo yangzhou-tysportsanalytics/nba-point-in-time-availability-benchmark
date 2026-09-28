@@ -1,0 +1,62 @@
+{
+ "reconstruction_check": {
+  "rows": 178421,
+  "rows_with_history": 178421,
+  "rows_with_history_share": 1.0,
+  "absent_rows": 55036,
+  "absent_rows_with_history": 55036,
+  "corr": 0.99999992,
+  "mean_abs_diff": 1.19e-05,
+  "max_abs_diff": 1.061299,
+  "rows_differing_above_1e6": 10,
+  "note_on_differences": "the build caps reference minutes (cap=40 on a rolling p90), which simple rescaling to 240 does not reproduce; those rows are the residual",
+  "median_team_raw_sum": 317.8
+ },
+ "contrasts": {
+  "gain_F1": {
+   "point": 0.1966,
+   "ci95_home": [
+    0.1318,
+    0.2646
+   ],
+   "ci95_two_way": [
+    0.0807,
+    0.3024
+   ]
+  },
+  "inflation": {
+   "point": 0.0588,
+   "ci95_home": [
+    -0.003,
+    0.1206
+   ],
+   "ci95_two_way": [
+    -0.0309,
+    0.1505
+   ]
+  },
+  "gain_F1_noscale": {
+   "point": 0.2054,
+   "ci95_home": [
+    0.1426,
+    0.2737
+   ],
+   "ci95_two_way": [
+    0.0931,
+    0.3093
+   ]
+  },
+  "inflation_noscale": {
+   "point": 0.0384,
+   "ci95_home": [
+    -0.0174,
+    0.0949
+   ],
+   "ci95_two_way": [
+    -0.0417,
+    0.1225
+   ]
+  }
+ },
+ "difference_inflation_noscale_minus_base": -0.0204
+}

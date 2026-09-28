@@ -1,0 +1,89 @@
+{
+ "point": {
+  "inflation": 0.166,
+  "ratio": 1.7331
+ },
+ "designs": {
+  "home_cluster": {
+   "draws": 2000,
+   "inflation_ci95": [
+    0.0772,
+    0.2546
+   ],
+   "ratio_ci95_dropping_nonpositive": [
+    1.268,
+    2.957
+   ],
+   "share_draws_gain_F1_nonpositive": 0.0,
+   "ratio_ci95_keeping_all": [
+    1.268,
+    2.957
+   ]
+  },
+  "iid_game": {
+   "draws": 2000,
+   "inflation_ci95": [
+    0.0666,
+    0.2572
+   ],
+   "ratio_ci95_dropping_nonpositive": [
+    1.241,
+    3.332
+   ],
+   "share_draws_gain_F1_nonpositive": 0.001,
+   "ratio_ci95_keeping_all": [
+    1.241,
+    3.384
+   ]
+  },
+  "two_way_pigeonhole": {
+   "draws": 2000,
+   "inflation_ci95": [
+    0.0101,
+    0.3152
+   ],
+   "ratio_ci95_dropping_nonpositive": [
+    1.047,
+    5.898
+   ],
+   "share_draws_gain_F1_nonpositive": 0.0215,
+   "ratio_ci95_keeping_all": [
+    1.047,
+    17.277
+   ]
+  }
+ },
+ "robust_to_bootstrap_design": true,
+ "name_matching": {
+  "6h": {
+   "matched_rows": 57457,
+   "rows_without_prior_team_season_appearance": 8383,
+   "of_which_out": 7834,
+   "of_which_rotation_out_in_F1": 2300
+  },
+  "_90m": {
+   "matched_rows": 63880,
+   "rows_without_prior_team_season_appearance": 9169,
+   "of_which_out": 8617,
+   "of_which_rotation_out_in_F1": 2527
+  },
+  "plan_unmatch_no_prior_team_season": {
+   "ref_out_rows_set_to_not_out": 2537,
+   "inflation": 0.1702,
+   "inflation_ci95": [
+    0.0825,
+    0.2529
+   ],
+   "gain_F1": 0.2221
+  },
+  "strict_no_prior_any_team": {
+   "ref_out_rows_set_to_not_out": 0,
+   "inflation": 0.166,
+   "inflation_ci95": [
+    0.0772,
+    0.2546
+   ],
+   "gain_F1": 0.2264
+  }
+ }
+}

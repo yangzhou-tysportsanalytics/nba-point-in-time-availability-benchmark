@@ -1,0 +1,97 @@
+{
+ "cc0_nba_betting_data": {
+  "2022": {
+   "games": 1230,
+   "matched": 0.9984,
+   "score_agrees": 1.0,
+   "verified_close_n": 1228,
+   "within_0_5": 0.9536,
+   "exact": 0.7549,
+   "mean_abs": 0.162,
+   "pass": true
+  },
+  "2023": {
+   "games": 1230,
+   "matched": 1.0,
+   "score_agrees": 1.0,
+   "verified_close_n": 1230,
+   "within_0_5": 0.9382,
+   "exact": 0.6179,
+   "mean_abs": 0.235,
+   "pass": true
+  },
+  "2024": {
+   "games": 1231,
+   "matched": 0.9992,
+   "score_agrees": 1.0
+  },
+  "2025": {
+   "games": 1231,
+   "matched": 0.9992,
+   "score_agrees": 1.0
+  },
+  "2026": {
+   "games": 1231,
+   "matched": 0.9992,
+   "score_agrees": 0.9976,
+   "verified_close_n": 978,
+   "within_0_5": 0.8793,
+   "exact": 0.5828,
+   "mean_abs": 0.456,
+   "pass": false
+  },
+  "passes_all_verified": false
+ },
+ "ccbysa_mgm_grand": {
+  "2022": {
+   "games": 1230,
+   "matched": 0.9967,
+   "verified_close_n": 1226,
+   "within_0_5": 0.9405,
+   "exact": 0.5832,
+   "mean_abs": 0.267,
+   "pass": true
+  },
+  "2023": {
+   "games": 1230,
+   "matched": 0.9854,
+   "verified_close_n": 1212,
+   "within_0_5": 0.9546,
+   "exact": 0.5206,
+   "mean_abs": 0.292,
+   "pass": true
+  },
+  "2024": {
+   "games": 1231,
+   "matched": 0.9992
+  },
+  "2025": {
+   "games": 1231,
+   "matched": 1.0
+  },
+  "2026": {
+   "games": 1231,
+   "matched": 0.6572,
+   "verified_close_n": 557,
+   "within_0_5": 0.8779,
+   "exact": 0.8779,
+   "mean_abs": 0.144,
+   "pass": false
+  },
+  "passes_all_verified": false
+ },
+ "accepted": [],
+ "primary": null,
+ "coverage": {
+  "2022": 1230,
+  "2023": 1230,
+  "2024": 0,
+  "2025": 0,
+  "2026": 979
+ },
+ "rmse_close": {
+  "2022": 13.638,
+  "2023": 12.478,
+  "2026": 14.134
+ }
+}

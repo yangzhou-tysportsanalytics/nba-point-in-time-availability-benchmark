@@ -1,0 +1,100 @@
+{
+ "rows_old": 1886765,
+ "rows_new": 1886765,
+ "A_same_row_set": true,
+ "A_status_identical": true,
+ "A_reason_changed_rows": 386570,
+ "A_reason_changed_share": 0.204885,
+ "A_changed_player_games": 12162,
+ "A_whitespace_only_changes": 364052,
+ "A_substantive_changes": 22518,
+ "A_substantive_share": 0.011935,
+ "A_examples": [
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  }
+ ],
+ "A_changes_that_are_not_a_move": 366578,
+ "A_not_a_move_examples": [
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  },
+  {
+   "old": "Injury/Illness - Left Ankle; Injury recovery; Health & safety  protocols",
+   "new": "Injury/Illness - Left Ankle; Injury recovery; Health & safety protocols"
+  }
+ ],
+ "B_fragment_rows_old": 8160,
+ "B_fragment_share_old": 0.004325,
+ "B_fragment_rows_new": 0,
+ "B_fragment_share_new": 0.0,
+ "B_residual_leading_tokens": {},
+ "B_residual_examples": [],
+ "C_truncated_rows_old": 370,
+ "C_truncated_rows_new": 0,
+ "D_vanishing_player_reports_old": 0,
+ "D_vanishing_player_reports_new": 0,
+ "E_audited_rows": [
+  {
+   "team": "ATL",
+   "ok": true,
+   "matched": true
+  },
+  {
+   "team": "ATL",
+   "ok": true,
+   "matched": true
+  },
+  {
+   "team": "PHX",
+   "ok": true,
+   "matched": true
+  },
+  {
+   "team": "HOU",
+   "ok": true,
+   "matched": true
+  }
+ ],
+ "E_all_ok": true,
+ "F_release_rows_matched": 121918,
+ "F_release_rows_unmatched": 0,
+ "F_status_identical": true,
+ "F_reason_changed_rows": 20998,
+ "F_reason_changed_player_games": 11252,
+ "_release_note": "The audited rows are released without the player and the reason text: those quote an identifiable person's injury report. The audit result (whether the parsed reason matched the source) is kept for every row."
+}

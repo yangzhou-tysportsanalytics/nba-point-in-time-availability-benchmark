@@ -1,0 +1,82 @@
+{
+ "note": "the grid hyperparameters are reused as selected; only the interval is recomputed",
+ "settings": {
+  "narrow/ols": {
+   "inflation": 0.166,
+   "inflation_ci_home": [
+    0.0772,
+    0.2546
+   ],
+   "inflation_ci_two_way": [
+    0.0153,
+    0.3286
+   ],
+   "inflation_ci_iid": [
+    0.0692,
+    0.2613
+   ],
+   "gain_F1": 0.2264,
+   "gain_F1_ci_two_way": [
+    0.0127,
+    0.4348
+   ],
+   "grid_inflation": 0.166,
+   "grid_ci_home": [
+    0.0772,
+    0.2546
+   ]
+  },
+  "narrow/lgbm": {
+   "inflation": 0.1689,
+   "inflation_ci_home": [
+    0.0838,
+    0.2596
+   ],
+   "inflation_ci_two_way": [
+    0.0148,
+    0.3373
+   ],
+   "inflation_ci_iid": [
+    0.0763,
+    0.2582
+   ],
+   "gain_F1": 0.1476,
+   "gain_F1_ci_two_way": [
+    -0.0787,
+    0.3633
+   ],
+   "grid_inflation": 0.1689,
+   "grid_ci_home": [
+    0.0812,
+    0.2561
+   ]
+  },
+  "narrow/mlp": {
+   "inflation": 0.174,
+   "inflation_ci_home": [
+    0.0737,
+    0.2733
+   ],
+   "inflation_ci_two_way": [
+    0.0131,
+    0.3473
+   ],
+   "inflation_ci_iid": [
+    0.0758,
+    0.2766
+   ],
+   "gain_F1": 0.2281,
+   "gain_F1_ci_two_way": [
+    -0.0047,
+    0.4406
+   ],
+   "grid_inflation": 0.174,
+   "grid_ci_home": [
+    0.081,
+    0.274
+   ]
+  }
+ },
+ "n_two_way_excluding_zero": 3,
+ "n_home_excluding_zero": 3
+}

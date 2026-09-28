@@ -1,0 +1,26 @@
+{
+ "sample": {
+  "games": 4846,
+  "seasons": "2022-23 to 2025-26 rolling holdouts, team-games with a report"
+ },
+ "player_games": {
+  "three_kinds": 23464,
+  "fourth_term": 52,
+  "out_at_cutoff": 19807,
+  "absent": 43219
+ },
+ "absence_value": {
+  "three_kinds": 132172.6,
+  "fourth_term": 241.6,
+  "fourth_over_three_kinds": 0.0018
+ },
+ "per_game": {
+  "mean_abs_three_kinds": 11.089,
+  "mean_abs_fourth": 0.05,
+  "share_of_games_with_a_fourth_term": 0.0091
+ },
+ "identity_check": {
+  "max_abs_residual": 0.0,
+  "note": "F2_diff - F1_diff equals (three kinds) - (fourth term) game by game"
+ }
+}

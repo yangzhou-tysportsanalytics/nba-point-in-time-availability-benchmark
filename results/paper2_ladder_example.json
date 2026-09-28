@@ -1,0 +1,162 @@
+{
+ "ladder": {
+  "controls only": {
+   "n_train": 1853,
+   "n": 977,
+   "baseline_rmse_F0": 15.215,
+   "reps": 10000,
+   "gain_F1": 0.3303,
+   "gain_F1_ci": [
+    0.0835,
+    0.5741
+   ],
+   "gain_F1_ci_home": [
+    0.2067,
+    0.4499
+   ],
+   "inflation": 0.1821,
+   "inflation_ci": [
+    0.0184,
+    0.3535
+   ],
+   "inflation_ci_home": [
+    0.086,
+    0.2793
+   ]
+  },
+  "plus Elo": {
+   "n_train": 1853,
+   "n": 977,
+   "baseline_rmse_F0": 14.884,
+   "reps": 10000,
+   "gain_F1": 0.3698,
+   "gain_F1_ci": [
+    0.0846,
+    0.6585
+   ],
+   "gain_F1_ci_home": [
+    0.221,
+    0.5189
+   ],
+   "inflation": 0.1287,
+   "inflation_ci": [
+    -0.0508,
+    0.3103
+   ],
+   "inflation_ci_home": [
+    0.0275,
+    0.2285
+   ]
+  },
+  "plus the opening line": {
+   "n_train": 1853,
+   "n": 977,
+   "baseline_rmse_F0": 14.383,
+   "reps": 10000,
+   "gain_F1": 0.1191,
+   "gain_F1_ci": [
+    -0.0621,
+    0.2957
+   ],
+   "gain_F1_ci_home": [
+    0.0218,
+    0.2178
+   ],
+   "inflation": 0.1023,
+   "inflation_ci": [
+    -0.0172,
+    0.2213
+   ],
+   "inflation_ci_home": [
+    0.0322,
+    0.1729
+   ]
+  },
+  "plus the closing line": {
+   "n_train": 1853,
+   "n": 977,
+   "baseline_rmse_F0": 14.11,
+   "reps": 10000,
+   "gain_F1": 0.0327,
+   "gain_F1_ci": [
+    -0.0431,
+    0.105
+   ],
+   "gain_F1_ci_home": [
+    -0.0109,
+    0.0788
+   ],
+   "inflation": 0.0146,
+   "inflation_ci": [
+    -0.0322,
+    0.0582
+   ],
+   "inflation_ci_home": [
+    -0.014,
+    0.041
+   ]
+  }
+ },
+ "example": {
+  "game_id": "401811037",
+  "home": "DEN",
+  "away": "OKC",
+  "margin": 20.0,
+  "spread_home": -2.5,
+  "late_out_value": 81.62,
+  "median_late_out_value": 4.85,
+  "F1_diff": -96.26,
+  "F2_diff": -14.64,
+  "pred_F1": 7.55,
+  "pred_F2": -1.36,
+  "late_out": "[5 per-player rows removed for release; see the paper]"
+ },
+ "example_runners_up": [
+  {
+   "game_id": "401810937",
+   "away": "LAC",
+   "home": "MIL",
+   "margin": -14.0,
+   "late_out_value": 77.69,
+   "F1_diff": 80.35,
+   "F2_diff": 62.99
+  },
+  {
+   "game_id": "401811044",
+   "away": "ATL",
+   "home": "MIA",
+   "margin": 26.0,
+   "late_out_value": 74.38,
+   "F1_diff": 0.63,
+   "F2_diff": -79.1
+  },
+  {
+   "game_id": "401810835",
+   "away": "POR",
+   "home": "PHI",
+   "margin": 6.0,
+   "late_out_value": 68.15,
+   "F1_diff": 43.24,
+   "F2_diff": 37.4
+  },
+  {
+   "game_id": "401810837",
+   "away": "UTAH",
+   "home": "SAC",
+   "margin": 5.0,
+   "late_out_value": 65.63,
+   "F1_diff": -19.87,
+   "F2_diff": -33.36
+  },
+  {
+   "game_id": "401811048",
+   "away": "CHI",
+   "home": "DAL",
+   "margin": 21.0,
+   "late_out_value": 61.11,
+   "F1_diff": -68.03,
+   "F2_diff": -6.92
+  }
+ ],
+ "_release_note": "Per-player rows are removed from this file. The paper describes the same worked example in prose; the game-level fields here are unchanged."
+}

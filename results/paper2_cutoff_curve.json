@@ -1,0 +1,505 @@
+{
+ "fixed_games": 5181,
+ "curve": {
+  "12": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.1079,
+    "inflation": 0.1275,
+    "gain_F1_ci": [
+     0.0595,
+     0.1553
+    ],
+    "inflation_ci": [
+     0.0547,
+     0.1982
+    ],
+    "gain_F1_ci_two_way": [
+     0.0123,
+     0.1919
+    ],
+    "inflation_ci_two_way": [
+     0.0156,
+     0.237
+    ]
+   }
+  },
+  "9": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.1084,
+    "inflation": 0.1269,
+    "gain_F1_ci": [
+     0.0602,
+     0.1577
+    ],
+    "inflation_ci": [
+     0.0552,
+     0.1981
+    ],
+    "gain_F1_ci_two_way": [
+     0.0113,
+     0.1955
+    ],
+    "inflation_ci_two_way": [
+     0.0129,
+     0.2354
+    ]
+   }
+  },
+  "6": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.1852,
+    "inflation": 0.0502,
+    "gain_F1_ci": [
+     0.1255,
+     0.2447
+    ],
+    "inflation_ci": [
+     -0.0113,
+     0.1096
+    ],
+    "gain_F1_ci_two_way": [
+     0.0665,
+     0.2963
+    ],
+    "inflation_ci_two_way": [
+     -0.0394,
+     0.1463
+    ]
+   }
+  },
+  "4": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.1965,
+    "inflation": 0.0389,
+    "gain_F1_ci": [
+     0.135,
+     0.2596
+    ],
+    "inflation_ci": [
+     -0.0181,
+     0.098
+    ],
+    "gain_F1_ci_two_way": [
+     0.073,
+     0.3097
+    ],
+    "inflation_ci_two_way": [
+     -0.0484,
+     0.1279
+    ]
+   }
+  },
+  "3": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.2023,
+    "inflation": 0.0331,
+    "gain_F1_ci": [
+     0.1417,
+     0.2657
+    ],
+    "inflation_ci": [
+     -0.0227,
+     0.0919
+    ],
+    "gain_F1_ci_two_way": [
+     0.0761,
+     0.3141
+    ],
+    "inflation_ci_two_way": [
+     -0.053,
+     0.1238
+    ]
+   }
+  },
+  "2": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.2155,
+    "inflation": 0.0199,
+    "gain_F1_ci": [
+     0.1543,
+     0.2795
+    ],
+    "inflation_ci": [
+     -0.0328,
+     0.0754
+    ],
+    "gain_F1_ci_two_way": [
+     0.0967,
+     0.328
+    ],
+    "inflation_ci_two_way": [
+     -0.0639,
+     0.1119
+    ]
+   }
+  },
+  "1.5": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.2359,
+    "inflation": -0.0006,
+    "gain_F1_ci": [
+     0.1692,
+     0.303
+    ],
+    "inflation_ci": [
+     -0.0548,
+     0.0523
+    ],
+    "gain_F1_ci_two_way": [
+     0.1079,
+     0.355
+    ],
+    "inflation_ci_two_way": [
+     -0.079,
+     0.0846
+    ]
+   }
+  },
+  "1": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.2518,
+    "inflation": -0.0164,
+    "gain_F1_ci": [
+     0.1845,
+     0.3214
+    ],
+    "inflation_ci": [
+     -0.0621,
+     0.0284
+    ],
+    "gain_F1_ci_two_way": [
+     0.1249,
+     0.3712
+    ],
+    "inflation_ci_two_way": [
+     -0.0924,
+     0.0668
+    ]
+   }
+  },
+  "0.5": {
+   "pooled_rolling": {
+    "n": 4131,
+    "gain_F1": 0.2579,
+    "inflation": -0.0225,
+    "gain_F1_ci": [
+     0.1848,
+     0.3333
+    ],
+    "inflation_ci": [
+     -0.0581,
+     0.0142
+    ],
+    "gain_F1_ci_two_way": [
+     0.1242,
+     0.3885
+    ],
+    "inflation_ci_two_way": [
+     -0.0762,
+     0.035
+    ]
+   }
+  }
+ },
+ "curve_both_filed": {
+  "12": {
+   "n_fixed_games": 4246,
+   "share": 0.8195,
+   "pooled_rolling": {
+    "n": 3401,
+    "gain_F1": 0.1534,
+    "inflation": 0.0536,
+    "gain_F1_ci": [
+     0.0892,
+     0.2156
+    ],
+    "inflation_ci": [
+     -0.0098,
+     0.1249
+    ],
+    "gain_F1_ci_two_way": [
+     0.0264,
+     0.2654
+    ],
+    "inflation_ci_two_way": [
+     -0.0519,
+     0.1585
+    ]
+   },
+   "six_hour_same_games": {
+    "n": 3401,
+    "gain_F1": 0.1647,
+    "inflation": 0.0424,
+    "gain_F1_ci": [
+     0.0968,
+     0.2312
+    ],
+    "inflation_ci": [
+     -0.0185,
+     0.1109
+    ],
+    "gain_F1_ci_two_way": [
+     0.032,
+     0.2842
+    ],
+    "inflation_ci_two_way": [
+     -0.0506,
+     0.1387
+    ]
+   }
+  },
+  "9": {
+   "n_fixed_games": 4262,
+   "share": 0.8226,
+   "pooled_rolling": {
+    "n": 3410,
+    "gain_F1": 0.1539,
+    "inflation": 0.0501,
+    "gain_F1_ci": [
+     0.0882,
+     0.2173
+    ],
+    "inflation_ci": [
+     -0.0133,
+     0.121
+    ],
+    "gain_F1_ci_two_way": [
+     0.0209,
+     0.2694
+    ],
+    "inflation_ci_two_way": [
+     -0.0549,
+     0.1548
+    ]
+   },
+   "six_hour_same_games": {
+    "n": 3410,
+    "gain_F1": 0.1632,
+    "inflation": 0.0407,
+    "gain_F1_ci": [
+     0.0952,
+     0.2295
+    ],
+    "inflation_ci": [
+     -0.0199,
+     0.1075
+    ],
+    "gain_F1_ci_two_way": [
+     0.0308,
+     0.2834
+    ],
+    "inflation_ci_two_way": [
+     -0.0521,
+     0.1367
+    ]
+   }
+  }
+ },
+ "robustness_5h45": {
+  "pooled_rolling": {
+   "n": 4131,
+   "gain_F1": 0.1845,
+   "inflation": 0.0509,
+   "gain_F1_ci": [
+    0.1252,
+    0.2438
+   ],
+   "inflation_ci": [
+    -0.0107,
+    0.11
+   ],
+   "gain_F1_ci_two_way": [
+    0.0632,
+    0.2952
+   ],
+   "inflation_ci_two_way": [
+    -0.0397,
+    0.1479
+   ]
+  }
+ },
+ "paired_30min_minus_6h": {
+  "n": 4131,
+  "point": 0.0727,
+  "ci95_home": [
+   0.0265,
+   0.119
+  ],
+  "ci95_two_way": [
+   0.0006,
+   0.1415
+  ]
+ },
+ "paired_1h_minus_6h": {
+  "n": 4131,
+  "point": 0.0666,
+  "ci95_home": [
+   0.0305,
+   0.1031
+  ],
+  "ci95_two_way": [
+   0.0096,
+   0.1223
+  ]
+ },
+ "late_coverage": {
+  "1": {
+   "n_games": 4179,
+   "share": 0.8066,
+   "selected_report_age": {
+    "n_team_games": 8358,
+    "median_minutes_before_cutoff": 30.0,
+    "p90_minutes_before_cutoff": 30.0
+   },
+   "cutoff": {
+    "n": 3322,
+    "gain_F1": 0.2323,
+    "inflation": -0.0326,
+    "gain_F1_ci": [
+     0.1647,
+     0.3022
+    ],
+    "inflation_ci": [
+     -0.0766,
+     0.0099
+    ],
+    "gain_F1_ci_two_way": [
+     0.106,
+     0.3439
+    ],
+    "inflation_ci_two_way": [
+     -0.0944,
+     0.0428
+    ]
+   },
+   "six_hour_same_games": {
+    "n": 3322,
+    "gain_F1": 0.1685,
+    "inflation": 0.0312,
+    "gain_F1_ci": [
+     0.111,
+     0.2298
+    ],
+    "inflation_ci": [
+     -0.0281,
+     0.0886
+    ],
+    "gain_F1_ci_two_way": [
+     0.0538,
+     0.2719
+    ],
+    "inflation_ci_two_way": [
+     -0.0471,
+     0.1146
+    ]
+   },
+   "paired_minus_6h": {
+    "n": 3322,
+    "point": 0.0638,
+    "ci95_home": [
+     0.0274,
+     0.1004
+    ],
+    "ci95_two_way": [
+     0.0069,
+     0.1146
+    ]
+   }
+  },
+  "0.5": {
+   "n_games": 3711,
+   "share": 0.7163,
+   "selected_report_age": {
+    "n_team_games": 7422,
+    "median_minutes_before_cutoff": 0.0,
+    "p90_minutes_before_cutoff": 30.0
+   },
+   "cutoff": {
+    "n": 2951,
+    "gain_F1": 0.2525,
+    "inflation": -0.0452,
+    "gain_F1_ci": [
+     0.1722,
+     0.3301
+    ],
+    "inflation_ci": [
+     -0.0791,
+     -0.0135
+    ],
+    "gain_F1_ci_two_way": [
+     0.1123,
+     0.3858
+    ],
+    "inflation_ci_two_way": [
+     -0.0948,
+     0.0073
+    ]
+   },
+   "six_hour_same_games": {
+    "n": 2951,
+    "gain_F1": 0.1745,
+    "inflation": 0.0328,
+    "gain_F1_ci": [
+     0.113,
+     0.2342
+    ],
+    "inflation_ci": [
+     -0.0235,
+     0.0885
+    ],
+    "gain_F1_ci_two_way": [
+     0.0477,
+     0.2872
+    ],
+    "inflation_ci_two_way": [
+     -0.0457,
+     0.1236
+    ]
+   },
+   "paired_minus_6h": {
+    "n": 2951,
+    "point": 0.0781,
+    "ci95_home": [
+     0.0302,
+     0.1244
+    ],
+    "ci95_two_way": [
+     0.0042,
+     0.1479
+    ]
+   }
+  }
+ },
+ "strict_lastmodified_6h": {
+  "pooled_rolling": {
+   "n": 4131,
+   "gain_F1": 0.1367,
+   "inflation": 0.0987,
+   "gain_F1_ci": [
+    0.0778,
+    0.1946
+   ],
+   "inflation_ci": [
+    0.0308,
+    0.168
+   ],
+   "gain_F1_ci_two_way": [
+    0.0219,
+    0.2374
+   ],
+   "inflation_ci_two_way": [
+    -0.008,
+    0.209
+   ]
+  }
+ },
+ "strict_changed_team_games": 496
+}

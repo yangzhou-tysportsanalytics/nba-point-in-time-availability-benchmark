@@ -1,0 +1,119 @@
+{
+ "coverage": {
+  "players_with_history": 1.0,
+  "absent_players_with_history": 1.0,
+  "nonzero_feature_games": 6056,
+  "games": 6056,
+  "sd_F1": 8.899,
+  "sd_F2": 12.263,
+  "sd_F1_eff": 22.258,
+  "sd_F2_eff": 22.432
+ },
+ "contrasts": {
+  "gain_F1": {
+   "point": 0.1966,
+   "ci95_home": [
+    0.1318,
+    0.2646
+   ],
+   "ci95_two_way": [
+    0.0807,
+    0.3024
+   ]
+  },
+  "inflation": {
+   "point": 0.0588,
+   "ci95_home": [
+    -0.003,
+    0.1206
+   ],
+   "ci95_two_way": [
+    -0.0309,
+    0.1505
+   ]
+  },
+  "gain_F1_impact": {
+   "point": 0.0514,
+   "ci95_home": [
+    0.0128,
+    0.0854
+   ],
+   "ci95_two_way": [
+    0.0008,
+    0.1066
+   ]
+  },
+  "inflation_impact": {
+   "point": -0.0296,
+   "ci95_home": [
+    -0.0522,
+    -0.003
+   ],
+   "ci95_two_way": [
+    -0.0673,
+    0.0043
+   ]
+  }
+ },
+ "difference_inflation_impact_minus_base": -0.0884,
+ "monte_carlo_endpoints": {
+  "gain_F1_impact": {
+   "seeds": [
+    20260921,
+    20260922,
+    20260923,
+    20260924,
+    20260925
+   ],
+   "reps": 10000,
+   "lower": [
+    0.00025,
+    -0.000525,
+    0.00038,
+    -0.00156,
+    0.000894
+   ],
+   "upper": [
+    0.105928,
+    0.10709,
+    0.105738,
+    0.105339,
+    0.10476
+   ],
+   "lower_range": [
+    -0.00156,
+    0.000894
+   ],
+   "lower_crosses_zero": true
+  },
+  "inflation_impact": {
+   "seeds": [
+    20260921,
+    20260922,
+    20260923,
+    20260924,
+    20260925
+   ],
+   "reps": 10000,
+   "lower": [
+    -0.067092,
+    -0.068453,
+    -0.068102,
+    -0.067558,
+    -0.06723
+   ],
+   "upper": [
+    0.005831,
+    0.007051,
+    0.0061,
+    0.007479,
+    0.006168
+   ],
+   "lower_range": [
+    -0.068453,
+    -0.067092
+   ],
+   "lower_crosses_zero": false
+  }
+ }
+}

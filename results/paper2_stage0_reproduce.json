@@ -1,0 +1,580 @@
+{
+ "python": "3.12.10",
+ "numpy": "2.4.1",
+ "pandas": "3.0.0",
+ "refs": {
+  "p5_commit": {
+   "sha": "6891c9e7e9b97e95e343e242320077c698ab0fb6",
+   "games_vs_original": {
+    "rows": [
+     3693,
+     3693
+    ],
+    "same_games": true,
+    "strength_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "rest_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F1_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F2_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F3_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F4_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "n_out_pre": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "n_out_real": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "margin": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "spread_home": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    }
+   },
+   "results_vs_original": {
+    "n_values": 96,
+    "n_diff": 0,
+    "diffs": {}
+   },
+   "holdout_metrics": {
+    "F0_none": {
+     "rmse": 14.7044,
+     "mae": 11.5885,
+     "logloss": 0.6152,
+     "acc": 0.6522
+    },
+    "F1_pregame": {
+     "rmse": 14.5171,
+     "mae": 11.4158,
+     "logloss": 0.608,
+     "acc": 0.6571
+    },
+    "F2_realized": {
+     "rmse": 14.3117,
+     "mae": 11.2571,
+     "logloss": 0.6015,
+     "acc": 0.6571
+    },
+    "F3_lookahead": {
+     "rmse": 14.5154,
+     "mae": 11.4228,
+     "logloss": 0.6084,
+     "acc": 0.6579
+    },
+    "F4_both": {
+     "rmse": 14.3179,
+     "mae": 11.2651,
+     "logloss": 0.6024,
+     "acc": 0.6579
+    }
+   },
+   "leakage_gap_F2": {
+    "rmse": {
+     "point": 0.2055,
+     "ci95": [
+      0.1073,
+      0.2956
+     ]
+    },
+    "mae": {
+     "point": 0.1587,
+     "ci95": [
+      0.071,
+      0.2398
+     ]
+    },
+    "logloss": {
+     "point": 0.0065,
+     "ci95": [
+      0.001,
+      0.012
+     ]
+    },
+    "acc": {
+     "point": 0.0,
+     "ci95": [
+      -0.0139,
+      0.0139
+     ]
+    }
+   },
+   "market_reference": {
+    "n": 977,
+    "rmse_market": 14.084561479056362,
+    "rmse_F0_none": 15.089401950716908,
+    "rmse_F1_pregame": 14.83162399358545,
+    "rmse_F2_realized": 14.597673247853423,
+    "rmse_F3_lookahead": 14.823700793091712,
+    "rmse_F4_both": 14.595398393927942
+   }
+  },
+  "head": {
+   "sha": "464c91ca55fe67f1cc161c5a0f996a3c26e9620d",
+   "games_vs_original": {
+    "rows": [
+     3693,
+     3693
+    ],
+    "same_games": true,
+    "strength_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "rest_diff": {
+     "max_abs_diff": 1.0,
+     "n_diff": 14
+    },
+    "F1_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F2_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F3_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "F4_diff": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "n_out_pre": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "n_out_real": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "margin": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    },
+    "spread_home": {
+     "max_abs_diff": 0.0,
+     "n_diff": 0
+    }
+   },
+   "results_vs_original": {
+    "n_values": 96,
+    "n_diff": 80,
+    "diffs": {
+     "holdout_metrics.F0_none.rmse": [
+      14.7044,
+      14.6991
+     ],
+     "holdout_metrics.F0_none.mae": [
+      11.5885,
+      11.5842
+     ],
+     "holdout_metrics.F0_none.logloss": [
+      0.6152,
+      0.6148
+     ],
+     "holdout_metrics.F1_pregame.rmse": [
+      14.5171,
+      14.5132
+     ],
+     "holdout_metrics.F1_pregame.mae": [
+      11.4158,
+      11.4112
+     ],
+     "holdout_metrics.F1_pregame.logloss": [
+      0.608,
+      0.6077
+     ],
+     "holdout_metrics.F1_pregame.acc": [
+      0.6571,
+      0.6579
+     ],
+     "holdout_metrics.F2_realized.rmse": [
+      14.3117,
+      14.3069
+     ],
+     "holdout_metrics.F2_realized.mae": [
+      11.2571,
+      11.2524
+     ],
+     "holdout_metrics.F2_realized.logloss": [
+      0.6015,
+      0.6011
+     ],
+     "holdout_metrics.F3_lookahead.rmse": [
+      14.5154,
+      14.5115
+     ],
+     "holdout_metrics.F3_lookahead.mae": [
+      11.4228,
+      11.4182
+     ],
+     "holdout_metrics.F3_lookahead.logloss": [
+      0.6084,
+      0.6081
+     ],
+     "holdout_metrics.F3_lookahead.acc": [
+      0.6579,
+      0.6571
+     ],
+     "holdout_metrics.F4_both.rmse": [
+      14.3179,
+      14.3131
+     ],
+     "holdout_metrics.F4_both.mae": [
+      11.2651,
+      11.2602
+     ],
+     "holdout_metrics.F4_both.logloss": [
+      0.6024,
+      0.602
+     ],
+     "holdout_metrics.F4_both.acc": [
+      0.6579,
+      0.6571
+     ],
+     "leakage_gap_F1_minus.F2_realized.rmse.point": [
+      0.2055,
+      0.2063
+     ],
+     "leakage_gap_F1_minus.F2_realized.rmse.ci95[0]": [
+      0.1073,
+      0.1078
+     ],
+     "leakage_gap_F1_minus.F2_realized.rmse.ci95[1]": [
+      0.2956,
+      0.2961
+     ],
+     "leakage_gap_F1_minus.F2_realized.mae.point": [
+      0.1587,
+      0.1588
+     ],
+     "leakage_gap_F1_minus.F2_realized.mae.ci95[0]": [
+      0.071,
+      0.0709
+     ],
+     "leakage_gap_F1_minus.F2_realized.logloss.point": [
+      0.0065,
+      0.0066
+     ],
+     "leakage_gap_F1_minus.F2_realized.logloss.ci95[0]": [
+      0.001,
+      0.0011
+     ],
+     "leakage_gap_F1_minus.F2_realized.acc.point": [
+      0.0,
+      0.0008
+     ],
+     "leakage_gap_F1_minus.F2_realized.acc.ci95[0]": [
+      -0.0139,
+      -0.0131
+     ],
+     "leakage_gap_F1_minus.F2_realized.acc.ci95[1]": [
+      0.0139,
+      0.0148
+     ],
+     "leakage_gap_F1_minus.F3_lookahead.rmse.ci95[0]": [
+      -0.011,
+      -0.0111
+     ],
+     "leakage_gap_F1_minus.F3_lookahead.rmse.ci95[1]": [
+      0.0137,
+      0.0138
+     ],
+     "leakage_gap_F1_minus.F3_lookahead.mae.ci95[1]": [
+      0.0049,
+      0.005
+     ],
+     "leakage_gap_F1_minus.F3_lookahead.acc.point": [
+      -0.0008,
+      0.0008
+     ],
+     "leakage_gap_F1_minus.F3_lookahead.acc.ci95[0]": [
+      -0.0049,
+      -0.0033
+     ],
+     "leakage_gap_F1_minus.F3_lookahead.acc.ci95[1]": [
+      0.0033,
+      0.0049
+     ],
+     "leakage_gap_F1_minus.F4_both.rmse.point": [
+      0.1992,
+      0.2001
+     ],
+     "leakage_gap_F1_minus.F4_both.rmse.ci95[0]": [
+      0.1164,
+      0.1168
+     ],
+     "leakage_gap_F1_minus.F4_both.rmse.ci95[1]": [
+      0.2788,
+      0.2798
+     ],
+     "leakage_gap_F1_minus.F4_both.mae.point": [
+      0.1507,
+      0.151
+     ],
+     "leakage_gap_F1_minus.F4_both.mae.ci95[0]": [
+      0.0632,
+      0.0636
+     ],
+     "leakage_gap_F1_minus.F4_both.logloss.point": [
+      0.0056,
+      0.0057
+     ],
+     "leakage_gap_F1_minus.F4_both.logloss.ci95[0]": [
+      0.0004,
+      0.0005
+     ],
+     "leakage_gap_F1_minus.F4_both.logloss.ci95[1]": [
+      0.0107,
+      0.0108
+     ],
+     "leakage_gap_F1_minus.F4_both.acc.point": [
+      -0.0008,
+      0.0008
+     ],
+     "leakage_gap_F1_minus.F4_both.acc.ci95[0]": [
+      -0.0131,
+      -0.0116
+     ],
+     "leakage_gap_F1_minus.F4_both.acc.ci95[1]": [
+      0.0123,
+      0.0139
+     ],
+     "leakage_gap_F1_minus.F0_none.rmse.point": [
+      -0.1873,
+      -0.1859
+     ],
+     "leakage_gap_F1_minus.F0_none.rmse.ci95[0]": [
+      -0.3073,
+      -0.305
+     ],
+     "leakage_gap_F1_minus.F0_none.rmse.ci95[1]": [
+      -0.0658,
+      -0.0645
+     ],
+     "leakage_gap_F1_minus.F0_none.mae.point": [
+      -0.1727,
+      -0.1731
+     ],
+     "leakage_gap_F1_minus.F0_none.mae.ci95[0]": [
+      -0.3075,
+      -0.3082
+     ],
+     "leakage_gap_F1_minus.F0_none.mae.ci95[1]": [
+      -0.0438,
+      -0.0436
+     ],
+     "leakage_gap_F1_minus.F0_none.logloss.point": [
+      -0.0072,
+      -0.0071
+     ],
+     "leakage_gap_F1_minus.F0_none.logloss.ci95[0]": [
+      -0.0145,
+      -0.0143
+     ],
+     "leakage_gap_F1_minus.F0_none.logloss.ci95[1]": [
+      0.0002,
+      0.0003
+     ],
+     "leakage_gap_F1_minus.F0_none.acc.point": [
+      0.0049,
+      0.0057
+     ],
+     "leakage_gap_F1_minus.F0_none.acc.ci95[1]": [
+      0.0245,
+      0.0253
+     ],
+     "market_reference.rmse_F0_none": [
+      15.089401950716908,
+      15.083437149201218
+     ],
+     "market_reference.rmse_F1_pregame": [
+      14.83162399358545,
+      14.827129120025885
+     ],
+     "market_reference.rmse_F2_realized": [
+      14.597673247853423,
+      14.592307517402013
+     ],
+     "market_reference.rmse_F3_lookahead": [
+      14.823700793091712,
+      14.819213313214332
+     ],
+     "market_reference.rmse_F4_both": [
+      14.595398393927942,
+      14.590001896019107
+     ],
+     "coefficients.F0_none.const": [
+      1.9719,
+      1.9725
+     ],
+     "coefficients.F0_none.strength_diff": [
+      0.5851,
+      0.585
+     ],
+     "coefficients.F0_none.rest_diff": [
+      1.5829,
+      1.5453
+     ],
+     "coefficients.F1_pregame.const": [
+      1.8753,
+      1.8757
+     ],
+     "coefficients.F1_pregame.strength_diff": [
+      0.5231,
+      0.523
+     ],
+     "coefficients.F1_pregame.rest_diff": [
+      1.2246,
+      1.1918
+     ],
+     "coefficients.F1_pregame.F1_diff": [
+      -0.1116,
+      -0.1117
+     ],
+     "coefficients.F2_realized.const": [
+      1.9321,
+      1.9326
+     ],
+     "coefficients.F2_realized.strength_diff": [
+      0.5084,
+      0.5082
+     ],
+     "coefficients.F2_realized.rest_diff": [
+      1.3294,
+      1.2946
+     ],
+     "coefficients.F2_realized.F2_diff": [
+      -0.1186,
+      -0.1187
+     ],
+     "coefficients.F3_lookahead.const": [
+      1.8748,
+      1.8752
+     ],
+     "coefficients.F3_lookahead.strength_diff": [
+      0.5221,
+      0.5219
+     ],
+     "coefficients.F3_lookahead.rest_diff": [
+      1.2157,
+      1.1831
+     ],
+     "coefficients.F3_lookahead.F3_diff": [
+      -0.1122,
+      -0.1124
+     ],
+     "coefficients.F4_both.const": [
+      1.936,
+      1.9365
+     ],
+     "coefficients.F4_both.strength_diff": [
+      0.508,
+      0.5078
+     ],
+     "coefficients.F4_both.rest_diff": [
+      1.324,
+      1.2895
+     ],
+     "coefficients.F4_both.F4_diff": [
+      -0.1179,
+      -0.118
+     ]
+    }
+   },
+   "holdout_metrics": {
+    "F0_none": {
+     "rmse": 14.6991,
+     "mae": 11.5842,
+     "logloss": 0.6148,
+     "acc": 0.6522
+    },
+    "F1_pregame": {
+     "rmse": 14.5132,
+     "mae": 11.4112,
+     "logloss": 0.6077,
+     "acc": 0.6579
+    },
+    "F2_realized": {
+     "rmse": 14.3069,
+     "mae": 11.2524,
+     "logloss": 0.6011,
+     "acc": 0.6571
+    },
+    "F3_lookahead": {
+     "rmse": 14.5115,
+     "mae": 11.4182,
+     "logloss": 0.6081,
+     "acc": 0.6571
+    },
+    "F4_both": {
+     "rmse": 14.3131,
+     "mae": 11.2602,
+     "logloss": 0.602,
+     "acc": 0.6571
+    }
+   },
+   "leakage_gap_F2": {
+    "rmse": {
+     "point": 0.2063,
+     "ci95": [
+      0.1078,
+      0.2961
+     ]
+    },
+    "mae": {
+     "point": 0.1588,
+     "ci95": [
+      0.0709,
+      0.2398
+     ]
+    },
+    "logloss": {
+     "point": 0.0066,
+     "ci95": [
+      0.0011,
+      0.012
+     ]
+    },
+    "acc": {
+     "point": 0.0008,
+     "ci95": [
+      -0.0131,
+      0.0148
+     ]
+    }
+   },
+   "market_reference": {
+    "n": 977,
+    "rmse_market": 14.084561479056362,
+    "rmse_F0_none": 15.083437149201218,
+    "rmse_F1_pregame": 14.827129120025885,
+    "rmse_F2_realized": 14.592307517402013,
+    "rmse_F3_lookahead": 14.819213313214332,
+    "rmse_F4_both": 14.590001896019107
+   }
+  }
+ }
+}

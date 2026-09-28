@@ -1,0 +1,426 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "sc": "https://schema.org/",
+  "cr": "http://mlcommons.org/croissant/",
+  "rai": "http://mlcommons.org/croissant/RAI/",
+  "dct": "http://purl.org/dc/terms/",
+  "citeAs": "cr:citeAs",
+  "column": "cr:column",
+  "conformsTo": "dct:conformsTo",
+  "data": {
+   "@id": "cr:data",
+   "@type": "@json"
+  },
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "examples": {
+   "@id": "cr:examples",
+   "@type": "@json"
+  },
+  "extract": "cr:extract",
+  "field": "cr:field",
+  "fileObject": "cr:fileObject",
+  "fileProperty": "cr:fileProperty",
+  "format": "cr:format",
+  "includes": "cr:includes",
+  "isLiveDataset": "cr:isLiveDataset",
+  "jsonPath": "cr:jsonPath",
+  "key": "cr:key",
+  "md5": "cr:md5",
+  "parentField": "cr:parentField",
+  "path": "cr:path",
+  "recordSet": "cr:recordSet",
+  "references": "cr:references",
+  "regex": "cr:regex",
+  "repeated": "cr:repeated",
+  "replace": "cr:replace",
+  "separator": "cr:separator",
+  "source": "cr:source",
+  "subField": "cr:subField",
+  "transform": "cr:transform"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "PIT-Avail",
+ "description": "Point-in-time NBA player availability, 2021-22 to 2025-26: a game-level benchmark with a compliant pregame availability feature (official injury report at a fixed cutoff, timed by the printed report time) and leaky versions (post-game participation, whole-season statistics), plus summary tables. Player-level tables are rebuilt locally from public sources with the repository code; source documents are not redistributed.",
+ "license": [
+  "https://creativecommons.org/licenses/by/4.0/",
+  "https://opensource.org/licenses/MIT"
+ ],
+ "url": "⟦repository URL⟧",
+ "version": "1.0.0",
+ "datePublished": "2026-09-22",
+ "citeAs": "⟦citation⟧",
+ "creator": {
+  "@type": "sc:Organization",
+  "name": "⟦authors; anonymised for review⟧"
+ },
+ "keywords": [
+  "NBA",
+  "injury reports",
+  "point-in-time data",
+  "information leakage",
+  "sports forecasting",
+  "benchmark"
+ ],
+ "rai:dataCollection": "Official NBA injury-report PDFs (league public URL, SHA-256 listed) and a CC0 Kaggle box-score dataset (version 515).",
+ "rai:dataLimitations": "Rosters approximate (box appearances only in the public build); some games missing from the box-score source; no betting lines; leaky columns are post-game or look-ahead by construction and must not be used as pregame features.",
+ "rai:personalSensitiveInformation": "Injury reasons published by the league about professional players; no private data added.",
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "bench_games_public",
+   "name": "bench_games_public",
+   "description": "Game-level benchmark, one row per game",
+   "contentUrl": "data/bench_games_public.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "1e1adc918c5da1a9722bb737f5f48fb844b032519f82032e866bf947260e65ca"
+  },
+  {
+   "@type": "cr:FileObject",
+   "@id": "status_table_public",
+   "name": "status_table_public",
+   "description": "Pregame status versus play, 2023-24 to 2025-26",
+   "contentUrl": "data/status_table_public.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "109851ab9eef705384dad91865026a098e740bcff22bee38f4189bf1ec40e8e7"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "games",
+   "name": "games",
+   "description": "Benchmark rows; evaluation: train 2023-24 and 2024-25, test 2025-26, exclude any_block_missing; headline metric RMSE(F1) - RMSE(F2) on margin",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "games/game_id",
+     "name": "game_id",
+     "description": "NBA game id",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "game_id"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/season_year",
+     "name": "season_year",
+     "description": "Season, labelled by the year it ends (2026 = 2025-26)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "season_year"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/game_date_et",
+     "name": "game_date_et",
+     "description": "Game date, US Eastern (MM/DD/YYYY)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "game_date_et"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/home",
+     "name": "home",
+     "description": "Home team (NBA abbreviation)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "home"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/away",
+     "name": "away",
+     "description": "Away team (NBA abbreviation)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "away"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/margin",
+     "name": "margin",
+     "description": "Target: home points minus away points (final, overtime included)",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "margin"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/any_block_missing",
+     "name": "any_block_missing",
+     "description": "True if either team had no submitted report at the cutoff (excluded from the benchmark)",
+     "dataType": "sc:Boolean",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "any_block_missing"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/strength_diff",
+     "name": "strength_diff",
+     "description": "Pregame control: home minus away average margin over the previous 10 games",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "strength_diff"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/rest_diff",
+     "name": "rest_diff",
+     "description": "Pregame control: home minus away rest days (capped at 3)",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "rest_diff"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/n_out_pre_h",
+     "name": "n_out_pre_h",
+     "description": "Home reference-rotation players reported Out at the cutoff (pregame)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "n_out_pre_h"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/n_out_pre_a",
+     "name": "n_out_pre_a",
+     "description": "Away reference-rotation players reported Out at the cutoff (pregame)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "n_out_pre_a"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/n_out_real_h",
+     "name": "n_out_real_h",
+     "description": "Home reference-rotation players who did not play (POST-GAME; leakage)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "n_out_real_h"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/n_out_real_a",
+     "name": "n_out_real_a",
+     "description": "Away reference-rotation players who did not play (POST-GAME; leakage)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "n_out_real_a"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/F1_diff",
+     "name": "F1_diff",
+     "description": "Compliant: absence value of players reported Out at the cutoff, home minus away (efficiency points)",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "F1_diff"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/F2_diff",
+     "name": "F2_diff",
+     "description": "LEAKY (post-game): absence value of players who did not play, home minus away",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "F2_diff"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/F3_diff",
+     "name": "F3_diff",
+     "description": "LEAKY (look-ahead): F1 players valued with whole-season efficiency, home minus away",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "F3_diff"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "games/F4_diff",
+     "name": "F4_diff",
+     "description": "LEAKY (both): did-not-play players valued with whole-season efficiency, home minus away",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "bench_games_public"
+      },
+      "extract": {
+       "column": "F4_diff"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "cr:RecordSet",
+   "@id": "status_table",
+   "name": "status_table",
+   "description": "Summary table (public build)",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "status_table/status",
+     "name": "status",
+     "description": "Pregame status at the cutoff (Out, Doubtful, Questionable, Probable, Available, not_listed)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "status_table_public"
+      },
+      "extract": {
+       "column": "status"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "status_table/player_games",
+     "name": "player_games",
+     "description": "Roster player-games with this status, 2023-24 to 2025-26",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "status_table_public"
+      },
+      "extract": {
+       "column": "player_games"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "status_table/played_pct",
+     "name": "played_pct",
+     "description": "Percent of those player-games in which the player played",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "status_table_public"
+      },
+      "extract": {
+       "column": "played_pct"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "status_table/share_of_lost_ref_minutes_pct",
+     "name": "share_of_lost_ref_minutes_pct",
+     "description": "Percent of reference minutes lost to absent rotation players that fall in this status",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "status_table_public"
+      },
+      "extract": {
+       "column": "share_of_lost_ref_minutes_pct"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

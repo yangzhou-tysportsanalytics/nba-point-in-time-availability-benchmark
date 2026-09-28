@@ -1,0 +1,184 @@
+{
+ "fetch": {
+  "candidates_logged": 26300,
+  "status": {
+   "200": 23485,
+   "403": 2815
+  },
+  "files_held": 4283,
+  "files_new": 19202
+ },
+ "team_games": {
+  "old": {
+   "n": 12306,
+   "from_90m": 1636,
+   "no_report": 99,
+   "by_season_no_report": {
+    "2022": 20,
+    "2023": 22,
+    "2024": 34,
+    "2025": 14,
+    "2026": 9
+   }
+  },
+  "new": {
+   "n": 12306,
+   "from_90m": 1082,
+   "no_report": 98,
+   "by_season_no_report": {
+    "2022": 20,
+    "2023": 22,
+    "2024": 33,
+    "2025": 14,
+    "2026": 9
+   }
+  },
+  "selected_report_changed": 6588,
+  "variant_changed": 554,
+  "newer_report_selected": 6034
+ },
+ "rotation_status": {
+  "rows": 178424,
+  "status_changed": 1282,
+  "out_new_not_old": 441,
+  "out_old_not_new": 159,
+  "transitions": {
+   "not_listed -> Questionable": 226,
+   "Questionable -> Out": 198,
+   "not_listed -> Out": 167,
+   "Questionable -> Available": 120,
+   "Questionable -> Probable": 87,
+   "Out -> Questionable": 76,
+   "Doubtful -> Out": 66,
+   "Probable -> Available": 49,
+   "Out -> Available": 41,
+   "Questionable -> Doubtful": 37
+  }
+ },
+ "bench": {
+  "games": 6153,
+  "excluded_new": 97,
+  "excluded_old": 98,
+  "corr_F1": 0.9798,
+  "F1_equal_share": 0.93,
+  "F2_equal_share": 0.9974,
+  "mean_n_out_pre_old": 4.06,
+  "mean_n_out_pre_new": 4.106
+ },
+ "headline": {
+  "gain_F1": {
+   "old": {
+    "point": 0.1979,
+    "ci95": [
+     0.0711,
+     0.3225
+    ]
+   },
+   "new": {
+    "point": 0.2264,
+    "ci95": [
+     0.1046,
+     0.3508
+    ]
+   }
+  },
+  "gain_F2": {
+   "old": {
+    "point": 0.3931,
+    "ci95": [
+     0.2682,
+     0.5178
+    ]
+   },
+   "new": {
+    "point": 0.3924,
+    "ci95": [
+     0.2677,
+     0.5165
+    ]
+   }
+  },
+  "inflation_F2": {
+   "old": {
+    "point": 0.1952,
+    "ci95": [
+     0.0992,
+     0.2845
+    ]
+   },
+   "new": {
+    "point": 0.166,
+    "ci95": [
+     0.0772,
+     0.2546
+    ]
+   }
+  },
+  "ratio_F2": {
+   "old": {
+    "point": 1.9863,
+    "ci95": [
+     1.3802,
+     4.1913
+    ]
+   },
+   "new": {
+    "point": 1.7331,
+    "ci95": [
+     1.268,
+     2.9574
+    ]
+   }
+  },
+  "mkt_F1_minus_market": {
+   "old": {
+    "point": 0.7296,
+    "ci95": [
+     0.4289,
+     1.0179
+    ]
+   },
+   "new": {
+    "point": 0.6903,
+    "ci95": [
+     0.3913,
+     0.9732
+    ]
+   }
+  },
+  "mkt_F2_minus_market": {
+   "old": {
+    "point": 0.5063,
+    "ci95": [
+     0.2349,
+     0.7719
+    ]
+   },
+   "new": {
+    "point": 0.5078,
+    "ci95": [
+     0.2369,
+     0.7736
+    ]
+   }
+  },
+  "n_holdout": {
+   "old": 1222,
+   "new": 1222
+  },
+  "lost_ref_minutes_not_reported_out_pct": {
+   "old": 44.5,
+   "new": 43.7
+  }
+ },
+ "parse": {
+  "files": 23485,
+  "files_error": 0,
+  "files_empty": 0,
+  "files_no_header": 0,
+  "files_in_dst_transition_hours": 5,
+  "rows": 1886765,
+  "blocks": 692789,
+  "report_times": 23469
+ }
+}

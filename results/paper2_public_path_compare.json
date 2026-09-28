@@ -1,0 +1,66 @@
+{
+ "main_games": 6153,
+ "public_games": 6146,
+ "joined": 6146,
+ "excluded_main": 97,
+ "excluded_public": 111,
+ "excluded_agree": 0.9970712658639765,
+ "joined_both_included": 6033,
+ "margin_equal": 1.0,
+ "corr_strength_diff": 0.9995,
+ "mean_abs_diff_strength_diff": 0.0365,
+ "corr_rest_diff": 0.997,
+ "mean_abs_diff_rest_diff": 0.0028,
+ "corr_F1_diff": 0.9859,
+ "mean_abs_diff_F1_diff": 1.6549,
+ "corr_F2_diff": 0.9726,
+ "mean_abs_diff_F2_diff": 3.0452,
+ "corr_F3_diff": 0.985,
+ "mean_abs_diff_F3_diff": 1.707,
+ "corr_F4_diff": 0.9706,
+ "mean_abs_diff_F4_diff": 3.1809,
+ "n_out_pre_h_equal": 0.9158,
+ "n_out_real_h_equal": 0.6383,
+ "n_out_pre_a_equal": 0.9121,
+ "n_out_real_a_equal": 0.6378,
+ "by_season_both_included": {
+  "2022": 1200,
+  "2023": 1207,
+  "2024": 1197,
+  "2025": 1208,
+  "2026": 1221
+ },
+ "judgement": {
+  "main_inflation": {
+   "point": 0.166,
+   "ci95": [
+    0.0772,
+    0.2546
+   ]
+  },
+  "public_inflation": {
+   "point": 0.176,
+   "ci95": [
+    0.0791,
+    0.2705
+   ]
+  },
+  "main_ratio": {
+   "point": 1.7331,
+   "ci95": [
+    1.268,
+    2.9574
+   ]
+  },
+  "public_ratio": {
+   "point": 1.8278,
+   "ci95": [
+    1.2635,
+    3.732
+   ]
+  },
+  "public_point_inside_main_ci": true,
+  "public_ci_excludes_0": true,
+  "verdict": "reproduced"
+ }
+}

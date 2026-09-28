@@ -1,0 +1,496 @@
+{
+ "versions": {
+  "F0": [],
+  "F1": [
+   "F1_diff"
+  ],
+  "F1_6h": [
+   "F1_6h_diff"
+  ],
+  "F1+c2": [
+   "F1c2_diff"
+  ],
+  "F1+c3": [
+   "F1c3_diff"
+  ],
+  "F1+c2+c3": [
+   "F1c23_diff"
+  ],
+  "F2": [
+   "F2_diff"
+  ],
+  "F1p+c1": [
+   "F1pc1_diff"
+  ],
+  "F1p+c2": [
+   "F1pc2_diff"
+  ],
+  "F1p+c3": [
+   "F1pc3_diff"
+  ],
+  "F1p+c2+c3": [
+   "F1pc23_diff"
+  ],
+  "F1p+c1+c2+c3": [
+   "F1pc123_diff"
+  ]
+ },
+ "component_overlap_with_F1": {
+  "late_status_in_F1": 124,
+  "never_listed_in_F1": 27,
+  "out_at_cutoff_not_out_late": 236,
+  "out_at_cutoff_not_out_late_and_sat": 151,
+  "out_at_cutoff_but_played": 93
+ },
+ "note_components": "late_status and never_listed are net of the players F1 already counts as Out; \"never listed\" means absent from the last report held at 30 minutes, not from every report of that game",
+ "augmented_full_sample": {
+  "n": 4846,
+  "gains": {
+   "F1": {
+    "point": 0.1966,
+    "ci95_home": [
+     0.1318,
+     0.2646
+    ],
+    "ci95_two_way": [
+     0.0807,
+     0.3024
+    ]
+   },
+   "F1_6h": {
+    "point": 0.1603,
+    "ci95_home": [
+     0.1097,
+     0.2133
+    ],
+    "ci95_two_way": [
+     0.057,
+     0.2552
+    ]
+   },
+   "F1+c2": {
+    "point": 0.1604,
+    "ci95_home": [
+     0.1084,
+     0.2152
+    ],
+    "ci95_two_way": [
+     0.0592,
+     0.256
+    ]
+   },
+   "F1+c3": {
+    "point": 0.1243,
+    "ci95_home": [
+     0.0742,
+     0.1738
+    ],
+    "ci95_two_way": [
+     0.0274,
+     0.2156
+    ]
+   },
+   "F1+c2+c3": {
+    "point": 0.1271,
+    "ci95_home": [
+     0.076,
+     0.181
+    ],
+    "ci95_two_way": [
+     0.0305,
+     0.2221
+    ]
+   },
+   "F2": {
+    "point": 0.2554,
+    "ci95_home": [
+     0.1708,
+     0.3434
+    ],
+    "ci95_two_way": [
+     0.111,
+     0.4012
+    ]
+   },
+   "F1p+c1": {
+    "point": 0.267,
+    "ci95_home": [
+     0.191,
+     0.3488
+    ],
+    "ci95_two_way": [
+     0.1367,
+     0.3916
+    ]
+   },
+   "F1p+c2": {
+    "point": 0.1972,
+    "ci95_home": [
+     0.13,
+     0.2706
+    ],
+    "ci95_two_way": [
+     0.0807,
+     0.3073
+    ]
+   },
+   "F1p+c3": {
+    "point": 0.1634,
+    "ci95_home": [
+     0.0996,
+     0.2314
+    ],
+    "ci95_two_way": [
+     0.04,
+     0.2745
+    ]
+   },
+   "F1p+c2+c3": {
+    "point": 0.1671,
+    "ci95_home": [
+     0.1002,
+     0.2415
+    ],
+    "ci95_two_way": [
+     0.0455,
+     0.2828
+    ]
+   },
+   "F1p+c1+c2+c3": {
+    "point": 0.2535,
+    "ci95_home": [
+     0.1687,
+     0.342
+    ],
+    "ci95_two_way": [
+     0.106,
+     0.3978
+    ]
+   }
+  }
+ },
+ "augmented_both_filed_6h": {
+  "n": 4131,
+  "gains": {
+   "F1": {
+    "point": 0.1888,
+    "ci95_home": [
+     0.1269,
+     0.2549
+    ],
+    "ci95_two_way": [
+     0.0617,
+     0.3068
+    ]
+   },
+   "F1_6h": {
+    "point": 0.1766,
+    "ci95_home": [
+     0.1246,
+     0.2308
+    ],
+    "ci95_two_way": [
+     0.0681,
+     0.2746
+    ]
+   },
+   "F1+c2": {
+    "point": 0.1795,
+    "ci95_home": [
+     0.1252,
+     0.2369
+    ],
+    "ci95_two_way": [
+     0.074,
+     0.2778
+    ]
+   },
+   "F1+c3": {
+    "point": 0.1375,
+    "ci95_home": [
+     0.0839,
+     0.1914
+    ],
+    "ci95_two_way": [
+     0.0279,
+     0.2391
+    ]
+   },
+   "F1+c2+c3": {
+    "point": 0.1431,
+    "ci95_home": [
+     0.0891,
+     0.2008
+    ],
+    "ci95_two_way": [
+     0.0361,
+     0.2462
+    ]
+   },
+   "F2": {
+    "point": 0.2381,
+    "ci95_home": [
+     0.1504,
+     0.3253
+    ],
+    "ci95_two_way": [
+     0.0861,
+     0.3989
+    ]
+   },
+   "F1p+c1": {
+    "point": 0.2584,
+    "ci95_home": [
+     0.1837,
+     0.3362
+    ],
+    "ci95_two_way": [
+     0.1195,
+     0.3921
+    ]
+   },
+   "F1p+c2": {
+    "point": 0.1925,
+    "ci95_home": [
+     0.1276,
+     0.2617
+    ],
+    "ci95_two_way": [
+     0.0654,
+     0.314
+    ]
+   },
+   "F1p+c3": {
+    "point": 0.1459,
+    "ci95_home": [
+     0.0783,
+     0.2142
+    ],
+    "ci95_two_way": [
+     0.0071,
+     0.2754
+    ]
+   },
+   "F1p+c2+c3": {
+    "point": 0.153,
+    "ci95_home": [
+     0.0857,
+     0.2272
+    ],
+    "ci95_two_way": [
+     0.0168,
+     0.2855
+    ]
+   },
+   "F1p+c1+c2+c3": {
+    "point": 0.2364,
+    "ci95_home": [
+     0.1492,
+     0.3235
+    ],
+    "ci95_two_way": [
+     0.082,
+     0.399
+    ]
+   }
+  }
+ },
+ "games_added_back": 715,
+ "contrasts_vs_F1_6h": {
+  "F1+c2 - F1_6h": {
+   "point": 0.0001,
+   "ci95_home": [
+    -0.0178,
+    0.0188
+   ],
+   "ci95_two_way": [
+    -0.0228,
+    0.0254
+   ]
+  },
+  "F1+c3 - F1_6h": {
+   "point": -0.036,
+   "ci95_home": [
+    -0.0562,
+    -0.0165
+   ],
+   "ci95_two_way": [
+    -0.0682,
+    -0.0021
+   ]
+  },
+  "F1+c2+c3 - F1_6h": {
+   "point": -0.0332,
+   "ci95_home": [
+    -0.0575,
+    -0.007
+   ],
+   "ci95_two_way": [
+    -0.0655,
+    0.0031
+   ]
+  },
+  "F2 - F1_6h": {
+   "point": 0.0951,
+   "ci95_home": [
+    0.0253,
+    0.1663
+   ],
+   "ci95_two_way": [
+    -0.017,
+    0.2075
+   ]
+  }
+ },
+ "contrasts_vs_F1_headline": {
+  "F1p+c1 - F1": {
+   "point": 0.0704,
+   "ci95_home": [
+    0.026,
+    0.1149
+   ],
+   "ci95_two_way": [
+    0.0064,
+    0.1307
+   ]
+  },
+  "F1p+c2 - F1": {
+   "point": 0.0006,
+   "ci95_home": [
+    -0.0204,
+    0.0222
+   ],
+   "ci95_two_way": [
+    -0.0266,
+    0.0304
+   ]
+  },
+  "F1p+c3 - F1": {
+   "point": -0.0332,
+   "ci95_home": [
+    -0.0583,
+    -0.0097
+   ],
+   "ci95_two_way": [
+    -0.0742,
+    0.0083
+   ]
+  },
+  "F1p+c2+c3 - F1": {
+   "point": -0.0295,
+   "ci95_home": [
+    -0.0593,
+    0.0029
+   ],
+   "ci95_two_way": [
+    -0.0709,
+    0.0159
+   ]
+  },
+  "F1p+c1+c2+c3 - F1": {
+   "point": 0.0569,
+   "ci95_home": [
+    -0.0049,
+    0.1177
+   ],
+   "ci95_two_way": [
+    -0.0329,
+    0.1474
+   ]
+  },
+  "F2 - F1": {
+   "point": 0.0588,
+   "ci95_home": [
+    -0.003,
+    0.1206
+   ],
+   "ci95_two_way": [
+    -0.0309,
+    0.1505
+   ]
+  }
+ },
+ "contrasts_vs_F2": {
+  "F1 - F2": {
+   "point": 0.0588,
+   "ci95_home": [
+    -0.003,
+    0.1206
+   ],
+   "ci95_two_way": [
+    -0.0309,
+    0.1505
+   ]
+  },
+  "F1p+c1 - F2": {
+   "point": -0.0116,
+   "ci95_home": [
+    -0.0465,
+    0.027
+   ],
+   "ci95_two_way": [
+    -0.0627,
+    0.0406
+   ]
+  },
+  "F1p+c1+c2+c3 - F2": {
+   "point": 0.0019,
+   "ci95_home": [
+    -0.0022,
+    0.0075
+   ],
+   "ci95_two_way": [
+    -0.0035,
+    0.0096
+   ]
+  }
+ },
+ "player_games_declared_late": 5594,
+ "joint_regression": {
+  "const": {
+   "coef": -0.3877,
+   "ci95_home": [
+    -3.2892,
+    2.2365
+   ],
+   "ci95_two_way": [
+    -5.3833,
+    3.4522
+   ]
+  },
+  "D_pub": {
+   "coef": 0.3287,
+   "ci95_home": [
+    0.0917,
+    0.5804
+   ],
+   "ci95_two_way": [
+    -0.0476,
+    0.7467
+   ]
+  },
+  "D_late_status": {
+   "coef": 0.0085,
+   "ci95_home": [
+    -0.9918,
+    0.9011
+   ],
+   "ci95_two_way": [
+    -1.1093,
+    0.853
+   ]
+  },
+  "D_never_listed": {
+   "coef": -0.1936,
+   "ci95_home": [
+    -0.5097,
+    0.1379
+   ],
+   "ci95_two_way": [
+    -0.6857,
+    0.4123
+   ]
+  },
+  "note": "e_i = (y - F1 pred)^2 - (y - F2 pred)^2 on the pooled rolling holdouts, regressed on the absolute home-minus-away component values; a positive coefficient means the leaky feature does better where that component is larger."
+ }
+}

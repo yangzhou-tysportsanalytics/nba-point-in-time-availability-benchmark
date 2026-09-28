@@ -1,0 +1,280 @@
+{
+ "sample": {
+  "holdout": 4131,
+  "fixed_games": 5181
+ },
+ "absence_value_totals": {
+  "out_at_30min": 288966.2,
+  "late_status_sat": 14512.3,
+  "never_listed_sat": 97126.3
+ },
+ "player_games": {
+  "out_at_30min": 51665,
+  "late_status_sat": 1901,
+  "never_listed_sat": 22522
+ },
+ "dose_published": {
+  "cells": {
+   "low": {
+    "n": 1822,
+    "dose_mean": 0.0,
+    "gain_F1": 0.2274,
+    "gain_F1_ci": [
+     0.1413,
+     0.3126
+    ],
+    "inflation": -0.0332,
+    "inflation_ci": [
+     -0.0963,
+     0.0285
+    ]
+   },
+   "mid": {
+    "n": 932,
+    "dose_mean": 5.15,
+    "gain_F1": 0.2442,
+    "gain_F1_ci": [
+     0.112,
+     0.3728
+    ],
+    "inflation": 0.015,
+    "inflation_ci": [
+     -0.0484,
+     0.0805
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 18.64,
+    "gain_F1": 0.0876,
+    "gain_F1_ci": [
+     -0.0342,
+     0.2106
+    ],
+    "inflation": 0.1859,
+    "inflation_ci": [
+     0.0441,
+     0.3247
+    ]
+   }
+  },
+  "dose_range": 18.64,
+  "zero_share": 0.441,
+  "top_minus_bottom": {
+   "point": 0.2191,
+   "ci95": [
+    0.0724,
+    0.3651
+   ]
+  }
+ },
+ "dose_late_status": {
+  "cells": {
+   "low": {
+    "n": 3171,
+    "dose_mean": 0.0,
+    "gain_F1": 0.2081,
+    "gain_F1_ci": [
+     0.1357,
+     0.2795
+    ],
+    "inflation": 0.0424,
+    "inflation_ci": [
+     -0.019,
+     0.1018
+    ]
+   },
+   "mid": {
+    "n": 480,
+    "dose_mean": 3.76,
+    "gain_F1": -0.059,
+    "gain_F1_ci": [
+     -0.2195,
+     0.093
+    ],
+    "inflation": 0.1741,
+    "inflation_ci": [
+     0.0066,
+     0.3605
+    ]
+   },
+   "high": {
+    "n": 480,
+    "dose_mean": 14.56,
+    "gain_F1": 0.2486,
+    "gain_F1_ci": [
+     0.0755,
+     0.4282
+    ],
+    "inflation": -0.0078,
+    "inflation_ci": [
+     -0.2475,
+     0.2161
+    ]
+   }
+  },
+  "dose_range": 14.56,
+  "zero_share": 0.768,
+  "top_minus_bottom": {
+   "point": -0.0502,
+   "ci95": [
+    -0.2993,
+    0.1867
+   ]
+  }
+ },
+ "dose_never_listed": {
+  "cells": {
+   "low": {
+    "n": 1377,
+    "dose_mean": 1.27,
+    "gain_F1": 0.258,
+    "gain_F1_ci": [
+     0.1535,
+     0.3667
+    ],
+    "inflation": 0.0952,
+    "inflation_ci": [
+     0.0101,
+     0.1858
+    ]
+   },
+   "mid": {
+    "n": 1377,
+    "dose_mean": 5.52,
+    "gain_F1": 0.1847,
+    "gain_F1_ci": [
+     0.0763,
+     0.2887
+    ],
+    "inflation": 0.035,
+    "inflation_ci": [
+     -0.0554,
+     0.1225
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 13.5,
+    "gain_F1": 0.0961,
+    "gain_F1_ci": [
+     -0.0034,
+     0.1997
+    ],
+    "inflation": 0.0103,
+    "inflation_ci": [
+     -0.0955,
+     0.1221
+    ]
+   }
+  },
+  "dose_range": 12.23,
+  "zero_share": 0.083,
+  "top_minus_bottom": {
+   "point": -0.0849,
+   "ci95": [
+    -0.2233,
+    0.045
+   ]
+  }
+ },
+ "month_within_top_tercile": {
+  "Oct-Dec": {
+   "n": 516,
+   "inflation": 0.0903,
+   "inflation_ci": [
+    -0.11,
+    0.2938
+   ]
+  },
+  "Jan-Feb": {
+   "n": 473,
+   "inflation": 0.1793,
+   "inflation_ci": [
+    -0.0208,
+    0.3673
+   ]
+  },
+  "Mar-Apr": {
+   "n": 388,
+   "inflation": 0.3128,
+   "inflation_ci": [
+    0.0165,
+    0.6072
+   ]
+  }
+ },
+ "timing_rule": {
+  "team_games_with_6h_report": 11224,
+  "team_games_without_strict_report": 428,
+  "team_games_value_changed": 496,
+  "served_only": {
+   "label": "games the strict rule can still serve",
+   "n_holdout": 3813,
+   "inflation_printed": 0.0511,
+   "inflation_printed_ci": [
+    -0.0103,
+    0.1106
+   ],
+   "inflation_strict": 0.0506,
+   "inflation_strict_ci": [
+    -0.0122,
+    0.1108
+   ],
+   "gain_printed": 0.1743,
+   "gain_printed_ci": [
+    0.1077,
+    0.2403
+   ],
+   "gain_strict": 0.1748,
+   "gain_strict_ci": [
+    0.1077,
+    0.2422
+   ],
+   "strict_minus_printed_inflation": -0.0005,
+   "strict_minus_printed_inflation_ci": [
+    -0.0077,
+    0.0065
+   ],
+   "strict_minus_printed_gain": 0.0005,
+   "strict_minus_printed_gain_ci": [
+    -0.0065,
+    0.0077
+   ]
+  },
+  "with_imputation": {
+   "label": "all fixed games; unserved teams count as having no absentees",
+   "n_holdout": 4131,
+   "inflation_printed": 0.0502,
+   "inflation_printed_ci": [
+    -0.0106,
+    0.1078
+   ],
+   "inflation_strict": 0.0987,
+   "inflation_strict_ci": [
+    0.0289,
+    0.1667
+   ],
+   "gain_printed": 0.1852,
+   "gain_printed_ci": [
+    0.1246,
+    0.2451
+   ],
+   "gain_strict": 0.1367,
+   "gain_strict_ci": [
+    0.0772,
+    0.1948
+   ],
+   "strict_minus_printed_inflation": 0.0485,
+   "strict_minus_printed_inflation_ci": [
+    0.0198,
+    0.0786
+   ],
+   "strict_minus_printed_gain": -0.0485,
+   "strict_minus_printed_gain_ci": [
+    -0.0786,
+    -0.0198
+   ]
+  }
+ }
+}

@@ -1,0 +1,11 @@
+# python 3.12.10 (tested on Windows 11)
+numpy==2.4.1
+pandas==3.0.0
+python-dateutil==2.9.0.post0
+tzdata==2025.3
+pdfplumber==0.11.10
+pdfminer.six==20260107
+pypdfium2==5.13.0
+Pillow==12.3.0
+charset-normalizer==3.4.4
+cryptography==46.0.4

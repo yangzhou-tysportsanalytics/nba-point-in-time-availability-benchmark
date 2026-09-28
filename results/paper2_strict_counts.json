@@ -1,0 +1,18 @@
+{
+ "team_games_served_at_six_hours_printed": 11224,
+ "served_by_the_server_time_rule": 10796,
+ "lost_to_the_server_time_rule": 428,
+ "of_those_still_served": {
+  "total": 10796,
+  "any_earlier_report": 4363,
+  "any_earlier_share": 0.4041,
+  "previous_hourly_file_exactly_sixty_minutes_earlier": 2896,
+  "sixty_minute_share": 0.2682,
+  "same_report": 6433,
+  "gap_minutes_top": {
+   "60": 2896,
+   "15": 1467
+  }
+ },
+ "note": "printed-time selection versus max(printed, server Last-Modified) at the six-hour cutoff, all five seasons; \"lost\" team-games are those whose only qualifying report is printed exactly on the cutoff"
+}

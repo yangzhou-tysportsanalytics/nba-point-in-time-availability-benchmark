@@ -1,0 +1,13 @@
+{
+ "seasons": [
+  2024,
+  2025,
+  2026
+ ],
+ "cutoff_hours": 6,
+ "team_games_name_timed": 7171,
+ "team_games_printed_timed": 6722,
+ "selected_report_printed_after_cutoff": 3846,
+ "share": 0.5363,
+ "median_minutes_after_cutoff": 30.0
+}

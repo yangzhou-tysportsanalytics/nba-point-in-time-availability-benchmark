@@ -1,0 +1,63 @@
+{
+ "note": "Counts behind two statements in the paper: how many newly-Out player-games the retrospective filter in put-back component (a) excludes, and how often both teams had filed at each cutoff.",
+ "all_bench_games": {
+  "newly_out_after_cutoff": 5594,
+  "component_a_absent_in_the_end": 5594,
+  "newly_out_but_played": 0,
+  "share_newly_out_but_played": 0.0,
+  "absence_value_component_a": 56368.6,
+  "absence_value_newly_out_but_played": 0.0,
+  "share_of_value_dropped": 0.0
+ },
+ "pooled_holdouts": {
+  "newly_out_after_cutoff": 4569,
+  "component_a_absent_in_the_end": 4569,
+  "newly_out_but_played": 0,
+  "share_newly_out_but_played": 0.0,
+  "absence_value_component_a": 46037.1,
+  "absence_value_newly_out_but_played": 0.0,
+  "share_of_value_dropped": 0.0
+ },
+ "fixed_sample_both_filed": {
+  "n_fixed_games": 5181,
+  "by_cutoff": {
+   "12": {
+    "n_games": 4246,
+    "share": 0.8195
+   },
+   "9": {
+    "n_games": 4262,
+    "share": 0.8226
+   },
+   "6": {
+    "n_games": 5181,
+    "share": 1.0
+   },
+   "4": {
+    "n_games": 5181,
+    "share": 1.0
+   },
+   "3": {
+    "n_games": 5181,
+    "share": 1.0
+   },
+   "2": {
+    "n_games": 5181,
+    "share": 1.0
+   },
+   "1.5": {
+    "n_games": 5181,
+    "share": 1.0
+   },
+   "1": {
+    "n_games": 5181,
+    "share": 1.0
+   },
+   "0.5": {
+    "n_games": 5181,
+    "share": 1.0
+   }
+  },
+  "note": "Share of the fixed cutoff sample (both teams submitted a block at six hours) in which both teams had also submitted one at that cutoff. Game-level shares of one sample; six hours is 1.0 by construction."
+ }
+}

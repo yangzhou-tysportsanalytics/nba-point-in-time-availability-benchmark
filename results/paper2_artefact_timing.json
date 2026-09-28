@@ -1,0 +1,160 @@
+{
+ "never_listed_rows": 22495,
+ "never_listed_recent_rows": 14112,
+ "dose_published": {
+  "cells": {
+   "low": {
+    "n": 1822,
+    "dose_mean": 0.0,
+    "gain_F1": 0.2274,
+    "inflation": -0.0332,
+    "inflation_ci": [
+     -0.0963,
+     0.0285
+    ]
+   },
+   "mid": {
+    "n": 932,
+    "dose_mean": 5.15,
+    "gain_F1": 0.2442,
+    "inflation": 0.015,
+    "inflation_ci": [
+     -0.0484,
+     0.0805
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 18.64,
+    "gain_F1": 0.0876,
+    "inflation": 0.1859,
+    "inflation_ci": [
+     0.0441,
+     0.3247
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": 0.2191,
+   "ci95": [
+    0.0724,
+    0.3651
+   ]
+  }
+ },
+ "dose_never_listed": {
+  "cells": {
+   "low": {
+    "n": 1377,
+    "dose_mean": 1.27,
+    "gain_F1": 0.2616,
+    "inflation": 0.0931,
+    "inflation_ci": [
+     0.0079,
+     0.1837
+    ]
+   },
+   "mid": {
+    "n": 1377,
+    "dose_mean": 5.52,
+    "gain_F1": 0.1879,
+    "inflation": 0.0353,
+    "inflation_ci": [
+     -0.0538,
+     0.1246
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 13.49,
+    "gain_F1": 0.0881,
+    "inflation": 0.0126,
+    "inflation_ci": [
+     -0.0936,
+     0.1245
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": -0.0805,
+   "ci95": [
+    -0.2155,
+    0.0512
+   ]
+  }
+ },
+ "dose_never_listed_recent": {
+  "cells": {
+   "low": {
+    "n": 1377,
+    "dose_mean": 0.46,
+    "gain_F1": 0.2718,
+    "inflation": 0.1302,
+    "inflation_ci": [
+     0.0387,
+     0.2222
+    ]
+   },
+   "mid": {
+    "n": 1377,
+    "dose_mean": 4.14,
+    "gain_F1": 0.2248,
+    "inflation": 0.0196,
+    "inflation_ci": [
+     -0.0656,
+     0.1053
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 11.05,
+    "gain_F1": 0.0229,
+    "inflation": -0.0262,
+    "inflation_ci": [
+     -0.1248,
+     0.0724
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": -0.1564,
+   "ci95": [
+    -0.2872,
+    -0.0344
+   ]
+  }
+ },
+ "name_timing": {
+  "n": 4846,
+  "gain_printed": 0.1966,
+  "gain_printed_ci": [
+   0.1319,
+   0.2605
+  ],
+  "gain_name": 0.1917,
+  "gain_name_ci": [
+   0.1293,
+   0.2525
+  ],
+  "inflation_printed": 0.0588,
+  "inflation_printed_ci": [
+   -0.0003,
+   0.1154
+  ],
+  "inflation_name": 0.0636,
+  "inflation_name_ci": [
+   0.006,
+   0.1213
+  ],
+  "gain_name_minus_printed": -0.0048,
+  "gain_name_minus_printed_ci": [
+   -0.0272,
+   0.0177
+  ],
+  "inflation_name_minus_printed": 0.0048,
+  "inflation_name_minus_printed_ci": [
+   -0.0177,
+   0.0272
+  ]
+ }
+}

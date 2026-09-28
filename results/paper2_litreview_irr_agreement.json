@@ -1,0 +1,146 @@
+{
+ "uses_availability": {
+  "agreement": 0.773,
+  "kappa": 0.486,
+  "disagreements": [
+   [
+    "47",
+    "unclear",
+    "yes"
+   ],
+   [
+    "96",
+    "unclear",
+    "yes"
+   ],
+   [
+    "144",
+    "unclear",
+    "no"
+   ],
+   [
+    "159",
+    "no",
+    "unclear"
+   ],
+   [
+    "220",
+    "no",
+    "unclear"
+   ]
+  ]
+ },
+ "same_game_stats": {
+  "agreement": 0.864,
+  "kappa": 0.783,
+  "disagreements": [
+   [
+    "158",
+    "no",
+    "unclear"
+   ],
+   [
+    "274",
+    "no",
+    "unclear"
+   ],
+   [
+    "312",
+    "unclear",
+    "yes"
+   ]
+  ]
+ },
+ "validation": {
+  "agreement": 0.727,
+  "kappa": 0.561,
+  "disagreements": [
+   [
+    "68",
+    "temporal",
+    "unclear"
+   ],
+   [
+    "86",
+    "random",
+    "unclear"
+   ],
+   [
+    "96",
+    "unclear",
+    "temporal"
+   ],
+   [
+    "106",
+    "temporal",
+    "unclear"
+   ],
+   [
+    "159",
+    "temporal",
+    "unclear"
+   ],
+   [
+    "231",
+    "temporal",
+    "unclear"
+   ]
+  ]
+ },
+ "market_compared": {
+  "agreement": 1.0,
+  "kappa": 1.0,
+  "disagreements": []
+ },
+ "leakage_risk": {
+  "agreement": 0.591,
+  "kappa": 0.377,
+  "disagreements": [
+   [
+    "47",
+    "unclear",
+    "low"
+   ],
+   [
+    "68",
+    "low",
+    "unclear"
+   ],
+   [
+    "96",
+    "unclear",
+    "low"
+   ],
+   [
+    "106",
+    "low",
+    "unclear"
+   ],
+   [
+    "144",
+    "unclear",
+    "low"
+   ],
+   [
+    "159",
+    "low",
+    "unclear"
+   ],
+   [
+    "231",
+    "low",
+    "unclear"
+   ],
+   [
+    "312",
+    "unclear",
+    "high"
+   ],
+   [
+    "337",
+    "high",
+    "unclear"
+   ]
+  ]
+ }
+}

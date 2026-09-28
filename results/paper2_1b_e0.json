@@ -1,0 +1,316 @@
+{
+ "games": {
+  "2022": {
+   "n": 1230,
+   "completed": 1230,
+   "teams": 30,
+   "games_per_team": [
+    82
+   ],
+   "with_summary": 1230,
+   "team_games_with_box": 2460,
+   "team_games": 2460,
+   "team_points_equal_box_sum": 1.0
+  },
+  "2023": {
+   "n": 1230,
+   "completed": 1230,
+   "teams": 30,
+   "games_per_team": [
+    82
+   ],
+   "with_summary": 1230,
+   "team_games_with_box": 2460,
+   "team_games": 2460,
+   "team_points_equal_box_sum": 1.0
+  },
+  "2024": {
+   "n": 1231,
+   "completed": 1231,
+   "teams": 30,
+   "games_per_team": [
+    82,
+    83
+   ],
+   "with_summary": 1231,
+   "team_games_with_box": 2462,
+   "team_games": 2462,
+   "team_points_equal_box_sum": 1.0
+  },
+  "2025": {
+   "n": 1231,
+   "completed": 1231,
+   "teams": 30,
+   "games_per_team": [
+    82,
+    83
+   ],
+   "with_summary": 1231,
+   "team_games_with_box": 2462,
+   "team_games": 2462,
+   "team_points_equal_box_sum": 1.0
+  },
+  "2026": {
+   "n": 1231,
+   "completed": 1231,
+   "teams": 30,
+   "games_per_team": [
+    82,
+    83
+   ],
+   "with_summary": 1231,
+   "team_games_with_box": 2462,
+   "team_games": 2462,
+   "team_points_equal_box_sum": 0.9972
+  }
+ },
+ "pdf_files_total": 5108,
+ "reports": {
+  "2022": {
+   "6h": {
+    "games_with_same_day_report": 0.9179,
+    "report_age_hours_median": 1.0,
+    "report_age_hours_p90": 3.5
+   },
+   "90m": {
+    "games_with_same_day_report": 1.0,
+    "report_age_hours_median": 0.5,
+    "report_age_hours_p90": 0.5
+   },
+   "game_days": 165,
+   "game_days_with_any_report": 165,
+   "reports_per_game_day": {
+    "median": 5.0,
+    "min": 2,
+    "max": 9
+   }
+  },
+  "2023": {
+   "6h": {
+    "games_with_same_day_report": 0.8927,
+    "report_age_hours_median": 1.0,
+    "report_age_hours_p90": 11.0
+   },
+   "90m": {
+    "games_with_same_day_report": 1.0,
+    "report_age_hours_median": 0.5,
+    "report_age_hours_p90": 0.5
+   },
+   "game_days": 164,
+   "game_days_with_any_report": 164,
+   "reports_per_game_day": {
+    "median": 5.0,
+    "min": 2,
+    "max": 8
+   }
+  },
+  "2024": {
+   "6h": {
+    "games_with_same_day_report": 0.9033,
+    "report_age_hours_median": 1.0,
+    "report_age_hours_p90": 3.5
+   },
+   "90m": {
+    "games_with_same_day_report": 1.0,
+    "report_age_hours_median": 0.5,
+    "report_age_hours_p90": 0.5
+   },
+   "game_days": 161,
+   "game_days_with_any_report": 161,
+   "reports_per_game_day": {
+    "median": 5.0,
+    "min": 2,
+    "max": 9
+   }
+  },
+  "2025": {
+   "6h": {
+    "games_with_same_day_report": 0.896,
+    "report_age_hours_median": 1.0,
+    "report_age_hours_p90": 11.0
+   },
+   "90m": {
+    "games_with_same_day_report": 1.0,
+    "report_age_hours_median": 0.5,
+    "report_age_hours_p90": 0.5
+   },
+   "game_days": 164,
+   "game_days_with_any_report": 164,
+   "reports_per_game_day": {
+    "median": 5.0,
+    "min": 2,
+    "max": 8
+   }
+  },
+  "2026": {
+   "6h": {
+    "games_with_same_day_report": 0.883,
+    "report_age_hours_median": 1.0,
+    "report_age_hours_p90": 12.0
+   },
+   "90m": {
+    "games_with_same_day_report": 1.0,
+    "report_age_hours_median": 0.0,
+    "report_age_hours_p90": 0.5
+   },
+   "game_days": 165,
+   "game_days_with_any_report": 165,
+   "reports_per_game_day": {
+    "median": 6.0,
+    "min": 3,
+    "max": 11
+   }
+  }
+ },
+ "movements": {
+  "rows": 6716,
+  "date_range": [
+   "2019-07-01",
+   "2026-08-27"
+  ],
+  "by_league_year": {
+   "2019-20": 800,
+   "2020-21": 796,
+   "2021-22": 1084,
+   "2022-23": 863,
+   "2023-24": 967,
+   "2024-25": 950,
+   "2025-26": 971,
+   "2026-27": 285
+  }
+ },
+ "crosswalk": {
+  "rows": 1799,
+  "with_espn_id": 1266,
+  "with_nba_id": 1675,
+  "box_players_2022_in_crosswalk": 0.9968,
+  "box_players_2023_in_crosswalk": 1.0,
+  "box_players_2024_in_crosswalk": 0.9983,
+  "box_players_2025_in_crosswalk": 0.9983,
+  "box_players_2026_in_crosswalk": 0.9966
+ },
+ "paper_a_old_parse_team_games": {
+  "2022": 1059,
+  "2023": 1118,
+  "2024": 2342,
+  "2025": 2363,
+  "2026": 2357
+ },
+ "lines": {
+  "2020": {
+   "games": 1059,
+   "games_with_line": 1059,
+   "providers": {
+    "consensus": 1059,
+    "teamrankings": 1059,
+    "numberfire": 1057
+   },
+   "first_provider": {
+    "consensus": 1059
+   },
+   "has_open_close": 0,
+   "has_current_only": 1059,
+   "spread_equals_close": null,
+   "spread_equals_open": null,
+   "moneyline_favourite_agrees_with_spread": 0.9962,
+   "details_team_agrees_with_spread_sign": 1.0,
+   "spread_rmse_vs_margin": 12.754,
+   "mean_home_spread": -2.26,
+   "share_half_point": 0.618,
+   "providers_identical_spread": 0.491
+  },
+  "2021": {
+   "games": 1080,
+   "games_with_line": 1080,
+   "providers": {
+    "consensus": 1080,
+    "teamrankings": 1079,
+    "numberfire": 994
+   },
+   "first_provider": {
+    "consensus": 1080
+   },
+   "has_open_close": 0,
+   "has_current_only": 1080,
+   "spread_equals_close": null,
+   "spread_equals_open": null,
+   "moneyline_favourite_agrees_with_spread": 0.9991,
+   "details_team_agrees_with_spread_sign": 1.0,
+   "spread_rmse_vs_margin": 13.584,
+   "mean_home_spread": -1.22,
+   "share_half_point": 0.553,
+   "providers_identical_spread": 0.4269
+  },
+  "2022": {
+   "games": 1230,
+   "games_with_line": 1230,
+   "providers": {
+    "consensus": 1230,
+    "teamrankings": 1230
+   },
+   "first_provider": {
+    "consensus": 1230
+   },
+   "has_open_close": 0,
+   "has_current_only": 1230,
+   "spread_equals_close": null,
+   "spread_equals_open": null,
+   "moneyline_favourite_agrees_with_spread": 0.9967,
+   "details_team_agrees_with_spread_sign": 1.0,
+   "spread_rmse_vs_margin": 13.638,
+   "mean_home_spread": -2.27,
+   "share_half_point": 0.603,
+   "providers_identical_spread": 0.6154
+  },
+  "2023": {
+   "games": 1230,
+   "games_with_line": 1230,
+   "providers": {
+    "consensus": 1230,
+    "teamrankings": 1230
+   },
+   "first_provider": {
+    "consensus": 1230
+   },
+   "has_open_close": 0,
+   "has_current_only": 1230,
+   "spread_equals_close": null,
+   "spread_equals_open": null,
+   "moneyline_favourite_agrees_with_spread": 0.9959,
+   "details_team_agrees_with_spread_sign": 1.0,
+   "spread_rmse_vs_margin": 12.478,
+   "mean_home_spread": -2.22,
+   "share_half_point": 0.556,
+   "providers_identical_spread": 0.5577
+  },
+  "2024": {
+   "games_with_line": 0
+  },
+  "2025": {
+   "games_with_line": 0
+  },
+  "2026": {
+   "games": 1231,
+   "games_with_line": 980,
+   "providers": {
+    "DraftKings": 980
+   },
+   "first_provider": {
+    "DraftKings": 980
+   },
+   "has_open_close": 979,
+   "has_current_only": 0,
+   "spread_equals_close": 1.0,
+   "spread_equals_open": 0.2462,
+   "moneyline_favourite_agrees_with_spread": 0.999,
+   "details_team_agrees_with_spread_sign": 1.0,
+   "spread_rmse_vs_margin": 14.134,
+   "mean_home_spread": -1.88,
+   "share_half_point": 1.0,
+   "providers_identical_spread": null,
+   "rmse_close": 14.134,
+   "rmse_open": 14.431,
+   "open_differs_from_close": 0.7538
+  }
+ }
+}

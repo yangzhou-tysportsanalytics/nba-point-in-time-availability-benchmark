@@ -1,0 +1,96 @@
+{
+ "files_with_last_modified": 23485,
+ "files_in_series": 23485,
+ "from_head_scan": 4283,
+ "from_fetch_log": 19202,
+ "hour": {
+  "n": 14949,
+  "n_with_expected_size": 3555,
+  "share_lm_within_name_minus5_plus180": 1.0,
+  "share_size_match": 1.0,
+  "share_lm_on_other_day": 0.0,
+  "top_other_day_share": 0.0,
+  "top_other_days": {},
+  "R1_plausible": true,
+  "lm_minus_name_min": {
+   "0.0": 0.07,
+   "0.01": 30.03,
+   "0.05": 30.03,
+   "0.25": 30.03,
+   "0.5": 30.05,
+   "0.75": 30.07,
+   "0.95": 30.12,
+   "0.99": 30.25,
+   "1.0": 45.2
+  },
+  "lm_minus_header_min": {
+   "0.0": -0.02,
+   "0.01": 0.03,
+   "0.05": 0.03,
+   "0.25": 0.03,
+   "0.5": 0.05,
+   "0.75": 0.07,
+   "0.95": 0.12,
+   "0.99": 0.22,
+   "1.0": 2.37
+  },
+  "header_offset_0": {
+   "n": 1,
+   "median_lm_minus_header": 0.07,
+   "median_lm_minus_name": 0.07,
+   "share_within_2min_of_header": 1.0
+  },
+  "header_offset_30": {
+   "n": 14891,
+   "median_lm_minus_header": 0.05,
+   "median_lm_minus_name": 30.05,
+   "share_within_2min_of_header": 0.9999
+  },
+  "header_offset_45": {
+   "n": 57,
+   "median_lm_minus_header": 0.12,
+   "median_lm_minus_name": 45.12,
+   "share_within_2min_of_header": 1.0
+  },
+  "R2": "uploaded at the printed time (file name understates publication time)"
+ },
+ "minutes": {
+  "n": 8536,
+  "n_with_expected_size": 728,
+  "share_lm_within_name_minus5_plus180": 1.0,
+  "share_size_match": 1.0,
+  "share_lm_on_other_day": 0.0,
+  "top_other_day_share": 0.0,
+  "top_other_days": {},
+  "R1_plausible": true,
+  "lm_minus_name_min": {
+   "0.0": 0.05,
+   "0.01": 0.07,
+   "0.05": 0.07,
+   "0.25": 0.07,
+   "0.5": 0.08,
+   "0.75": 0.1,
+   "0.95": 0.15,
+   "0.99": 0.3,
+   "1.0": 14.25
+  },
+  "lm_minus_header_min": {
+   "0.0": 0.05,
+   "0.01": 0.07,
+   "0.05": 0.07,
+   "0.25": 0.07,
+   "0.5": 0.08,
+   "0.75": 0.1,
+   "0.95": 0.15,
+   "0.99": 0.3,
+   "1.0": 0.95
+  }
+ },
+ "R3_main_build": {
+  "team_games": 7330,
+  "matched_to_scan": 7330,
+  "selected_report_lm_after_cutoff": 3872,
+  "share": 0.5282,
+  "max_minutes_after": 0.98
+ }
+}

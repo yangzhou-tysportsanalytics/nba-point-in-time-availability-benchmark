@@ -1,0 +1,370 @@
+{
+ "closing_2026": {
+  "n_train": 2418,
+  "n_holdout": 977,
+  "label": "holdout 2025-26, trained on 2021-22 and 2022-23",
+  "report_adds_to_M2": {
+   "point": 0.0251,
+   "ci95_home": [
+    -0.015,
+    0.0704
+   ],
+   "ci95_two_way": [
+    -0.0392,
+    0.0966
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": 0.0452,
+   "ci95_home": [
+    0.0079,
+    0.0817
+   ],
+   "ci95_two_way": [
+    -0.0151,
+    0.1038
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": 0.0202,
+   "ci95_home": [
+    -0.0078,
+    0.0468
+   ],
+   "ci95_two_way": [
+    -0.0273,
+    0.0619
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": 0.0159,
+   "ci95_home": [
+    -0.031,
+    0.0654
+   ],
+   "ci95_two_way": [
+    -0.0458,
+    0.0879
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": 0.0361,
+   "ci95_home": [
+    -0.0045,
+    0.077
+   ],
+   "ci95_two_way": [
+    -0.0213,
+    0.0936
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": -0.0091,
+   "ci95_home": [
+    -0.0287,
+    0.0111
+   ],
+   "ci95_two_way": [
+    -0.0464,
+    0.0253
+   ]
+  }
+ },
+ "opening_2026": {
+  "n_train": 1853,
+  "n_holdout": 977,
+  "label": "holdout 2025-26, opening price, trained on 2021-23",
+  "report_adds_to_M2": {
+   "point": 0.114,
+   "ci95_home": [
+    0.0166,
+    0.221
+   ],
+   "ci95_two_way": [
+    -0.0624,
+    0.306
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": 0.2186,
+   "ci95_home": [
+    0.1038,
+    0.3278
+   ],
+   "ci95_two_way": [
+    0.0102,
+    0.4362
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": 0.1047,
+   "ci95_home": [
+    0.037,
+    0.1793
+   ],
+   "ci95_two_way": [
+    -0.0162,
+    0.2273
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": 0.0982,
+   "ci95_home": [
+    -0.0052,
+    0.2131
+   ],
+   "ci95_two_way": [
+    -0.0665,
+    0.2788
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": 0.2029,
+   "ci95_home": [
+    0.0865,
+    0.3159
+   ],
+   "ci95_two_way": [
+    0.0018,
+    0.4049
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": -0.0158,
+   "ci95_home": [
+    -0.0444,
+    0.0151
+   ],
+   "ci95_two_way": [
+    -0.0714,
+    0.039
+   ]
+  }
+ },
+ "closing_2023": {
+  "n_train": 1210,
+  "n_holdout": 1208,
+  "label": "holdout 2022-23, trained on 2021-22",
+  "report_adds_to_M2": {
+   "point": 0.0009,
+   "ci95_home": [
+    -0.0414,
+    0.0402
+   ],
+   "ci95_two_way": [
+    -0.075,
+    0.0676
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": -0.0429,
+   "ci95_home": [
+    -0.1117,
+    0.0294
+   ],
+   "ci95_two_way": [
+    -0.1563,
+    0.0601
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": -0.0438,
+   "ci95_home": [
+    -0.1015,
+    0.0203
+   ],
+   "ci95_two_way": [
+    -0.1348,
+    0.0383
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": -0.0386,
+   "ci95_home": [
+    -0.1093,
+    0.0272
+   ],
+   "ci95_two_way": [
+    -0.1366,
+    0.0483
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": -0.0824,
+   "ci95_home": [
+    -0.1747,
+    0.0129
+   ],
+   "ci95_two_way": [
+    -0.208,
+    0.033
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": -0.0395,
+   "ci95_home": [
+    -0.0794,
+    -0.0025
+   ],
+   "ci95_two_way": [
+    -0.1072,
+    0.0249
+   ]
+  }
+ },
+ "opening_2023": {
+  "n_train": 1206,
+  "n_holdout": 647,
+  "label": "holdout 2022-23, opening price, trained on 2021-22",
+  "report_adds_to_M2": {
+   "point": 0.0695,
+   "ci95_home": [
+    -0.0335,
+    0.172
+   ],
+   "ci95_two_way": [
+    -0.1665,
+    0.2697
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": -0.065,
+   "ci95_home": [
+    -0.2141,
+    0.0927
+   ],
+   "ci95_two_way": [
+    -0.3917,
+    0.2134
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": -0.1345,
+   "ci95_home": [
+    -0.26,
+    -0.0032
+   ],
+   "ci95_two_way": [
+    -0.3498,
+    0.0643
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": 0.0214,
+   "ci95_home": [
+    -0.0885,
+    0.1358
+   ],
+   "ci95_two_way": [
+    -0.2022,
+    0.2251
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": -0.1131,
+   "ci95_home": [
+    -0.2745,
+    0.0564
+   ],
+   "ci95_two_way": [
+    -0.4363,
+    0.1517
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": -0.048,
+   "ci95_home": [
+    -0.0949,
+    -0.0045
+   ],
+   "ci95_two_way": [
+    -0.1248,
+    0.0233
+   ]
+  }
+ },
+ "betting": {
+  "F1": {
+   "bets": 846,
+   "win_rate": 0.5248,
+   "binomial_ci": [
+    0.4912,
+    0.5585
+   ],
+   "iid_game_bootstrap_ci": [
+    0.4919,
+    0.5594
+   ],
+   "home_cluster_ci": [
+    0.4911,
+    0.5567
+   ],
+   "two_way_ci": [
+    0.4645,
+    0.5825
+   ]
+  },
+  "F2": {
+   "bets": 849,
+   "win_rate": 0.5324,
+   "binomial_ci": [
+    0.4988,
+    0.566
+   ],
+   "iid_game_bootstrap_ci": [
+    0.5,
+    0.5677
+   ],
+   "home_cluster_ci": [
+    0.5,
+    0.5632
+   ],
+   "two_way_ci": [
+    0.468,
+    0.5943
+   ]
+  }
+ },
+ "betting_closing": {
+  "F1": {
+   "bets": 176,
+   "win_rate": 0.5227,
+   "binomial_ci": [
+    0.4489,
+    0.5965
+   ],
+   "iid_game_bootstrap_ci": [
+    0.4514,
+    0.5928
+   ],
+   "home_cluster_ci": [
+    0.4367,
+    0.5943
+   ],
+   "two_way_ci": [
+    0.3923,
+    0.6369
+   ]
+  },
+  "F2": {
+   "bets": 172,
+   "win_rate": 0.5465,
+   "binomial_ci": [
+    0.4721,
+    0.6209
+   ],
+   "iid_game_bootstrap_ci": [
+    0.4762,
+    0.6196
+   ],
+   "home_cluster_ci": [
+    0.4733,
+    0.6141
+   ],
+   "two_way_ci": [
+    0.4285,
+    0.65
+   ]
+  }
+ }
+}

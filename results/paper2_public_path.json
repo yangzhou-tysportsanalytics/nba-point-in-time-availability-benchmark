@@ -1,0 +1,184 @@
+{
+ "input": "data/public/out/bench_games_public.csv",
+ "stats": {
+  "pdf_files": 23485,
+  "files_no_header": 0,
+  "files_error": 0,
+  "status_table": [
+   {
+    "status": "Out",
+    "player_games": 26637,
+    "played_pct": 0.3,
+    "share_of_lost_ref_minutes_pct": 51.7
+   },
+   {
+    "status": "Doubtful",
+    "player_games": 999,
+    "played_pct": 2.0,
+    "share_of_lost_ref_minutes_pct": 3.1
+   },
+   {
+    "status": "Questionable",
+    "player_games": 6366,
+    "played_pct": 48.2,
+    "share_of_lost_ref_minutes_pct": 9.9
+   },
+   {
+    "status": "Probable",
+    "player_games": 2231,
+    "played_pct": 90.5,
+    "share_of_lost_ref_minutes_pct": 0.5
+   },
+   {
+    "status": "Available",
+    "player_games": 1714,
+    "played_pct": 78.5,
+    "share_of_lost_ref_minutes_pct": 0.4
+   },
+   {
+    "status": "not_listed",
+    "player_games": 120849,
+    "played_pct": 58.9,
+    "share_of_lost_ref_minutes_pct": 34.3
+   }
+  ],
+  "lost_ref_minutes_not_reported_out_pct": 48.3,
+  "games": 8285,
+  "games_by_season": {
+   "2020": 1059,
+   "2021": 1080,
+   "2022": 1230,
+   "2023": 1230,
+   "2024": 1231,
+   "2025": 1224,
+   "2026": 1231
+  },
+  "games_zero_score_fixed_from_box": 2,
+  "bench_games": 6146,
+  "bench_by_season": {
+   "2022": 1230,
+   "2023": 1230,
+   "2024": 1231,
+   "2025": 1224,
+   "2026": 1231
+  },
+  "bench_excluded_block_missing": 111,
+  "team_games_from_90m": 1106,
+  "team_games_block_missing": 115,
+  "ref_rows": 182004,
+  "ref_missing_eff_prior": 0,
+  "listed_rows": 62991,
+  "listed_unmatched": 188,
+  "seconds": 405
+ },
+ "main_train_2024_2025": {
+  "n_train": 2407,
+  "n_holdout": 1221,
+  "holdout_rmse": {
+   "F0": 14.7013,
+   "F1": 14.4887,
+   "F2": 14.3127,
+   "F3": 14.4869,
+   "F4": 14.3349
+  },
+  "estimates": {
+   "gain_F1": {
+    "point": 0.2126,
+    "ci95": [
+     0.0779,
+     0.3402
+    ]
+   },
+   "gain_F2": {
+    "point": 0.3886,
+    "ci95": [
+     0.2517,
+     0.5226
+    ]
+   },
+   "gain_F3": {
+    "point": 0.2144,
+    "ci95": [
+     0.0843,
+     0.3398
+    ]
+   },
+   "gain_F4": {
+    "point": 0.3665,
+    "ci95": [
+     0.2366,
+     0.4928
+    ]
+   },
+   "inflation_F2": {
+    "point": 0.176,
+    "ci95": [
+     0.0791,
+     0.2705
+    ]
+   },
+   "ratio_F2": {
+    "point": 1.8278,
+    "ci95": [
+     1.2635,
+     3.732
+    ]
+   }
+  }
+ },
+ "train_2022_2025": {
+  "n_train": 4814,
+  "n_holdout": 1221,
+  "holdout_rmse": {
+   "F0": 14.7303,
+   "F1": 14.5204,
+   "F2": 14.3392,
+   "F3": 14.5193,
+   "F4": 14.364
+  },
+  "estimates": {
+   "gain_F1": {
+    "point": 0.21,
+    "ci95": [
+     0.087,
+     0.3291
+    ]
+   },
+   "gain_F2": {
+    "point": 0.3911,
+    "ci95": [
+     0.2543,
+     0.5237
+    ]
+   },
+   "gain_F3": {
+    "point": 0.211,
+    "ci95": [
+     0.0939,
+     0.3263
+    ]
+   },
+   "gain_F4": {
+    "point": 0.3663,
+    "ci95": [
+     0.2373,
+     0.4909
+    ]
+   },
+   "inflation_F2": {
+    "point": 0.1812,
+    "ci95": [
+     0.0852,
+     0.2732
+    ]
+   },
+   "ratio_F2": {
+    "point": 1.8629,
+    "ci95": [
+     1.3182,
+     3.445
+    ]
+   }
+  }
+ }
+}

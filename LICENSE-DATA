@@ -1,0 +1,6 @@
+The derived tables in data/ and results/ are licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0), https://creativecommons.org/licenses/by/4.0/.
+
+They contain the authors' own computations (absence-value features, counts, model results) together with game dates,
+teams and final margins. They do not contain source documents, betting lines or player-level records. The sources
+(official NBA injury reports; the CC0 Kaggle box-score dataset derived from NBA.com) keep their own terms.

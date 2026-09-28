@@ -1,0 +1,82 @@
+{
+ "2022": {
+  "team_games": 2460,
+  "games_not_two_teams": 0,
+  "dup_keys": 0,
+  "roster_dup_keys": 0,
+  "reference_ok": 1.0,
+  "no_report": 20,
+  "cutoff_variant": {
+   "6h": 2265,
+   "90m": 195
+  },
+  "recall_played_in_roster": 0.99965,
+  "recall_box_listed_in_roster": 0.99936,
+  "roster_size_median": 19.0,
+  "core_out_cases": 928
+ },
+ "2023": {
+  "team_games": 2460,
+  "games_not_two_teams": 0,
+  "dup_keys": 0,
+  "roster_dup_keys": 0,
+  "reference_ok": 1.0,
+  "no_report": 22,
+  "cutoff_variant": {
+   "6h": 2237,
+   "90m": 223
+  },
+  "recall_played_in_roster": 0.99969,
+  "recall_box_listed_in_roster": 0.99952,
+  "roster_size_median": 19.0,
+  "core_out_cases": 843
+ },
+ "2024": {
+  "team_games": 2462,
+  "games_not_two_teams": 0,
+  "dup_keys": 0,
+  "roster_dup_keys": 0,
+  "reference_ok": 1.0,
+  "no_report": 33,
+  "cutoff_variant": {
+   "6h": 2227,
+   "90m": 235
+  },
+  "recall_played_in_roster": 0.99992,
+  "recall_box_listed_in_roster": 0.99942,
+  "roster_size_median": 19.0,
+  "core_out_cases": 742
+ },
+ "2025": {
+  "team_games": 2462,
+  "games_not_two_teams": 0,
+  "dup_keys": 0,
+  "roster_dup_keys": 0,
+  "reference_ok": 1.0,
+  "no_report": 14,
+  "cutoff_variant": {
+   "6h": 2182,
+   "90m": 280
+  },
+  "recall_played_in_roster": 0.99977,
+  "recall_box_listed_in_roster": 0.99945,
+  "roster_size_median": 19.0,
+  "core_out_cases": 919
+ },
+ "2026": {
+  "team_games": 2462,
+  "games_not_two_teams": 0,
+  "dup_keys": 0,
+  "roster_dup_keys": 0,
+  "reference_ok": 1.0,
+  "no_report": 9,
+  "cutoff_variant": {
+   "6h": 2313,
+   "90m": 149
+  },
+  "recall_played_in_roster": 0.9997,
+  "recall_box_listed_in_roster": 0.99947,
+  "roster_size_median": 19.0,
+  "core_out_cases": 1171
+ }
+}

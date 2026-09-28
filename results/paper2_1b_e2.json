@@ -1,0 +1,231 @@
+{
+ "cutoff_360m": {
+  "2022": {
+   "team_games": 2460,
+   "with_report": 2173,
+   "no_report_rate": 0.1167,
+   "status_rows": 10596,
+   "name_matched": 0.9999,
+   "out_played": 0.01,
+   "questionable_played": 0.5141,
+   "doubtful_played": 0.0743,
+   "probable_played": 0.913,
+   "reason_class": {
+    "medical": 7989,
+    "gleague": 2121,
+    "personal": 313,
+    "ineligible": 53,
+    "unknown": 46,
+    "rest": 30,
+    "suspension": 28,
+    "trade_pending": 16
+   }
+  },
+  "2023": {
+   "team_games": 2460,
+   "with_report": 2154,
+   "no_report_rate": 0.1244,
+   "status_rows": 9689,
+   "name_matched": 0.9982,
+   "out_played": 0.0091,
+   "questionable_played": 0.4764,
+   "doubtful_played": 0.0603,
+   "probable_played": 0.8689,
+   "reason_class": {
+    "medical": 6742,
+    "gleague": 2615,
+    "personal": 196,
+    "unknown": 47,
+    "trade_pending": 32,
+    "suspension": 31,
+    "rest": 21,
+    "ineligible": 5
+   }
+  },
+  "2024": {
+   "team_games": 2462,
+   "with_report": 2113,
+   "no_report_rate": 0.1418,
+   "status_rows": 10789,
+   "name_matched": 0.9978,
+   "out_played": 0.0041,
+   "questionable_played": 0.4748,
+   "doubtful_played": 0.0255,
+   "probable_played": 0.8986,
+   "reason_class": {
+    "medical": 7052,
+    "gleague": 3341,
+    "personal": 203,
+    "suspension": 79,
+    "unknown": 54,
+    "trade_pending": 29,
+    "rest": 28,
+    "ineligible": 3
+   }
+  },
+  "2025": {
+   "team_games": 2462,
+   "with_report": 2088,
+   "no_report_rate": 0.1519,
+   "status_rows": 11593,
+   "name_matched": 0.9965,
+   "out_played": 0.0052,
+   "questionable_played": 0.4748,
+   "doubtful_played": 0.0375,
+   "probable_played": 0.885,
+   "reason_class": {
+    "medical": 7865,
+    "gleague": 3299,
+    "personal": 227,
+    "rest": 80,
+    "suspension": 53,
+    "unknown": 40,
+    "trade_pending": 29
+   }
+  },
+  "2026": {
+   "team_games": 2462,
+   "with_report": 2157,
+   "no_report_rate": 0.1239,
+   "status_rows": 11771,
+   "name_matched": 0.9842,
+   "out_played": 0.002,
+   "questionable_played": 0.4957,
+   "doubtful_played": 0.0177,
+   "probable_played": 0.8955,
+   "reason_class": {
+    "medical": 8314,
+    "gleague": 3032,
+    "personal": 238,
+    "rest": 65,
+    "suspension": 48,
+    "unknown": 43,
+    "trade_pending": 31
+   }
+  }
+ },
+ "build_sha": "6bde50256e528fad99b151bd67c76d5ea5d3e5a0",
+ "cutoff_90m": {
+  "2022": {
+   "team_games": 2460,
+   "with_report": 2440,
+   "no_report_rate": 0.0081,
+   "status_rows": 12329,
+   "name_matched": 0.9998,
+   "out_played": 0.0018,
+   "questionable_played": 0.526,
+   "doubtful_played": 0.0248,
+   "probable_played": 0.9407,
+   "reason_class": {
+    "medical": 9323,
+    "gleague": 2329,
+    "personal": 382,
+    "unknown": 134,
+    "rest": 56,
+    "ineligible": 53,
+    "suspension": 31,
+    "trade_pending": 21
+   }
+  },
+  "2023": {
+   "team_games": 2460,
+   "with_report": 2438,
+   "no_report_rate": 0.0089,
+   "status_rows": 11362,
+   "name_matched": 0.9984,
+   "out_played": 0.0018,
+   "questionable_played": 0.4867,
+   "doubtful_played": 0.0154,
+   "probable_played": 0.9009,
+   "reason_class": {
+    "medical": 7953,
+    "gleague": 2894,
+    "personal": 253,
+    "unknown": 137,
+    "suspension": 51,
+    "rest": 42,
+    "trade_pending": 26,
+    "ineligible": 6
+   }
+  },
+  "2024": {
+   "team_games": 2462,
+   "with_report": 2428,
+   "no_report_rate": 0.0138,
+   "status_rows": 12752,
+   "name_matched": 0.998,
+   "out_played": 0.001,
+   "questionable_played": 0.4896,
+   "doubtful_played": 0.0152,
+   "probable_played": 0.9214,
+   "reason_class": {
+    "medical": 8358,
+    "gleague": 3754,
+    "personal": 239,
+    "unknown": 210,
+    "suspension": 93,
+    "rest": 52,
+    "trade_pending": 43,
+    "ineligible": 3
+   }
+  },
+  "2025": {
+   "team_games": 2462,
+   "with_report": 2450,
+   "no_report_rate": 0.0049,
+   "status_rows": 13963,
+   "name_matched": 0.9967,
+   "out_played": 0.0014,
+   "questionable_played": 0.4714,
+   "doubtful_played": 0.0256,
+   "probable_played": 0.9068,
+   "reason_class": {
+    "medical": 9490,
+    "gleague": 3779,
+    "personal": 283,
+    "unknown": 178,
+    "rest": 108,
+    "suspension": 65,
+    "trade_pending": 60
+   }
+  },
+  "2026": {
+   "team_games": 2462,
+   "with_report": 2453,
+   "no_report_rate": 0.0037,
+   "status_rows": 13766,
+   "name_matched": 0.9847,
+   "out_played": 0.0003,
+   "questionable_played": 0.5417,
+   "doubtful_played": 0.0038,
+   "probable_played": 0.9313,
+   "reason_class": {
+    "medical": 9777,
+    "gleague": 3351,
+    "personal": 301,
+    "unknown": 159,
+    "rest": 87,
+    "suspension": 56,
+    "trade_pending": 35
+   }
+  }
+ },
+ "gates": {
+  "2022": {
+   "parse_failures_le_0_5pct": true,
+   "game_match_ge_99_5pct": true,
+   "name_match_ge_99pct": true,
+   "out_played_le_1pct": true,
+   "questionable_played_35_65pct": true,
+   "no_report_rate_le_2x_reference": true
+  },
+  "2023": {
+   "parse_failures_le_0_5pct": true,
+   "game_match_ge_99_5pct": true,
+   "name_match_ge_99pct": true,
+   "out_played_le_1pct": true,
+   "questionable_played_35_65pct": true,
+   "no_report_rate_le_2x_reference": true
+  }
+ }
+}

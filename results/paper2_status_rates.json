@@ -1,0 +1,362 @@
+{
+ "q_full": {
+  "Available": 0.1573,
+  "Doubtful": 0.9718,
+  "Out": 0.9963,
+  "Probable": 0.0832,
+  "Questionable": 0.4877,
+  "not_listed": 0.1715
+ },
+ "q_roll_at_holdout_start": {
+  "Out": 0.9957,
+  "Doubtful": 0.9678,
+  "Questionable": 0.4873,
+  "Probable": 0.0858,
+  "Available": 0.1835,
+  "not_listed": 0.1735
+ },
+ "n_by_status": {
+  "Available": 1803,
+  "Doubtful": 1311,
+  "Out": 25263,
+  "Probable": 3281,
+  "Questionable": 9049,
+  "not_listed": 137714
+ },
+ "ols_main": {
+  "n_train": 2416,
+  "n_holdout": 1222,
+  "holdout_rmse": {
+   "F1": 14.4727,
+   "F2": 14.3067,
+   "F7": 14.4126,
+   "F7a": 14.428,
+   "F7L": 14.4131,
+   "F0": 14.6991
+  },
+  "estimates": {
+   "value_of_DQP_F1_minus_F7": {
+    "point": 0.0601,
+    "ci95": [
+     -0.0105,
+     0.1308
+    ]
+   },
+   "inflation_F7_minus_F2": {
+    "point": 0.1058,
+    "ci95": [
+     0.031,
+     0.1783
+    ]
+   },
+   "estimation_leak_F7_minus_F7L": {
+    "point": -0.0005,
+    "ci95": [
+     -0.0012,
+     0.0001
+    ]
+   },
+   "unlisted_rate_F7_minus_F7a": {
+    "point": -0.0154,
+    "ci95": [
+     -0.0394,
+     0.0068
+    ]
+   },
+   "inflation_F1_minus_F2": {
+    "point": 0.166,
+    "ci95": [
+     0.0772,
+     0.2546
+    ]
+   },
+   "gain_F1": {
+    "point": 0.2264,
+    "ci95": [
+     0.1046,
+     0.3508
+    ]
+   },
+   "gain_F2": {
+    "point": 0.3924,
+    "ci95": [
+     0.2677,
+     0.5165
+    ]
+   },
+   "gain_F7": {
+    "point": 0.2865,
+    "ci95": [
+     0.176,
+     0.4007
+    ]
+   },
+   "gain_F7a": {
+    "point": 0.2711,
+    "ci95": [
+     0.1664,
+     0.3795
+    ]
+   },
+   "gain_F7L": {
+    "point": 0.286,
+    "ci95": [
+     0.1756,
+     0.3995
+    ]
+   }
+  }
+ },
+ "ols_four_seasons": {
+  "n_train": 4834,
+  "n_holdout": 1222,
+  "holdout_rmse": {
+   "F1": 14.5051,
+   "F2": 14.3326,
+   "F7": 14.4385,
+   "F7a": 14.4539,
+   "F7L": 14.4394,
+   "F0": 14.7292
+  },
+  "estimates": {
+   "value_of_DQP_F1_minus_F7": {
+    "point": 0.0666,
+    "ci95": [
+     -0.0005,
+     0.1336
+    ]
+   },
+   "inflation_F7_minus_F2": {
+    "point": 0.1059,
+    "ci95": [
+     0.0304,
+     0.1788
+    ]
+   },
+   "estimation_leak_F7_minus_F7L": {
+    "point": -0.0009,
+    "ci95": [
+     -0.0017,
+     -0.0001
+    ]
+   },
+   "unlisted_rate_F7_minus_F7a": {
+    "point": -0.0154,
+    "ci95": [
+     -0.0394,
+     0.0064
+    ]
+   },
+   "inflation_F1_minus_F2": {
+    "point": 0.1725,
+    "ci95": [
+     0.0855,
+     0.2602
+    ]
+   },
+   "gain_F1": {
+    "point": 0.2241,
+    "ci95": [
+     0.1071,
+     0.3439
+    ]
+   },
+   "gain_F2": {
+    "point": 0.3966,
+    "ci95": [
+     0.272,
+     0.5218
+    ]
+   },
+   "gain_F7": {
+    "point": 0.2907,
+    "ci95": [
+     0.1836,
+     0.4043
+    ]
+   },
+   "gain_F7a": {
+    "point": 0.2753,
+    "ci95": [
+     0.1714,
+     0.3837
+    ]
+   },
+   "gain_F7L": {
+    "point": 0.2898,
+    "ci95": [
+     0.1831,
+     0.4025
+    ]
+   }
+  }
+ },
+ "lgbm_main": {
+  "n_train": 2416,
+  "n_holdout": 1222,
+  "holdout_rmse": {
+   "F1": 14.6102,
+   "F2": 14.4412,
+   "F7": 14.5636,
+   "F7a": 14.5637,
+   "F7L": 14.5677,
+   "F0": 14.7578
+  },
+  "estimates": {
+   "value_of_DQP_F1_minus_F7": {
+    "point": 0.0466,
+    "ci95": [
+     -0.0293,
+     0.1187
+    ]
+   },
+   "inflation_F7_minus_F2": {
+    "point": 0.1224,
+    "ci95": [
+     0.0341,
+     0.209
+    ]
+   },
+   "estimation_leak_F7_minus_F7L": {
+    "point": -0.0041,
+    "ci95": [
+     -0.015,
+     0.0069
+    ]
+   },
+   "unlisted_rate_F7_minus_F7a": {
+    "point": -0.0001,
+    "ci95": [
+     -0.0538,
+     0.0547
+    ]
+   },
+   "inflation_F1_minus_F2": {
+    "point": 0.1689,
+    "ci95": [
+     0.0838,
+     0.2596
+    ]
+   },
+   "gain_F1": {
+    "point": 0.1476,
+    "ci95": [
+     0.0201,
+     0.2737
+    ]
+   },
+   "gain_F2": {
+    "point": 0.3166,
+    "ci95": [
+     0.1662,
+     0.462
+    ]
+   },
+   "gain_F7": {
+    "point": 0.1942,
+    "ci95": [
+     0.085,
+     0.3118
+    ]
+   },
+   "gain_F7a": {
+    "point": 0.1941,
+    "ci95": [
+     0.0699,
+     0.3201
+    ]
+   },
+   "gain_F7L": {
+    "point": 0.1901,
+    "ci95": [
+     0.0822,
+     0.3062
+    ]
+   }
+  }
+ },
+ "lgbm_four_seasons": {
+  "n_train": 4834,
+  "n_holdout": 1222,
+  "holdout_rmse": {
+   "F1": 14.7016,
+   "F2": 14.5581,
+   "F7": 14.6411,
+   "F7a": 14.6611,
+   "F7L": 14.6469,
+   "F0": 14.8121
+  },
+  "estimates": {
+   "value_of_DQP_F1_minus_F7": {
+    "point": 0.0606,
+    "ci95": [
+     -0.007,
+     0.1303
+    ]
+   },
+   "inflation_F7_minus_F2": {
+    "point": 0.083,
+    "ci95": [
+     0.0022,
+     0.1621
+    ]
+   },
+   "estimation_leak_F7_minus_F7L": {
+    "point": -0.0058,
+    "ci95": [
+     -0.0137,
+     0.0026
+    ]
+   },
+   "unlisted_rate_F7_minus_F7a": {
+    "point": -0.0201,
+    "ci95": [
+     -0.0575,
+     0.0177
+    ]
+   },
+   "inflation_F1_minus_F2": {
+    "point": 0.1435,
+    "ci95": [
+     0.0556,
+     0.2248
+    ]
+   },
+   "gain_F1": {
+    "point": 0.1104,
+    "ci95": [
+     -0.0141,
+     0.2368
+    ]
+   },
+   "gain_F2": {
+    "point": 0.254,
+    "ci95": [
+     0.1142,
+     0.3941
+    ]
+   },
+   "gain_F7": {
+    "point": 0.171,
+    "ci95": [
+     0.0557,
+     0.2936
+    ]
+   },
+   "gain_F7a": {
+    "point": 0.1509,
+    "ci95": [
+     0.0382,
+     0.269
+    ]
+   },
+   "gain_F7L": {
+    "point": 0.1652,
+    "ci95": [
+     0.0485,
+     0.2868
+    ]
+   }
+  }
+ }
+}

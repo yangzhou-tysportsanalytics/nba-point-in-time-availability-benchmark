@@ -1,0 +1,47 @@
+{
+ "files": 29670,
+ "bytes": 4383564464,
+ "by_role": {
+  "espn_summary": {
+   "n": 6153,
+   "bytes": 2370393735
+  },
+  "injury_report_pdf": {
+   "n": 23472,
+   "bytes": 1503253319
+  },
+  "paper2_release": {
+   "n": 3,
+   "bytes": 7405553
+  },
+  "paper_a_raw_table": {
+   "n": 4,
+   "bytes": 113330743
+  },
+  "pipeline": {
+   "n": 37,
+   "bytes": 388795800
+  },
+  "report_times": {
+   "n": 1,
+   "bytes": 385314
+  }
+ },
+ "release_games": 6153,
+ "games_with_summary": 6153,
+ "pdfs_referenced": 23472,
+ "pdfs_missing": [],
+ "unmapped_block_times": 1,
+ "seasons": [
+  "2022",
+  "2023",
+  "2024",
+  "2025",
+  "2026"
+ ],
+ "release_sha256": {
+  "data/league/paper2_ext/rebuild/data/paper2_release/games.csv.gz": "aab6dd230a6de95bb3c2dc2476e316c8e71b8e9ba8a33372c7239da2d3d72745",
+  "data/league/paper2_ext/rebuild/data/paper2_release/player_availability.csv.gz": "a559c93f7e9d811251201a2a7d2a5bd135215d87acf88700b0e81380b64cd491",
+  "data/league/paper2_ext/rebuild/data/paper2_release/team_games.csv.gz": "1accd9cd2409dedf951d217c7d05e48b832cc84a5c466ba6991231691fba8135"
+ }
+}

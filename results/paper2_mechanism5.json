@@ -1,0 +1,449 @@
+{
+ "design": {
+  "holdout_games": 4131,
+  "fixed_games": 5181,
+  "reps": 2000,
+  "seed": 20260921,
+  "clusters": "home team x season for the cells, both designs for the high-minus-low contrast",
+  "note": "same rolling-origin design and sample as the mechanism section"
+ },
+ "identity": {
+  "max_abs_residual_terms": 0.0,
+  "max_abs_residual_vs_features": 0.0,
+  "note": "value(absent) - value(Out at the cutoff) = (a) + (b) + (c) - (d), game by game, and equals F2_diff - F1_diff"
+ },
+ "player_games": {
+  "declared_out_after_cutoff": 5594,
+  "listed_later_not_out": 1777,
+  "not_on_last_report": 22495,
+  "out_at_cutoff_played": 93
+ },
+ "absence_value": {
+  "declared_out_after_cutoff": 56368.6,
+  "listed_later_not_out": 13973.3,
+  "not_on_last_report": 96994.4,
+  "out_at_cutoff_played": 486.4
+ },
+ "share_of_positive_value": {
+  "declared_out_after_cutoff": 0.3369,
+  "listed_later_not_out": 0.0835,
+  "not_on_last_report": 0.5796
+ },
+ "withdrawn_out": {
+  "out_at_cutoff_not_out_on_last_report": 236,
+  "of_those_absent": 151,
+  "of_those_played": 85
+ },
+ "dose_declared_out_after_cutoff": {
+  "cells": {
+   "low": {
+    "n": 1855,
+    "dose_mean": 0.0,
+    "gain_F1": 0.2196,
+    "gain_F1_ci": [
+     0.1331,
+     0.305
+    ],
+    "inflation": -0.0263,
+    "inflation_ci": [
+     -0.0874,
+     0.0334
+    ]
+   },
+   "mid": {
+    "n": 899,
+    "dose_mean": 5.15,
+    "gain_F1": 0.2692,
+    "gain_F1_ci": [
+     0.1412,
+     0.3905
+    ],
+    "inflation": 0.0004,
+    "inflation_ci": [
+     -0.0653,
+     0.0685
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 18.55,
+    "gain_F1": 0.0817,
+    "gain_F1_ci": [
+     -0.0403,
+     0.2049
+    ],
+    "inflation": 0.1876,
+    "inflation_ci": [
+     0.046,
+     0.3257
+    ]
+   }
+  },
+  "dose_range": 18.55,
+  "zero_share": 0.449,
+  "cells_two_way": {
+   "low": {
+    "gain_F1_ci_two_way": [
+     0.0283,
+     0.3914
+    ],
+    "inflation_ci_two_way": [
+     -0.1342,
+     0.0865
+    ]
+   },
+   "mid": {
+    "gain_F1_ci_two_way": [
+     0.0054,
+     0.5109
+    ],
+    "inflation_ci_two_way": [
+     -0.1073,
+     0.1231
+    ]
+   },
+   "high": {
+    "gain_F1_ci_two_way": [
+     -0.1605,
+     0.2957
+    ],
+    "inflation_ci_two_way": [
+     -0.0186,
+     0.4103
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": 0.2139,
+   "ci95": [
+    0.0681,
+    0.3625
+   ],
+   "ci95_two_way": [
+    -0.0136,
+    0.4634
+   ]
+  }
+ },
+ "dose_listed_later_not_out": {
+  "cells": {
+   "low": {
+    "n": 3219,
+    "dose_mean": 0.0,
+    "gain_F1": 0.206,
+    "gain_F1_ci": [
+     0.1357,
+     0.2777
+    ],
+    "inflation": 0.0418,
+    "inflation_ci": [
+     -0.0171,
+     0.1007
+    ]
+   },
+   "mid": {
+    "n": 456,
+    "dose_mean": 3.82,
+    "gain_F1": -0.0477,
+    "gain_F1_ci": [
+     -0.2134,
+     0.1004
+    ],
+    "inflation": 0.1802,
+    "inflation_ci": [
+     0.0089,
+     0.379
+    ]
+   },
+   "high": {
+    "n": 456,
+    "dose_mean": 14.91,
+    "gain_F1": 0.2437,
+    "gain_F1_ci": [
+     0.0652,
+     0.4307
+    ],
+    "inflation": -0.0056,
+    "inflation_ci": [
+     -0.2578,
+     0.2296
+    ]
+   }
+  },
+  "dose_range": 14.91,
+  "zero_share": 0.779,
+  "cells_two_way": {
+   "low": {
+    "gain_F1_ci_two_way": [
+     0.0758,
+     0.3325
+    ],
+    "inflation_ci_two_way": [
+     -0.0551,
+     0.1448
+    ]
+   },
+   "mid": {
+    "gain_F1_ci_two_way": [
+     -0.3435,
+     0.2551
+    ],
+    "inflation_ci_two_way": [
+     -0.0546,
+     0.4537
+    ]
+   },
+   "high": {
+    "gain_F1_ci_two_way": [
+     -0.0731,
+     0.5862
+    ],
+    "inflation_ci_two_way": [
+     -0.3733,
+     0.313
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": -0.0474,
+   "ci95": [
+    -0.314,
+    0.1983
+   ],
+   "ci95_two_way": [
+    -0.4205,
+    0.2804
+   ]
+  }
+ },
+ "dose_not_on_last_report": {
+  "cells": {
+   "low": {
+    "n": 1377,
+    "dose_mean": 1.27,
+    "gain_F1": 0.2616,
+    "gain_F1_ci": [
+     0.1578,
+     0.3694
+    ],
+    "inflation": 0.0931,
+    "inflation_ci": [
+     0.0079,
+     0.1837
+    ]
+   },
+   "mid": {
+    "n": 1377,
+    "dose_mean": 5.52,
+    "gain_F1": 0.1879,
+    "gain_F1_ci": [
+     0.0803,
+     0.2922
+    ],
+    "inflation": 0.0353,
+    "inflation_ci": [
+     -0.0538,
+     0.1246
+    ]
+   },
+   "high": {
+    "n": 1377,
+    "dose_mean": 13.49,
+    "gain_F1": 0.0881,
+    "gain_F1_ci": [
+     -0.0109,
+     0.1919
+    ],
+    "inflation": 0.0126,
+    "inflation_ci": [
+     -0.0936,
+     0.1245
+    ]
+   }
+  },
+  "dose_range": 12.22,
+  "zero_share": 0.083,
+  "cells_two_way": {
+   "low": {
+    "gain_F1_ci_two_way": [
+     0.0762,
+     0.4472
+    ],
+    "inflation_ci_two_way": [
+     -0.0404,
+     0.2304
+    ]
+   },
+   "mid": {
+    "gain_F1_ci_two_way": [
+     -0.0082,
+     0.3738
+    ],
+    "inflation_ci_two_way": [
+     -0.1036,
+     0.197
+    ]
+   },
+   "high": {
+    "gain_F1_ci_two_way": [
+     -0.1072,
+     0.2819
+    ],
+    "inflation_ci_two_way": [
+     -0.1843,
+     0.2237
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": -0.0805,
+   "ci95": [
+    -0.2155,
+    0.0512
+   ],
+   "ci95_two_way": [
+    -0.3248,
+    0.1721
+   ]
+  }
+ },
+ "dose_out_at_cutoff_played": {
+  "cells": {
+   "low": {
+    "n": 4089,
+    "dose_mean": 0.0,
+    "gain_F1": 0.189,
+    "gain_F1_ci": [
+     0.1284,
+     0.2499
+    ],
+    "inflation": 0.0454,
+    "inflation_ci": [
+     -0.0153,
+     0.102
+    ]
+   },
+   "mid": {
+    "n": 21,
+    "dose_mean": 2.35,
+    "gain_F1": NaN,
+    "gain_F1_ci": [
+     -0.7355,
+     0.6143
+    ],
+    "inflation": NaN,
+    "inflation_ci": [
+     -0.2042,
+     0.3401
+    ]
+   },
+   "high": {
+    "n": 21,
+    "dose_mean": 8.38,
+    "gain_F1": NaN,
+    "gain_F1_ci": [
+     -0.4994,
+     0.3258
+    ],
+    "inflation": NaN,
+    "inflation_ci": [
+     -0.009,
+     1.0748
+    ]
+   }
+  },
+  "dose_range": 8.38,
+  "zero_share": 0.99,
+  "cells_two_way": {
+   "low": {
+    "gain_F1_ci_two_way": [
+     0.0714,
+     0.3052
+    ],
+    "inflation_ci_two_way": [
+     -0.0458,
+     0.1428
+    ]
+   },
+   "mid": {
+    "gain_F1_ci_two_way": [
+     -1.2146,
+     1.145
+    ],
+    "inflation_ci_two_way": [
+     -0.4962,
+     0.6332
+    ]
+   },
+   "high": {
+    "gain_F1_ci_two_way": [
+     -0.8006,
+     0.8928
+    ],
+    "inflation_ci_two_way": [
+     -0.87,
+     1.7006
+    ]
+   }
+  },
+  "top_minus_bottom": {
+   "point": NaN,
+   "ci95": [
+    -0.06,
+    1.0462
+   ],
+   "ci95_two_way": [
+    -0.9936,
+    1.6277
+   ]
+  }
+ },
+ "zero_group_composition": {
+  "declared_out_after_cutoff": {
+   "games_with_zero_difference": 1855,
+   "of_which_neither_team_has_any": 1855,
+   "of_which_both_sides_equal_and_non_zero": 0
+  },
+  "listed_later_not_out": {
+   "games_with_zero_difference": 3219,
+   "of_which_neither_team_has_any": 3219,
+   "of_which_both_sides_equal_and_non_zero": 0
+  },
+  "not_on_last_report": {
+   "games_with_zero_difference": 341,
+   "of_which_neither_team_has_any": 341,
+   "of_which_both_sides_equal_and_non_zero": 0
+  },
+  "out_at_cutoff_played": {
+   "games_with_zero_difference": 4089,
+   "of_which_neither_team_has_any": 4089,
+   "of_which_both_sides_equal_and_non_zero": 0
+  }
+ },
+ "month_within_top_group": {
+  "Oct-Dec": {
+   "n": 516,
+   "inflation": 0.0953,
+   "inflation_ci": [
+    -0.105,
+    0.2943
+   ]
+  },
+  "Jan-Feb": {
+   "n": 472,
+   "inflation": 0.1723,
+   "inflation_ci": [
+    -0.0268,
+    0.3577
+   ]
+  },
+  "Mar-Apr": {
+   "n": 389,
+   "inflation": 0.3188,
+   "inflation_ci": [
+    0.0215,
+    0.6095
+   ]
+  }
+ }
+}

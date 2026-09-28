@@ -1,0 +1,154 @@
+{
+ "n_train": 2416,
+ "n_holdout": 1222,
+ "n_market": 977,
+ "holdout_rmse": {
+  "F0": 14.699,
+  "F1": 14.513,
+  "F2": 14.307,
+  "F3": 14.512,
+  "F4": 14.313
+ },
+ "estimates": {
+  "gain_F1": {
+   "point": 0.1859,
+   "ci95": [
+    0.0645,
+    0.305
+   ]
+  },
+  "gain_F2": {
+   "point": 0.3922,
+   "ci95": [
+    0.2677,
+    0.5162
+   ]
+  },
+  "gain_F3": {
+   "point": 0.1876,
+   "ci95": [
+    0.0679,
+    0.3061
+   ]
+  },
+  "gain_F4": {
+   "point": 0.386,
+   "ci95": [
+    0.2703,
+    0.5013
+   ]
+  },
+  "inflation_F2": {
+   "point": 0.2063,
+   "ci95": [
+    0.1078,
+    0.2961
+   ]
+  },
+  "ratio_F2": {
+   "point": 2.11,
+   "ci95": [
+    1.4582,
+    4.6301
+   ]
+  },
+  "mkt_rmse_market": {
+   "point": 14.0846,
+   "ci95": [
+    13.4957,
+    14.7059
+   ]
+  },
+  "mkt_rmse_F1": {
+   "point": 14.8271,
+   "ci95": [
+    14.2119,
+    15.4228
+   ]
+  },
+  "mkt_rmse_F2": {
+   "point": 14.5923,
+   "ci95": [
+    13.9764,
+    15.1715
+   ]
+  },
+  "mkt_F2_minus_market": {
+   "point": 0.5077,
+   "ci95": [
+    0.2366,
+    0.7736
+   ]
+  },
+  "mkt_F1_minus_market": {
+   "point": 0.7426,
+   "ci95": [
+    0.4468,
+    1.0339
+   ]
+  }
+ },
+ "note": "gain_k = RMSE(F0) - RMSE(Fk); inflation_F2 = RMSE(F1) - RMSE(F2); ratio_F2 = gain_F2 / gain_F1; bootstrap resamples home-team clusters (2,000).",
+ "status_table": [
+  {
+   "status": "Out",
+   "player_games": 28292,
+   "played_pct": 0.3,
+   "rotation_player_games": 15377,
+   "share_of_rotation_absences_pct": 46.4,
+   "share_of_lost_ref_minutes_pct": 55.9
+  },
+  {
+   "status": "Doubtful",
+   "player_games": 1031,
+   "played_pct": 2.3,
+   "rotation_player_games": 907,
+   "share_of_rotation_absences_pct": 2.7,
+   "share_of_lost_ref_minutes_pct": 3.3
+  },
+  {
+   "status": "Questionable",
+   "player_games": 6547,
+   "played_pct": 48.1,
+   "rotation_player_games": 5688,
+   "share_of_rotation_absences_pct": 8.3,
+   "share_of_lost_ref_minutes_pct": 10.6
+  },
+  {
+   "status": "Probable",
+   "player_games": 2189,
+   "played_pct": 89.8,
+   "rotation_player_games": 2082,
+   "share_of_rotation_absences_pct": 0.5,
+   "share_of_lost_ref_minutes_pct": 0.6
+  },
+  {
+   "status": "Available",
+   "player_games": 1717,
+   "played_pct": 78.4,
+   "rotation_player_games": 1409,
+   "share_of_rotation_absences_pct": 0.5,
+   "share_of_lost_ref_minutes_pct": 0.4
+  },
+  {
+   "status": "not_listed",
+   "player_games": 101963,
+   "played_pct": 70.5,
+   "rotation_player_games": 81385,
+   "share_of_rotation_absences_pct": 41.6,
+   "share_of_lost_ref_minutes_pct": 29.3
+  }
+ ],
+ "rotation_absences": 33099,
+ "rotation_absences_not_reported_out_pct": 53.6,
+ "rotation_absences_not_listed_pct": 41.6,
+ "lost_ref_minutes_not_reported_out_pct": 44.1,
+ "not_listed_absences_by_post_reason": {
+  "COACH'S DECISION": 9432,
+  "NOT IN BOX": 4076,
+  "ILLNESS": 39,
+  "INJURY/ILLNESS": 16,
+  "RIGHT KNEE SORENESS": 9
+ },
+ "release_rows": 141739
+}

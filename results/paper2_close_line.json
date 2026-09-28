@@ -1,0 +1,48 @@
+{
+ "close_line_as_feature": {
+  "n_train": 2418,
+  "n_holdout": 977,
+  "gain_close_F1_over_close": {
+   "point": 0.0251,
+   "ci95": [
+    -0.015,
+    0.0704
+   ]
+  },
+  "gain_close_F2_over_close": {
+   "point": 0.0452,
+   "ci95": [
+    0.0079,
+    0.0817
+   ]
+  },
+  "gain_close_F2_over_close_F1": {
+   "point": 0.0202,
+   "ci95": [
+    -0.0078,
+    0.0468
+   ]
+  },
+  "close_only_over_raw_line": {
+   "point": -0.0091,
+   "ci95": [
+    -0.0287,
+    0.0111
+   ]
+  },
+  "close_F1_over_raw_line": {
+   "point": 0.0159,
+   "ci95": [
+    -0.031,
+    0.0654
+   ]
+  },
+  "close_F2_over_raw_line": {
+   "point": 0.0361,
+   "ci95": [
+    -0.0045,
+    0.077
+   ]
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "pregame_status.csv": {
+  "rows": 57736,
+  "listed_rows": 57736,
+  "reason_changed": 9943,
+  "reason_class_changed": 6
+ },
+ "pregame_status_90m.csv": {
+  "rows": 64182,
+  "listed_rows": 64182,
+  "reason_changed": 11055,
+  "reason_class_changed": 8
+ }
+}

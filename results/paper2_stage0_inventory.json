@@ -1,0 +1,267 @@
+{
+ "games": {
+  "2024": {
+   "n": 1231,
+   "by_type": {
+    "2": 1231
+   },
+   "completed": 1231,
+   "with_spread": 0,
+   "odds_provider": {
+    "nan": 1231
+   }
+  },
+  "2025": {
+   "n": 1231,
+   "by_type": {
+    "2": 1231
+   },
+   "completed": 1231,
+   "with_spread": 0,
+   "odds_provider": {
+    "nan": 1231
+   }
+  },
+  "2026": {
+   "n": 1231,
+   "by_type": {
+    "2": 1231
+   },
+   "completed": 1231,
+   "with_spread": 979,
+   "odds_provider": {
+    "DraftKings": 980,
+    "nan": 251
+   }
+  }
+ },
+ "team_games_hybrid": {
+  "rows": 7386,
+  "by_season": {
+   "2024": 2462,
+   "2025": 2462,
+   "2026": 2462
+  },
+  "dup_keys": 0,
+  "games": 3693,
+  "games_not_two_teams": 0,
+  "regular_completed_games_missing": 0,
+  "games_not_in_games_csv": 0,
+  "season_types_present": {
+   "2": 7386
+  },
+  "report_found": 0.9926888708367181,
+  "team_block_missing": 56,
+  "cutoff_variant": {
+   "6h": 6568,
+   "90m": 818
+  },
+  "report_fallback": 2,
+  "report_age_hours": {
+   "count": 7332.0,
+   "mean": 2.16,
+   "std": 4.02,
+   "min": 0.0,
+   "25%": 0.0,
+   "50%": 0.5,
+   "75%": 2.0,
+   "max": 19.0
+  },
+  "listed_unmatched": 284,
+  "listed_misattributed": 134,
+  "reference_ok": 1.0
+ },
+ "pregame_status": {
+  "rows": 35435,
+  "dup_keys": 0,
+  "id_missing": 257,
+  "status": {
+   "Out": 24953,
+   "Questionable": 6111,
+   "Probable": 2002,
+   "Available": 1438,
+   "Doubtful": 931
+  },
+  "reason_class": {
+   "medical": 24113,
+   "gleague": 9989,
+   "personal": 693,
+   "rest": 194,
+   "suspension": 189,
+   "unknown": 155,
+   "trade_pending": 99,
+   "ineligible": 3
+  }
+ },
+ "pregame_status_90m": {
+  "rows": 40600,
+  "dup_keys": 0,
+  "id_missing": 284,
+  "status": {
+   "Out": 30595,
+   "Available": 4148,
+   "Questionable": 3880,
+   "Probable": 1401,
+   "Doubtful": 576
+  },
+  "reason_class": {
+   "medical": 27633,
+   "gleague": 10923,
+   "personal": 832,
+   "unknown": 604,
+   "rest": 247,
+   "suspension": 214,
+   "trade_pending": 144,
+   "ineligible": 3
+  }
+ },
+ "rosters_hybrid": {
+  "rows": 142245,
+  "dup_keys": 0,
+  "status": {
+   "not_listed": 102882,
+   "Out": 27927,
+   "Questionable": 6517,
+   "Probable": 2187,
+   "Available": 1714,
+   "Doubtful": 1018
+  },
+  "reason_class": {
+   "nan": 102882,
+   "medical": 27191,
+   "gleague": 10689,
+   "personal": 740,
+   "rest": 242,
+   "suspension": 209,
+   "unknown": 192,
+   "trade_pending": 97,
+   "ineligible": 3
+  },
+  "supported": 0.7566592850363809,
+  "per_team_game": {
+   "count": 7386.0,
+   "mean": 19.26,
+   "std": 1.76,
+   "min": 14.0,
+   "25%": 18.0,
+   "50%": 19.0,
+   "75%": 20.0,
+   "max": 27.0
+  },
+  "team_games_without_roster": 0
+ },
+ "player_games": {
+  "rows": 97359,
+  "dup_keys": 0,
+  "id_missing": 33,
+  "did_not_play": 17756,
+  "minutes_positive": 79105,
+  "minutes_missing": 17956,
+  "dnp_reason_top": {
+   "COACH'S DECISION": 14444,
+   "LEFT ANKLE SPRAIN": 133,
+   "ILLNESS": 121,
+   "INJURY/ILLNESS": 110,
+   "RIGHT ANKLE SPRAIN": 108,
+   "SUSPENDED BY LEAGUE": 104,
+   "REST": 75,
+   "NOT WITH TEAM": 61,
+   "SPRAINED RIGHT ANKLE": 57,
+   "LEFT HAMSTRING STRAIN": 57,
+   "SPRAINED LEFT ANKLE": 52,
+   "RIGHT ANKLE INJURY": 51
+  },
+  "team_games_without_box": 0
+ },
+ "report_vs_box": {
+  "Available": {
+   "n": 1436,
+   "in_box": 0.9492,
+   "played": 0.7702
+  },
+  "Doubtful": {
+   "n": 919,
+   "in_box": 0.2459,
+   "played": 0.025
+  },
+  "Out": {
+   "n": 24731,
+   "in_box": 0.0787,
+   "played": 0.0032
+  },
+  "Probable": {
+   "n": 2002,
+   "in_box": 0.963,
+   "played": 0.8961
+  },
+  "Questionable": {
+   "n": 6090,
+   "in_box": 0.6596,
+   "played": 0.4768
+  }
+ },
+ "injury_reports": {
+  "files": 2629,
+  "rows": 309529,
+  "rows_game_id_missing": 0,
+  "blocks": 77618,
+  "block_state": {
+   "listed": 56548,
+   "not_yet_submitted": 21070
+  },
+  "report_ts_range": [
+   "2023-10-24T17:00:00-04:00",
+   "2026-04-12T19:00:00-04:00"
+  ]
+ },
+ "gold_release_v12": {
+  "exists": true,
+  "files": [
+   "README.md",
+   "action_demands.csv",
+   "actual_participation.csv",
+   "all_targets.csv",
+   "baseline_inputs.csv",
+   "case_review.csv",
+   "conditional_inputs.csv",
+   "conditional_scenarios.csv",
+   "coverage_scenarios.csv",
+   "fixed_reference_capacity_checks.csv",
+   "historical_baseline_links.csv",
+   "historical_box_source_rows.csv",
+   "historical_input_links.csv",
+   "historical_input_support.csv",
+   "historical_team_states.csv",
+   "leave_one_supplier_out.csv",
+   "measurement_policy.json",
+   "measurement_summary.csv",
+   "minute_allocations.csv",
+   "new_game_readiness.csv",
+   "new_pregame_facts.csv",
+   "outcomes.csv",
+   "player_game_facts.csv",
+   "player_profiles.csv",
+   "pregame_predictors.csv",
+   "pregame_scenarios.csv",
+   "reference_rotations.csv",
+   "release_actors.csv",
+   "release_actual_participation.csv",
+   "release_conditional_scenarios.csv",
+   "release_dependencies.csv",
+   "release_games.csv",
+   "release_gaps.csv",
+   "release_medical_segments.csv",
+   "release_observation_timeline.csv",
+   "release_outcomes.csv",
+   "release_player_profiles.csv",
+   "release_pregame_facts.csv",
+   "release_pregame_scenarios.csv",
+   "release_reference_rotations.csv",
+   "release_support.csv",
+   "schema.json",
+   "sensitivity_comparisons.csv",
+   "source_index.csv",
+   "stage_gate.json"
+  ]
+ }
+}

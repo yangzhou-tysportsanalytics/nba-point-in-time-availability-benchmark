@@ -1,0 +1,102 @@
+{
+ "source": "data/league/paper2_ext/rebuild/data (complete report series)",
+ "available_vs_probable": {
+  "Available": {
+   "rows": 1743,
+   "outside_reference_rotation_pct": 19.0,
+   "mean_ref_minutes": 14.1,
+   "gleague_reason_pct": 15.0,
+   "played_pct_within_rotation": 87.1
+  },
+  "Probable": {
+   "rows": 2247,
+   "outside_reference_rotation_pct": 4.5,
+   "mean_ref_minutes": 19.6,
+   "gleague_reason_pct": 5.3,
+   "played_pct_within_rotation": 92.1
+  }
+ },
+ "sample": {
+  "team_games": 12306,
+  "team_games_no_report": 98,
+  "games_excluded_any_block_missing": 97,
+  "games_excluded_three_headline_seasons": 55,
+  "games_by_season": {
+   "2022": 1230,
+   "2023": 1230,
+   "2024": 1231,
+   "2025": 1231,
+   "2026": 1231
+  },
+  "excluded_by_season": {
+   "2022": 20,
+   "2023": 22,
+   "2024": 32,
+   "2025": 14,
+   "2026": 9
+  },
+  "player_team_game_rows": 237944
+ },
+ "name_matching": {
+  "2022": 0.99983,
+  "2023": 0.99838,
+  "2024": 0.99793,
+  "2025": 0.99658,
+  "2026": 0.98449
+ },
+ "name_matching_range": [
+  0.98449,
+  0.99983
+ ],
+ "market_sample": {
+  "holdout_games": 1222,
+  "with_closing_line": 977,
+  "without_by_month": {
+   "Nov": 169,
+   "Oct": 76
+  }
+ },
+ "worked_example_401811037": {
+  "DEN": {
+   "listed_at_6h": 7,
+   "out_at_6h": 2,
+   "out_at_6h_in_reference_rotation": 2,
+   "questionable_at_6h": 5
+  },
+  "OKC": {
+   "listed_at_6h": 10,
+   "out_at_6h": 10,
+   "out_at_6h_in_reference_rotation": 9,
+   "questionable_at_6h": 0
+  }
+ },
+ "series": {
+  "files": 23485,
+  "first_quarter_hour_file": "2025-12-22",
+  "before": {
+   "files": 14940,
+   "days": 743,
+   "minutes_seen": [
+    0
+   ]
+  },
+  "after": {
+   "files": 8545,
+   "days": 107,
+   "minutes_seen": [
+    0,
+    15,
+    30,
+    45
+   ]
+  }
+ },
+ "collection_window": {
+  "pooled_holdout_games": 4846,
+  "last_tip_of_day": 817,
+  "within_30min_of_last_tip": 1141,
+  "within_60min_of_last_tip": 1500,
+  "within_90min_of_last_tip": 1789,
+  "note": "games at or within X minutes of the day last tip-off; for these the 1 h and 0.5 h cutoffs cannot see a report published after the collection window closes, so their late-cutoff feature is the last one held"
+ }
+}

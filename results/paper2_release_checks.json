@@ -1,0 +1,24 @@
+{
+ "rows": 237944,
+ "dup_keys": 0,
+ "roster_status_agrees_with_upstream": 1.0,
+ "roster_rows_recoded_no_report": 1799,
+ "rows_without_team_game": 0,
+ "status": {
+  "not_listed": 173071,
+  "Out": 45770,
+  "Questionable": 10137,
+  "Probable": 3426,
+  "Available": 2285,
+  "no_report": 1807,
+  "Doubtful": 1448
+ },
+ "id_missing": 337,
+ "listed_not_on_roster": 475,
+ "in_box_not_on_roster": 122,
+ "played_not_on_roster": 33,
+ "out_but_played": 197,
+ "team_games": 12306,
+ "games": 6153,
+ "team_games_no_report": 98
+}

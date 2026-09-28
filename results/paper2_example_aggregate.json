@@ -1,0 +1,32 @@
+{
+ "top50": {
+  "n": 50,
+  "mean_late_out_value": 48.02,
+  "mean_abs_pred_gap": 2.36,
+  "mae_compliant": 13.86,
+  "mae_leaky": 12.86,
+  "mean_abs_line_move": 2.22,
+  "median_abs_line_move": 1.0,
+  "mean_abs_margin": 15.58
+ },
+ "rest": {
+  "n": 927,
+  "mean_late_out_value": 7.42,
+  "mean_abs_pred_gap": 1.15,
+  "mae_compliant": 11.51,
+  "mae_leaky": 11.42,
+  "mean_abs_line_move": 1.45,
+  "median_abs_line_move": 1.0,
+  "mean_abs_margin": 13.32
+ },
+ "note": "2025-26 holdout, 977 games with both an opening and a closing price; models trained on 2023-24 and 2024-25. late_out_value is the absolute home-minus-away absence value ruled Out between the six-hour cutoff and thirty minutes before tip-off.",
+ "difference": {
+  "mean_late_out_value": 40.6,
+  "mean_abs_pred_gap": 1.21,
+  "mae_compliant": 2.35,
+  "mae_leaky": 1.44,
+  "mean_abs_line_move": 0.77,
+  "median_abs_line_move": 0.0,
+  "mean_abs_margin": 2.26
+ }
+}

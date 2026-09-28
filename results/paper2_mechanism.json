@@ -1,0 +1,374 @@
+{
+ "sample": {
+  "bench_games": 6153,
+  "fixed_games": 5181,
+  "holdout_games_fixed": 4131,
+  "holdout_games_full": 4846
+ },
+ "distribution": {
+  "by_season": {
+   "2022": {
+    "n": 1050,
+    "abs_D_pub_mean": 6.737,
+    "abs_D_pub_median": 2.882,
+    "abs_D_unpub_mean": 8.198
+   },
+   "2023": {
+    "n": 1029,
+    "abs_D_pub_mean": 7.228,
+    "abs_D_pub_median": 3.659,
+    "abs_D_unpub_mean": 8.169
+   },
+   "2024": {
+    "n": 1023,
+    "abs_D_pub_mean": 7.166,
+    "abs_D_pub_median": 2.901,
+    "abs_D_unpub_mean": 7.556
+   },
+   "2025": {
+    "n": 985,
+    "abs_D_pub_mean": 7.61,
+    "abs_D_pub_median": 4.302,
+    "abs_D_unpub_mean": 7.859
+   },
+   "2026": {
+    "n": 1094,
+    "abs_D_pub_mean": 7.494,
+    "abs_D_pub_median": 3.315,
+    "abs_D_unpub_mean": 7.08
+   }
+  },
+  "by_month": {
+   "Jan-Feb": {
+    "n": 1673,
+    "abs_D_pub_mean": 7.299,
+    "abs_D_pub_median": 3.811,
+    "abs_D_unpub_mean": 7.457
+   },
+   "Mar-Apr": {
+    "n": 1382,
+    "abs_D_pub_mean": 8.363,
+    "abs_D_pub_median": 4.495,
+    "abs_D_unpub_mean": 7.438
+   },
+   "Oct-Dec": {
+    "n": 2126,
+    "abs_D_pub_mean": 6.476,
+    "abs_D_pub_median": 2.146,
+    "abs_D_unpub_mean": 8.22
+   }
+  }
+ },
+ "tertiles": {
+  "cuts": [
+   0.0,
+   9.015
+  ],
+  "T1_low": {
+   "n": 1822,
+   "gain_F1": 0.2274,
+   "gain_F1_ci": [
+    0.1413,
+    0.3126
+   ],
+   "inflation": -0.0332,
+   "inflation_ci": [
+    -0.0963,
+    0.0285
+   ]
+  },
+  "T2_mid": {
+   "n": 932,
+   "gain_F1": 0.2442,
+   "gain_F1_ci": [
+    0.112,
+    0.3728
+   ],
+   "inflation": 0.015,
+   "inflation_ci": [
+    -0.0484,
+    0.0805
+   ]
+  },
+  "T3_high": {
+   "n": 1377,
+   "gain_F1": 0.0876,
+   "gain_F1_ci": [
+    -0.0342,
+    0.2106
+   ],
+   "inflation": 0.1859,
+   "inflation_ci": [
+    0.0441,
+    0.3247
+   ]
+  },
+  "all": {
+   "n": 4131,
+   "gain_F1": 0.1852,
+   "gain_F1_ci": [
+    0.1246,
+    0.2451
+   ],
+   "inflation": 0.0502,
+   "inflation_ci": [
+    -0.0106,
+    0.1078
+   ]
+  }
+ },
+ "month_within_tertile": {
+  "Oct-Dec_topT": {
+   "n": 516,
+   "gain_F1": 0.0013,
+   "gain_F1_ci": [
+    -0.1788,
+    0.1659
+   ],
+   "inflation": 0.0903,
+   "inflation_ci": [
+    -0.11,
+    0.2938
+   ]
+  },
+  "Oct-Dec_restT": {
+   "n": 1162,
+   "gain_F1": 0.0955,
+   "gain_F1_ci": [
+    -0.0055,
+    0.2027
+   ],
+   "inflation": -0.0919,
+   "inflation_ci": [
+    -0.1688,
+    -0.0112
+   ]
+  },
+  "Jan-Feb_topT": {
+   "n": 473,
+   "gain_F1": 0.2025,
+   "gain_F1_ci": [
+    0.0157,
+    0.3807
+   ],
+   "inflation": 0.1793,
+   "inflation_ci": [
+    -0.0208,
+    0.3673
+   ]
+  },
+  "Jan-Feb_restT": {
+   "n": 870,
+   "gain_F1": 0.2011,
+   "gain_F1_ci": [
+    0.0682,
+    0.3336
+   ],
+   "inflation": -0.0007,
+   "inflation_ci": [
+    -0.0704,
+    0.067
+   ]
+  },
+  "Mar-Apr_topT": {
+   "n": 388,
+   "gain_F1": 0.0596,
+   "gain_F1_ci": [
+    -0.2227,
+    0.3362
+   ],
+   "inflation": 0.3128,
+   "inflation_ci": [
+    0.0165,
+    0.6072
+   ]
+  },
+  "Mar-Apr_restT": {
+   "n": 722,
+   "gain_F1": 0.4787,
+   "gain_F1_ci": [
+    0.3261,
+    0.6554
+   ],
+   "inflation": 0.0783,
+   "inflation_ci": [
+    -0.0235,
+    0.1762
+   ]
+  }
+ },
+ "month_by_season": {
+  "2023_Oct-Dec": {
+   "n": 532,
+   "gain_F1": 0.1162,
+   "gain_F1_ci": [
+    -0.0454,
+    0.2795
+   ],
+   "inflation": -0.1682,
+   "inflation_ci": [
+    -0.3607,
+    0.0288
+   ]
+  },
+  "2023_Jan-Feb": {
+   "n": 381,
+   "gain_F1": 0.1201,
+   "gain_F1_ci": [
+    -0.0238,
+    0.2598
+   ],
+   "inflation": -0.0433,
+   "inflation_ci": [
+    -0.2355,
+    0.1505
+   ]
+  },
+  "2023_Mar-Apr": {
+   "n": 295,
+   "gain_F1": 0.2402,
+   "gain_F1_ci": [
+    -0.2019,
+    0.6641
+   ],
+   "inflation": 0.2583,
+   "inflation_ci": [
+    -0.0766,
+    0.5916
+   ]
+  },
+  "2024_Oct-Dec": {
+   "n": 467,
+   "gain_F1": 0.1186,
+   "gain_F1_ci": [
+    -0.0913,
+    0.3183
+   ],
+   "inflation": -0.0297,
+   "inflation_ci": [
+    -0.137,
+    0.0799
+   ]
+  },
+  "2024_Jan-Feb": {
+   "n": 396,
+   "gain_F1": 0.2167,
+   "gain_F1_ci": [
+    -0.0208,
+    0.4395
+   ],
+   "inflation": 0.0031,
+   "inflation_ci": [
+    -0.1749,
+    0.1698
+   ]
+  },
+  "2024_Mar-Apr": {
+   "n": 336,
+   "gain_F1": 0.3215,
+   "gain_F1_ci": [
+    0.0413,
+    0.6533
+   ],
+   "inflation": 0.0778,
+   "inflation_ci": [
+    -0.1169,
+    0.2555
+   ]
+  },
+  "2025_Oct-Dec": {
+   "n": 479,
+   "gain_F1": 0.0041,
+   "gain_F1_ci": [
+    -0.1896,
+    0.1968
+   ],
+   "inflation": -0.0226,
+   "inflation_ci": [
+    -0.1759,
+    0.1323
+   ]
+  },
+  "2025_Jan-Feb": {
+   "n": 398,
+   "gain_F1": 0.141,
+   "gain_F1_ci": [
+    -0.1194,
+    0.4034
+   ],
+   "inflation": 0.1015,
+   "inflation_ci": [
+    -0.0395,
+    0.2454
+   ]
+  },
+  "2025_Mar-Apr": {
+   "n": 340,
+   "gain_F1": 0.5254,
+   "gain_F1_ci": [
+    0.2955,
+    0.7871
+   ],
+   "inflation": 0.1333,
+   "inflation_ci": [
+    -0.1155,
+    0.3715
+   ]
+  },
+  "2026_Oct-Dec": {
+   "n": 490,
+   "gain_F1": -0.0205,
+   "gain_F1_ci": [
+    -0.224,
+    0.1928
+   ],
+   "inflation": 0.0781,
+   "inflation_ci": [
+    -0.0638,
+    0.2142
+   ]
+  },
+  "2026_Jan-Feb": {
+   "n": 398,
+   "gain_F1": 0.3067,
+   "gain_F1_ci": [
+    0.0699,
+    0.5237
+   ],
+   "inflation": 0.1921,
+   "inflation_ci": [
+    0.0294,
+    0.3455
+   ]
+  },
+  "2026_Mar-Apr": {
+   "n": 334,
+   "gain_F1": 0.4512,
+   "gain_F1_ci": [
+    0.2082,
+    0.6817
+   ],
+   "inflation": 0.2777,
+   "inflation_ci": [
+    0.0769,
+    0.4961
+   ]
+  }
+ },
+ "submission": {
+  "12": 0.8198,
+  "9": 0.8215,
+  "6": 0.9121,
+  "4": 0.9909,
+  "3": 0.9916,
+  "2": 0.992,
+  "1.5": 0.9922,
+  "1": 0.9923,
+  "0.5": 0.9926
+ },
+ "month_abs_D_pub": {
+  "Oct-Dec": 6.497,
+  "Jan-Feb": 7.523,
+  "Mar-Apr": 8.52
+ }
+}
