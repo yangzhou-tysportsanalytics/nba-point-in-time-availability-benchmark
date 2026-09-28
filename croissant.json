@@ -57,7 +57,7 @@
  "citeAs": "PIT-Avail: a point-in-time NBA player availability benchmark, version 1.0.0. Accompanies \"Who Was Really Out? A Point-in-Time NBA Availability Benchmark, and What It Says About Hindsight\" (under review). https://github.com/yangzhou-tysportsanalytics/nba-point-in-time-availability-benchmark",
  "creator": {
   "@type": "sc:Organization",
-  "name": "⟦authors; anonymised for review⟧"
+  "name": "Anonymised for review"
  },
  "keywords": [
   "NBA",
