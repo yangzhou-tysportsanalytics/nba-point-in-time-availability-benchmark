@@ -23,7 +23,7 @@ whose uploader released the compilation under CC0. **That dedication covers the 
 NBA data**, and the NBA.com terms restrict redistribution of the source documents and of comprehensive statistics
 databases built from them. So:
 
-- **No player-level tables.** We release game-level and aggregate tables. `p6_ds_public_rebuild.py` regenerates the
+- **No player-level tables.** We release game-level and aggregate tables. `rebuild.py` regenerates the
   player-level tables on your machine in one command, and the exact source files are pinned by SHA-256 in
   `league/public/sources.csv` (23,485 injury-report PDFs and 2 Kaggle files).
 - **No source documents.** No PDFs, no box scores. The fetch script downloads them from the league's public URL and
@@ -43,8 +43,8 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `results/*.json` | Every result file behind the paper's numbers: the rolling-origin holdouts, the cutoff curve, the decomposition and the put-back tests, the valuation runs, the model grid, the market section. |
 | `results/figures/` | The cutoff-curve figure, as it appears in the paper and in the abstract. |
 | `league/public/sources.csv` | Every source file with URL, size and SHA-256. |
-| `league/scripts/p6_ds_public_fetch.py` | Downloads the sources and verifies every hash. |
-| `league/scripts/p6_ds_public_rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
+| `league/scripts/fetch_sources.py` | Downloads the sources and verifies every hash. |
+| `league/scripts/rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
 | `league/scripts/parse_injury_pdf.py` | The injury-report parser. |
 | `league/public/pit_rules.py` | Name matching, reason classes and reference minutes, copied verbatim from the project code. |
 | `league/tests/` | Tests for the public path. |
@@ -61,7 +61,7 @@ not play; a flag for games where a team had no submitted report.
 
 ```
 pip install -r requirements.txt
-python league/scripts/p6_ds_public_rebuild.py model --bench data/bench_games_public.csv
+python league/scripts/rebuild.py model --bench data/bench_games_public.csv
 ```
 
 This refits the headline model on the released table and writes `results/paper2_public_path_check.json`, which
@@ -71,10 +71,10 @@ should match `results/paper2_public_path.json`.
 
 ```
 pip install -r requirements.txt
-python league/scripts/p6_ds_public_fetch.py                # ~1.5 GB of PDFs + ~400 MB of Kaggle CSVs; verifies SHA-256
-python league/scripts/p6_ds_public_rebuild.py parse 3600   # re-run until it prints "done" (4 processes, about an hour)
-python league/scripts/p6_ds_public_rebuild.py build
-python league/scripts/p6_ds_public_rebuild.py model
+python league/scripts/fetch_sources.py                # ~1.5 GB of PDFs + ~400 MB of Kaggle CSVs; verifies SHA-256
+python league/scripts/rebuild.py parse 3600   # re-run until it prints "done" (4 processes, about an hour)
+python league/scripts/rebuild.py build
+python league/scripts/rebuild.py model
 python -m unittest discover league/tests
 ```
 
@@ -153,6 +153,8 @@ Every number in the paper is generated from a file in `results/`. The main ones:
 | Model grid, deployment gap | `paper2_models.json`, `paper2_models_extra.json` | `A_main`, `B_five_seasons` |
 | Market section | `paper2_close_line.json`, `paper2_open_line.json` | `rmse_vs_lines`, `estimates` |
 | Public rebuild against the main build | `paper2_public_path.json`, `paper2_public_path_compare.json` | — |
+
+The files in `results/` keep the names the analysis pipeline writes, so what is published here is what the code produces. A few of them carry that pipeline's own stage names (`paper2_1b_*`, `paper2_stage0_*`, `paper2_text_numbers.json`); they hold the parsing gates, the source inventory and the counts quoted in the dataset section, and they are included because the paper prints numbers from them.
 
 ## Differences from the paper's main build
 

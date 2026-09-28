@@ -1,4 +1,5 @@
-"""Paper 2 stage E: the public path's vendored rules must match the project code, and the source list must be sound."""
+"""The rules vendored into the public path must match the project code they were copied from, and the source
+list must be sound. The first check skips where the project code is not present, as in this repository."""
 import csv, inspect, sys, unittest
 from pathlib import Path
 

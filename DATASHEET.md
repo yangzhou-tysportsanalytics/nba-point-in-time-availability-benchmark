@@ -239,8 +239,8 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   this is not legal advice).
 
 **Rebuilding.**
-1. `p6_ds_public_fetch.py` downloads the official PDFs and the pinned Kaggle files, and checks every SHA-256.
-2. `p6_ds_public_rebuild.py` parses and builds the tables.
+1. `fetch_sources.py` downloads the official PDFs and the pinned Kaggle files, and checks every SHA-256.
+2. `rebuild.py` parses and builds the tables.
 
 Users are responsible for complying with each source's terms.
 

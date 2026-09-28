@@ -1,7 +1,7 @@
 """Fetch the public sources listed in league/public/sources.csv and verify every SHA-256.
 
-  python league/scripts/p6_ds_public_fetch.py            # download into data/public/, verify, write fetch_log.csv
-  python league/scripts/p6_ds_public_fetch.py make-list  # (maintainers only) write league/public/sources.csv
+  python league/scripts/fetch_sources.py            # download into data/public/, verify, write fetch_log.csv
+  python league/scripts/fetch_sources.py make-list  # (maintainers only) write league/public/sources.csv
 
 Sources: official NBA injury-report PDFs (ak-static.cms.nba.com) and a pinned CC0 Kaggle box-score dataset.
 Nothing is fetched from ESPN or stats.nba.com. Files that already exist and verify are skipped, so the script can be

@@ -1,6 +1,6 @@
 """Rules used by the public rebuild path, copied verbatim from the committed project code
-(league/src/build.py: name_key, name_keys, reason_class; src/measurement_rules.py: reference_minutes).
-tests/test_pit_rules.py checks that the copies still match the originals when those are present.
+(name_key, name_keys, reason_class from the build module; reference_minutes from the measurement rules).
+league/tests/test_rebuild.py checks that the copies still match the originals when those are present.
 """
 import re, unicodedata
 

@@ -1,12 +1,12 @@
 """Rebuild the point-in-time availability features from the fetched sources, and rerun the
 headline leakage experiment from public sources only (official injury-report PDFs + pinned CC0 Kaggle box scores),
-as fetched by p6_ds_public_fetch.py. No ESPN, stats.nba.com, private cache or betting data is read.
+as fetched by fetch_sources.py. No ESPN, stats.nba.com, private cache or betting data is read.
 
-  python league/scripts/p6_ds_public_rebuild.py parse [budget_seconds]   # resumable; re-run until it prints 'done'
-  python league/scripts/p6_ds_public_rebuild.py build                    # -> data/public/out/*.csv
-  python league/scripts/p6_ds_public_rebuild.py model                    # -> results/paper2_public_path.json
+  python league/scripts/rebuild.py parse [budget_seconds]   # resumable; re-run until it prints 'done'
+  python league/scripts/rebuild.py build                    # -> data/public/out/*.csv
+  python league/scripts/rebuild.py model                    # -> results/paper2_public_path.json
 
-Rules follow the main path (league/src/build.py, build_coverage.py, make_hybrid.py, p6_ds_bench_features.py) with two
+Rules follow the project's main build path, with two
 differences: tip-off is the scheduled time in the Kaggle game table, and the roster at the cutoff uses box appearances
 only (no transaction log).
 """
@@ -279,7 +279,7 @@ def build():
     k = lambda d: pd.Series(list(zip(d.game_id, d.team)), index=d.index).isin(use90)
     tg = pd.concat([a[~k(a)], b[k(b)]]); ros = pd.concat([ra[~k(ra)], rb[k(rb)]])
     tg['season_year'] = tg.game_id.map(g.set_index('game_id').season_year)
-    # features (p6_ds_bench_features.py definitions)
+    # features, defined as in the main build
     ref = ros[ros.base_minutes > 0].merge(tg[['game_id', 'team', 'cutoff', 'season_year', 'block_missing']], on=['game_id', 'team'])
     ref['eff_prior'] = [lg.eff_prior(p, c) for p, c in zip(ref.pid, ref.cutoff)]
     pos = box[box['min'] > 0]
