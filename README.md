@@ -47,6 +47,7 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
 | `league/scripts/parse_injury_pdf.py` | The injury-report parser. |
 | `league/public/pit_rules.py` | Name matching, reason classes and reference minutes, copied verbatim from the project code. |
+| `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `DATASHEET.md` | Datasheet (Gebru et al., 2021). |
 | `croissant.json` | Croissant 1.0 metadata for the two released data tables (validated with `mlcroissant`). |
@@ -174,6 +175,20 @@ The files in `results/` keep the names the analysis pipeline writes, so what is 
 `results/paper2_public_path_compare.json` quantifies the agreement: margins match exactly on the joined games, the
 compliant feature correlates 0.986 with the main build and the participation feature 0.973, and the two paths agree
 on whether to exclude a game in 99.7% of cases.
+
+## The prospective test
+
+The estimates in this repository are retrospective: the seasons were over and their outcomes were known when the
+analyses were designed. A confirmatory test on the 2026-27 regular season is written and will be registered on OSF,
+with its data, rules, models and decision criteria fixed, before that season's first game.
+
+`league/scripts/prospective_poll.py` is the collector that test relies on, published here because it is the part
+that cannot be reconstructed afterwards. The benchmark above dates each report by the time printed on it, which is
+when the report says it was issued, not when it could first be read. The collector records the second quantity:
+every few minutes it probes the league's published file names and writes down, for each file, when it first
+answered, the server's own clock, and the validators it returned. It takes no arguments, writes to
+`data/prospective_2627/`, and is not part of the rebuild above — running it starts a collection, it does not
+reproduce anything.
 
 ## Licences and terms
 
