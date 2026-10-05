@@ -192,6 +192,30 @@ answered, the server's own clock, and the validators it returned. It takes no ar
 `data/prospective_2627/`, and is not part of the rebuild above — running it starts a collection, it does not
 reproduce anything.
 
+### How the interval is chosen, and why it changed
+
+The registration first decided every hypothesis on a two-way team bootstrap, which draws the 30 teams once and
+weights a game by the product of its two teams' draw counts. Two studies run afterwards, on the retrospective
+seasons only, show that design is not calibrated: on placebo data with a known truth it covers a nominal 95%
+interval at essentially 1, with an interval about 1.5 times the sampling distribution, because a product of two
+resampling counts has variance near 2.6 where an ordinary bootstrap weight has 1. The per-game loss difference
+has almost no team structure to justify the extra width — under 1% of its variance.
+
+On one season that costs power and buys nothing, so the registration was amended before the season's first game
+to decide on an iid game bootstrap, which covers at the nominal level here. Both studies run on the released
+build:
+
+```
+python league/scripts/boot_calibration.py     # -> results/paper2_boot_calibration_public.json
+python league/scripts/prospective_power.py    # -> results/paper2_prospective_power_public.json
+```
+
+They take a few minutes each and need only `data/bench_games_public.csv`. The same scripts run on the main build
+in the originating project; the two agree on every conclusion and differ in the third decimal, as the public path
+does for the headline. Note that the paper and the prospective test do not use the same interval, and should not:
+the paper generalises across four holdout seasons whose inflation differs from season to season, and that
+variance belongs in its interval; the prospective test is one season, where that term does not exist.
+
 ## Licences and terms
 
 - **Code:** MIT (`LICENSE`).

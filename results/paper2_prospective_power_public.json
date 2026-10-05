@@ -1,0 +1,146 @@
+{
+ "season": 2026,
+ "n_games": 1221,
+ "n_teams": 30,
+ "z_one_sided": 1.6449,
+ "reps": 4000,
+ "truth_draws": 4000,
+ "quantities": {
+  "H1_gain_F1": {
+   "contrast": "RMSE(F0) - RMSE(F1)",
+   "point_2025_26": 0.21,
+   "expected_size_registered": 0.2,
+   "sigma_true": 0.069,
+   "team_share_of_per_game_variance": 0.0,
+   "designs": {
+    "home_season_cluster": {
+     "sd_design": 0.061,
+     "ratio_to_true": 0.884,
+     "coverage_one_season": 0.95,
+     "power_at_expected": 0.926,
+     "mde_80": 0.1585,
+     "ci95": [
+      0.0872,
+      0.328
+     ]
+    },
+    "two_way_team": {
+     "sd_design": 0.1034,
+     "ratio_to_true": 1.499,
+     "coverage_one_season": 1.0,
+     "power_at_expected": 0.667,
+     "mde_80": 0.2282,
+     "ci95": [
+      0.0033,
+      0.4142
+     ]
+    },
+    "iid_game": {
+     "sd_design": 0.0685,
+     "ratio_to_true": 0.993,
+     "coverage_one_season": 0.963,
+     "power_at_expected": 0.897,
+     "mde_80": 0.1708,
+     "ci95": [
+      0.0749,
+      0.3457
+     ]
+    }
+   },
+   "power_curve_by_effect": {
+    "home_season_cluster": {
+     "0.05": 0.233,
+     "0.10": 0.498,
+     "0.15": 0.764,
+     "0.20": 0.926,
+     "0.25": 0.985,
+     "0.30": 0.998
+    },
+    "two_way_team": {
+     "0.05": 0.041,
+     "0.10": 0.155,
+     "0.15": 0.385,
+     "0.20": 0.667,
+     "0.25": 0.876,
+     "0.30": 0.97
+    },
+    "iid_game": {
+     "0.05": 0.182,
+     "0.10": 0.427,
+     "0.15": 0.705,
+     "0.20": 0.897,
+     "0.25": 0.977,
+     "0.30": 0.997
+    }
+   }
+  },
+  "H3_inflation": {
+   "contrast": "RMSE(F1) - RMSE(F2)",
+   "point_2025_26": 0.1812,
+   "expected_size_registered": 0.06,
+   "sigma_true": 0.0521,
+   "team_share_of_per_game_variance": 0.0,
+   "designs": {
+    "home_season_cluster": {
+     "sd_design": 0.0513,
+     "ratio_to_true": 0.984,
+     "coverage_one_season": 0.953,
+     "power_at_expected": 0.32,
+     "mde_80": 0.1283,
+     "ci95": [
+      0.0823,
+      0.2825
+     ]
+    },
+    "two_way_team": {
+     "sd_design": 0.0822,
+     "ratio_to_true": 1.577,
+     "coverage_one_season": 1.0,
+     "power_at_expected": 0.074,
+     "mde_80": 0.1792,
+     "ci95": [
+      0.0234,
+      0.339
+     ]
+    },
+    "iid_game": {
+     "sd_design": 0.0502,
+     "ratio_to_true": 0.963,
+     "coverage_one_season": 0.96,
+     "power_at_expected": 0.333,
+     "mde_80": 0.1265,
+     "ci95": [
+      0.0858,
+      0.2841
+     ]
+    }
+   },
+   "power_curve_by_effect": {
+    "home_season_cluster": {
+     "0.05": 0.255,
+     "0.10": 0.618,
+     "0.15": 0.896,
+     "0.20": 0.987,
+     "0.25": 0.999,
+     "0.30": 1.0
+    },
+    "two_way_team": {
+     "0.05": 0.051,
+     "0.10": 0.249,
+     "0.15": 0.611,
+     "0.20": 0.893,
+     "0.25": 0.986,
+     "0.30": 0.999
+    },
+    "iid_game": {
+     "0.05": 0.266,
+     "0.10": 0.631,
+     "0.15": 0.902,
+     "0.20": 0.988,
+     "0.25": 0.999,
+     "0.30": 1.0
+    }
+   }
+  }
+ }
+}
