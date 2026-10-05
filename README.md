@@ -152,6 +152,7 @@ Every number in the paper is generated from a file in `results/`. The main ones:
 | Plus-minus valuation | `paper2_impact_valuation.json` | `estimates` |
 | Without the 240-minute rescaling | `paper2_valuation_robustness.json` | `estimates` |
 | Model grid, deployment gap | `paper2_models.json`, `paper2_models_extra.json` | `A_main`, `B_five_seasons` |
+| Deployment gap, pooled over four holdouts | `paper2_deployment_pooled.json` | `feature_sets` |
 | Market section | `paper2_close_line.json`, `paper2_open_line.json` | `rmse_vs_lines`, `estimates` |
 | Public rebuild against the main build | `paper2_public_path.json`, `paper2_public_path_compare.json` | — |
 
@@ -215,6 +216,24 @@ in the originating project; the two agree on every conclusion and differ in the 
 does for the headline. Note that the paper and the prospective test do not use the same interval, and should not:
 the paper generalises across four holdout seasons whose inflation differs from season to season, and that
 variance belongs in its interval; the prospective test is one season, where that term does not exist.
+
+### The deployment gap, pooled
+
+The paper's model grid measures the deployment gap -- what a model loses between its own backtest and the
+accuracy it delivers when handed only the pregame report -- on one holdout season, as a range across settings.
+That range is not an estimate, so the paper also pools the gap over the four rolling holdouts, and this script
+reruns it here:
+
+```
+python league/scripts/deployment_pooled.py    # -> results/paper2_deployment_pooled_public.json
+```
+
+On the released build the gap is 0.086 points of margin RMSE (0.035 to 0.137) for these four seasons, against
+0.068 (0.015 to 0.120) on the main build; both exclude zero. Neither build resolves it as a statement about an
+NBA season in general -- 0.084 (-0.052 to 0.220) here, 0.065 (-0.072 to 0.203) there -- because the gap is not
+steady across seasons, and 2025-26, the season the grid uses, is the largest of the four on both builds. The
+implied season-to-season standard deviation is 0.068 on each, close to the 0.0675 the inflation carries. The
+narrow feature set runs here; the wide one needs the home and away columns the released file does not carry.
 
 ## Licences and terms
 
