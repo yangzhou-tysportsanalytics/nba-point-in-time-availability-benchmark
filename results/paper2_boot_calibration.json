@@ -1,0 +1,307 @@
+{
+ "n_games": 4846,
+ "n_teams": 30,
+ "sims": 300,
+ "reps": 600,
+ "truth_draws": 3000,
+ "seed": 20261005,
+ "quantities": {
+  "gain_F1": {
+   "contrast": "RMSE(F0) - RMSE(F1)",
+   "point": 0.1966,
+   "variance_components": {
+    "total": 4369.553959,
+    "team": 0.0,
+    "team_season": 12.278257,
+    "game": 4357.275701,
+    "cov_same_season": 7.974701,
+    "cov_across_seasons": -4.303556,
+    "share_team": 0.0,
+    "share_team_season": 0.0028,
+    "share_game": 0.9972
+   },
+   "dyadic_se": 0.0313,
+   "dyadic_ci95": [
+    0.1352,
+    0.258
+   ],
+   "observed_bootstrap": {
+    "home_season_cluster": {
+     "ci95": [
+      0.1316,
+      0.2613
+     ],
+     "width": 0.1297,
+     "boot_sd": 0.0331
+    },
+    "two_way_team": {
+     "ci95": [
+      0.089,
+      0.3038
+     ],
+     "width": 0.2148,
+     "boot_sd": 0.0554
+    },
+    "season_then_cluster": {
+     "ci95": [
+      0.1212,
+      0.2633
+     ],
+     "width": 0.1422,
+     "boot_sd": 0.0363
+    },
+    "iid_game": {
+     "ci95": [
+      0.1312,
+      0.2622
+     ],
+     "width": 0.131,
+     "boot_sd": 0.0333
+    }
+   },
+   "season_level": {
+    "per_season": {
+     "2023": 0.1491,
+     "2024": 0.2093,
+     "2025": 0.1997,
+     "2026": 0.2241
+    },
+    "between_season_var": 0.001059,
+    "mean_within_season_var": 0.004283,
+    "season_variance_tau2": 0.0,
+    "season_sd": 0.0,
+    "se_of_four_season_mean": 0.0327,
+    "ci95_normal": [
+     0.1315,
+     0.2597
+    ],
+    "ci95_t3": [
+     0.0915,
+     0.2997
+    ],
+    "width_t3": 0.2083,
+    "note": "target is a season drawn from the same process, not these four seasons"
+   },
+   "calibration": {
+    "fitted": {
+     "scenario": "fitted",
+     "true_value": 0.1965,
+     "true_sd": 0.0405,
+     "nominal_width": 0.1586,
+     "designs": {
+      "home_season_cluster": {
+       "coverage": 0.893,
+       "mean_width": 0.1364,
+       "width_over_true": 0.86
+      },
+      "two_way_team": {
+       "coverage": 1.0,
+       "mean_width": 0.2343,
+       "width_over_true": 1.477
+      },
+      "season_then_cluster": {
+       "coverage": 0.97,
+       "mean_width": 0.1856,
+       "width_over_true": 1.17
+      },
+      "iid_game": {
+       "coverage": 0.883,
+       "mean_width": 0.1301,
+       "width_over_true": 0.82
+      },
+      "dyadic": {
+       "coverage": 0.87,
+       "mean_width": 0.1423,
+       "width_over_true": 0.897
+      }
+     }
+    },
+    "no_team": {
+     "scenario": "no_team",
+     "true_value": 0.1965,
+     "true_sd": 0.0335,
+     "nominal_width": 0.1312,
+     "designs": {
+      "home_season_cluster": {
+       "coverage": 0.96,
+       "mean_width": 0.1287,
+       "width_over_true": 0.981
+      },
+      "two_way_team": {
+       "coverage": 1.0,
+       "mean_width": 0.2204,
+       "width_over_true": 1.68
+      },
+      "season_then_cluster": {
+       "coverage": 0.993,
+       "mean_width": 0.1704,
+       "width_over_true": 1.299
+      },
+      "iid_game": {
+       "coverage": 0.963,
+       "mean_width": 0.1303,
+       "width_over_true": 0.993
+      },
+      "dyadic": {
+       "coverage": 0.86,
+       "mean_width": 0.1145,
+       "width_over_true": 0.872
+      }
+     }
+    }
+   }
+  },
+  "infl": {
+   "contrast": "RMSE(F1) - RMSE(F2)",
+   "point": 0.0588,
+   "variance_components": {
+    "total": 2596.460744,
+    "team": 0.0,
+    "team_season": 7.187427,
+    "game": 2589.273316,
+    "cov_same_season": 5.965213,
+    "cov_across_seasons": -1.222214,
+    "share_team": 0.0,
+    "share_team_season": 0.0028,
+    "share_game": 0.9972
+   },
+   "dyadic_se": 0.0271,
+   "dyadic_ci95": [
+    0.0056,
+    0.112
+   ],
+   "observed_bootstrap": {
+    "home_season_cluster": {
+     "ci95": [
+      0.0013,
+      0.1194
+     ],
+     "width": 0.1182,
+     "boot_sd": 0.0302
+    },
+    "two_way_team": {
+     "ci95": [
+      -0.0334,
+      0.1508
+     ],
+     "width": 0.1842,
+     "boot_sd": 0.0465
+    },
+    "season_then_cluster": {
+     "ci95": [
+      -0.0311,
+      0.1497
+     ],
+     "width": 0.1808,
+     "boot_sd": 0.0465
+    },
+    "iid_game": {
+     "ci95": [
+      0.0097,
+      0.1102
+     ],
+     "width": 0.1006,
+     "boot_sd": 0.026
+    }
+   },
+   "season_level": {
+    "per_season": {
+     "2023": -0.022,
+     "2024": 0.0116,
+     "2025": 0.064,
+     "2026": 0.1725
+    },
+    "between_season_var": 0.007227,
+    "mean_within_season_var": 0.002677,
+    "season_variance_tau2": 0.00455,
+    "season_sd": 0.0675,
+    "se_of_four_season_mean": 0.0425,
+    "ci95_normal": [
+     -0.0268,
+     0.1398
+    ],
+    "ci95_t3": [
+     -0.0788,
+     0.1918
+    ],
+    "width_t3": 0.2705,
+    "note": "target is a season drawn from the same process, not these four seasons"
+   },
+   "calibration": {
+    "fitted": {
+     "scenario": "fitted",
+     "true_value": 0.0587,
+     "true_sd": 0.0316,
+     "nominal_width": 0.1237,
+     "designs": {
+      "home_season_cluster": {
+       "coverage": 0.9,
+       "mean_width": 0.106,
+       "width_over_true": 0.857
+      },
+      "two_way_team": {
+       "coverage": 1.0,
+       "mean_width": 0.1846,
+       "width_over_true": 1.492
+      },
+      "season_then_cluster": {
+       "coverage": 0.963,
+       "mean_width": 0.144,
+       "width_over_true": 1.164
+      },
+      "iid_game": {
+       "coverage": 0.897,
+       "mean_width": 0.1016,
+       "width_over_true": 0.821
+      },
+      "dyadic": {
+       "coverage": 0.873,
+       "mean_width": 0.1108,
+       "width_over_true": 0.896
+      }
+     }
+    },
+    "no_team": {
+     "scenario": "no_team",
+     "true_value": 0.0587,
+     "true_sd": 0.0262,
+     "nominal_width": 0.1026,
+     "designs": {
+      "home_season_cluster": {
+       "coverage": 0.963,
+       "mean_width": 0.1006,
+       "width_over_true": 0.981
+      },
+      "two_way_team": {
+       "coverage": 1.0,
+       "mean_width": 0.1724,
+       "width_over_true": 1.681
+      },
+      "season_then_cluster": {
+       "coverage": 0.983,
+       "mean_width": 0.1322,
+       "width_over_true": 1.288
+      },
+      "iid_game": {
+       "coverage": 0.963,
+       "mean_width": 0.1011,
+       "width_over_true": 0.985
+      },
+      "dyadic": {
+       "coverage": 0.863,
+       "mean_width": 0.0894,
+       "width_over_true": 0.871
+      }
+     }
+    }
+   }
+  }
+ },
+ "schedule_deflation": {
+  "ordered_pairs_sharing_a_team": 3072644,
+  "per_game": 634.1,
+  "variance_factor": 0.7383,
+  "se_factor": 0.8593,
+  "note": "The dyadic estimator is low by about this factor when games are independent; compare it with the dyadic row of the placebo coverage below."
+ }
+}
