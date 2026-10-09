@@ -33,6 +33,24 @@
   ],
   "F1p+c1+c2+c3": [
    "F1pc123_diff"
+  ],
+  "F1|c1": [
+   "F1_diff",
+   "declared_diff"
+  ],
+  "F1|c2": [
+   "F1_diff",
+   "late_diff"
+  ],
+  "F1|c3": [
+   "F1_diff",
+   "never_diff"
+  ],
+  "F1|c1c2c3": [
+   "F1_diff",
+   "declared_diff",
+   "late_diff",
+   "never_diff"
   ]
  },
  "component_overlap_with_F1": {
@@ -55,6 +73,10 @@
     "ci95_two_way": [
      0.0807,
      0.3024
+    ],
+    "ci95_season": [
+     0.1217,
+     0.2635
     ]
    },
    "F1_6h": {
@@ -66,6 +88,10 @@
     "ci95_two_way": [
      0.057,
      0.2552
+    ],
+    "ci95_season": [
+     0.0869,
+     0.2249
     ]
    },
    "F1+c2": {
@@ -77,6 +103,10 @@
     "ci95_two_way": [
      0.0592,
      0.256
+    ],
+    "ci95_season": [
+     0.0819,
+     0.2304
     ]
    },
    "F1+c3": {
@@ -88,6 +118,10 @@
     "ci95_two_way": [
      0.0274,
      0.2156
+    ],
+    "ci95_season": [
+     0.0382,
+     0.2006
     ]
    },
    "F1+c2+c3": {
@@ -99,6 +133,10 @@
     "ci95_two_way": [
      0.0305,
      0.2221
+    ],
+    "ci95_season": [
+     0.0364,
+     0.2071
     ]
    },
    "F2": {
@@ -110,6 +148,10 @@
     "ci95_two_way": [
      0.111,
      0.4012
+    ],
+    "ci95_season": [
+     0.1202,
+     0.3791
     ]
    },
    "F1p+c1": {
@@ -121,6 +163,10 @@
     "ci95_two_way": [
      0.1367,
      0.3916
+    ],
+    "ci95_season": [
+     0.1654,
+     0.3628
     ]
    },
    "F1p+c2": {
@@ -132,6 +178,10 @@
     "ci95_two_way": [
      0.0807,
      0.3073
+    ],
+    "ci95_season": [
+     0.1194,
+     0.2698
     ]
    },
    "F1p+c3": {
@@ -143,6 +193,10 @@
     "ci95_two_way": [
      0.04,
      0.2745
+    ],
+    "ci95_season": [
+     0.077,
+     0.2428
     ]
    },
    "F1p+c2+c3": {
@@ -154,6 +208,10 @@
     "ci95_two_way": [
      0.0455,
      0.2828
+    ],
+    "ci95_season": [
+     0.0713,
+     0.2524
     ]
    },
    "F1p+c1+c2+c3": {
@@ -165,6 +223,70 @@
     "ci95_two_way": [
      0.106,
      0.3978
+    ],
+    "ci95_season": [
+     0.1119,
+     0.3781
+    ]
+   },
+   "F1|c1": {
+    "point": 0.2657,
+    "ci95_home": [
+     0.1915,
+     0.3469
+    ],
+    "ci95_two_way": [
+     0.1362,
+     0.3874
+    ],
+    "ci95_season": [
+     0.1671,
+     0.3582
+    ]
+   },
+   "F1|c2": {
+    "point": 0.1999,
+    "ci95_home": [
+     0.1332,
+     0.2711
+    ],
+    "ci95_two_way": [
+     0.0835,
+     0.3091
+    ],
+    "ci95_season": [
+     0.1217,
+     0.2713
+    ]
+   },
+   "F1|c3": {
+    "point": 0.184,
+    "ci95_home": [
+     0.1169,
+     0.2547
+    ],
+    "ci95_two_way": [
+     0.0583,
+     0.296
+    ],
+    "ci95_season": [
+     0.0968,
+     0.2603
+    ]
+   },
+   "F1|c1c2c3": {
+    "point": 0.2612,
+    "ci95_home": [
+     0.1757,
+     0.3511
+    ],
+    "ci95_two_way": [
+     0.1109,
+     0.4056
+    ],
+    "ci95_season": [
+     0.1244,
+     0.377
     ]
    }
   }
@@ -181,6 +303,10 @@
     "ci95_two_way": [
      0.0617,
      0.3068
+    ],
+    "ci95_season": [
+     0.1067,
+     0.2604
     ]
    },
    "F1_6h": {
@@ -192,6 +318,10 @@
     "ci95_two_way": [
      0.0681,
      0.2746
+    ],
+    "ci95_season": [
+     0.1068,
+     0.2353
     ]
    },
    "F1+c2": {
@@ -203,6 +333,10 @@
     "ci95_two_way": [
      0.074,
      0.2778
+    ],
+    "ci95_season": [
+     0.1074,
+     0.2426
     ]
    },
    "F1+c3": {
@@ -214,6 +348,10 @@
     "ci95_two_way": [
      0.0279,
      0.2391
+    ],
+    "ci95_season": [
+     0.0549,
+     0.205
     ]
    },
    "F1+c2+c3": {
@@ -225,6 +363,10 @@
     "ci95_two_way": [
      0.0361,
      0.2462
+    ],
+    "ci95_season": [
+     0.0586,
+     0.2142
     ]
    },
    "F2": {
@@ -236,6 +378,10 @@
     "ci95_two_way": [
      0.0861,
      0.3989
+    ],
+    "ci95_season": [
+     0.0841,
+     0.3765
     ]
    },
    "F1p+c1": {
@@ -247,6 +393,10 @@
     "ci95_two_way": [
      0.1195,
      0.3921
+    ],
+    "ci95_season": [
+     0.1443,
+     0.3624
     ]
    },
    "F1p+c2": {
@@ -258,6 +408,10 @@
     "ci95_two_way": [
      0.0654,
      0.314
+    ],
+    "ci95_season": [
+     0.1063,
+     0.2687
     ]
    },
    "F1p+c3": {
@@ -269,6 +423,10 @@
     "ci95_two_way": [
      0.0071,
      0.2754
+    ],
+    "ci95_season": [
+     0.0425,
+     0.2324
     ]
    },
    "F1p+c2+c3": {
@@ -280,6 +438,10 @@
     "ci95_two_way": [
      0.0168,
      0.2855
+    ],
+    "ci95_season": [
+     0.0449,
+     0.2431
     ]
    },
    "F1p+c1+c2+c3": {
@@ -291,6 +453,70 @@
     "ci95_two_way": [
      0.082,
      0.399
+    ],
+    "ci95_season": [
+     0.0802,
+     0.3755
+    ]
+   },
+   "F1|c1": {
+    "point": 0.2572,
+    "ci95_home": [
+     0.1836,
+     0.3343
+    ],
+    "ci95_two_way": [
+     0.1193,
+     0.3901
+    ],
+    "ci95_season": [
+     0.1469,
+     0.3578
+    ]
+   },
+   "F1|c2": {
+    "point": 0.1943,
+    "ci95_home": [
+     0.1291,
+     0.2625
+    ],
+    "ci95_two_way": [
+     0.0664,
+     0.3146
+    ],
+    "ci95_season": [
+     0.1108,
+     0.2668
+    ]
+   },
+   "F1|c3": {
+    "point": 0.172,
+    "ci95_home": [
+     0.106,
+     0.2416
+    ],
+    "ci95_two_way": [
+     0.029,
+     0.3054
+    ],
+    "ci95_season": [
+     0.0663,
+     0.2562
+    ]
+   },
+   "F1|c1c2c3": {
+    "point": 0.2475,
+    "ci95_home": [
+     0.1615,
+     0.3344
+    ],
+    "ci95_two_way": [
+     0.0837,
+     0.4108
+    ],
+    "ci95_season": [
+     0.0863,
+     0.3797
     ]
    }
   }
@@ -306,6 +532,10 @@
    "ci95_two_way": [
     -0.0228,
     0.0254
+   ],
+   "ci95_season": [
+    -0.0184,
+    0.0183
    ]
   },
   "F1+c3 - F1_6h": {
@@ -317,6 +547,10 @@
    "ci95_two_way": [
     -0.0682,
     -0.0021
+   ],
+   "ci95_season": [
+    -0.0684,
+    -0.0075
    ]
   },
   "F1+c2+c3 - F1_6h": {
@@ -328,6 +562,10 @@
    "ci95_two_way": [
     -0.0655,
     0.0031
+   ],
+   "ci95_season": [
+    -0.0721,
+    0.0015
    ]
   },
   "F2 - F1_6h": {
@@ -339,6 +577,10 @@
    "ci95_two_way": [
     -0.017,
     0.2075
+   ],
+   "ci95_season": [
+    0.0084,
+    0.1732
    ]
   }
  },
@@ -352,6 +594,10 @@
    "ci95_two_way": [
     0.0064,
     0.1307
+   ],
+   "ci95_season": [
+    0.0136,
+    0.1313
    ]
   },
   "F1p+c2 - F1": {
@@ -363,6 +609,10 @@
    "ci95_two_way": [
     -0.0266,
     0.0304
+   ],
+   "ci95_season": [
+    -0.0214,
+    0.022
    ]
   },
   "F1p+c3 - F1": {
@@ -374,6 +624,10 @@
    "ci95_two_way": [
     -0.0742,
     0.0083
+   ],
+   "ci95_season": [
+    -0.0747,
+    0.0046
    ]
   },
   "F1p+c2+c3 - F1": {
@@ -385,6 +639,10 @@
    "ci95_two_way": [
     -0.0709,
     0.0159
+   ],
+   "ci95_season": [
+    -0.081,
+    0.0168
    ]
   },
   "F1p+c1+c2+c3 - F1": {
@@ -396,6 +654,10 @@
    "ci95_two_way": [
     -0.0329,
     0.1474
+   ],
+   "ci95_season": [
+    -0.0402,
+    0.1492
    ]
   },
   "F2 - F1": {
@@ -406,6 +668,10 @@
    ],
    "ci95_two_way": [
     -0.0309,
+    0.1505
+   ],
+   "ci95_season": [
+    -0.033,
     0.1505
    ]
   }
@@ -420,6 +686,10 @@
    "ci95_two_way": [
     -0.0309,
     0.1505
+   ],
+   "ci95_season": [
+    -0.033,
+    0.1505
    ]
   },
   "F1p+c1 - F2": {
@@ -431,6 +701,10 @@
    "ci95_two_way": [
     -0.0627,
     0.0406
+   ],
+   "ci95_season": [
+    -0.0749,
+    0.0437
    ]
   },
   "F1p+c1+c2+c3 - F2": {
@@ -442,7 +716,263 @@
    "ci95_two_way": [
     -0.0035,
     0.0096
+   ],
+   "ci95_season": [
+    -0.0022,
+    0.0108
    ]
+  }
+ },
+ "free_coefficient": {
+  "plan": "docs/plans/paper2_Q_free_coefficient_putback.md",
+  "note": "Each model adds the component as its own regressor beside F1_diff. The contrast with F1 is nested, so its population value is non-negative and only its size is at issue. Reported beside the fixed-weight put-back of the same component, which is a substitution contrast and is not.",
+  "vs_F1": {
+   "F1|c1": {
+    "point": 0.0692,
+    "ci95_home": [
+     0.0287,
+     0.1094
+    ],
+    "ci95_two_way": [
+     0.0113,
+     0.1228
+    ],
+    "ci95_season": [
+     0.019,
+     0.1229
+    ]
+   },
+   "F1|c2": {
+    "point": 0.0033,
+    "ci95_home": [
+     -0.0095,
+     0.0168
+    ],
+    "ci95_two_way": [
+     -0.0133,
+     0.0202
+    ],
+    "ci95_season": [
+     -0.0113,
+     0.016
+    ]
+   },
+   "F1|c3": {
+    "point": -0.0125,
+    "ci95_home": [
+     -0.025,
+     -0.0002
+    ],
+    "ci95_two_way": [
+     -0.036,
+     0.009
+    ],
+    "ci95_season": [
+     -0.0385,
+     0.0025
+    ]
+   },
+   "F1|c1c2c3": {
+    "point": 0.0647,
+    "ci95_home": [
+     0.0115,
+     0.1182
+    ],
+    "ci95_two_way": [
+     -0.0162,
+     0.1461
+    ],
+    "ci95_season": [
+     -0.0254,
+     0.1399
+    ]
+   }
+  },
+  "joint_vs_F2": {
+   "point": -0.0059,
+   "ci95_home": [
+    -0.0214,
+    0.0114
+   ],
+   "ci95_two_way": [
+    -0.0326,
+    0.0221
+   ],
+   "ci95_season": [
+    -0.0365,
+    0.018
+   ]
+  },
+  "coefficients": {
+   "F1|c1": {
+    "by_holdout": [
+     {
+      "F1_diff": -0.11594,
+      "declared_diff": -0.10225
+     },
+     {
+      "F1_diff": -0.1099,
+      "declared_diff": -0.09569
+     },
+     {
+      "F1_diff": -0.11579,
+      "declared_diff": -0.1038
+     },
+     {
+      "F1_diff": -0.11537,
+      "declared_diff": -0.09738
+     }
+    ],
+    "mean": {
+     "F1_diff": -0.11425,
+     "declared_diff": -0.09978
+    },
+    "ratio_to_F1_coefficient": {
+     "declared_diff": 0.873
+    }
+   },
+   "F1|c2": {
+    "by_holdout": [
+     {
+      "F1_diff": -0.10498,
+      "late_diff": -0.08418
+     },
+     {
+      "F1_diff": -0.10055,
+      "late_diff": -0.05445
+     },
+     {
+      "F1_diff": -0.1071,
+      "late_diff": -0.04576
+     },
+     {
+      "F1_diff": -0.10806,
+      "late_diff": -0.05326
+     }
+    ],
+    "mean": {
+     "F1_diff": -0.10517,
+     "late_diff": -0.05941
+    },
+    "ratio_to_F1_coefficient": {
+     "late_diff": 0.565
+    }
+   },
+   "F1|c3": {
+    "by_holdout": [
+     {
+      "F1_diff": -0.11936,
+      "never_diff": -0.0946
+     },
+     {
+      "F1_diff": -0.10451,
+      "never_diff": -0.02876
+     },
+     {
+      "F1_diff": -0.10689,
+      "never_diff": -0.00113
+     },
+     {
+      "F1_diff": -0.10945,
+      "never_diff": -0.0167
+     }
+    ],
+    "mean": {
+     "F1_diff": -0.11005,
+     "never_diff": -0.0353
+    },
+    "ratio_to_F1_coefficient": {
+     "never_diff": 0.321
+    }
+   },
+   "F1|c1c2c3": {
+    "by_holdout": [
+     {
+      "F1_diff": -0.14169,
+      "declared_diff": -0.13282,
+      "late_diff": -0.11126,
+      "never_diff": -0.13856
+     },
+     {
+      "F1_diff": -0.12069,
+      "declared_diff": -0.10707,
+      "late_diff": -0.07025,
+      "never_diff": -0.06052
+     },
+     {
+      "F1_diff": -0.12181,
+      "declared_diff": -0.11059,
+      "late_diff": -0.06204,
+      "never_diff": -0.03387
+     },
+     {
+      "F1_diff": -0.12416,
+      "declared_diff": -0.10654,
+      "late_diff": -0.07334,
+      "never_diff": -0.04927
+     }
+    ],
+    "mean": {
+     "F1_diff": -0.12709,
+     "declared_diff": -0.11425,
+     "late_diff": -0.07922,
+     "never_diff": -0.07055
+    },
+    "ratio_to_F1_coefficient": {
+     "declared_diff": 0.899,
+     "late_diff": 0.623,
+     "never_diff": 0.555
+    }
+   }
+  },
+  "seed_checks": {
+   "F1|c3:upper": {
+    "bounds": [
+     -0.00016,
+     -0.00129,
+     -0.00116,
+     -0.0006,
+     -0.00076
+    ],
+    "crosses_zero": false
+   }
+  },
+  "nested_tests": {
+   "note": "home-team x season clusters. DM is undersized against the larger model on a nested pair, so the CW column is the fair test; a negative DM mean is the extra parameter being paid for, not evidence that the component hurts.",
+   "by_model": {
+    "F1|c1": {
+     "dm_mean": 1.9374,
+     "dm_t": 3.45,
+     "dm_p_two_sided": 0.0006,
+     "cw_mean": 3.4294,
+     "cw_t": 6.01,
+     "cw_p_one_sided": 0.0
+    },
+    "F1|c2": {
+     "dm_mean": 0.0929,
+     "dm_t": 0.51,
+     "dm_p_two_sided": 0.6114,
+     "cw_mean": 0.2322,
+     "cw_t": 1.22,
+     "cw_p_one_sided": 0.1104
+    },
+    "F1|c3": {
+     "dm_mean": -0.3523,
+     "dm_t": -2.08,
+     "dm_p_two_sided": 0.0378,
+     "cw_mean": -0.1563,
+     "cw_t": -0.95,
+     "cw_p_one_sided": 0.8297
+    },
+    "F1|c1c2c3": {
+     "dm_mean": 1.812,
+     "dm_t": 2.42,
+     "dm_p_two_sided": 0.0155,
+     "cw_mean": 4.0571,
+     "cw_t": 5.47,
+     "cw_p_one_sided": 0.0
+    }
+   }
   }
  },
  "player_games_declared_late": 5594,
@@ -456,6 +986,10 @@
    "ci95_two_way": [
     -5.3833,
     3.4522
+   ],
+   "ci95_season": [
+    -5.5211,
+    4.1187
    ]
   },
   "D_pub": {
@@ -467,6 +1001,10 @@
    "ci95_two_way": [
     -0.0476,
     0.7467
+   ],
+   "ci95_season": [
+    0.0588,
+    0.6152
    ]
   },
   "D_late_status": {
@@ -478,6 +1016,10 @@
    "ci95_two_way": [
     -1.1093,
     0.853
+   ],
+   "ci95_season": [
+    -1.156,
+    1.0142
    ]
   },
   "D_never_listed": {
@@ -489,6 +1031,10 @@
    "ci95_two_way": [
     -0.6857,
     0.4123
+   ],
+   "ci95_season": [
+    -0.5636,
+    0.1723
    ]
   },
   "note": "e_i = (y - F1 pred)^2 - (y - F2 pred)^2 on the pooled rolling holdouts, regressed on the absolute home-minus-away component values; a positive coefficient means the leaky feature does better where that component is larger."

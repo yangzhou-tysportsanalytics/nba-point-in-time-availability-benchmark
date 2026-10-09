@@ -1,0 +1,71 @@
+{
+ "n_holdout_games": 4846,
+ "seasons": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "build": "main",
+ "bench_file": "bench_games.csv",
+ "model": "least squares",
+ "note": "One model, trained on realized participation. Its backtest evaluates it on participation; its deployment hands it the pregame report. The gap is deployment RMSE minus backtest RMSE, so a positive number is what the buyer loses.",
+ "feature_sets": {
+  "narrow": {
+   "backtest_rmse": 13.9847,
+   "deployed_rmse": 14.0523,
+   "gap": 0.0676,
+   "dyadic_se": 0.0267,
+   "dyadic_ci95": [
+    0.0153,
+    0.1199
+   ],
+   "iid_ci95": [
+    0.015,
+    0.1208
+   ],
+   "per_season": {
+    "2023": -0.0046,
+    "2024": 0.0087,
+    "2025": 0.0721,
+    "2026": 0.1853
+   },
+   "season_mean": 0.0654,
+   "season_sd": 0.0867,
+   "season_ci95_t3": [
+    -0.0725,
+    0.2033
+   ],
+   "implied_season_component": 0.0683,
+   "within_season_se": 0.0534
+  },
+  "wide": {
+   "backtest_rmse": 13.9832,
+   "deployed_rmse": 14.0831,
+   "gap": 0.0999,
+   "dyadic_se": 0.0181,
+   "dyadic_ci95": [
+    0.0644,
+    0.1354
+   ],
+   "iid_ci95": [
+    0.0398,
+    0.1603
+   ],
+   "per_season": {
+    "2023": -0.0039,
+    "2024": 0.0556,
+    "2025": 0.1311,
+    "2026": 0.2058
+   },
+   "season_mean": 0.0972,
+   "season_sd": 0.0911,
+   "season_ci95_t3": [
+    -0.0478,
+    0.2421
+   ],
+   "implied_season_component": 0.0836,
+   "within_season_se": 0.0362
+  }
+ }
+}

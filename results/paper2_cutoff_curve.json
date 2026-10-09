@@ -21,6 +21,14 @@
     "inflation_ci_two_way": [
      0.0156,
      0.237
+    ],
+    "gain_F1_ci_season": [
+     0.0541,
+     0.1613
+    ],
+    "inflation_ci_season": [
+     0.0044,
+     0.255
     ]
    }
   },
@@ -44,6 +52,14 @@
     "inflation_ci_two_way": [
      0.0129,
      0.2354
+    ],
+    "gain_F1_ci_season": [
+     0.054,
+     0.1625
+    ],
+    "inflation_ci_season": [
+     0.001,
+     0.2554
     ]
    }
   },
@@ -67,6 +83,14 @@
     "inflation_ci_two_way": [
      -0.0394,
      0.1463
+    ],
+    "gain_F1_ci_season": [
+     0.1058,
+     0.2551
+    ],
+    "inflation_ci_season": [
+     -0.0437,
+     0.1475
     ]
    }
   },
@@ -90,6 +114,14 @@
     "inflation_ci_two_way": [
      -0.0484,
      0.1279
+    ],
+    "gain_F1_ci_season": [
+     0.1104,
+     0.2696
+    ],
+    "inflation_ci_season": [
+     -0.0508,
+     0.125
     ]
    }
   },
@@ -113,6 +145,14 @@
     "inflation_ci_two_way": [
      -0.053,
      0.1238
+    ],
+    "gain_F1_ci_season": [
+     0.1133,
+     0.2765
+    ],
+    "inflation_ci_season": [
+     -0.0542,
+     0.1188
     ]
    }
   },
@@ -136,6 +176,14 @@
     "inflation_ci_two_way": [
      -0.0639,
      0.1119
+    ],
+    "gain_F1_ci_season": [
+     0.1305,
+     0.2912
+    ],
+    "inflation_ci_season": [
+     -0.068,
+     0.1005
     ]
    }
   },
@@ -159,6 +207,14 @@
     "inflation_ci_two_way": [
      -0.079,
      0.0846
+    ],
+    "gain_F1_ci_season": [
+     0.153,
+     0.3163
+    ],
+    "inflation_ci_season": [
+     -0.0858,
+     0.0809
     ]
    }
   },
@@ -182,6 +238,14 @@
     "inflation_ci_two_way": [
      -0.0924,
      0.0668
+    ],
+    "gain_F1_ci_season": [
+     0.1489,
+     0.3491
+    ],
+    "inflation_ci_season": [
+     -0.0818,
+     0.0415
     ]
    }
   },
@@ -205,6 +269,14 @@
     "inflation_ci_two_way": [
      -0.0762,
      0.035
+    ],
+    "gain_F1_ci_season": [
+     0.149,
+     0.3632
+    ],
+    "inflation_ci_season": [
+     -0.0834,
+     0.0323
     ]
    }
   }
@@ -232,6 +304,14 @@
     "inflation_ci_two_way": [
      -0.0519,
      0.1585
+    ],
+    "gain_F1_ci_season": [
+     0.075,
+     0.2233
+    ],
+    "inflation_ci_season": [
+     -0.0556,
+     0.1736
     ]
    },
    "six_hour_same_games": {
@@ -253,6 +333,14 @@
     "inflation_ci_two_way": [
      -0.0506,
      0.1387
+    ],
+    "gain_F1_ci_season": [
+     0.0731,
+     0.2421
+    ],
+    "inflation_ci_season": [
+     -0.0499,
+     0.1368
     ]
    }
   },
@@ -278,6 +366,14 @@
     "inflation_ci_two_way": [
      -0.0549,
      0.1548
+    ],
+    "gain_F1_ci_season": [
+     0.0756,
+     0.2248
+    ],
+    "inflation_ci_season": [
+     -0.0633,
+     0.1696
     ]
    },
    "six_hour_same_games": {
@@ -299,6 +395,14 @@
     "inflation_ci_two_way": [
      -0.0521,
      0.1367
+    ],
+    "gain_F1_ci_season": [
+     0.0698,
+     0.2425
+    ],
+    "inflation_ci_season": [
+     -0.0516,
+     0.1334
     ]
    }
   }
@@ -323,6 +427,14 @@
    "inflation_ci_two_way": [
     -0.0397,
     0.1479
+   ],
+   "gain_F1_ci_season": [
+    0.1052,
+    0.2536
+   ],
+   "inflation_ci_season": [
+    -0.0437,
+    0.149
    ]
   }
  },
@@ -336,6 +448,10 @@
   "ci95_two_way": [
    0.0006,
    0.1415
+  ],
+  "ci95_season": [
+   0.0112,
+   0.1372
   ]
  },
  "paired_1h_minus_6h": {
@@ -348,6 +464,10 @@
   "ci95_two_way": [
    0.0096,
    0.1223
+  ],
+  "ci95_season": [
+   0.0182,
+   0.1208
   ]
  },
  "late_coverage": {
@@ -378,6 +498,14 @@
     "inflation_ci_two_way": [
      -0.0944,
      0.0428
+    ],
+    "gain_F1_ci_season": [
+     0.1228,
+     0.3489
+    ],
+    "inflation_ci_season": [
+     -0.0854,
+     0.0165
     ]
    },
    "six_hour_same_games": {
@@ -399,6 +527,14 @@
     "inflation_ci_two_way": [
      -0.0471,
      0.1146
+    ],
+    "gain_F1_ci_season": [
+     0.0945,
+     0.2382
+    ],
+    "inflation_ci_season": [
+     -0.0654,
+     0.1257
     ]
    },
    "paired_minus_6h": {
@@ -411,6 +547,10 @@
     "ci95_two_way": [
      0.0069,
      0.1146
+    ],
+    "ci95_season": [
+     0.0088,
+     0.1287
     ]
    }
   },
@@ -441,6 +581,14 @@
     "inflation_ci_two_way": [
      -0.0948,
      0.0073
+    ],
+    "gain_F1_ci_season": [
+     0.1208,
+     0.3862
+    ],
+    "inflation_ci_season": [
+     -0.098,
+     0.0028
     ]
    },
    "six_hour_same_games": {
@@ -462,6 +610,14 @@
     "inflation_ci_two_way": [
      -0.0457,
      0.1236
+    ],
+    "gain_F1_ci_season": [
+     0.097,
+     0.2533
+    ],
+    "inflation_ci_season": [
+     -0.0727,
+     0.1366
     ]
    },
    "paired_minus_6h": {
@@ -474,6 +630,10 @@
     "ci95_two_way": [
      0.0042,
      0.1479
+    ],
+    "ci95_season": [
+     0.0047,
+     0.1587
     ]
    }
   }
@@ -497,6 +657,14 @@
    ],
    "inflation_ci_two_way": [
     -0.008,
+    0.209
+   ],
+   "gain_F1_ci_season": [
+    0.0667,
+    0.2018
+   ],
+   "inflation_ci_season": [
+    -0.0097,
     0.209
    ]
   }
