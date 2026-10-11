@@ -168,20 +168,22 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
 
 **Main results the benchmark supports** (main build, OLS; details in the paper):
 - **The pregame report has a stable value.** In rolling-origin holdouts (each season in turn, trained on all earlier
-  seasons) it lowers RMSE by 0.149, 0.209, 0.200 and 0.224 points; pooled 0.197, 95% CI 0.084–0.304 under the
-  two-way design the paper reports (0.132–0.265 under the home-team clustering an earlier version used). Of the four
-  per-season intervals, three include zero; 2025-26 does not (0.224, 0.021–0.428).
+  seasons) it lowers RMSE by 0.149, 0.209, 0.200 and 0.224 points; pooled 0.197, 95% CI 0.132–0.261 under the
+  home-team x season cluster design the paper reports (see the README on how the interval is chosen). Three of the four
+  per-season intervals exclude zero; 2022-23 reaches it (0.149, −0.006 to 0.302).
 - **Participation leakage is small on average and largest in 2025-26.** On the 2025-26 holdout, participation (F2) adds an apparent
   0.166 (0.077–0.255) over the report (F1), a ratio of 1.73; pooled over the four rolling holdouts it is
-  0.059 (−0.032 to 0.152) with both teams resampled, i.e. not distinguishable from zero. Under that design the
-  per-season estimates are mostly not resolved either: only 2025-26's inflation is clear of zero (0.172,
-  0.022–0.333), and of the four per-season report values only 2025-26's is. A joint test does not resolve that the seasons differ (p = 0.44; 0.12
-  under home clustering); the linear trend of 0.064 per season is descriptive and is confounded with a training
-  window that grows with the holdout season. The inflation is concentrated in March–April (0.184), at cutoffs far
+  0.059 (0.001–0.119), whose lower bound is zero to within the bootstrap's own Monte-Carlo error: across five seeds at
+  10,000 replicates it runs −0.0017 to 0.0012, above zero in three and below in two. It is not resolved under any
+  reading, and as a statement about a season it is 0.059 (−0.079 to 0.192). Per season only 2025-26's premium is
+  clear of zero (0.172, 0.087–0.262). A joint test does not resolve that the seasons differ (p = 0.12 under the
+  design these are read under); the linear trend of 0.064 per season has an interval that excludes zero (0.004–0.121) but is
+  not read as a trend, since the omnibus test does not resolve, four seasons cannot separate a trend from a
+  season-level term, and the training window grows with the holdout season. The inflation is concentrated in March–April (0.184), at cutoffs far
   from tip-off, and in games that were expected to be one-sided: by tercile of the pregame predicted margin it is
   0.044, 0.004 and 0.129, and by tercile of the closing spread 0.001, 0.017 and 0.231, while the log-loss inflation
   stays near zero throughout, so it does not change who is predicted to win.
-  - Against the stronger baseline F7 it is 0.106 (0.031–0.180) on the 2025-26 holdout, and its interval excludes zero in
+  - Against the stronger baseline F7 it is 0.031 (−0.017 to 0.077) pooled over the four holdouts, and its interval excludes zero in
     26 of 28 model and feature settings on that holdout under home-team clustering; leaky models fed pregame features lose to honest ones in 27
     of 28.
   - The public rebuild gives 0.176 (0.079–0.271) on the same holdout, against 0.166 in the main build.
@@ -191,7 +193,7 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   (3,401 of 4,131): on the full set they read 0.128 rather than 0.054, because a team that has not filed contributes
   no absentees, which is the same mistake this dataset exists to avoid. The gain between cutoffs is a paired
   quantity, both against the six-hour report on the same games: the thirty-minute report beats it by 0.073
-  (0.001–0.141) and the one-hour report by 0.067 (0.010–0.122).
+  (0.026–0.119) and the one-hour report by 0.067 (0.030–0.103).
 - **The leak is who played, not how long.**
   - Adding realized minutes on top of participation changes nothing (−0.011, −0.048 to 0.022).
   - In a present-player form, realized minutes tend to hurt (−0.090, −0.190 to 0.010).
@@ -201,32 +203,37 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
 - **How much the valuation matters** (both runs corrected on 2026-09-26, then aligned with the build's own
   history rule after an independent code audit). Without the 240-minute
   rescale — same history as the build, last 20 positive-minute games within 365 days of that team-game's own
-  cutoff, so the rescaling is the only thing switched off — the report is worth 0.205 (0.093–0.309) and the pooled
-  inflation is 0.038 (−0.042 to 0.122); the rescaling accounts for about a third of the inflation and none of the
-  report's value. With a plus-minus impact measure in place of per-minute efficiency the report is worth 0.051
-  (0.001–0.106) and the inflation −0.030 (−0.067 to 0.004): much smaller, a point estimate on the other side of
-  zero, and the report's own lower bound straddles zero across seeds (−0.0016 to 0.0009 at 10,000 replicates), so
-  read it as a small positive estimate at the edge of what the design resolves. Absolute magnitudes, and the sign
-  of the inflation's point estimate, are specific to the valuation; users building their own should expect the
-  leak estimate to move with it.
+  cutoff, so the rescaling is the only thing switched off — the report is worth 0.205 (0.143–0.274) and the pooled
+  premium is 0.038 (−0.017 to 0.095); the rescaling accounts for about a third of the inflation and none of the
+  report's value. A third valuation charges an absence only at the player's margin over a replacement, which is what it costs a team
+  that fills the minutes with someone else: the report is worth 0.162 (0.102–0.223) and the premium 0.038
+  (−0.004 to 0.079). With a plus-minus impact measure in place of per-minute efficiency they are 0.051
+  (0.014–0.086) and −0.030 (−0.053 to −0.004), the second negative and clear of zero. The three valuations differ
+  in how much of the fact that someone else plays each already contains, and both quantities fall as more of it
+  does. The report's value is positive and clear of zero under all three; the premium is resolved above zero under
+  none of them. Users building their own valuation should expect the premium, including its sign, to move with it.
 - **The public path reproduces the headline.** Running the same pooled rolling design on the released rebuild
-  (4,835 holdout games against 4,846) gives a report value of 0.196 (0.088–0.299) against 0.197 and an inflation of
-  0.074 (−0.015 to 0.164) against 0.059.
+  (4,835 holdout games against 4,846) gives a report value of 0.196 (0.131–0.260) against 0.197 and a premium of
+  0.074 (0.012–0.135) against 0.059.
 - **A deflating field.** ESPN's page-embedded injury field makes availability look worthless: 0.258 (0.122–0.399)
   worse than the compliant report.
 - **One kind of absence is followed by the leak.** The difference between the compliant and the leaky feature
   decomposes exactly — absence declared Out after the cutoff, absence listed later but not as Out, absence on no
   report we hold, minus players Out at the cutoff who played (93 player-games) — and the identity is verified
   player-game by player-game and game by game (`results/paper2_mechanism5.json`; the analysis script is released with the paper's full code). Only the first is followed by the
-  inflation: −0.026 (−0.087 to 0.033) in games with none against 0.188 (0.046–0.326) in the top group, a
-  difference of 0.214 (0.068–0.362). The other two spread the features just as far apart and show no detectable
+  premium: −0.026 (−0.087 to 0.033) in games with none against 0.188 (0.046–0.326) in the top group, a
+  difference of 0.214 (0.068–0.362), which excludes zero under the design these are read under. The other two spread the features just as far apart and show no detectable
   relation to the inflation (−0.047 and −0.081, both intervals including zero). Two tests that do not sort games
   on a component of what they explain (`results/paper2_mechanism4.json`) give the negative half and the positive half. On the
   headline feature and sample, a retrospective put-back of the absences declared Out after the cutoff whose players
-  did not play is worth 0.070 (0.006–0.131), and the difference that then remains from the participation feature,
-  −0.012 (−0.063 to 0.041), is not resolved; adding the late-status absences back is worth 0.001 (−0.027 to
-  0.030) and the ones on no report we hold −0.033 (−0.074 to 0.008), against the 0.059 that participation is worth
-  over the same feature. Each put-back adds the component inside the absence-value feature, whose coefficient is
+  did not play is worth 0.070 (0.026–0.115), and the difference that then remains from the participation feature,
+  −0.012 (−0.046 to 0.027), is not resolved; adding the late-status absences back is worth 0.001 (−0.020 to
+  0.022) and the ones on no report we hold −0.033 (−0.058 to −0.010), against the 0.059 that participation is worth
+  over the same feature. Entering each component as its own regressor instead, so the data chooses its weight rather
+  than inheriting the valuation's, keeps the first at 0.069 (0.029–0.109) and leaves the other two with nothing: the
+  never-listed component reads −0.013 (−0.025 to −0.000), which a Diebold-Mariano test would call significantly
+  worse at p = 0.04 while the Clark-West adjustment puts it at p = 0.83, because a nested model cannot be worse in
+  population and that negative is the price of the extra parameter. Each put-back adds the component inside the absence-value feature, whose coefficient is
   refitted with it at every origin and applied to training as well as the holdout, so a null is a null about that
   encoding rather than a demonstration that the information is absent — and all three components are defined on
   players who did not play, so the put-backs are retrospective and not a build available at the cutoff.
