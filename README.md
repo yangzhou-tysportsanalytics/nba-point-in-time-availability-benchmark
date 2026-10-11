@@ -98,45 +98,58 @@ Outputs, including the player-level tables we do not redistribute, go to `data/p
 
 ## Key results
 
-Pooled over the four rolling-origin holdouts, two-way intervals:
+Pooled over the four rolling-origin holdouts. Two readings are given because they answer different questions,
+and each is read under the design the calibration scores at its nominal rate for that question (see *How the
+interval is chosen*): home-team x season clusters for these four seasons, a seasons-then-clusters bootstrap for
+a statement about a season.
 
-| Quantity | Estimate |
-| --- | --- |
-| Value of the pregame report, RMSE(F0) − RMSE(F1) | **0.197 (0.084–0.304)** |
-| Inflation from actual participation, RMSE(F1) − RMSE(F2) | **0.059 (−0.032 to 0.152)** |
-| The same two on the public rebuild (4,835 games) | 0.196 (0.088–0.299) and 0.074 (−0.015 to 0.164) |
-
-The report's own value is the stable part. The inflation is not:
-
-- **It depends on how an absent player is valued.** Under a plus-minus valuation the report is worth 0.051
-  (0.001–0.107) and the inflation is −0.030 (−0.067 to 0.004) — the other side of zero. Without the 240-minute
-  rescaling they read 0.205 (0.093–0.309) and 0.038 (−0.042 to 0.122).
-- **It depends on the cutoff.** On the games where both teams had filed at six hours, the report is worth 0.185
-  (0.067–0.296) six hours out and 0.258 (0.124–0.389) thirty minutes out. Read at one hour instead of six, on the
-  same games, the compliant feature gains 0.067 (0.010–0.122); at thirty minutes, 0.073 (0.001–0.141).
-- **The twelve-hour point needs care.** On the games where both teams had actually filed that early, the report is
-  worth 0.153 (0.026–0.265) and the inflation is 0.054 (−0.052 to 0.159). Computed on all games, imputing health
-  for the teams that had not filed, the same pair reads 0.108 and 0.128 — which is the mistake this paper is about,
-  and the reason the first version of that point was wrong.
-- **A stronger compliant baseline closes part of it.** Weighting every listed status by its sit-out rate (F7) is
-  worth 0.224 (0.111–0.340) against F1's 0.197, and the inflation measured against F7 falls to 0.031 (−0.050 to
-  0.108).
-- **Which absences carry it.** The difference between the two features decomposes exactly into absence declared Out
-  after the cutoff, absence listed later but not as Out, and absence on no report we hold, minus players Out at the
-  cutoff who played. A retrospective put-back of the first is worth 0.070 (0.006–0.131); the difference that then
-  remains from the participation feature, −0.012 (−0.063 to 0.041), is not resolved. The other two put-backs buy
-  nothing measurable.
-- **Who played, not how long.** Once participation is known, realized minutes add nothing (−0.011, −0.048 to 0.022).
-- **No market edge.** No model built from availability beats the closing line, and a model handed the closing price
-  shows no improvement from adding availability.
-
-Single-season figures, for comparison with the public build (2025-26 holdout, two training seasons, home-team
-cluster intervals — the design those runs used):
-
-| Result | Public build (this repository) | Paper's main build |
+| Quantity | In these four seasons | In an NBA season |
 | --- | --- | --- |
-| Value of the pregame report | 0.213 (0.078–0.340) | 0.226 (0.105–0.351) |
-| Inflation from actual participation | 0.176 (0.079–0.271) | 0.166 (0.077–0.255) |
+| Value of the pregame report, RMSE(F0) - RMSE(F1) | **0.197 (0.132-0.261)** | 0.197 (0.123-0.267) |
+| Premium from actual participation, RMSE(F1) - RMSE(F2) | 0.059 (0.001-0.119) | 0.059 (-0.032 to 0.149) |
+| The same two on the public rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - |
+
+**The report's own value is the stable part. The premium is not resolved under any reading.** Its lower bound
+for these four seasons is zero to within the bootstrap's own Monte-Carlo error: across five seeds at 10,000
+replicates it runs -0.0017 to 0.0012, above zero in three of the five and below it in two. Taking the season as
+the unit instead gives 0.059 (-0.079 to 0.192). We report the point estimate and do not call it resolved.
+
+- **The premium depends on how an absent player is valued, for its sign.** Three valuations, ordered by how
+  much of the fact that someone else plays each one already contains: charging the whole player gives a report
+  value of 0.197 and a premium of 0.059; charging only his margin over a replacement gives 0.162 (0.102-0.223)
+  and 0.038 (-0.004 to 0.079); a plus-minus impact measure gives 0.051 (0.014-0.086) and -0.030 (-0.053 to
+  -0.004), negative and clear of zero. The report's value is positive and clear of zero under all three.
+  Without the 240-minute rescaling the pair reads 0.205 (0.143-0.274) and 0.038 (-0.017 to 0.095).
+- **It depends on the cutoff.** On the games where both teams had filed at six hours, the report is worth
+  0.185 (0.126-0.245) six hours out and 0.258 (0.185-0.333) thirty minutes out. Read at one hour instead of
+  six, on the same games, the compliant feature gains 0.067 (0.030-0.103); at thirty minutes, 0.073
+  (0.026-0.119). At thirty minutes the premium is -0.022 (-0.058 to 0.014): the report is already level with
+  knowing who played.
+- **The twelve-hour point needs care.** On the games where both teams had actually filed that early, the
+  report is worth 0.153 (0.089-0.216) and the premium is 0.054 (-0.010 to 0.125). Computed on all games,
+  imputing health for the teams that had not filed, the same pair reads 0.108 and 0.128 - which is the mistake
+  this paper is about, and the reason the first version of that point was wrong.
+- **Stronger compliant baselines close part of it.** Weighting every listed status by its sit-out rate (F7) is
+  worth 0.224 (0.152-0.296) against F1's 0.197, and the premium measured against F7 falls to 0.031 (-0.017 to
+  0.077). A baseline that needs no report at all - the rotation players who did not play in their team's
+  previous game - is worth 0.092 (0.042-0.142), and the official report adds 0.105 (0.049-0.161) on top of it.
+- **Which absences carry it.** The difference between the two features decomposes exactly into absence declared
+  Out after the cutoff, absence listed later but not as Out, and absence on no report we hold, minus players
+  Out at the cutoff who played. A retrospective put-back of the first is worth 0.070 (0.026-0.115); the
+  difference that then remains from the participation feature, -0.012 (-0.046 to 0.027), is not resolved.
+  Entering each component as its own regressor instead, so the data chooses its weight, keeps the first at
+  0.069 (0.029-0.109) and leaves the other two with nothing: the never-listed component reads -0.013 (-0.025
+  to -0.000), which a Diebold-Mariano test would call significantly worse at p = 0.04 and the Clark-West
+  adjustment puts at p = 0.83, because a nested model cannot be worse in population and that negative is the
+  price of the extra parameter.
+- **What a buyer should ask for.** The gap between a model's own backtest and the accuracy it delivers when
+  handed only the pregame report, pooled over the four holdouts, is 0.068 (0.015-0.120) with narrow features
+  and 0.100 (0.064-0.135) with wide ones; 0.086 (0.035-0.137) on this rebuild. It is not steady across
+  seasons, and no single season reproduced it.
+- **Who played, not how long.** Once participation is known, realized minutes add nothing.
+- **No market edge.** No model built from availability beats the closing line, and a model handed the closing
+  price shows no improvement from adding availability. Against the opening price the premium is clear of zero
+  in both lined seasons with opposite signs, which is a sharper failure to replicate than an unresolved one.
 
 ## Reproducing the numbers
 
