@@ -1,0 +1,42 @@
+{
+ "build": "public rebuild",
+ "diagnostics": {
+  "rotation_rows": 182004,
+  "rows_without_a_level": 60,
+  "level_mean": 0.40785,
+  "share_below_replacement": 0.2482,
+  "games": 6035,
+  "corr_F2_rep_with_existing": 0.8469
+ },
+ "reps": 10000,
+ "estimates": {
+  "report_replacement": {
+   "point": 0.1611,
+   "ci95_home": [
+    0.0987,
+    0.2224
+   ]
+  },
+  "premium_replacement": {
+   "point": 0.0419,
+   "ci95_home": [
+    -0.0009,
+    0.0826
+   ]
+  },
+  "report_existing": {
+   "point": 0.1958,
+   "ci95_home": [
+    0.1306,
+    0.2601
+   ]
+  },
+  "premium_existing": {
+   "point": 0.0736,
+   "ci95_home": [
+    0.0118,
+    0.1351
+   ]
+  }
+ }
+}

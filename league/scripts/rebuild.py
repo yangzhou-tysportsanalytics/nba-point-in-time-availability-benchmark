@@ -313,6 +313,13 @@ def build():
     G.to_csv(OUTD / 'bench_games_public.csv', index=False)
     tg.to_csv(OUTD / 'team_games_public.csv', index=False)
     ros.to_csv(OUTD / 'rosters_public.csv', index=False)
+    # The reference-rotation player-games the player-level analyses need: same construction as the
+    # main build's bench_ref_players.csv, same columns under this build's own names. Written here and
+    # never redistributed -- the source terms forbid sharing a player-level table, so the reader
+    # produces it from the public sources and the released scripts read it.
+    REF_COLS = ['game_id', 'team', 'season_year', 'pid', 'base_minutes', 'eff_prior', 'eff_season',
+                'status', 'out_pre', 'out_real', 'block_missing']
+    ref[REF_COLS].to_csv(OUTD / 'bench_ref_players_public.csv', index=False)
     pd.concat([sa.assign(variant='6h'), sb.assign(variant='90m')]).to_csv(OUTD / 'pregame_status_public.csv', index=False)
     # Table 1 analogue (2023-24...2025-26, team-games with a report): pregame status vs play
     R = ros.merge(tg[['game_id', 'team', 'season_year', 'block_missing']], on=['game_id', 'team'])

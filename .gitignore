@@ -2,3 +2,8 @@ data/public/
 __pycache__/
 *.pyc
 results/paper2_public_path_check.json
+# player-level, produced by the rebuild on the reader's machine; never redistributed
+data/out/bench_ref_players_public.csv
+**/bench_ref_players_public.csv
+# everything the rebuild writes: the reader regenerates it, and one of them is player-level
+data/out/
