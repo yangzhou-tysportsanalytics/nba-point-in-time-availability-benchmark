@@ -167,9 +167,12 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   that status sit out, with the probability estimated only from games finished before the cutoff.
 
 **Main results the benchmark supports** (main build, OLS; details in the paper):
-- **The pregame report has a stable value.** In rolling-origin holdouts (each season in turn, trained on all earlier
-  seasons) it lowers RMSE by 0.149, 0.209, 0.200 and 0.224 points; pooled 0.197, 95% CI 0.132–0.261 under the
-  home-team x season cluster design the paper reports (see the README on how the interval is chosen). Three of the four
+- **The pregame report has a stable value.** The benchmark is the strict six-hour one, the 4,131 holdout games where
+  both teams had filed at least six hours before tip-off. In rolling-origin holdouts (each season in turn, trained on
+  all earlier seasons) the report lowers RMSE by 0.108, 0.199, 0.199 and 0.226 points; pooled 0.185, 95% CI
+  0.126–0.245 under the home-team x season cluster design the paper reports, and 0.101–0.265 with the season as
+  the unit. Accepting a 90-minute report where a team had not filed keeps every game and gives 0.197 (0.132–0.261); that is
+  an operational choice rather than information available six hours out (see the README on how the interval is chosen). Three of the four
   per-season intervals exclude zero; 2022-23 reaches it (0.149, −0.006 to 0.302).
 - **Participation leakage is small on average and largest in 2025-26.** On the 2025-26 holdout, participation (F2) adds an apparent
   0.166 (0.077–0.255) over the report (F1), a ratio of 1.73; pooled over the four rolling holdouts it is
