@@ -103,11 +103,18 @@ and each is read under the design the calibration scores at its nominal rate for
 interval is chosen*): home-team x season clusters for these four seasons, a seasons-then-clusters bootstrap for
 a statement about a season.
 
+The benchmark is the strict six-hour one: the 4,131 holdout games where **both** teams had filed at least six
+hours before tip-off, with the same rule applied to the training set. The paper's other feature accepts a
+90-minute report where a team had not filed, which keeps every game and reaches 8.0% of team-games; that is an
+operational choice rather than information available six hours out, and it is reported beside the benchmark.
+
 | Quantity | In these four seasons | In an NBA season |
 | --- | --- | --- |
-| Value of the pregame report, RMSE(F0) - RMSE(F1) | **0.197 (0.132-0.261)** | 0.197 (0.123-0.267) |
-| Premium from actual participation, RMSE(F1) - RMSE(F2) | 0.059 (0.001-0.119) | 0.059 (-0.032 to 0.149) |
-| The same two on the public rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - |
+| Value of the pregame report, strict six hours | **0.185 (0.126-0.245)** | 0.185 (0.101-0.265) |
+| Premium from actual participation, strict six hours | 0.050 (-0.011 to 0.110) | 0.046 (-0.095 to 0.188) |
+| The report's value accepting the 90-minute fallback | 0.197 (0.132-0.261) | 0.197 (0.123-0.267) |
+| The premium accepting the fallback | 0.059 (0.001-0.119) | 0.059 (-0.032 to 0.149) |
+| The last two on this rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - |
 
 **The report's own value is the stable part. The premium is not resolved under any reading.** Its lower bound
 for these four seasons is zero to within the bootstrap's own Monte-Carlo error: across five seeds at 10,000
@@ -132,7 +139,8 @@ the unit instead gives 0.059 (-0.079 to 0.192). We report the point estimate and
 - **Stronger compliant baselines close part of it.** Weighting every listed status by its sit-out rate (F7) is
   worth 0.224 (0.152-0.296) against F1's 0.197, and the premium measured against F7 falls to 0.031 (-0.017 to
   0.077). A baseline that needs no report at all - the rotation players who did not play in their team's
-  previous game - is worth 0.092 (0.042-0.142), and the official report adds 0.105 (0.049-0.161) on top of it.
+  previous game - is worth 0.092 (0.050-0.133), and the report added to a model that keeps it is worth
+  0.109 (0.056-0.163), a nested comparison rather than a swap of one feature for the other.
 - **Which absences carry it.** The difference between the two features decomposes exactly into absence declared
   Out after the cutoff, absence listed later but not as Out, and absence on no report we hold, minus players
   Out at the cutoff who played. A retrospective put-back of the first is worth 0.070 (0.026-0.115); the
@@ -229,6 +237,35 @@ in the originating project; the two agree on every conclusion and differ in the 
 does for the headline. Note that the paper and the prospective test do not use the same interval, and should not:
 the paper generalises across four holdout seasons whose inflation differs from season to season, and that
 variance belongs in its interval; the prospective test is one season, where that term does not exist.
+
+### Rerunning the player-level analyses
+
+The valuations, the decomposition and the cutoff curve need a player-level table, and the source terms forbid
+redistributing one, so this repository ships none. The rebuild writes it on your machine instead, which the
+terms allow, and the released scripts read it from there:
+
+```
+python league/scripts/fetch_sources.py
+python league/scripts/rebuild.py parse 3600     # until it prints "done"
+python league/scripts/rebuild.py build          # also writes data/public/out/bench_ref_players_public.csv
+python league/scripts/impact_valuation.py       # the plus-minus valuation
+python league/scripts/valuation_robustness.py   # without the 240-minute rescaling
+python league/scripts/replacement_valuation.py  # at replacement level
+python league/scripts/cutoff_curve.py           # the curve, and the twelve-hour artefact
+python league/scripts/decomposition.py          # the three components, both readings of the put-backs
+```
+
+None of them reimplements the build: the report rows, the name matching and the rule for which report is
+current at a cutoff come from `rebuild.py` called with a different cutoff, and `history.py` is the originating
+project's module shipped unchanged, because those rules are part of what the paper claims. Each script prints
+the figures this repository already publishes as a control, so you can see the plumbing is right before
+reading anything new off it.
+
+Two results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
+minutes back to 240 does not return this build's reference minutes for 32,118 of 182,004 rows, where on the
+paper's build all but ten do, so the no-rescale ablation is less clean here. And the fixed-weight put-back of
+the never-listed absences is -0.016 (-0.048 to 0.016) here, not resolved, where the paper's build has it
+resolved below zero.
 
 ### The deployment gap, pooled
 
