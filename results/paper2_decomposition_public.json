@@ -1,0 +1,95 @@
+{
+ "build": "public rebuild",
+ "reps": 10000,
+ "component_counts": {
+  "absent": 59786,
+  "declared": 5554,
+  "late": 1749,
+  "never": 28359,
+  "out_at_cutoff_but_played": 89
+ },
+ "identity_residual_max": 0.0,
+ "fixed_weight": {
+  "declared (c1)": {
+   "point": 0.0649,
+   "ci95_home": [
+    0.0224,
+    0.107
+   ]
+  },
+  "late (c2)": {
+   "point": 0.0001,
+   "ci95_home": [
+    -0.0203,
+    0.0207
+   ]
+  },
+  "never (c3)": {
+   "point": -0.0157,
+   "ci95_home": [
+    -0.0476,
+    0.0163
+   ]
+  },
+  "all three": {
+   "point": 0.0736,
+   "ci95_home": [
+    0.0118,
+    0.1351
+   ]
+  }
+ },
+ "free_coefficient": {
+  "declared (c1)": {
+   "point": 0.0633,
+   "ci95_home": [
+    0.0254,
+    0.1008
+   ]
+  },
+  "late (c2)": {
+   "point": 0.0034,
+   "ci95_home": [
+    -0.0073,
+    0.0146
+   ]
+  },
+  "never (c3)": {
+   "point": 0.0008,
+   "ci95_home": [
+    -0.0179,
+    0.0191
+   ]
+  },
+  "all three": {
+   "point": 0.0808,
+   "ci95_home": [
+    0.0277,
+    0.1345
+   ]
+  }
+ },
+ "reference": {
+  "F1 vs F2": {
+   "point": 0.0736,
+   "ci95_home": [
+    0.0118,
+    0.1351
+   ]
+  },
+  "F1+c1 vs F2": {
+   "point": 0.0087,
+   "ci95_home": [
+    -0.0326,
+    0.0505
+   ]
+  },
+  "F1|all vs F2": {
+   "point": -0.0072,
+   "ci95_home": [
+    -0.0228,
+    0.0091
+   ]
+  }
+ }
+}

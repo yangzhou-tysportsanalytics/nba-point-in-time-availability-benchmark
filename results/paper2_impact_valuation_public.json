@@ -1,0 +1,40 @@
+{
+ "build": "public rebuild",
+ "reps": 10000,
+ "diagnostics": {
+  "players_with_history": 0.9731,
+  "games": 6035,
+  "sd_F2_pm": 13.453,
+  "sd_F2_eff": 23.102
+ },
+ "estimates": {
+  "gain_F1_impact": {
+   "point": 0.0549,
+   "ci95_home": [
+    0.0142,
+    0.0925
+   ]
+  },
+  "inflation_impact": {
+   "point": -0.0328,
+   "ci95_home": [
+    -0.0593,
+    -0.0036
+   ]
+  },
+  "gain_F1": {
+   "point": 0.1958,
+   "ci95_home": [
+    0.1306,
+    0.2601
+   ]
+  },
+  "inflation": {
+   "point": 0.0736,
+   "ci95_home": [
+    0.0118,
+    0.1351
+   ]
+  }
+ }
+}
