@@ -23,12 +23,18 @@ player-level result in the paper, and it costs a rebuild rather than a request.
 from __future__ import annotations
 
 import sys
+import os
 from pathlib import Path
 
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'data/out'
+# the same convention rebuild.py uses, including the override, so a reader who sets P2_PUBLIC does not have
+# to set it twice
+PUB = Path(os.environ.get('P2_PUBLIC', ROOT / 'data/public'))
+OUT = PUB / 'out'
+KAG = PUB / 'kaggle_v515'
+PARTS = PUB / 'parse'
 SHIPPED = ROOT / 'data'
 
 REF = OUT / 'bench_ref_players_public.csv'
@@ -42,7 +48,7 @@ HOWTO = ('run `python league/scripts/rebuild.py build` first; it writes the play
 
 def _need(path: Path) -> Path:
     if not path.exists():
-        raise SystemExit(f'{path.relative_to(ROOT)} is missing: {HOWTO}')
+        raise SystemExit(f'{path} is missing: {HOWTO}')
     return path
 
 
@@ -69,9 +75,9 @@ def report_rows() -> pd.DataFrame:
 
     One file per parsed batch under data/parse, as `rebuild.py parse` writes them.
     """
-    parts = sorted((ROOT / 'data/parse').glob('rows_*.csv'))
+    parts = sorted(PARTS.glob('rows_*.csv'))
     if not parts:
-        raise SystemExit('data/parse holds no rows_*.csv: run `rebuild.py parse` first')
+        raise SystemExit(f'{PARTS} holds no rows_*.csv: run `rebuild.py parse` first')
     return pd.concat([pd.read_csv(p, low_memory=False) for p in parts], ignore_index=True)
 
 
@@ -81,7 +87,7 @@ def box_scores() -> pd.DataFrame:
     The plus-minus valuation of Section 4.2 needs `plusMinusPoints`, which this source carries, so that
     valuation is reproducible here and not only checkable from its result file.
     """
-    p = _need(ROOT / 'data/kaggle/PlayerStatistics.csv')
+    p = _need(KAG / 'PlayerStatistics.csv')
     cols = ['personId', 'gameId', 'numMinutes', 'plusMinusPoints', 'points', 'reboundsTotal', 'assists',
             'steals', 'blocks', 'turnovers', 'fieldGoalsAttempted', 'fieldGoalsMade',
             'freeThrowsAttempted', 'freeThrowsMade']

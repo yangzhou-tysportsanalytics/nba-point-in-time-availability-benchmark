@@ -1,0 +1,40 @@
+{
+ "build": "public rebuild",
+ "reps": 10000,
+ "rescaling_check": {
+  "rows": 182004,
+  "rows_without_history": 2144,
+  "rows_differing_above_1e6": 32118,
+  "max_abs_diff": 15.303665
+ },
+ "estimates": {
+  "gain_F1_noscale": {
+   "point": 0.2049,
+   "ci95_home": [
+    0.1389,
+    0.2701
+   ]
+  },
+  "inflation_noscale": {
+   "point": 0.0313,
+   "ci95_home": [
+    -0.0297,
+    0.0913
+   ]
+  },
+  "gain_F1": {
+   "point": 0.1958,
+   "ci95_home": [
+    0.1306,
+    0.2601
+   ]
+  },
+  "inflation": {
+   "point": 0.0736,
+   "ci95_home": [
+    0.0118,
+    0.1351
+   ]
+  }
+ }
+}
