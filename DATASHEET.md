@@ -171,10 +171,12 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   both teams had filed at least six hours before tip-off. In rolling-origin holdouts (each season in turn, trained on
   all earlier seasons) the report lowers RMSE by 0.108, 0.199, 0.199 and 0.226 points; pooled 0.185, 95% CI
   0.126–0.245 under the home-team x season cluster design the paper reports, and 0.101–0.265 for the average
-  over seasons with the season as the unit. For the estimate one unseen season would produce -- which is what the
-  registered 2026-27 test observes, and which carries that season's own deviation as well -- it is 0.0001–0.366,
-  so the report's value is resolved for these four seasons and for the average over seasons and not for a single
-  unseen season. Accepting a 90-minute report where a team had not filed raises the pooled holdout from 4,131
+  over seasons with the season as the unit, so the report's value is resolved for these four seasons and for the
+  average over seasons. The estimate one unseen season would produce -- which is what the registered 2026-27 test
+  observes, and which carries that season's own deviation as well -- is 0.0001–0.366 on this sample and
+  0.080–0.311 on the one accepting the fallback; those bounds are analytic rather than bootstrap quantiles and
+  treat four rolling-origin estimates as independent draws, so they illustrate how little four seasons settle
+  rather than resolving anything. Accepting a 90-minute report where a team had not filed raises the pooled holdout from 4,131
   games to 4,846 rather than to all of them and gives 0.197 (0.132–0.261); that is
   an operational choice rather than information available six hours out (see the README on how the interval is chosen). Three of the four
   per-season intervals exclude zero; 2022-23 reaches it (0.149, −0.006 to 0.302).

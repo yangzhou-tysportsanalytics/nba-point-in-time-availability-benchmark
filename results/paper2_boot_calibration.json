@@ -3,7 +3,7 @@
  "n_teams": 30,
  "sims": 300,
  "reps": 600,
- "truth_draws": 3000,
+ "truth_draws": 4000,
  "seed": 20261005,
  "quantities": {
   "gain_F1": {
@@ -70,82 +70,91 @@
     "mean_within_season_var": 0.004283,
     "season_variance_tau2": 0.0,
     "season_sd": 0.0,
-    "se_of_four_season_mean": 0.0327,
+    "between_season_sd": 0.0325,
+    "se_of_four_season_mean": 0.0163,
     "ci95_normal": [
-     0.1315,
-     0.2597
+     0.1637,
+     0.2275
     ],
     "ci95_t3": [
-     0.0915,
-     0.2997
+     0.143807,
+     0.247366
     ],
-    "width_t3": 0.2083,
-    "note": "target is a season drawn from the same process, not these four seasons"
+    "pi95_t3": [
+     0.079804,
+     0.31137
+    ],
+    "pi95_t3_true_value": [
+     0.143807,
+     0.247366
+    ],
+    "width_t3": 0.1036,
+    "note": "ci95_t3 is the average over seasons drawn from this process; pi95_t3 is the estimate one unseen season would produce, and season_sd is sqrt(tau2), not the between-season standard deviation, which is between_season_sd"
    },
    "calibration": {
     "fitted": {
      "scenario": "fitted",
-     "true_value": 0.1965,
-     "true_sd": 0.0405,
-     "nominal_width": 0.1586,
+     "true_value": 0.1964,
+     "true_sd": 0.0402,
+     "nominal_width": 0.1575,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.893,
        "mean_width": 0.1364,
-       "width_over_true": 0.86
+       "width_over_true": 0.866
       },
       "two_way_team": {
        "coverage": 1.0,
        "mean_width": 0.2343,
-       "width_over_true": 1.477
+       "width_over_true": 1.488
       },
       "season_then_cluster": {
        "coverage": 0.97,
        "mean_width": 0.1856,
-       "width_over_true": 1.17
+       "width_over_true": 1.178
       },
       "iid_game": {
        "coverage": 0.883,
        "mean_width": 0.1301,
-       "width_over_true": 0.82
+       "width_over_true": 0.826
       },
       "dyadic": {
        "coverage": 0.87,
        "mean_width": 0.1423,
-       "width_over_true": 0.897
+       "width_over_true": 0.903
       }
      }
     },
     "no_team": {
      "scenario": "no_team",
-     "true_value": 0.1965,
-     "true_sd": 0.0335,
-     "nominal_width": 0.1312,
+     "true_value": 0.1964,
+     "true_sd": 0.0334,
+     "nominal_width": 0.1308,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.96,
        "mean_width": 0.1287,
-       "width_over_true": 0.981
+       "width_over_true": 0.984
       },
       "two_way_team": {
        "coverage": 1.0,
        "mean_width": 0.2204,
-       "width_over_true": 1.68
+       "width_over_true": 1.685
       },
       "season_then_cluster": {
        "coverage": 0.993,
        "mean_width": 0.1704,
-       "width_over_true": 1.299
+       "width_over_true": 1.303
       },
       "iid_game": {
        "coverage": 0.963,
        "mean_width": 0.1303,
-       "width_over_true": 0.993
+       "width_over_true": 0.996
       },
       "dyadic": {
        "coverage": 0.86,
        "mean_width": 0.1145,
-       "width_over_true": 0.872
+       "width_over_true": 0.875
       }
      }
     }
@@ -215,82 +224,91 @@
     "mean_within_season_var": 0.002677,
     "season_variance_tau2": 0.00455,
     "season_sd": 0.0675,
+    "between_season_sd": 0.085,
     "se_of_four_season_mean": 0.0425,
     "ci95_normal": [
      -0.0268,
      0.1398
     ],
     "ci95_t3": [
-     -0.0788,
-     0.1918
+     -0.078753,
+     0.191785
+    ],
+    "pi95_t3": [
+     -0.245955,
+     0.358987
+    ],
+    "pi95_t3_true_value": [
+     -0.197212,
+     0.310244
     ],
     "width_t3": 0.2705,
-    "note": "target is a season drawn from the same process, not these four seasons"
+    "note": "ci95_t3 is the average over seasons drawn from this process; pi95_t3 is the estimate one unseen season would produce, and season_sd is sqrt(tau2), not the between-season standard deviation, which is between_season_sd"
    },
    "calibration": {
     "fitted": {
      "scenario": "fitted",
      "true_value": 0.0587,
-     "true_sd": 0.0316,
-     "nominal_width": 0.1237,
+     "true_sd": 0.0313,
+     "nominal_width": 0.1228,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.9,
        "mean_width": 0.106,
-       "width_over_true": 0.857
+       "width_over_true": 0.863
       },
       "two_way_team": {
        "coverage": 1.0,
        "mean_width": 0.1846,
-       "width_over_true": 1.492
+       "width_over_true": 1.503
       },
       "season_then_cluster": {
        "coverage": 0.963,
        "mean_width": 0.144,
-       "width_over_true": 1.164
+       "width_over_true": 1.172
       },
       "iid_game": {
        "coverage": 0.897,
        "mean_width": 0.1016,
-       "width_over_true": 0.821
+       "width_over_true": 0.827
       },
       "dyadic": {
        "coverage": 0.873,
        "mean_width": 0.1108,
-       "width_over_true": 0.896
+       "width_over_true": 0.902
       }
      }
     },
     "no_team": {
      "scenario": "no_team",
-     "true_value": 0.0587,
-     "true_sd": 0.0262,
-     "nominal_width": 0.1026,
+     "true_value": 0.0586,
+     "true_sd": 0.0261,
+     "nominal_width": 0.1022,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.963,
        "mean_width": 0.1006,
-       "width_over_true": 0.981
+       "width_over_true": 0.984
       },
       "two_way_team": {
        "coverage": 1.0,
        "mean_width": 0.1724,
-       "width_over_true": 1.681
+       "width_over_true": 1.686
       },
       "season_then_cluster": {
        "coverage": 0.983,
        "mean_width": 0.1322,
-       "width_over_true": 1.288
+       "width_over_true": 1.293
       },
       "iid_game": {
        "coverage": 0.963,
        "mean_width": 0.1011,
-       "width_over_true": 0.985
+       "width_over_true": 0.989
       },
       "dyadic": {
        "coverage": 0.863,
        "mean_width": 0.0894,
-       "width_over_true": 0.871
+       "width_over_true": 0.874
       }
      }
     }

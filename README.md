@@ -120,13 +120,18 @@ the first column: a pooled RMSE difference is not the average of four season-spe
 | --- | --- | --- | --- |
 | Value of the pregame report, strict six hours | **0.185 (0.126-0.245)** | 0.183 (0.101-0.265) | 0.183 (0.0001-0.366) |
 | Premium from actual participation, strict six hours | 0.050 (-0.011 to 0.110) | 0.046 (-0.095 to 0.188) | 0.046 (-0.270 to 0.362) |
-| The report's value accepting the 90-minute fallback | 0.197 (0.132-0.261) | 0.196 (0.091-0.300) | 0.196 (-0.037 to 0.428) |
+| The report's value accepting the 90-minute fallback | 0.197 (0.132-0.261) | 0.196 (0.144-0.247) | 0.196 (0.080-0.311) |
 | The premium accepting the fallback | 0.059 (0.001-0.119) | 0.057 (-0.079 to 0.192) | 0.057 (-0.246 to 0.359) |
 | The last two on this rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - | - |
 
-So the report's value is resolved for these four seasons and for the average over seasons, and **not** for a
-single unseen season, where its lower bound is 0.0001 on the strict sample and below zero with the fallback.
-Earlier versions of these documents called the second column a statement about an unseen season. It is not.
+So the report's value is resolved for these four seasons and for the average over seasons. The third column is an
+illustration of how little four seasons settle rather than a result: its bounds are analytic rather than
+bootstrap quantiles, it treats four rolling-origin estimates as independent draws when they share training
+history, and the strict sample's lower bound of 0.0001 sits against the fallback's 0.080. Earlier versions of
+these documents called the second column a statement about an unseen season, and gave the fallback row's
+second and third columns as (0.091-0.300) and (-0.037 to 0.428); that interval was computed with a standard
+error that an external review found inflated wherever the season-to-season spread is smaller than the
+sampling noise inside a season, which is the case for this quantity.
 
 **The report's own value is the stable part. The premium is not resolved under any reading.** Its lower bound
 for these four seasons is zero to within the bootstrap's own Monte-Carlo error: across five seeds at 10,000
