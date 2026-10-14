@@ -253,6 +253,7 @@ python league/scripts/valuation_robustness.py   # without the 240-minute rescali
 python league/scripts/replacement_valuation.py  # at replacement level
 python league/scripts/cutoff_curve.py           # the curve, and the twelve-hour artefact
 python league/scripts/decomposition.py          # the three components, both readings of the put-backs
+python league/scripts/replacement_mechanism.py  # the curve and the put-backs under all three valuations
 ```
 
 None of them reimplements the build: the report rows, the name matching and the rule for which report is
@@ -261,11 +262,20 @@ project's module shipped unchanged, because those rules are part of what the pap
 the figures this repository already publishes as a control, so you can see the plumbing is right before
 reading anything new off it.
 
-Two results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
+Three results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
 minutes back to 240 does not return this build's reference minutes for 32,118 of 182,004 rows, where on the
-paper's build all but ten do, so the no-rescale ablation is less clean here. And the fixed-weight put-back of
+paper's build all but ten do, so the no-rescale ablation is less clean here. The fixed-weight put-back of
 the never-listed absences is -0.016 (-0.048 to 0.016) here, not resolved, where the paper's build has it
-resolved below zero.
+resolved below zero. And under the plus-minus valuation the premium at six hours is -0.026 (-0.049 to 0.001)
+here, which reaches zero, where the paper's build resolves it below zero at -0.027 (-0.048 to -0.003); the
+reading that matters -- that the premium is negative under that valuation and that neither mechanism test
+supports the account there -- is the same on both builds.
+
+`replacement_mechanism.py` is the one that answers the question the paper's Section 4.6 ends on. The two tests
+agree with the account at replacement level, where the put-back of the late Out designations is 0.040
+(0.004-0.077) and reading the report an hour out rather than six is 0.043 (0.013-0.073), and they do not under
+the plus-minus valuation, where the same two are 0.008 (-0.013 to 0.029) and -0.003 (-0.018 to 0.011). What
+holds under all three is the direction: the premium falls as the cutoff moves later on every one of them.
 
 ### The deployment gap, pooled
 

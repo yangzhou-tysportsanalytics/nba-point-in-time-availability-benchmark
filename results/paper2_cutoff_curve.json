@@ -669,5 +669,81 @@
    ]
   }
  },
- "strict_changed_team_games": 496
+ "strict_changed_team_games": 496,
+ "strict_headline": {
+  "plan": "docs/plans/paper2_R_strict_headline.md",
+  "note": "The strict six-hour benchmark: only the games where both teams had filed at least six hours before tip-off, with the same rule applied to the training set. No 90-minute fallback. The pooled figures are curve[\"6\"]; these are the seasons one at a time and the season as the unit.",
+  "per_season": {
+   "2023": {
+    "n": 1029,
+    "gain_F1": 0.1083,
+    "gain_F1_ci": [
+     -0.0262,
+     0.2272
+    ],
+    "inflation": -0.0344,
+    "inflation_ci": [
+     -0.1983,
+     0.1376
+    ]
+   },
+   "2024": {
+    "n": 1023,
+    "gain_F1": 0.1992,
+    "gain_F1_ci": [
+     0.0717,
+     0.3218
+    ],
+    "inflation": 0.0085,
+    "inflation_ci": [
+     -0.0881,
+     0.0989
+    ]
+   },
+   "2025": {
+    "n": 985,
+    "gain_F1": 0.1987,
+    "gain_F1_ci": [
+     0.0782,
+     0.3182
+    ],
+    "inflation": 0.0396,
+    "inflation_ci": [
+     -0.0712,
+     0.1524
+    ]
+   },
+   "2026": {
+    "n": 1094,
+    "gain_F1": 0.2259,
+    "gain_F1_ci": [
+     0.1254,
+     0.3406
+    ],
+    "inflation": 0.1715,
+    "inflation_ci": [
+     0.083,
+     0.2526
+    ]
+   }
+  },
+  "season_level": {
+   "gain_F1": {
+    "mean": 0.183,
+    "season_sd": 0.0514,
+    "ci95_t3": [
+     0.1012,
+     0.2648
+    ]
+   },
+   "inflation": {
+    "mean": 0.0463,
+    "season_sd": 0.0888,
+    "ci95_t3": [
+     -0.095,
+     0.1876
+    ]
+   }
+  }
+ }
 }
