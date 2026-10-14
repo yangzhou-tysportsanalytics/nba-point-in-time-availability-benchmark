@@ -1,0 +1,2017 @@
+{
+ "plan": "docs/plans/paper2_S_replacement_mechanism.md",
+ "plan_sha256": "e805513297e80aae6fded6fffd2bad26aa5b8141a25959771a02a7c931b96e34",
+ "seed": 20260921,
+ "reps": 2000,
+ "valuations": {
+  "base": "minutes x prior efficiency",
+  "rep": "minutes x (efficiency - replacement)",
+  "imp": "minutes x plus-minus per minute"
+ },
+ "diagnostics": {
+  "plan_sha256": "e805513297e80aae6fded6fffd2bad26aa5b8141a25959771a02a7c931b96e34",
+  "rotation_rows": 178421,
+  "q_replacement": 0.2,
+  "rows_without_a_level": 58,
+  "level_mean": 0.40118,
+  "level_sd": 0.00855,
+  "share_below_replacement": 0.2482,
+  "rows_valued_nan_rep": 58,
+  "pm20_coverage": 1.0,
+  "level_movement_12h_to_30min": {
+   "n": 178363,
+   "n_unmeasurable": 58,
+   "mean_abs": 2.2e-05,
+   "max_abs": 0.002391,
+   "fraction_of_level_sd": 0.0026,
+   "exceeds": true
+  }
+ },
+ "curve_games": 5181,
+ "paired": {
+  "base": {
+   "6h_minus_30min": {
+    "point": 0.0727,
+    "ci95_home": [
+     0.0265,
+     0.119
+    ],
+    "ci95_season": [
+     0.0112,
+     0.1372
+    ],
+    "n": 4131
+   },
+   "6h_minus_1h": {
+    "point": 0.0666,
+    "ci95_home": [
+     0.0305,
+     0.1031
+    ],
+    "ci95_season": [
+     0.0182,
+     0.1208
+    ],
+    "n": 4131
+   }
+  },
+  "rep": {
+   "6h_minus_30min": {
+    "point": 0.047,
+    "ci95_home": [
+     0.0072,
+     0.0869
+    ],
+    "ci95_season": [
+     -0.0009,
+     0.0958
+    ],
+    "n": 4131
+   },
+   "6h_minus_1h": {
+    "point": 0.0477,
+    "ci95_home": [
+     0.0166,
+     0.0788
+    ],
+    "ci95_season": [
+     0.0079,
+     0.0891
+    ],
+    "n": 4131
+   }
+  },
+  "imp": {
+   "6h_minus_30min": {
+    "point": 0.0086,
+    "ci95_home": [
+     -0.0089,
+     0.0254
+    ],
+    "ci95_season": [
+     -0.0096,
+     0.0251
+    ],
+    "n": 4131
+   },
+   "6h_minus_1h": {
+    "point": -0.0016,
+    "ci95_home": [
+     -0.0143,
+     0.0103
+    ],
+    "ci95_season": [
+     -0.0179,
+     0.0115
+    ],
+    "n": 4131
+   }
+  }
+ },
+ "curve": {
+  "base": {
+   "12": {
+    "gain_F1": {
+     "point": 0.1079,
+     "ci95_home": [
+      0.0595,
+      0.1553
+     ],
+     "ci95_season": [
+      0.0541,
+      0.1613
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.1275,
+     "ci95_home": [
+      0.0547,
+      0.1982
+     ],
+     "ci95_season": [
+      0.0044,
+      0.255
+     ],
+     "n": 4131
+    }
+   },
+   "9": {
+    "gain_F1": {
+     "point": 0.1084,
+     "ci95_home": [
+      0.0602,
+      0.1577
+     ],
+     "ci95_season": [
+      0.054,
+      0.1625
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.1269,
+     "ci95_home": [
+      0.0552,
+      0.1981
+     ],
+     "ci95_season": [
+      0.001,
+      0.2554
+     ],
+     "n": 4131
+    }
+   },
+   "6": {
+    "gain_F1": {
+     "point": 0.1852,
+     "ci95_home": [
+      0.1255,
+      0.2447
+     ],
+     "ci95_season": [
+      0.1058,
+      0.2551
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0502,
+     "ci95_home": [
+      -0.0113,
+      0.1096
+     ],
+     "ci95_season": [
+      -0.0437,
+      0.1475
+     ],
+     "n": 4131
+    }
+   },
+   "4": {
+    "gain_F1": {
+     "point": 0.1965,
+     "ci95_home": [
+      0.135,
+      0.2596
+     ],
+     "ci95_season": [
+      0.1104,
+      0.2696
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0389,
+     "ci95_home": [
+      -0.0181,
+      0.098
+     ],
+     "ci95_season": [
+      -0.0508,
+      0.125
+     ],
+     "n": 4131
+    }
+   },
+   "3": {
+    "gain_F1": {
+     "point": 0.2023,
+     "ci95_home": [
+      0.1417,
+      0.2657
+     ],
+     "ci95_season": [
+      0.1133,
+      0.2765
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0331,
+     "ci95_home": [
+      -0.0227,
+      0.0919
+     ],
+     "ci95_season": [
+      -0.0542,
+      0.1188
+     ],
+     "n": 4131
+    }
+   },
+   "2": {
+    "gain_F1": {
+     "point": 0.2155,
+     "ci95_home": [
+      0.1543,
+      0.2795
+     ],
+     "ci95_season": [
+      0.1305,
+      0.2912
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0199,
+     "ci95_home": [
+      -0.0328,
+      0.0754
+     ],
+     "ci95_season": [
+      -0.068,
+      0.1005
+     ],
+     "n": 4131
+    }
+   },
+   "1.5": {
+    "gain_F1": {
+     "point": 0.2359,
+     "ci95_home": [
+      0.1692,
+      0.303
+     ],
+     "ci95_season": [
+      0.153,
+      0.3163
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0006,
+     "ci95_home": [
+      -0.0548,
+      0.0523
+     ],
+     "ci95_season": [
+      -0.0858,
+      0.0809
+     ],
+     "n": 4131
+    }
+   },
+   "1": {
+    "gain_F1": {
+     "point": 0.2518,
+     "ci95_home": [
+      0.1845,
+      0.3214
+     ],
+     "ci95_season": [
+      0.1489,
+      0.3491
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0164,
+     "ci95_home": [
+      -0.0621,
+      0.0284
+     ],
+     "ci95_season": [
+      -0.0818,
+      0.0415
+     ],
+     "n": 4131
+    }
+   },
+   "0.5": {
+    "gain_F1": {
+     "point": 0.2579,
+     "ci95_home": [
+      0.1848,
+      0.3333
+     ],
+     "ci95_season": [
+      0.149,
+      0.3632
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0225,
+     "ci95_home": [
+      -0.0581,
+      0.0142
+     ],
+     "ci95_season": [
+      -0.0834,
+      0.0323
+     ],
+     "n": 4131
+    }
+   }
+  },
+  "rep": {
+   "12": {
+    "gain_F1": {
+     "point": 0.102,
+     "ci95_home": [
+      0.0554,
+      0.1495
+     ],
+     "ci95_season": [
+      0.053,
+      0.1523
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0929,
+     "ci95_home": [
+      0.0409,
+      0.1457
+     ],
+     "ci95_season": [
+      0.016,
+      0.1717
+     ],
+     "n": 4131
+    }
+   },
+   "9": {
+    "gain_F1": {
+     "point": 0.103,
+     "ci95_home": [
+      0.0553,
+      0.1517
+     ],
+     "ci95_season": [
+      0.0528,
+      0.1535
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0919,
+     "ci95_home": [
+      0.0397,
+      0.1446
+     ],
+     "ci95_season": [
+      0.0148,
+      0.1708
+     ],
+     "n": 4131
+    }
+   },
+   "6": {
+    "gain_F1": {
+     "point": 0.1601,
+     "ci95_home": [
+      0.1053,
+      0.2181
+     ],
+     "ci95_season": [
+      0.0916,
+      0.2224
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0347,
+     "ci95_home": [
+      -0.0096,
+      0.0796
+     ],
+     "ci95_season": [
+      -0.0257,
+      0.0958
+     ],
+     "n": 4131
+    }
+   },
+   "4": {
+    "gain_F1": {
+     "point": 0.1698,
+     "ci95_home": [
+      0.1148,
+      0.2291
+     ],
+     "ci95_season": [
+      0.0983,
+      0.2325
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.025,
+     "ci95_home": [
+      -0.016,
+      0.0652
+     ],
+     "ci95_season": [
+      -0.0298,
+      0.0775
+     ],
+     "n": 4131
+    }
+   },
+   "3": {
+    "gain_F1": {
+     "point": 0.1735,
+     "ci95_home": [
+      0.118,
+      0.2343
+     ],
+     "ci95_season": [
+      0.0981,
+      0.2392
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0213,
+     "ci95_home": [
+      -0.0199,
+      0.0626
+     ],
+     "ci95_season": [
+      -0.033,
+      0.0739
+     ],
+     "n": 4131
+    }
+   },
+   "2": {
+    "gain_F1": {
+     "point": 0.1826,
+     "ci95_home": [
+      0.1265,
+      0.242
+     ],
+     "ci95_season": [
+      0.1075,
+      0.251
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": 0.0123,
+     "ci95_home": [
+      -0.0246,
+      0.0509
+     ],
+     "ci95_season": [
+      -0.0375,
+      0.0586
+     ],
+     "n": 4131
+    }
+   },
+   "1.5": {
+    "gain_F1": {
+     "point": 0.1968,
+     "ci95_home": [
+      0.1384,
+      0.257
+     ],
+     "ci95_season": [
+      0.124,
+      0.268
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0019,
+     "ci95_home": [
+      -0.0384,
+      0.0345
+     ],
+     "ci95_season": [
+      -0.0491,
+      0.0408
+     ],
+     "n": 4131
+    }
+   },
+   "1": {
+    "gain_F1": {
+     "point": 0.2078,
+     "ci95_home": [
+      0.1481,
+      0.2722
+     ],
+     "ci95_season": [
+      0.1229,
+      0.2873
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.013,
+     "ci95_home": [
+      -0.0454,
+      0.0196
+     ],
+     "ci95_season": [
+      -0.0501,
+      0.023
+     ],
+     "n": 4131
+    }
+   },
+   "0.5": {
+    "gain_F1": {
+     "point": 0.2072,
+     "ci95_home": [
+      0.1459,
+      0.2728
+     ],
+     "ci95_season": [
+      0.1224,
+      0.2907
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0123,
+     "ci95_home": [
+      -0.0378,
+      0.0143
+     ],
+     "ci95_season": [
+      -0.0487,
+      0.0231
+     ],
+     "n": 4131
+    }
+   }
+  },
+  "imp": {
+   "12": {
+    "gain_F1": {
+     "point": 0.0258,
+     "ci95_home": [
+      -0.0104,
+      0.0606
+     ],
+     "ci95_season": [
+      -0.0195,
+      0.0656
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0135,
+     "ci95_home": [
+      -0.0421,
+      0.0163
+     ],
+     "ci95_season": [
+      -0.0531,
+      0.0321
+     ],
+     "n": 4131
+    }
+   },
+   "9": {
+    "gain_F1": {
+     "point": 0.026,
+     "ci95_home": [
+      -0.0105,
+      0.0614
+     ],
+     "ci95_season": [
+      -0.0181,
+      0.0651
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0137,
+     "ci95_home": [
+      -0.0423,
+      0.0162
+     ],
+     "ci95_season": [
+      -0.0528,
+      0.0309
+     ],
+     "n": 4131
+    }
+   },
+   "6": {
+    "gain_F1": {
+     "point": 0.0389,
+     "ci95_home": [
+      0.0064,
+      0.0689
+     ],
+     "ci95_season": [
+      0.0057,
+      0.0765
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0266,
+     "ci95_home": [
+      -0.048,
+      -0.003
+     ],
+     "ci95_season": [
+      -0.0536,
+      0.0004
+     ],
+     "n": 4131
+    }
+   },
+   "4": {
+    "gain_F1": {
+     "point": 0.0317,
+     "ci95_home": [
+      0.0006,
+      0.0607
+     ],
+     "ci95_season": [
+      -0.0009,
+      0.0671
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0194,
+     "ci95_home": [
+      -0.0394,
+      0.0027
+     ],
+     "ci95_season": [
+      -0.0447,
+      0.0088
+     ],
+     "n": 4131
+    }
+   },
+   "3": {
+    "gain_F1": {
+     "point": 0.031,
+     "ci95_home": [
+      0.0008,
+      0.0596
+     ],
+     "ci95_season": [
+      -0.0017,
+      0.0661
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0187,
+     "ci95_home": [
+      -0.0384,
+      0.0028
+     ],
+     "ci95_season": [
+      -0.0431,
+      0.0084
+     ],
+     "n": 4131
+    }
+   },
+   "2": {
+    "gain_F1": {
+     "point": 0.0339,
+     "ci95_home": [
+      0.0017,
+      0.0648
+     ],
+     "ci95_season": [
+      -0.0014,
+      0.0701
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0217,
+     "ci95_home": [
+      -0.0437,
+      0.0016
+     ],
+     "ci95_season": [
+      -0.0484,
+      0.0084
+     ],
+     "n": 4131
+    }
+   },
+   "1.5": {
+    "gain_F1": {
+     "point": 0.0316,
+     "ci95_home": [
+      -0.0017,
+      0.0641
+     ],
+     "ci95_season": [
+      -0.0082,
+      0.0696
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0194,
+     "ci95_home": [
+      -0.0424,
+      0.0052
+     ],
+     "ci95_season": [
+      -0.0497,
+      0.0165
+     ],
+     "n": 4131
+    }
+   },
+   "1": {
+    "gain_F1": {
+     "point": 0.0373,
+     "ci95_home": [
+      0.005,
+      0.0694
+     ],
+     "ci95_season": [
+      0.0023,
+      0.0741
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.025,
+     "ci95_home": [
+      -0.0476,
+      -0.0017
+     ],
+     "ci95_season": [
+      -0.0524,
+      0.0049
+     ],
+     "n": 4131
+    }
+   },
+   "0.5": {
+    "gain_F1": {
+     "point": 0.0475,
+     "ci95_home": [
+      0.0123,
+      0.0824
+     ],
+     "ci95_season": [
+      0.011,
+      0.0882
+     ],
+     "n": 4131
+    },
+    "premium": {
+     "point": -0.0353,
+     "ci95_home": [
+      -0.0605,
+      -0.0097
+     ],
+     "ci95_season": [
+      -0.0658,
+      -0.0045
+     ],
+     "n": 4131
+    }
+   }
+  }
+ },
+ "curve_both_filed": {
+  "12": {
+   "n_games": 4246,
+   "share": 0.8195,
+   "base": {
+    "gain_F1": {
+     "point": 0.1534,
+     "ci95_home": [
+      0.0892,
+      0.2156
+     ],
+     "ci95_season": [
+      0.075,
+      0.2233
+     ],
+     "n": 3401
+    },
+    "premium": {
+     "point": 0.0536,
+     "ci95_home": [
+      -0.0098,
+      0.1249
+     ],
+     "ci95_season": [
+      -0.0556,
+      0.1736
+     ],
+     "n": 3401
+    },
+    "six_hour_same_games": {
+     "gain_F1": {
+      "point": 0.1647,
+      "ci95_home": [
+       0.0968,
+       0.2312
+      ],
+      "ci95_season": [
+       0.0731,
+       0.2421
+      ],
+      "n": 3401
+     },
+     "premium": {
+      "point": 0.0424,
+      "ci95_home": [
+       -0.0185,
+       0.1109
+      ],
+      "ci95_season": [
+       -0.0499,
+       0.1368
+      ],
+      "n": 3401
+     }
+    }
+   },
+   "rep": {
+    "gain_F1": {
+     "point": 0.1279,
+     "ci95_home": [
+      0.0723,
+      0.1844
+     ],
+     "ci95_season": [
+      0.0619,
+      0.1916
+     ],
+     "n": 3401
+    },
+    "premium": {
+     "point": 0.0458,
+     "ci95_home": [
+      -0.0064,
+      0.1022
+     ],
+     "ci95_season": [
+      -0.036,
+      0.1371
+     ],
+     "n": 3401
+    },
+    "six_hour_same_games": {
+     "gain_F1": {
+      "point": 0.1406,
+      "ci95_home": [
+       0.079,
+       0.203
+      ],
+      "ci95_season": [
+       0.0573,
+       0.2123
+      ],
+      "n": 3401
+     },
+     "premium": {
+      "point": 0.0331,
+      "ci95_home": [
+       -0.0143,
+       0.0851
+      ],
+      "ci95_season": [
+       -0.0364,
+       0.1091
+      ],
+      "n": 3401
+     }
+    }
+   },
+   "imp": {
+    "gain_F1": {
+     "point": 0.035,
+     "ci95_home": [
+      -0.0109,
+      0.0767
+     ],
+     "ci95_season": [
+      -0.0184,
+      0.0801
+     ],
+     "n": 3401
+    },
+    "premium": {
+     "point": -0.0227,
+     "ci95_home": [
+      -0.0522,
+      0.009
+     ],
+     "ci95_season": [
+      -0.057,
+      0.0209
+     ],
+     "n": 3401
+    },
+    "six_hour_same_games": {
+     "gain_F1": {
+      "point": 0.0376,
+      "ci95_home": [
+       -0.01,
+       0.0817
+      ],
+      "ci95_season": [
+       -0.0146,
+       0.0842
+      ],
+      "n": 3401
+     },
+     "premium": {
+      "point": -0.0253,
+      "ci95_home": [
+       -0.0567,
+       0.0083
+      ],
+      "ci95_season": [
+       -0.0597,
+       0.0158
+      ],
+      "n": 3401
+     }
+    }
+   }
+  },
+  "9": {
+   "n_games": 4262,
+   "share": 0.8226,
+   "base": {
+    "gain_F1": {
+     "point": 0.1539,
+     "ci95_home": [
+      0.0882,
+      0.2173
+     ],
+     "ci95_season": [
+      0.0756,
+      0.2248
+     ],
+     "n": 3410
+    },
+    "premium": {
+     "point": 0.0501,
+     "ci95_home": [
+      -0.0133,
+      0.121
+     ],
+     "ci95_season": [
+      -0.0633,
+      0.1696
+     ],
+     "n": 3410
+    },
+    "six_hour_same_games": {
+     "gain_F1": {
+      "point": 0.1632,
+      "ci95_home": [
+       0.0952,
+       0.2295
+      ],
+      "ci95_season": [
+       0.0698,
+       0.2425
+      ],
+      "n": 3410
+     },
+     "premium": {
+      "point": 0.0407,
+      "ci95_home": [
+       -0.0199,
+       0.1075
+      ],
+      "ci95_season": [
+       -0.0516,
+       0.1334
+      ],
+      "n": 3410
+     }
+    }
+   },
+   "rep": {
+    "gain_F1": {
+     "point": 0.1277,
+     "ci95_home": [
+      0.0704,
+      0.1856
+     ],
+     "ci95_season": [
+      0.0603,
+      0.1935
+     ],
+     "n": 3410
+    },
+    "premium": {
+     "point": 0.0413,
+     "ci95_home": [
+      -0.0098,
+      0.0965
+     ],
+     "ci95_season": [
+      -0.0401,
+      0.1334
+     ],
+     "n": 3410
+    },
+    "six_hour_same_games": {
+     "gain_F1": {
+      "point": 0.1386,
+      "ci95_home": [
+       0.0769,
+       0.2016
+      ],
+      "ci95_season": [
+       0.0534,
+       0.2107
+      ],
+      "n": 3410
+     },
+     "premium": {
+      "point": 0.0305,
+      "ci95_home": [
+       -0.0162,
+       0.0815
+      ],
+      "ci95_season": [
+       -0.0383,
+       0.1056
+      ],
+      "n": 3410
+     }
+    }
+   },
+   "imp": {
+    "gain_F1": {
+     "point": 0.0362,
+     "ci95_home": [
+      -0.01,
+      0.0788
+     ],
+     "ci95_season": [
+      -0.0172,
+      0.0813
+     ],
+     "n": 3410
+    },
+    "premium": {
+     "point": -0.0236,
+     "ci95_home": [
+      -0.0536,
+      0.0084
+     ],
+     "ci95_season": [
+      -0.0591,
+      0.0193
+     ],
+     "n": 3410
+    },
+    "six_hour_same_games": {
+     "gain_F1": {
+      "point": 0.0383,
+      "ci95_home": [
+       -0.0087,
+       0.0824
+      ],
+      "ci95_season": [
+       -0.0136,
+       0.0845
+      ],
+      "n": 3410
+     },
+     "premium": {
+      "point": -0.0257,
+      "ci95_home": [
+       -0.0567,
+       0.0078
+      ],
+      "ci95_season": [
+       -0.0596,
+       0.0154
+      ],
+      "n": 3410
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "sizes": {
+   "declared_late": 5594,
+   "late_status": 1777,
+   "never_listed": 22495
+  },
+  "overlap_with_F1": {
+   "late_status_in_F1": 124,
+   "never_listed_in_F1": 27,
+   "out_at_cutoff_not_out_late": 236,
+   "out_at_cutoff_not_out_late_and_sat": 151,
+   "out_at_cutoff_but_played": 93
+  },
+  "cross_check": "the five overlap counts reproduce results/paper2_mechanism4.json exactly"
+ },
+ "putback_games": {
+  "base": 4846,
+  "rep": 4846,
+  "imp": 4846
+ },
+ "putbacks": {
+  "base": {
+   "fixed_weight": {
+    "F1p1": {
+     "point": 0.0704,
+     "ci95_home": [
+      0.026,
+      0.1149
+     ],
+     "ci95_season": [
+      0.0136,
+      0.1313
+     ],
+     "n": 4846
+    },
+    "F1p2": {
+     "point": 0.0006,
+     "ci95_home": [
+      -0.0204,
+      0.0222
+     ],
+     "ci95_season": [
+      -0.0214,
+      0.022
+     ],
+     "n": 4846
+    },
+    "F1p3": {
+     "point": -0.0332,
+     "ci95_home": [
+      -0.0583,
+      -0.0097
+     ],
+     "ci95_season": [
+      -0.0747,
+      0.0046
+     ],
+     "n": 4846
+    },
+    "F1p23": {
+     "point": -0.0295,
+     "ci95_home": [
+      -0.0593,
+      0.0029
+     ],
+     "ci95_season": [
+      -0.081,
+      0.0168
+     ],
+     "n": 4846
+    },
+    "F1p123": {
+     "point": 0.0569,
+     "ci95_home": [
+      -0.0049,
+      0.1177
+     ],
+     "ci95_season": [
+      -0.0402,
+      0.1492
+     ],
+     "n": 4846
+    }
+   },
+   "free_coefficient": {
+    "free_c1": {
+     "point": 0.0692,
+     "ci95_home": [
+      0.0287,
+      0.1094
+     ],
+     "ci95_season": [
+      0.019,
+      0.1229
+     ],
+     "n": 4846
+    },
+    "free_c2": {
+     "point": 0.0033,
+     "ci95_home": [
+      -0.0095,
+      0.0168
+     ],
+     "ci95_season": [
+      -0.0113,
+      0.016
+     ],
+     "n": 4846
+    },
+    "free_c3": {
+     "point": -0.0125,
+     "ci95_home": [
+      -0.025,
+      -0.0002
+     ],
+     "ci95_season": [
+      -0.0385,
+      0.0025
+     ],
+     "n": 4846
+    },
+    "free_all": {
+     "point": 0.0647,
+     "ci95_home": [
+      0.0115,
+      0.1182
+     ],
+     "ci95_season": [
+      -0.0254,
+      0.1399
+     ],
+     "n": 4846
+    }
+   },
+   "premium": {
+    "point": 0.0588,
+    "ci95_home": [
+     -0.003,
+     0.1206
+    ],
+    "ci95_season": [
+     -0.033,
+     0.1505
+    ],
+    "n": 4846
+   },
+   "report_value": {
+    "point": 0.1966,
+    "ci95_home": [
+     0.1318,
+     0.2646
+    ],
+    "ci95_season": [
+     0.1217,
+     0.2635
+    ],
+    "n": 4846
+   }
+  },
+  "rep": {
+   "fixed_weight": {
+    "F1p1": {
+     "point": 0.0434,
+     "ci95_home": [
+      0.0062,
+      0.0813
+     ],
+     "ci95_season": [
+      -0.001,
+      0.0914
+     ],
+     "n": 4846
+    },
+    "F1p2": {
+     "point": -0.0019,
+     "ci95_home": [
+      -0.019,
+      0.0154
+     ],
+     "ci95_season": [
+      -0.0204,
+      0.0157
+     ],
+     "n": 4846
+    },
+    "F1p3": {
+     "point": -0.0066,
+     "ci95_home": [
+      -0.0241,
+      0.0102
+     ],
+     "ci95_season": [
+      -0.036,
+      0.0219
+     ],
+     "n": 4846
+    },
+    "F1p23": {
+     "point": -0.0077,
+     "ci95_home": [
+      -0.029,
+      0.0152
+     ],
+     "ci95_season": [
+      -0.0424,
+      0.024
+     ],
+     "n": 4846
+    },
+    "F1p123": {
+     "point": 0.0369,
+     "ci95_home": [
+      -0.0055,
+      0.0803
+     ],
+     "ci95_season": [
+      -0.0235,
+      0.0955
+     ],
+     "n": 4846
+    }
+   },
+   "free_coefficient": {
+    "free_c1": {
+     "point": 0.0427,
+     "ci95_home": [
+      0.0125,
+      0.0741
+     ],
+     "ci95_season": [
+      0.0066,
+      0.0812
+     ],
+     "n": 4846
+    },
+    "free_c2": {
+     "point": 0.0014,
+     "ci95_home": [
+      -0.0026,
+      0.0057
+     ],
+     "ci95_season": [
+      -0.003,
+      0.0057
+     ],
+     "n": 4846
+    },
+    "free_c3": {
+     "point": -0.0047,
+     "ci95_home": [
+      -0.0158,
+      0.0066
+     ],
+     "ci95_season": [
+      -0.0211,
+      0.0076
+     ],
+     "n": 4846
+    },
+    "free_all": {
+     "point": 0.0396,
+     "ci95_home": [
+      0.0037,
+      0.0755
+     ],
+     "ci95_season": [
+      -0.0073,
+      0.0859
+     ],
+     "n": 4846
+    }
+   },
+   "premium": {
+    "point": 0.0381,
+    "ci95_home": [
+     -0.0044,
+     0.0809
+    ],
+    "ci95_season": [
+     -0.0217,
+     0.0962
+    ],
+    "n": 4846
+   },
+   "report_value": {
+    "point": 0.1615,
+    "ci95_home": [
+     0.1028,
+     0.2242
+    ],
+    "ci95_season": [
+     0.0952,
+     0.2249
+    ],
+    "n": 4846
+   }
+  },
+  "imp": {
+   "fixed_weight": {
+    "F1p1": {
+     "point": 0.0094,
+     "ci95_home": [
+      -0.0097,
+      0.0277
+     ],
+     "ci95_season": [
+      -0.0118,
+      0.0295
+     ],
+     "n": 4846
+    },
+    "F1p2": {
+     "point": -0.0014,
+     "ci95_home": [
+      -0.0076,
+      0.0046
+     ],
+     "ci95_season": [
+      -0.0098,
+      0.0064
+     ],
+     "n": 4846
+    },
+    "F1p3": {
+     "point": -0.0383,
+     "ci95_home": [
+      -0.0639,
+      -0.0099
+     ],
+     "ci95_season": [
+      -0.0709,
+      -0.0003
+     ],
+     "n": 4846
+    },
+    "F1p23": {
+     "point": -0.0383,
+     "ci95_home": [
+      -0.0642,
+      -0.0095
+     ],
+     "ci95_season": [
+      -0.0717,
+      0.0005
+     ],
+     "n": 4846
+    },
+    "F1p123": {
+     "point": -0.0298,
+     "ci95_home": [
+      -0.0528,
+      -0.0032
+     ],
+     "ci95_season": [
+      -0.0606,
+      0.007
+     ],
+     "n": 4846
+    }
+   },
+   "free_coefficient": {
+    "free_c1": {
+     "point": 0.0077,
+     "ci95_home": [
+      -0.0159,
+      0.0311
+     ],
+     "ci95_season": [
+      -0.0191,
+      0.0352
+     ],
+     "n": 4846
+    },
+    "free_c2": {
+     "point": -0.0003,
+     "ci95_home": [
+      -0.001,
+      0.0003
+     ],
+     "ci95_season": [
+      -0.0012,
+      0.0004
+     ],
+     "n": 4846
+    },
+    "free_c3": {
+     "point": 0.0071,
+     "ci95_home": [
+      -0.0147,
+      0.0286
+     ],
+     "ci95_season": [
+      -0.0229,
+      0.036
+     ],
+     "n": 4846
+    },
+    "free_all": {
+     "point": 0.0141,
+     "ci95_home": [
+      -0.0165,
+      0.0443
+     ],
+     "ci95_season": [
+      -0.0256,
+      0.0534
+     ],
+     "n": 4846
+    }
+   },
+   "premium": {
+    "point": -0.0296,
+    "ci95_home": [
+     -0.0522,
+     -0.003
+    ],
+    "ci95_season": [
+     -0.0603,
+     0.0071
+    ],
+    "n": 4846
+   },
+   "report_value": {
+    "point": 0.0514,
+    "ci95_home": [
+     0.0128,
+     0.0854
+    ],
+    "ci95_season": [
+     0.0045,
+     0.0934
+    ],
+    "n": 4846
+   },
+   "seed_checks": {
+    "free_c2": {
+     "lower_bounds": [
+      -0.001,
+      -0.001,
+      -0.00103,
+      -0.00099,
+      -0.00102
+     ],
+     "crosses_zero": false
+    }
+   }
+  }
+ },
+ "control_base_valuation": {
+  "note": "rule S7: the base valuation carried through the same code must reproduce the published figures, or the port is wrong and the differences are not findings",
+  "comparisons": [
+   {
+    "what": "curve 12h gain",
+    "published": 0.1079,
+    "here": 0.1079,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 12h premium",
+    "published": 0.1275,
+    "here": 0.1275,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 9h gain",
+    "published": 0.1084,
+    "here": 0.1084,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 9h premium",
+    "published": 0.1269,
+    "here": 0.1269,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 6h gain",
+    "published": 0.1852,
+    "here": 0.1852,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 6h premium",
+    "published": 0.0502,
+    "here": 0.0502,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 4h gain",
+    "published": 0.1965,
+    "here": 0.1965,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 4h premium",
+    "published": 0.0389,
+    "here": 0.0389,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 3h gain",
+    "published": 0.2023,
+    "here": 0.2023,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 3h premium",
+    "published": 0.0331,
+    "here": 0.0331,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 2h gain",
+    "published": 0.2155,
+    "here": 0.2155,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 2h premium",
+    "published": 0.0199,
+    "here": 0.0199,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 1.5h gain",
+    "published": 0.2359,
+    "here": 0.2359,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 1.5h premium",
+    "published": -0.0006,
+    "here": -0.0006,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 1h gain",
+    "published": 0.2518,
+    "here": 0.2518,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 1h premium",
+    "published": -0.0164,
+    "here": -0.0164,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 0.5h gain",
+    "published": 0.2579,
+    "here": 0.2579,
+    "difference": 0.0
+   },
+   {
+    "what": "curve 0.5h premium",
+    "published": -0.0225,
+    "here": -0.0225,
+    "difference": 0.0
+   },
+   {
+    "what": "put-back F1p1",
+    "published": 0.0704,
+    "here": 0.0704,
+    "difference": 0.0
+   },
+   {
+    "what": "put-back F1p2",
+    "published": 0.0006,
+    "here": 0.0006,
+    "difference": 0.0
+   },
+   {
+    "what": "put-back F1p3",
+    "published": -0.0332,
+    "here": -0.0332,
+    "difference": 0.0
+   },
+   {
+    "what": "put-back F1p23",
+    "published": -0.0295,
+    "here": -0.0295,
+    "difference": 0.0
+   },
+   {
+    "what": "put-back F1p123",
+    "published": 0.0569,
+    "here": 0.0569,
+    "difference": 0.0
+   },
+   {
+    "what": "paired 6h-30min",
+    "published": 0.0727,
+    "here": 0.0727,
+    "difference": 0.0
+   },
+   {
+    "what": "paired 6h-1h",
+    "published": 0.0666,
+    "here": 0.0666,
+    "difference": 0.0
+   }
+  ],
+  "disagreements": []
+ },
+ "rule_verdicts": {
+  "note": "S2 and S3 are stated in words in the plan; the comparisons that implement them are written out here, and both are reported with their figures rather than as a bare flag",
+  "base": {
+   "premium_at_6h": 0.0502,
+   "paired_6h_minus_30min": 0.0727,
+   "paired_resolved_under_home": true,
+   "S1_premium_sign_differs_from_base": false,
+   "S1_fires": false,
+   "S2_c1_putback": {
+    "point": 0.0704,
+    "ci95_home": [
+     0.026,
+     0.1149
+    ],
+    "ci95_season": [
+     0.0136,
+     0.1313
+    ],
+    "n": 4846
+   },
+   "S2_premium": {
+    "point": 0.0588,
+    "ci95_home": [
+     -0.003,
+     0.1206
+    ],
+    "ci95_season": [
+     -0.033,
+     0.1505
+    ],
+    "n": 4846
+   },
+   "S2_each_point_inside_the_other_interval": true,
+   "S2_fires": false,
+   "S3_by_component": {
+    "F1p1": {
+     "fixed": 0.0704,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0692,
+     "free_resolved_below_zero": false
+    },
+    "F1p2": {
+     "fixed": 0.0006,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0033,
+     "free_resolved_below_zero": false
+    },
+    "F1p3": {
+     "fixed": -0.0332,
+     "fixed_resolved_below_zero": true,
+     "free": -0.0125,
+     "free_resolved_below_zero": true
+    },
+    "F1p123": {
+     "fixed": 0.0569,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0647,
+     "free_resolved_below_zero": false
+    }
+   },
+   "S3_fires": false,
+   "S4_gain_monotone_in_lateness": true,
+   "S4_largest_fall_in_gain": 0.0005,
+   "S4_fires": false,
+   "gain_steps_12h_to_30min": [
+    0.0005,
+    0.0768,
+    0.0113,
+    0.0058,
+    0.0132,
+    0.0204,
+    0.0159,
+    0.0061
+   ],
+   "premium_steps_12h_to_30min": [
+    -0.0006,
+    -0.0767,
+    -0.0113,
+    -0.0058,
+    -0.0132,
+    -0.0205,
+    -0.0158,
+    -0.0061
+   ],
+   "premium_monotone_declining_in_lateness": true,
+   "premium_largest_rise": -0.0006,
+   "premium_change_12h_to_30min": -0.15
+  },
+  "rep": {
+   "premium_at_6h": 0.0347,
+   "paired_6h_minus_30min": 0.047,
+   "paired_resolved_under_home": true,
+   "S1_premium_sign_differs_from_base": false,
+   "S1_fires": false,
+   "S2_c1_putback": {
+    "point": 0.0434,
+    "ci95_home": [
+     0.0062,
+     0.0813
+    ],
+    "ci95_season": [
+     -0.001,
+     0.0914
+    ],
+    "n": 4846
+   },
+   "S2_premium": {
+    "point": 0.0381,
+    "ci95_home": [
+     -0.0044,
+     0.0809
+    ],
+    "ci95_season": [
+     -0.0217,
+     0.0962
+    ],
+    "n": 4846
+   },
+   "S2_each_point_inside_the_other_interval": true,
+   "S2_fires": false,
+   "S3_by_component": {
+    "F1p1": {
+     "fixed": 0.0434,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0427,
+     "free_resolved_below_zero": false
+    },
+    "F1p2": {
+     "fixed": -0.0019,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0014,
+     "free_resolved_below_zero": false
+    },
+    "F1p3": {
+     "fixed": -0.0066,
+     "fixed_resolved_below_zero": false,
+     "free": -0.0047,
+     "free_resolved_below_zero": false
+    },
+    "F1p123": {
+     "fixed": 0.0369,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0396,
+     "free_resolved_below_zero": false
+    }
+   },
+   "S3_fires": false,
+   "S4_gain_monotone_in_lateness": false,
+   "S4_largest_fall_in_gain": -0.0006,
+   "S4_fires": true,
+   "gain_steps_12h_to_30min": [
+    0.001,
+    0.0571,
+    0.0097,
+    0.0037,
+    0.0091,
+    0.0142,
+    0.011,
+    -0.0006
+   ],
+   "premium_steps_12h_to_30min": [
+    -0.001,
+    -0.0572,
+    -0.0097,
+    -0.0037,
+    -0.009,
+    -0.0142,
+    -0.0111,
+    0.0007
+   ],
+   "premium_monotone_declining_in_lateness": false,
+   "premium_largest_rise": 0.0007,
+   "premium_change_12h_to_30min": -0.1052
+  },
+  "imp": {
+   "premium_at_6h": -0.0266,
+   "paired_6h_minus_30min": 0.0086,
+   "paired_resolved_under_home": false,
+   "S1_premium_sign_differs_from_base": true,
+   "S1_fires": false,
+   "S2_c1_putback": {
+    "point": 0.0094,
+    "ci95_home": [
+     -0.0097,
+     0.0277
+    ],
+    "ci95_season": [
+     -0.0118,
+     0.0295
+    ],
+    "n": 4846
+   },
+   "S2_premium": {
+    "point": -0.0296,
+    "ci95_home": [
+     -0.0522,
+     -0.003
+    ],
+    "ci95_season": [
+     -0.0603,
+     0.0071
+    ],
+    "n": 4846
+   },
+   "S2_each_point_inside_the_other_interval": false,
+   "S2_fires": true,
+   "S3_by_component": {
+    "F1p1": {
+     "fixed": 0.0094,
+     "fixed_resolved_below_zero": false,
+     "free": 0.0077,
+     "free_resolved_below_zero": false
+    },
+    "F1p2": {
+     "fixed": -0.0014,
+     "fixed_resolved_below_zero": false,
+     "free": -0.0003,
+     "free_resolved_below_zero": false
+    },
+    "F1p3": {
+     "fixed": -0.0383,
+     "fixed_resolved_below_zero": true,
+     "free": 0.0071,
+     "free_resolved_below_zero": false
+    },
+    "F1p123": {
+     "fixed": -0.0298,
+     "fixed_resolved_below_zero": true,
+     "free": 0.0141,
+     "free_resolved_below_zero": false
+    }
+   },
+   "S3_fires": true,
+   "S4_gain_monotone_in_lateness": false,
+   "S4_largest_fall_in_gain": -0.0072,
+   "S4_fires": true,
+   "gain_steps_12h_to_30min": [
+    0.0002,
+    0.0129,
+    -0.0072,
+    -0.0007,
+    0.0029,
+    -0.0023,
+    0.0057,
+    0.0102
+   ],
+   "premium_steps_12h_to_30min": [
+    -0.0002,
+    -0.0129,
+    0.0072,
+    0.0007,
+    -0.003,
+    0.0023,
+    -0.0056,
+    -0.0103
+   ],
+   "premium_monotone_declining_in_lateness": false,
+   "premium_largest_rise": 0.0072,
+   "premium_change_12h_to_30min": -0.0218
+  },
+  "S6": {
+   "measured_movement_as_fraction_of_level_sd": 0.0026,
+   "mean_abs": 2.2e-05,
+   "max_abs": 0.002391,
+   "rows_that_could_not_be_measured": 58,
+   "fires_as_the_plan_states_it": false,
+   "module_conservative_flag": true,
+   "note": "the module refuses to call the approximation small while any pair is unmeasurable; the unmeasurable pairs here are the 58 rows with no replacement level at any cutoff, which the valuation already leaves out, so rule S6 itself does not fire"
+  }
+ }
+}

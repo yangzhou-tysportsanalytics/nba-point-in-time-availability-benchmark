@@ -13,78 +13,78 @@
   "gain_F1": {
    "point": 0.2264,
    "ci95": [
-    0.1046,
-    0.3508
+    0.1054,
+    0.3493
    ]
   },
   "gain_F2": {
    "point": 0.3924,
    "ci95": [
-    0.2677,
-    0.5165
+    0.271,
+    0.5146
    ]
   },
   "gain_F3": {
    "point": 0.2307,
    "ci95": [
-    0.1109,
-    0.3537
+    0.1123,
+    0.3517
    ]
   },
   "gain_F4": {
    "point": 0.3865,
    "ci95": [
-    0.271,
-    0.5024
+    0.2715,
+    0.4996
    ]
   },
   "inflation_F2": {
    "point": 0.166,
    "ci95": [
-    0.0772,
-    0.2546
+    0.0786,
+    0.2536
    ]
   },
   "ratio_F2": {
    "point": 1.7331,
    "ci95": [
-    1.268,
-    2.9574
+    1.274,
+    2.9882
    ]
   },
   "mkt_rmse_market": {
    "point": 14.0846,
    "ci95": [
-    13.4957,
-    14.7059
+    13.4763,
+    14.7
    ]
   },
   "mkt_rmse_F1": {
    "point": 14.7749,
    "ci95": [
-    14.1523,
-    15.362
+    14.1675,
+    15.3613
    ]
   },
   "mkt_rmse_F2": {
    "point": 14.5923,
    "ci95": [
-    13.9763,
-    15.1713
+    13.9778,
+    15.17
    ]
   },
   "mkt_F2_minus_market": {
    "point": 0.5078,
    "ci95": [
-    0.2369,
-    0.7736
+    0.2437,
+    0.7754
    ]
   },
   "mkt_F1_minus_market": {
    "point": 0.6903,
    "ci95": [
-    0.3913,
-    0.9732
+    0.3971,
+    0.9786
    ]
   }
  },
@@ -156,7 +156,7 @@
   "no_reason_in_box": 4024,
   "other_reason": 245,
   "other_distinct_labels": 104,
-  "definition": "reference-rotation absences whose status at the team-game cutoff is not_listed, 2023-24 to 2025-26; this is the cutoff status, not the last report of Section 4.6"
+  "definition": "reference-rotation absences whose status at the team-game cutoff is not_listed, 2023-24 to 2025-26; this is the cutoff status, not the last report used in the mechanism decomposition"
  },
  "release_rows": 141716
 }
