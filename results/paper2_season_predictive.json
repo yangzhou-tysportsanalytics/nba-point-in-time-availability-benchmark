@@ -95,18 +95,18 @@
     "season_sd": 0.032552,
     "season_variance_tau2": 0.0,
     "mean_within_season_var": 0.004283,
-    "se_of_mean": 0.032722,
+    "se_of_mean": 0.016276,
     "ci95_t3": [
-     0.091413,
-     0.299687
+     0.143752,
+     0.247348
     ],
     "pi95_t3": [
-     -0.037307,
-     0.428407
+     0.079726,
+     0.311374
     ],
     "pi95_t3_true_value": [
-     0.091413,
-     0.299687
+     0.143752,
+     0.247348
     ],
     "targets": {
      "ci95_t3": "the average over seasons drawn from this process",
@@ -114,8 +114,8 @@
      "pi95_t3_true_value": "that season's own underlying value"
     },
     "published_ci95_t3": [
-     0.0915,
-     0.2997
+     0.143807,
+     0.247366
     ],
     "description": "the report's value, sample accepting the 90-minute fallback"
    },
@@ -151,10 +151,88 @@
      "pi95_t3_true_value": "that season's own underlying value"
     },
     "published_ci95_t3": [
-     -0.0788,
-     0.1918
+     -0.078753,
+     0.191785
     ],
     "description": "the premium, sample accepting the 90-minute fallback"
+   }
+  },
+  "deployment_gap": {
+   "narrow": {
+    "n_seasons": 4,
+    "mean_of_seasons": 0.065375,
+    "per_season": [
+     -0.0046,
+     0.0087,
+     0.0721,
+     0.1853
+    ],
+    "variance_model": "between minus within",
+    "season_sd": 0.086671,
+    "season_variance_tau2": 0.004660369,
+    "mean_within_season_var": 0.00285156,
+    "se_of_mean": 0.043336,
+    "ci95_t3": [
+     -0.072539,
+     0.203289
+    ],
+    "pi95_t3": [
+     -0.243009,
+     0.373759
+    ],
+    "pi95_t3_true_value": [
+     -0.191958,
+     0.322708
+    ],
+    "targets": {
+     "ci95_t3": "the average over seasons drawn from this process",
+     "pi95_t3": "the estimate one unseen season would produce",
+     "pi95_t3_true_value": "that season's own underlying value"
+    },
+    "published_ci95_t3": [
+     -0.0725,
+     0.2033
+    ],
+    "description": "the pooled deployment gap, narrow features",
+    "note_not_in_plan": "plan T named the report value and the premium; this quantity is added for consistency with Section 3.1, which offers three at season level"
+   },
+   "wide": {
+    "n_seasons": 4,
+    "mean_of_seasons": 0.09715,
+    "per_season": [
+     -0.0039,
+     0.0556,
+     0.1311,
+     0.2058
+    ],
+    "variance_model": "between minus within",
+    "season_sd": 0.091095,
+    "season_variance_tau2": 0.00698787,
+    "mean_within_season_var": 0.00131044,
+    "se_of_mean": 0.045548,
+    "ci95_t3": [
+     -0.047803,
+     0.242103
+    ],
+    "pi95_t3": [
+     -0.226974,
+     0.421274
+    ],
+    "pi95_t3_true_value": [
+     -0.205809,
+     0.400109
+    ],
+    "targets": {
+     "ci95_t3": "the average over seasons drawn from this process",
+     "pi95_t3": "the estimate one unseen season would produce",
+     "pi95_t3_true_value": "that season's own underlying value"
+    },
+    "published_ci95_t3": [
+     -0.0478,
+     0.2421
+    ],
+    "description": "the pooled deployment gap, wide features",
+    "note_not_in_plan": "plan T named the report value and the premium; this quantity is added for consistency with Section 3.1, which offers three at season level"
    }
   }
  },
