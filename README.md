@@ -105,21 +105,34 @@ a statement about a season.
 
 The benchmark is the strict six-hour one: the 4,131 holdout games where **both** teams had filed at least six
 hours before tip-off, with the same rule applied to the training set. The paper's other feature accepts a
-90-minute report where a team had not filed, which keeps every game and reaches 8.0% of team-games; that is an
-operational choice rather than information available six hours out, and it is reported beside the benchmark.
+90-minute report where a team had not filed, which raises the pooled holdout from 4,131 games to 4,846 rather
+than to all of them and reaches 8.0% of team-games; that is an operational choice rather than information
+available six hours out, and it is reported beside the benchmark.
 
-| Quantity | In these four seasons | In an NBA season |
-| --- | --- | --- |
-| Value of the pregame report, strict six hours | **0.185 (0.126-0.245)** | 0.185 (0.101-0.265) |
-| Premium from actual participation, strict six hours | 0.050 (-0.011 to 0.110) | 0.046 (-0.095 to 0.188) |
-| The report's value accepting the 90-minute fallback | 0.197 (0.132-0.261) | 0.197 (0.123-0.267) |
-| The premium accepting the fallback | 0.059 (0.001-0.119) | 0.059 (-0.032 to 0.149) |
-| The last two on this rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - |
+Three readings, and they are not the same question. The first fixes these four seasons. The second is the
+average over seasons drawn from the same process. The third is the estimate one unseen season would produce,
+which carries that season's own deviation from the average as well and is therefore 2.24 times wider at four
+seasons -- and it is what the registered 2026-27 test will observe. The second and third are centred on the
+mean of the four season estimates, 0.183 and 0.046 on the strict sample, which is not the pooled estimate in
+the first column: a pooled RMSE difference is not the average of four season-specific ones.
+
+| Quantity | In these four seasons | Averaged over seasons | One unseen season |
+| --- | --- | --- | --- |
+| Value of the pregame report, strict six hours | **0.185 (0.126-0.245)** | 0.183 (0.101-0.265) | 0.183 (0.0001-0.366) |
+| Premium from actual participation, strict six hours | 0.050 (-0.011 to 0.110) | 0.046 (-0.095 to 0.188) | 0.046 (-0.270 to 0.362) |
+| The report's value accepting the 90-minute fallback | 0.197 (0.132-0.261) | 0.196 (0.091-0.300) | 0.196 (-0.037 to 0.428) |
+| The premium accepting the fallback | 0.059 (0.001-0.119) | 0.057 (-0.079 to 0.192) | 0.057 (-0.246 to 0.359) |
+| The last two on this rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - | - |
+
+So the report's value is resolved for these four seasons and for the average over seasons, and **not** for a
+single unseen season, where its lower bound is 0.0001 on the strict sample and below zero with the fallback.
+Earlier versions of these documents called the second column a statement about an unseen season. It is not.
 
 **The report's own value is the stable part. The premium is not resolved under any reading.** Its lower bound
 for these four seasons is zero to within the bootstrap's own Monte-Carlo error: across five seeds at 10,000
-replicates it runs -0.0017 to 0.0012, above zero in three of the five and below it in two. Taking the season as
-the unit instead gives 0.059 (-0.079 to 0.192). We report the point estimate and do not call it resolved.
+replicates it runs -0.0017 to 0.0012, above zero in three of the five and below it in two. Averaged over
+seasons it is 0.057 (-0.079 to 0.192) and for one unseen season 0.057 (-0.246 to 0.359). We report the point
+estimate and do not call it resolved under any of the three.
 
 - **The premium depends on how an absent player is valued, for its sign.** Three valuations, ordered by how
   much of the fact that someone else plays each one already contains: charging the whole player gives a report
