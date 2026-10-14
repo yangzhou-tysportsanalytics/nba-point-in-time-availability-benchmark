@@ -273,7 +273,7 @@ supports the account there -- is the same on both builds.
 
 `replacement_mechanism.py` is the one that answers the question the paper's Section 4.6 ends on. The two tests
 agree with the account at replacement level, where the put-back of the late Out designations is 0.040
-(0.004-0.077) and reading the report an hour out rather than six is 0.043 (0.013-0.073), and they do not under
+(0.004-0.077) and reading the report an hour out rather than six is 0.043 (0.013-0.072), and they do not under
 the plus-minus valuation, where the same two are 0.008 (-0.013 to 0.029) and -0.003 (-0.018 to 0.011). What
 holds under all three is the direction: the premium falls as the cutoff moves later on every one of them.
 
