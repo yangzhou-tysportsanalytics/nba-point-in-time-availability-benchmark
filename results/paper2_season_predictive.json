@@ -1,0 +1,198 @@
+{
+ "plan": "docs/plans/paper2_T_prediction_interval.md",
+ "plan_sha256": "a53e3bdefdf712b25bf48beb42d48fd5d185e1fdf275b239764179a9f4a41b16",
+ "note": "ci95_t3 is the across-season mean and is reproduced from the file it came from, not recomputed into it; pi95_t3 is the estimate one unseen season would produce, which is what the registered 2026-27 test observes; pi95_t3_true_value is that season's own value.",
+ "samples": {
+  "strict_six_hour": {
+   "gain_F1": {
+    "n_seasons": 4,
+    "mean_of_seasons": 0.183025,
+    "per_season": [
+     0.1083,
+     0.1992,
+     0.1987,
+     0.2259
+    ],
+    "variance_model": "plain between-season spread",
+    "season_sd": 0.051412,
+    "season_variance_tau2": 0.002643142,
+    "mean_within_season_var": 0.0,
+    "se_of_mean": 0.025706,
+    "ci95_t3": [
+     0.101218,
+     0.264832
+    ],
+    "pi95_t3": [
+     9.9e-05,
+     0.365951
+    ],
+    "pi95_t3_true_value": [
+     9.9e-05,
+     0.365951
+    ],
+    "targets": {
+     "ci95_t3": "the average over seasons drawn from this process",
+     "pi95_t3": "the estimate one unseen season would produce",
+     "pi95_t3_true_value": "that season's own underlying value"
+    },
+    "published_ci95_t3": [
+     0.1012,
+     0.2648
+    ],
+    "published_point_pooled": null,
+    "description": "the report's value, strict six-hour sample"
+   },
+   "inflation": {
+    "n_seasons": 4,
+    "mean_of_seasons": 0.0463,
+    "per_season": [
+     -0.0344,
+     0.0085,
+     0.0396,
+     0.1715
+    ],
+    "variance_model": "plain between-season spread",
+    "season_sd": 0.088809,
+    "season_variance_tau2": 0.007887087,
+    "mean_within_season_var": 0.0,
+    "se_of_mean": 0.044405,
+    "ci95_t3": [
+     -0.095015,
+     0.187615
+    ],
+    "pi95_t3": [
+     -0.269691,
+     0.362291
+    ],
+    "pi95_t3_true_value": [
+     -0.269691,
+     0.362291
+    ],
+    "targets": {
+     "ci95_t3": "the average over seasons drawn from this process",
+     "pi95_t3": "the estimate one unseen season would produce",
+     "pi95_t3_true_value": "that season's own underlying value"
+    },
+    "published_ci95_t3": [
+     -0.095,
+     0.1876
+    ],
+    "published_point_pooled": null,
+    "description": "the premium, strict six-hour sample"
+   }
+  },
+  "with_fallback": {
+   "gain_F1": {
+    "n_seasons": 4,
+    "mean_of_seasons": 0.19555,
+    "per_season": [
+     0.1491,
+     0.2093,
+     0.1997,
+     0.2241
+    ],
+    "variance_model": "between minus within",
+    "season_sd": 0.032552,
+    "season_variance_tau2": 0.0,
+    "mean_within_season_var": 0.004283,
+    "se_of_mean": 0.032722,
+    "ci95_t3": [
+     0.091413,
+     0.299687
+    ],
+    "pi95_t3": [
+     -0.037307,
+     0.428407
+    ],
+    "pi95_t3_true_value": [
+     0.091413,
+     0.299687
+    ],
+    "targets": {
+     "ci95_t3": "the average over seasons drawn from this process",
+     "pi95_t3": "the estimate one unseen season would produce",
+     "pi95_t3_true_value": "that season's own underlying value"
+    },
+    "published_ci95_t3": [
+     0.0915,
+     0.2997
+    ],
+    "description": "the report's value, sample accepting the 90-minute fallback"
+   },
+   "infl": {
+    "n_seasons": 4,
+    "mean_of_seasons": 0.056525,
+    "per_season": [
+     -0.022,
+     0.0116,
+     0.064,
+     0.1725
+    ],
+    "variance_model": "between minus within",
+    "season_sd": 0.08503,
+    "season_variance_tau2": 0.004553169,
+    "mean_within_season_var": 0.002677,
+    "se_of_mean": 0.042515,
+    "ci95_t3": [
+     -0.078777,
+     0.191827
+    ],
+    "pi95_t3": [
+     -0.24602,
+     0.35907
+    ],
+    "pi95_t3_true_value": [
+     -0.197288,
+     0.310338
+    ],
+    "targets": {
+     "ci95_t3": "the average over seasons drawn from this process",
+     "pi95_t3": "the estimate one unseen season would produce",
+     "pi95_t3_true_value": "that season's own underlying value"
+    },
+    "published_ci95_t3": [
+     -0.0788,
+     0.1918
+    ],
+    "description": "the premium, sample accepting the 90-minute fallback"
+   }
+  }
+ },
+ "pooled_against_mean_of_seasons": {
+  "strict_six_hour": {
+   "gain_F1": {
+    "pooled": 0.1852,
+    "mean_of_seasons": 0.183025,
+    "difference": 0.002175
+   },
+   "inflation": {
+    "pooled": 0.0502,
+    "mean_of_seasons": 0.0463,
+    "difference": 0.0039
+   }
+  },
+  "with_fallback": {
+   "gain_F1": {
+    "pooled": 0.1966,
+    "mean_of_seasons": 0.19555,
+    "difference": 0.00105
+   },
+   "infl": {
+    "pooled": 0.0588,
+    "mean_of_seasons": 0.056525,
+    "difference": 0.002275
+   }
+  }
+ },
+ "rule_T3": {
+  "prediction_interval": [
+   9.9e-05,
+   0.365951
+  ],
+  "contains_zero": false,
+  "lower_bound": 9.9e-05,
+  "within_0p01_of_zero": true,
+  "fires": true,
+  "what_it_requires": "if it fires, the claim that the report's value is resolved under both readings is withdrawn and replaced by: resolved in these four seasons and for the average over seasons, not resolved for a single unseen season"
+ }
+}
