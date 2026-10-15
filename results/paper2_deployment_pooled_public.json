@@ -37,7 +37,49 @@
     0.22
    ],
    "implied_season_component": 0.0678,
-   "within_season_se": 0.0519
+   "within_season_se": 0.0519,
+   "designs": {
+    "home_season_cluster": {
+     "reps": 10000,
+     "seeds": [
+      20261005,
+      20261006,
+      20261007
+     ],
+     "ci95": [
+      0.0217,
+      0.1505
+     ],
+     "lower_range": [
+      0.0208,
+      0.0231
+     ],
+     "upper_range": [
+      0.1498,
+      0.1514
+     ]
+    },
+    "season_then_cluster": {
+     "reps": 10000,
+     "seeds": [
+      20261005,
+      20261006,
+      20261007
+     ],
+     "ci95": [
+      -0.009,
+      0.1838
+     ],
+     "lower_range": [
+      -0.0101,
+      -0.0082
+     ],
+     "upper_range": [
+      0.1834,
+      0.1841
+     ]
+    }
+   }
   }
  }
 }

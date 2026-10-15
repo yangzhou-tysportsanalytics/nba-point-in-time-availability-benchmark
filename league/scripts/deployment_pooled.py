@@ -12,9 +12,17 @@ have at tip-off. The difference is the gap.
   python league/scripts/deployment_pooled.py -> results/paper2_deployment_pooled.json
 
 Least squares, the paper's main model, on the two feature sets the paper uses: narrow (three differences) and
-wide (the eight home and away values separately). Both of the targets of Section 3.1 are reported: the dyadic
-cluster-robust interval for these four seasons, and the season-level interval for an NBA season, because the
-calibration found a season component in quantities of this family and the four holdouts disagree.
+wide (the eight home and away values separately). Both of the targets of Section 3.1 are reported: an interval
+for these four seasons, and the season-level interval for an NBA season, because the calibration found a
+season component in quantities of this family and the four holdouts disagree.
+
+Four interval designs are printed for the four-season reading. `home_season_cluster` is the one Section 3.1
+designates for that reading and is what the paper reports; `season_then_cluster` is the one it reads for a
+statement about an unseen season; the iid game bootstrap is the design the four-season placebo cannot
+distinguish from the first; and the dyadic cluster-robust estimator is printed because earlier versions of
+the paper reported it and the calibration found it about 14% too narrow on this schedule. The designated
+designs were added in October 2026, after a referee pointed out that the paper was reporting this quantity
+under a design it does not designate.
 """
 from __future__ import annotations
 
@@ -29,8 +37,12 @@ import pandas as pd
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 SEASONS = (2023, 2024, 2025, 2026)
 SEED = 20261005
+
+# the designs Section 3.1 designates, over three seeds so the endpoints carry their own Monte-Carlo spread
+DESIGN_REPS, DESIGN_SEEDS = 10000, (20261005, 20261006, 20261007)
 
 
 def resolve_bench() -> tuple[Path, str]:
@@ -114,6 +126,32 @@ out = {'n_holdout_games': int(n), 'seasons': list(SEASONS), 'build': BUILD, 'ben
                'positive number is what the buyer loses.',
        'feature_sets': {}}
 
+def designed(frame: pd.DataFrame, sq_dep: np.ndarray, sq_back: np.ndarray) -> dict:
+    """The designs Section 3.1 designates, which this quantity had not been computed under before.
+
+    `home_season_cluster` is what the paper reports for a statement about these four seasons;
+    `season_then_cluster` is what it reports for a statement about one season drawn from the same process.
+    The endpoints are averaged over three seeds and their spread is stored beside them, because the lower
+    bound is what decides whether the gap is clear of zero.
+    """
+    from boot_designs import cluster_keys, weight_bank
+    keys = cluster_keys(frame)
+    out = {}
+    for name in ('home_season_cluster', 'season_then_cluster'):
+        lo, hi = [], []
+        for seed in DESIGN_SEEDS:
+            rng = np.random.default_rng(seed)
+            d = np.array([np.sqrt(np.sum(w * sq_dep) / w.sum()) - np.sqrt(np.sum(w * sq_back) / w.sum())
+                          for w in weight_bank(rng, name, DESIGN_REPS, keys)])
+            lo.append(float(np.percentile(d, 2.5)))
+            hi.append(float(np.percentile(d, 97.5)))
+        out[name] = dict(reps=DESIGN_REPS, seeds=list(DESIGN_SEEDS),
+                         ci95=[round(float(np.mean(lo)), 4), round(float(np.mean(hi)), 4)],
+                         lower_range=[round(min(lo), 4), round(max(lo), 4)],
+                         upper_range=[round(min(hi), 4), round(max(hi), 4)])
+    return out
+
+
 print(f'{"features":10}{"backtest":>10}{"deployed":>10}{"gap":>9}{"dyadic 95%":>22}{"iid 95%":>22}')
 for fs, H2 in rows.items():
     y = H2.margin.values
@@ -141,12 +179,15 @@ for fs, H2 in rows.items():
                                    gap=round(gap, 4), dyadic_se=round(se, 4), dyadic_ci95=dy, iid_ci95=ii,
                                    per_season=per, season_mean=round(m4, 4), season_sd=round(sd4, 4),
                                    season_ci95_t3=season_ci, implied_season_component=round(implied, 4),
-                                   within_season_se=round(float(within), 4))
+                                   within_season_se=round(float(within), 4),
+                                   designs=designed(H2, sq_dep, sq_back))
     print(f'{fs:10}{np.sqrt(sq_back.mean()):10.4f}{np.sqrt(sq_dep.mean()):10.4f}{gap:9.4f}'
           f'{str(dy):>22}{str(ii):>22}')
     print(f'{"":10}by season: {per}')
     print(f'{"":10}in an NBA season: {m4:.4f} {season_ci}  (season SD {sd4:.4f}, '
           f'within-season SE {within:.4f}, implied season component {implied:.4f})')
+    for _n, _d in out['feature_sets'][fs]['designs'].items():
+        print(f'{"":10}{_n}: {_d["ci95"]}  (lower across seeds {_d["lower_range"]})')
 
 OUT.write_text(json.dumps(out, indent=1), encoding='utf-8')
 print(f'\n-> {OUT.relative_to(ROOT)}')
