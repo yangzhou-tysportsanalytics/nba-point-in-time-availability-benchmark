@@ -514,5 +514,182 @@
    },
    "cw": null
   }
+ },
+ "closing_line": {
+  "holdout_season": 2026,
+  "training_seasons": [
+   2022,
+   2023
+  ],
+  "n_train": 2418,
+  "n_holdout": 977,
+  "specification": "margin ~ line (+ one availability difference); line = -close_spread_home",
+  "caveat": "One season of one product. The nested tests below are the fair ones for the nulls the market section reports; a plain DM reading of a nested null is undersized.",
+  "report_added_to_the_line": {
+   "small": "M2",
+   "large": "M2_F1",
+   "nested": true,
+   "n": 977,
+   "rmse_small": 14.0937,
+   "rmse_large": 14.0686,
+   "rmse_difference": 0.0251,
+   "dm": {
+    "mean_loss_differential": 0.7058,
+    "iid": {
+     "se": 0.5605,
+     "t": 1.259,
+     "p_two_sided": 0.208
+    },
+    "dyadic": {
+     "se": 0.618,
+     "t": 1.142,
+     "p_two_sided": 0.2535
+    },
+    "home_season": {
+     "se": 0.6202,
+     "t": 1.138,
+     "p_two_sided": 0.2551
+    }
+   },
+   "cw": {
+    "mean_adjusted_differential": 1.0563,
+    "adjustment_term": 0.3506,
+    "iid": {
+     "se": 0.5631,
+     "t": 1.876,
+     "p_one_sided": 0.0303
+    },
+    "dyadic": {
+     "se": 0.6392,
+     "t": 1.653,
+     "p_one_sided": 0.0492
+    },
+    "home_season": {
+     "se": 0.6328,
+     "t": 1.669,
+     "p_one_sided": 0.0475
+    }
+   }
+  },
+  "participation_added_to_the_line": {
+   "small": "M2",
+   "large": "M2_F2",
+   "nested": true,
+   "n": 977,
+   "rmse_small": 14.0937,
+   "rmse_large": 14.0485,
+   "rmse_difference": 0.0452,
+   "dm": {
+    "mean_loss_differential": 1.2723,
+    "iid": {
+     "se": 0.4842,
+     "t": 2.627,
+     "p_two_sided": 0.0086
+    },
+    "dyadic": {
+     "se": 0.6066,
+     "t": 2.097,
+     "p_two_sided": 0.036
+    },
+    "home_season": {
+     "se": 0.5151,
+     "t": 2.47,
+     "p_two_sided": 0.0135
+    }
+   },
+   "cw": {
+    "mean_adjusted_differential": 1.5678,
+    "adjustment_term": 0.2955,
+    "iid": {
+     "se": 0.4856,
+     "t": 3.229,
+     "p_one_sided": 0.0006
+    },
+    "dyadic": {
+     "se": 0.6081,
+     "t": 2.578,
+     "p_one_sided": 0.005
+    },
+    "home_season": {
+     "se": 0.5182,
+     "t": 3.026,
+     "p_one_sided": 0.0012
+    }
+   }
+  },
+  "inflation_on_top_of_the_price": {
+   "small": "M2_F1",
+   "large": "M2_F2",
+   "nested": false,
+   "n": 977,
+   "rmse_small": 14.0686,
+   "rmse_large": 14.0485,
+   "rmse_difference": 0.0202,
+   "dm": {
+    "mean_loss_differential": 0.5666,
+    "iid": {
+     "se": 0.3629,
+     "t": 1.561,
+     "p_two_sided": 0.1184
+    },
+    "dyadic": {
+     "se": 0.3644,
+     "t": 1.555,
+     "p_two_sided": 0.12
+    },
+    "home_season": {
+     "se": 0.3825,
+     "t": 1.481,
+     "p_two_sided": 0.1386
+    }
+   },
+   "cw": null
+  },
+  "refitting_the_price_against_the_raw_price": {
+   "small": "rawprice",
+   "large": "M2",
+   "nested": true,
+   "n": 977,
+   "rmse_small": 14.0846,
+   "rmse_large": 14.0937,
+   "rmse_difference": -0.0091,
+   "dm": {
+    "mean_loss_differential": -0.2569,
+    "iid": {
+     "se": 0.3224,
+     "t": -0.797,
+     "p_two_sided": 0.4255
+    },
+    "dyadic": {
+     "se": 0.2837,
+     "t": -0.906,
+     "p_two_sided": 0.3651
+    },
+    "home_season": {
+     "se": 0.2878,
+     "t": -0.893,
+     "p_two_sided": 0.372
+    }
+   },
+   "cw": {
+    "mean_adjusted_differential": -0.1119,
+    "adjustment_term": 0.145,
+    "iid": {
+     "se": 0.3219,
+     "t": -0.348,
+     "p_one_sided": 0.6359
+    },
+    "dyadic": {
+     "se": 0.2818,
+     "t": -0.397,
+     "p_one_sided": 0.6544
+    },
+    "home_season": {
+     "se": 0.2903,
+     "t": -0.385,
+     "p_one_sided": 0.6501
+    }
+   }
+  }
  }
 }
