@@ -95,7 +95,7 @@
    "@type": "cr:RecordSet",
    "@id": "games",
    "name": "games",
-   "description": "Benchmark rows; evaluation: train 2023-24 and 2024-25, test 2025-26, exclude any_block_missing; headline metric RMSE(F1) - RMSE(F2) on margin",
+   "description": "Benchmark rows; evaluation: rolling origin, each of 2022-23 to 2025-26 as the holdout in turn trained on all earlier seasons and pooled, on the games where both teams filed six hours out, excluding any_block_missing; headline metrics RMSE(F0) - RMSE(F1) and RMSE(F1) - RMSE(F2) on margin",
    "field": [
     {
      "@type": "cr:Field",

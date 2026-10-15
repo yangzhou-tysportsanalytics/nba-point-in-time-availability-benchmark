@@ -9,7 +9,7 @@ Plans and audit reports cited below are in the project repository.
 not exist before tip-off. This dataset records, for every regular-season game from 2021-22 to 2025-26, what the
 official NBA injury report said about each player at a fixed pregame cutoff. It keeps this separate from post-game
 participation, so that models can be trained and evaluated without information leakage. It is also the basis for the
-paper "Who Was Really Out? Point-in-Time Injury Reports and What Hindsight Actually Buys in NBA Prediction".
+paper "Who Was Really Out? A Point-in-Time NBA Availability Benchmark, and What It Says About Hindsight".
 
 **Creators and funding.** [anonymised for review]. No external funding.
 
@@ -159,10 +159,18 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   inflation on top of the closing price is −0.044 against +0.020 in 2025-26.
 
 **Benchmark protocol:**
-- train on 2023-24 and 2024-25, test on 2025-26;
+- rolling origin: each season from 2022-23 to 2025-26 is the holdout in turn, trained on all earlier ones,
+  and the four holdouts are pooled;
+- the benchmark sample is the strict one, the holdout games where **both** teams filed at least six hours
+  before tip-off, with the same rule applied to training; the 90-minute fallback is reported beside it as an
+  operational choice;
 - exclude games with a `no_report` team;
-- report RMSE of margin with a cluster bootstrap (home team) confidence interval;
-- the headline metric is **inflation** = RMSE(F1) − RMSE(F2);
+- report RMSE of margin with a home-team x season cluster bootstrap for a statement about these four seasons,
+  and a seasons-then-clusters bootstrap for the average over seasons;
+- the two headline metrics are the **report's value** = RMSE(F0) − RMSE(F1) and the **premium** =
+  RMSE(F1) − RMSE(F2);
+- the single-season specification (train 2023-24 and 2024-25, test 2025-26) is what an earlier version led
+  with and is still reported as a secondary reading;
 - as a stronger compliant baseline, also report F7: every listed player weighted by the probability that players with
   that status sit out, with the probability estimated only from games finished before the cutoff.
 
@@ -182,7 +190,7 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   per-season intervals exclude zero; 2022-23 reaches it (0.149, −0.006 to 0.302).
 - **Participation leakage is small on average and largest in 2025-26.** On the 2025-26 holdout, participation (F2) adds an apparent
   0.166 (0.077–0.255) over the report (F1), a ratio of 1.73; pooled over the four rolling holdouts it is
-  0.059 (0.001–0.119), whose lower bound is zero to within the bootstrap's own Monte-Carlo error: across five seeds at
+  0.059 (0.000–0.118), whose lower bound is zero to within the bootstrap's own Monte-Carlo error: across five seeds at
   10,000 replicates it runs −0.0017 to 0.0012, above zero in three and below in two. It is not resolved under any
   reading, and as a statement about a season it is 0.059 (−0.079 to 0.192). Per season only 2025-26's premium is
   clear of zero (0.172, 0.087–0.262). A joint test does not resolve that the seasons differ (p = 0.12 under the

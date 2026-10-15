@@ -121,7 +121,7 @@ the first column: a pooled RMSE difference is not the average of four season-spe
 | Value of the pregame report, strict six hours | **0.185 (0.126-0.245)** | 0.183 (0.101-0.265) | 0.183 (0.0001-0.366) |
 | Premium from actual participation, strict six hours | 0.050 (-0.011 to 0.110) | 0.046 (-0.095 to 0.188) | 0.046 (-0.270 to 0.362) |
 | The report's value accepting the 90-minute fallback | 0.197 (0.132-0.261) | 0.196 (0.144-0.247) | 0.196 (0.080-0.311) |
-| The premium accepting the fallback | 0.059 (0.001-0.119) | 0.057 (-0.079 to 0.192) | 0.057 (-0.246 to 0.359) |
+| The premium accepting the fallback | 0.059 (0.000-0.118) | 0.057 (-0.079 to 0.192) | 0.057 (-0.246 to 0.359) |
 | The last two on this rebuild (4,835 games) | 0.196 (0.131-0.260) and 0.074 (0.012-0.135) | - | - |
 
 So the report's value is resolved for these four seasons and for the average over seasons. The third column is an
@@ -272,6 +272,7 @@ python league/scripts/replacement_valuation.py  # at replacement level
 python league/scripts/cutoff_curve.py           # the curve, and the twelve-hour artefact
 python league/scripts/decomposition.py          # the three components, both readings of the put-backs
 python league/scripts/replacement_mechanism.py  # the curve and the put-backs under all three valuations
+python league/scripts/pooled_headline.py        # the pooled rolling headline on this rebuild
 ```
 
 None of them reimplements the build: the report rows, the name matching and the rule for which report is

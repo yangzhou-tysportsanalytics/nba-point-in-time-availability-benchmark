@@ -1,6 +1,10 @@
-# Paper 2 release: data dictionary
+# Paper 2: data dictionary of the originating project's tables
 
-Generated from the column descriptions in the release build script, which is released with the paper's full code; do not edit by hand.
+**What this file is, and what it is not.** It documents the schema of the three tables the originating project builds -- `games.csv.gz`, `team_games.csv.gz` and `player_availability.csv.gz` -- and **none of the three is in this repository**. The player-level one cannot be: the source terms forbid redistributing a player-level availability table, which is why `league/scripts/rebuild.py build` writes it on your own machine instead and why `data/out/` is not tracked here.
+
+What this repository releases is two game-level files, described in `README.md`: `data/bench_games_public.csv`, the benchmark's game-level table with no betting lines and no player-level rows, and `data/status_table_public.csv`, a six-row status aggregate. The betting-line columns listed below for `games.csv.gz` are among the reasons that table is not released.
+
+Read this file, then, as the schema you will have locally after a rebuild, and as the provenance of the columns the paper's features are built from. The column descriptions come from the originating project's build script, which is not released; they are reproduced here rather than generated.
 
 **Timing** tells you when a value is knowable. `pregame` = known at the stated cutoff and safe as a prediction input; `postgame` = an outcome, never a pregame input (the leakage experiments in the paper use exactly these columns as the leak); `key` / `meta` = identifiers and provenance.
 

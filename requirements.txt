@@ -1,6 +1,7 @@
 # python 3.12.10 (tested on Windows 11)
 numpy==2.4.1
 pandas==3.0.0
+scipy==1.17.0        # boot_calibration.py and prospective_power.py import it
 python-dateutil==2.9.0.post0
 tzdata==2025.3
 pdfplumber==0.11.10
