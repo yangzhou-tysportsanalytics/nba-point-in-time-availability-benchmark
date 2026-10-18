@@ -122,6 +122,11 @@
        "coverage": 0.87,
        "mean_width": 0.1423,
        "width_over_true": 0.903
+      },
+      "away_season_cluster": {
+       "coverage": 0.897,
+       "mean_width": 0.1356,
+       "width_over_true": 0.861
       }
      }
     },
@@ -155,6 +160,11 @@
        "coverage": 0.86,
        "mean_width": 0.1145,
        "width_over_true": 0.875
+      },
+      "away_season_cluster": {
+       "coverage": 0.957,
+       "mean_width": 0.1292,
+       "width_over_true": 0.988
       }
      }
     }
@@ -276,6 +286,11 @@
        "coverage": 0.873,
        "mean_width": 0.1108,
        "width_over_true": 0.902
+      },
+      "away_season_cluster": {
+       "coverage": 0.893,
+       "mean_width": 0.1058,
+       "width_over_true": 0.861
       }
      }
     },
@@ -309,6 +324,11 @@
        "coverage": 0.863,
        "mean_width": 0.0894,
        "width_over_true": 0.874
+      },
+      "away_season_cluster": {
+       "coverage": 0.96,
+       "mean_width": 0.1008,
+       "width_over_true": 0.986
       }
      }
     }
@@ -316,10 +336,11 @@
   }
  },
  "schedule_deflation": {
-  "ordered_pairs_sharing_a_team": 3072644,
-  "per_game": 634.1,
-  "variance_factor": 0.7383,
-  "se_factor": 0.8593,
-  "note": "The dyadic estimator is low by about this factor when games are independent; compare it with the dyadic row of the placebo coverage below."
+  "ordered_pairs_sharing_a_team": 3067798,
+  "per_game": 633.1,
+  "variance_factor": 0.8692,
+  "se_factor": 0.9323,
+  "formula": "1 - 1/n - P/n^2, P ordered pairs of distinct games sharing at least one team",
+  "note": "Centring on the sample mean makes the dyadic estimator low by about this factor when games are independent. Compare it with the dyadic row of the placebo coverage: the measured shortfall is larger than this, so centring is part of the story and real dependence is the rest."
  }
 }
