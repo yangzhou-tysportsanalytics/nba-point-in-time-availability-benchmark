@@ -147,7 +147,10 @@ estimate and do not call it resolved under any of the three.
   but these data cannot separate it from team strength: it correlates -0.03 with the feature it would revalue,
   enters the model with the opposite sign, and keeps 3% of its coefficient once the same measure over the
   whole reference rotation is controlled for, so its answer is not evidence about valuing an absence. The
-  report's value is positive and clear of zero under both valuations and under that feature as well.
+  report's value is resolved above zero under both valuations and under that feature as well, which are three
+  sizes and not three confirmations of a sign: the sign is non-negative for every valuation, because dropping
+  the feature is the same model with its coefficient set to zero, and that nesting is also why the premium,
+  which has no such guarantee, is read differently.
   Without the 240-minute rescaling the pair reads 0.205 (0.143-0.274) and 0.038 (-0.017 to 0.095).
 - **It depends on the cutoff.** On the games where both teams had filed at six hours, the report is worth
   0.185 (0.126-0.245) six hours out and 0.258 (0.185-0.333) thirty minutes out. Read at one hour instead of

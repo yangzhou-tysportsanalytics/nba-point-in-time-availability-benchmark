@@ -86,37 +86,37 @@
     "fitted": {
      "scenario": "fitted",
      "true_value": 0.1955,
-     "true_sd": 0.0408,
-     "nominal_width": 0.1597,
+     "true_sd": 0.0407,
+     "nominal_width": 0.1596,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.893,
-       "mean_width": 0.1352,
+       "mean_width": 0.135,
        "width_over_true": 0.846
       },
       "two_way_team": {
        "coverage": 0.997,
-       "mean_width": 0.2342,
+       "mean_width": 0.2339,
        "width_over_true": 1.466
       },
       "season_then_cluster": {
        "coverage": 0.973,
-       "mean_width": 0.188,
+       "mean_width": 0.1878,
        "width_over_true": 1.177
       },
       "iid_game": {
        "coverage": 0.88,
-       "mean_width": 0.1279,
+       "mean_width": 0.1276,
        "width_over_true": 0.8
       },
       "dyadic": {
        "coverage": 0.897,
-       "mean_width": 0.1451,
+       "mean_width": 0.145,
        "width_over_true": 0.908
       },
       "away_season_cluster": {
        "coverage": 0.913,
-       "mean_width": 0.1349,
+       "mean_width": 0.1347,
        "width_over_true": 0.844
       }
      }
@@ -241,37 +241,37 @@
     "fitted": {
      "scenario": "fitted",
      "true_value": 0.0734,
-     "true_sd": 0.0351,
-     "nominal_width": 0.1375,
+     "true_sd": 0.035,
+     "nominal_width": 0.1373,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.903,
-       "mean_width": 0.1138,
-       "width_over_true": 0.828
+       "mean_width": 0.1136,
+       "width_over_true": 0.827
       },
       "two_way_team": {
        "coverage": 0.997,
-       "mean_width": 0.1963,
-       "width_over_true": 1.428
+       "mean_width": 0.196,
+       "width_over_true": 1.427
       },
       "season_then_cluster": {
        "coverage": 0.963,
-       "mean_width": 0.1577,
+       "mean_width": 0.1575,
        "width_over_true": 1.147
       },
       "iid_game": {
        "coverage": 0.863,
-       "mean_width": 0.1061,
+       "mean_width": 0.1058,
        "width_over_true": 0.771
       },
       "dyadic": {
        "coverage": 0.903,
-       "mean_width": 0.125,
+       "mean_width": 0.1249,
        "width_over_true": 0.909
       },
       "away_season_cluster": {
        "coverage": 0.893,
-       "mean_width": 0.1136,
+       "mean_width": 0.1134,
        "width_over_true": 0.826
       }
      }
