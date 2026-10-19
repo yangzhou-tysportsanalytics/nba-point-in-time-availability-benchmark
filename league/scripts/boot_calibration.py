@@ -151,11 +151,21 @@ def variance_components(d: np.ndarray) -> dict:
     cross_cov = num_c / den_c if den_c else 0.0
     var_team = max(cross_cov, 0.0)
     var_team_season = max(same_cov - cross_cov, 0.0)
-    var_game = max(tot - var_team - var_team_season, 0.0)
+    # these are the per-effect variances, which is what the covariance between two games sharing a team
+    # identifies and what the generating equation draws from. Each enters a game's variance twice, once per
+    # side, so the game variance takes twice as much out and the structural share is twice the sum of the
+    # two per-effect shares. Reporting them one-sided is what made the paper say 0.3% where its own
+    # generating equation gives 0.6%.
+    var_structure = 2 * (var_team + var_team_season)
+    var_game = max(tot - var_structure, 0.0)
     return dict(total=round(tot, 6), team=round(var_team, 6), team_season=round(var_team_season, 6),
                 game=round(var_game, 6), cov_same_season=round(same_cov, 6), cov_across_seasons=round(cross_cov, 6),
                 share_team=round(var_team / tot, 4), share_team_season=round(var_team_season / tot, 4),
-                share_game=round(var_game / tot, 4))
+                share_structure_both_sides=round(var_structure / tot, 4),
+                share_game=round(var_game / tot, 4),
+                note='team and team_season are per-effect variances; a game carries one draw of each per '
+                     'side, so total = 2*(team + team_season) + game and share_structure_both_sides is the '
+                     'share of a game\'s variance that the two sides carry between them')
 
 
 # ---------------------------------------------------------------- the designs
@@ -327,7 +337,8 @@ def main() -> int:
 
         print(f'\n=== {q}: RMSE({ka}) - RMSE({kb}) = {point:.4f} ===', flush=True)
         print(f'  variance of the per-game difference: team {comps["share_team"]:.1%}, '
-              f'team-season {comps["share_team_season"]:.1%}, game {comps["share_game"]:.1%}', flush=True)
+              f'team-season {comps["share_team_season"]:.1%} (both sides '
+              f'{comps["share_structure_both_sides"]:.1%}), game {comps["share_game"]:.1%}', flush=True)
         print(f'  dyadic cluster-robust SE {se_dy:.4f}  ->  95% CI '
               f'[{point - 1.96 * se_dy:.4f}, {point + 1.96 * se_dy:.4f}]  width {2 * 1.96 * se_dy:.4f}', flush=True)
         seas = season_level(a, b)

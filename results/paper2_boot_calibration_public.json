@@ -13,12 +13,14 @@
     "total": 4191.331832,
     "team": 0.0,
     "team_season": 14.33427,
-    "game": 4176.997563,
+    "game": 4162.663293,
     "cov_same_season": 9.501788,
     "cov_across_seasons": -4.832481,
     "share_team": 0.0,
     "share_team_season": 0.0034,
-    "share_game": 0.9966
+    "share_structure_both_sides": 0.0068,
+    "share_game": 0.9932,
+    "note": "team and team_season are per-effect variances; a game carries one draw of each per side, so total = 2*(team + team_season) + game and share_structure_both_sides is the share of a game's variance that the two sides carry between them"
    },
    "dyadic_se": 0.0299,
    "dyadic_ci95": [
@@ -168,12 +170,14 @@
     "total": 2833.058711,
     "team": 0.0,
     "team_season": 11.500856,
-    "game": 2821.557855,
+    "game": 2810.056999,
     "cov_same_season": 7.708819,
     "cov_across_seasons": -3.792037,
     "share_team": 0.0,
     "share_team_season": 0.0041,
-    "share_game": 0.9959
+    "share_structure_both_sides": 0.0081,
+    "share_game": 0.9919,
+    "note": "team and team_season are per-effect variances; a game carries one draw of each per side, so total = 2*(team + team_season) + game and share_structure_both_sides is the share of a game's variance that the two sides carry between them"
    },
    "dyadic_se": 0.0246,
    "dyadic_ci95": [
