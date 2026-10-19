@@ -108,6 +108,16 @@
        "coverage": 0.88,
        "mean_width": 0.1279,
        "width_over_true": 0.8
+      },
+      "dyadic": {
+       "coverage": 0.897,
+       "mean_width": 0.1451,
+       "width_over_true": 0.908
+      },
+      "away_season_cluster": {
+       "coverage": 0.913,
+       "mean_width": 0.1349,
+       "width_over_true": 0.844
       }
      }
     },
@@ -136,6 +146,16 @@
        "coverage": 0.96,
        "mean_width": 0.1274,
        "width_over_true": 0.975
+      },
+      "dyadic": {
+       "coverage": 0.863,
+       "mean_width": 0.1108,
+       "width_over_true": 0.848
+      },
+      "away_season_cluster": {
+       "coverage": 0.95,
+       "mean_width": 0.1258,
+       "width_over_true": 0.963
       }
      }
     }
@@ -243,6 +263,16 @@
        "coverage": 0.863,
        "mean_width": 0.1061,
        "width_over_true": 0.771
+      },
+      "dyadic": {
+       "coverage": 0.903,
+       "mean_width": 0.125,
+       "width_over_true": 0.909
+      },
+      "away_season_cluster": {
+       "coverage": 0.893,
+       "mean_width": 0.1136,
+       "width_over_true": 0.826
       }
      }
     },
@@ -271,6 +301,16 @@
        "coverage": 0.95,
        "mean_width": 0.1057,
        "width_over_true": 0.971
+      },
+      "dyadic": {
+       "coverage": 0.857,
+       "mean_width": 0.0923,
+       "width_over_true": 0.847
+      },
+      "away_season_cluster": {
+       "coverage": 0.953,
+       "mean_width": 0.1047,
+       "width_over_true": 0.962
       }
      }
     }

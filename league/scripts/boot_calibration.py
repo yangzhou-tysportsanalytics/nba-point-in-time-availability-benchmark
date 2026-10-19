@@ -13,7 +13,8 @@ This does not take that on faith and does not assume it is wrong. Four questions
   2. Under a known truth on the real schedule, what coverage does each design have, and how wide is its interval
      against the true sampling SD? Placebo differences are generated from the fitted components and again with
      the team structure removed, and the statistic is the RMSE difference the paper reports, not a mean.
-  3. What does an analytic dyadic cluster-robust standard error say beside the bootstrap?
+  3. What does an analytic dyadic cluster-robust standard error say beside the bootstrap, on the
+     observed data and under the same placebo?
   4. For each quantity separately: how much of the two-way width is the product weight, and how much is
      dependence the design is right to carry? The paper's third design, season-then-cluster, has no product
      weights, so the gap between the two separates them.
@@ -60,11 +61,14 @@ SIMS = int(os.environ.get('P2_CAL_SIMS', 300))      # placebo datasets scored fo
 REPS = int(os.environ.get('P2_CAL_REPS', 600))      # bootstrap replicates inside each placebo
 TRUTH = int(os.environ.get('P2_CAL_TRUTH', 4000))   # datasets used to pin the true sampling distribution
 SEASONS = (2023, 2024, 2025, 2026)
-DESIGNS = ('home_season_cluster', 'two_way_team', 'season_then_cluster', 'iid_game')
+BOOT_DESIGNS = ('home_season_cluster', 'two_way_team', 'season_then_cluster', 'iid_game')
 # the mirror of the reported design, which the paper now reports a reading under. It is not in
-# DESIGNS because one generator is shared across them and a fifth entry would shift every later
+# BOOT_DESIGNS because one generator is shared across them and a fifth entry would shift every later
 # design's draws; it gets its own generator below.
 SIDE_DESIGN, SIDE_SEED = 'away_season_cluster', 20260921 + 909
+# the dyadic estimator draws no weights, so it costs the shared generator nothing and goes in the
+# scored list directly
+DESIGNS = BOOT_DESIGNS + ('dyadic', SIDE_DESIGN)
 
 # ---------------------------------------------------------------- the holdout, exactly as the paper builds it
 G = pd.read_csv(BENCH, dtype={'game_id': str})
@@ -86,7 +90,11 @@ season = H.season_year.values
 teams = np.array(sorted(set(H.home) | set(H.away)))
 hi_, ai_ = np.searchsorted(teams, H.home.values), np.searchsorted(teams, H.away.values)
 hs_code, hs_keys = pd.factorize(pd.Series(H.home + '_' + H.season_year.astype(str)))
+# the mirror of the design this study was written to score, so the placebo can be asked whether it can
+# tell the two sides apart at all
+as_code, as_keys = pd.factorize(pd.Series(H.away + '_' + H.season_year.astype(str)))
 n, n_hs, n_teams = len(y), len(hs_keys), len(teams)
+n_as = len(as_keys)
 season_cluster_ids = {s: np.flatnonzero(pd.Series(hs_keys).str.endswith('_' + str(s)).values) for s in SEASONS}
 season_idx = {s: np.flatnonzero(season == s) for s in SEASONS}
 # team-season index per game side, for generating placebo data with the right structure
@@ -166,6 +174,9 @@ def weight_bank(rng, design, reps):
                 ids = season_cluster_ids[s]
                 c += np.bincount(rng.choice(ids, len(ids)), minlength=n_hs).astype(float)
             W[r] = c[hs_code]
+        elif design == 'away_season_cluster':
+            c = np.bincount(rng.integers(0, n_as, n_as), minlength=n_as).astype(float)
+            W[r] = c[as_code]
         elif design == 'iid_game':
             W[r] = np.bincount(rng.integers(0, n, n), minlength=n).astype(float)
         else:
@@ -215,8 +226,12 @@ def calibrate(b: np.ndarray, comps: dict, scenario: str, rng) -> dict:
     truth = np.array([rmse_diff(b + make(tr), b) for _ in range(TRUTH)])
     true_mean, true_sd = float(truth.mean()), float(truth.std(ddof=1))
 
-    banks = {d: [weight_bank(rng, d, REPS) for _ in range(3)] for d in DESIGNS}
-    sums = {d: [W.sum(1) for W in banks[d]] for d in DESIGNS}
+    banks = {d: [weight_bank(rng, d, REPS) for _ in range(3)] for d in BOOT_DESIGNS}
+    sums = {d: [W.sum(1) for W in banks[d]] for d in BOOT_DESIGNS}
+    # its own generator, so the stream above is exactly what it was before this design existed
+    _srng = np.random.default_rng(SIDE_SEED)
+    banks[SIDE_DESIGN] = [weight_bank(_srng, SIDE_DESIGN, REPS) for _ in range(3)]
+    sums[SIDE_DESIGN] = [W.sum(1) for W in banks[SIDE_DESIGN]]
 
     res = {}
     for design in DESIGNS:
@@ -224,9 +239,13 @@ def calibrate(b: np.ndarray, comps: dict, scenario: str, rng) -> dict:
         sr = np.random.default_rng(SEED + 202)
         for i in range(SIMS):
             a = b + make(sr)
-            k = i % 3
-            vals = rmse_diff_batch(a, b, banks[design][k], sums[design][k])
-            lo, hi = np.percentile(vals, [2.5, 97.5])
+            if design == 'dyadic':
+                pt, se = rmse_diff(a, b), dyadic_se(a, b)
+                lo, hi = pt - 1.959964 * se, pt + 1.959964 * se
+            else:
+                k = i % 3
+                vals = rmse_diff_batch(a, b, banks[design][k], sums[design][k])
+                lo, hi = np.percentile(vals, [2.5, 97.5])
             widths.append(hi - lo)
             cover += int(lo <= true_mean <= hi)
         mw = float(np.mean(widths))
@@ -290,7 +309,7 @@ def main() -> int:
         se_dy = dyadic_se(a, b)
 
         observed = {}
-        for design in DESIGNS:
+        for design in BOOT_DESIGNS:
             W = weight_bank(rng, design, 3000)
             vals = rmse_diff_batch(a, b, W, W.sum(1))
             lo, hi = np.percentile(vals, [2.5, 97.5])
