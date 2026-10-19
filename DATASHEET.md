@@ -225,10 +225,13 @@ changed. The verification counts are in `results/paper2_parse_verify.json`; the 
   report's value. A third valuation charges an absence only at the player's margin over a replacement, which is what it costs a team
   that fills the minutes with someone else: the report is worth 0.162 (0.102–0.223) and the premium 0.038
   (−0.004 to 0.079). With a plus-minus impact measure in place of per-minute efficiency they are 0.051
-  (0.014–0.086) and −0.030 (−0.053 to −0.004), the second negative and clear of zero. The three valuations differ
-  in how much of the fact that someone else plays each already contains, and both quantities fall as more of it
-  does. The report's value is positive and clear of zero under all three; the premium is resolved above zero under
-  none of them. Users building their own valuation should expect the premium, including its sign, to move with it.
+  (0.014–0.086) and −0.030 (−0.053 to −0.004). That third feature is not a third valuation of the absences: it
+  correlates −0.03 with the feature it would revalue, enters the model with the opposite sign, and keeps 3% of
+  its coefficient once the same measure over the whole reference rotation — which carries no absence
+  information — is controlled for, so the difference between its answer and the other two is not evidence about
+  valuing an absence. Between the two valuations the premium falls by about a third of itself. The report's
+  value is positive and clear of zero under both and under that feature as well; the premium is resolved above
+  zero under neither. Users building their own valuation should expect the premium's magnitude to move with it.
 - **The public path reproduces the headline.** Running the same pooled rolling design on the released rebuild
   (4,835 holdout games against 4,846) gives a report value of 0.196 (0.131–0.260) against 0.197 and a premium of
   0.074 (0.012–0.135) against 0.059.

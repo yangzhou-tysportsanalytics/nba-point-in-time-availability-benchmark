@@ -61,6 +61,10 @@ REPS = int(os.environ.get('P2_CAL_REPS', 600))      # bootstrap replicates insid
 TRUTH = int(os.environ.get('P2_CAL_TRUTH', 4000))   # datasets used to pin the true sampling distribution
 SEASONS = (2023, 2024, 2025, 2026)
 DESIGNS = ('home_season_cluster', 'two_way_team', 'season_then_cluster', 'iid_game')
+# the mirror of the reported design, which the paper now reports a reading under. It is not in
+# DESIGNS because one generator is shared across them and a fifth entry would shift every later
+# design's draws; it gets its own generator below.
+SIDE_DESIGN, SIDE_SEED = 'away_season_cluster', 20260921 + 909
 
 # ---------------------------------------------------------------- the holdout, exactly as the paper builds it
 G = pd.read_csv(BENCH, dtype={'game_id': str})
@@ -255,7 +259,10 @@ def season_level(a, b) -> dict:
     between = float(per.var(ddof=1))
     within = float(np.mean(se2))
     tau2 = max(between - within, 0.0)                       # season-to-season variance of the true value
-    se_mean = np.sqrt((tau2 + within) / len(SEASONS))
+    # sqrt((tau2 + within)/n) widens exactly when tau2 clamps at zero, which is when there is least evidence
+    # of real season-to-season variation. The arithmetic lives in season_level.py, vendored from the
+    # originating project so the two cannot drift apart again (2026-10-19).
+    se_mean = np.sqrt(between / len(SEASONS))
     from scipy import stats
     t3 = float(stats.t.ppf(0.975, len(SEASONS) - 1))
     return dict(per_season={str(s): round(float(p), 4) for s, p in zip(SEASONS, per)},

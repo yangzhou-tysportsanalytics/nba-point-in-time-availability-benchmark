@@ -70,16 +70,16 @@
     "mean_within_season_var": 0.004195,
     "season_variance_tau2": 0.0,
     "season_sd": 0.0,
-    "se_of_four_season_mean": 0.0324,
+    "se_of_four_season_mean": 0.0182,
     "ci95_normal": [
-     0.1313,
-     0.2582
+     0.159,
+     0.2305
     ],
     "ci95_t3": [
-     0.0917,
-     0.2978
+     0.1367,
+     0.2528
     ],
-    "width_t3": 0.2061,
+    "width_t3": 0.1161,
     "note": "target is a season drawn from the same process, not these four seasons"
    },
    "calibration": {

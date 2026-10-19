@@ -93,8 +93,9 @@ Outputs, including the player-level tables we do not redistribute, go to `data/p
 - **Absence value.** Reference minutes × per-minute efficiency over the player's prior 20 games that ended before
   the cutoff.
 - **Evaluation.** Rolling-origin holdouts: each season from 2022-23 to 2025-26 in turn, trained on all earlier
-  seasons, then pooled (4,846 games). Inflation is RMSE(F1) − RMSE(F2). Intervals resample both teams (a two-way
-  team bootstrap); home-team×season cluster intervals are reported beside them in the paper.
+  seasons, then pooled (4,846 games). Inflation is RMSE(F1) − RMSE(F2). Intervals resample home-team×season clusters, the design the paper reports; the away-side mirror is
+  reported beside it, because the placebo calibration scores the two alike and cannot order them, and
+  the two-way team bootstrap earlier versions used is withdrawn, covering at essentially one.
 
 ## Key results
 
@@ -139,11 +140,14 @@ replicates it runs -0.0017 to 0.0012, above zero in three of the five and below 
 seasons it is 0.057 (-0.079 to 0.192) and for one unseen season 0.057 (-0.246 to 0.359). We report the point
 estimate and do not call it resolved under any of the three.
 
-- **The premium depends on how an absent player is valued, for its sign.** Three valuations, ordered by how
-  much of the fact that someone else plays each one already contains: charging the whole player gives a report
-  value of 0.197 and a premium of 0.059; charging only his margin over a replacement gives 0.162 (0.102-0.223)
-  and 0.038 (-0.004 to 0.079); a plus-minus impact measure gives 0.051 (0.014-0.086) and -0.030 (-0.053 to
-  -0.004), negative and clear of zero. The report's value is positive and clear of zero under all three.
+- **The premium's magnitude depends on how an absent player is valued.** Charging the whole player gives a
+  report value of 0.197 and a premium of 0.059; charging only his margin over a replacement gives 0.162
+  (0.102-0.223) and 0.038 (-0.004 to 0.079), so the premium falls by about a third of itself between the two.
+  A third feature, built from per-minute plus-minus, gives 0.051 (0.014-0.086) and -0.030 (-0.053 to -0.004),
+  but it is not a third valuation of the absences: it correlates -0.03 with the feature it would revalue,
+  enters the model with the opposite sign, and keeps 3% of its coefficient once the same measure over the
+  whole reference rotation is controlled for, so its answer is not evidence about valuing an absence. The
+  report's value is positive and clear of zero under both valuations and under that feature as well.
   Without the 240-minute rescaling the pair reads 0.205 (0.143-0.274) and 0.038 (-0.017 to 0.095).
 - **It depends on the cutoff.** On the games where both teams had filed at six hours, the report is worth
   0.185 (0.126-0.245) six hours out and 0.258 (0.185-0.333) thirty minutes out. Read at one hour instead of
