@@ -47,6 +47,8 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
 | `league/scripts/parse_injury_pdf.py` | The injury-report parser. |
 | `league/public/pit_rules.py` | Name matching, reason classes and reference minutes, copied verbatim from the project code. |
+| `league/public/cutoff_encoding.py` | How a report is read at a cutoff under either compliant encoding, copied verbatim from the project code, with its tests in `league/tests/`. |
+| `league/scripts/cutoff_f7_main_build.py` | Plan Y as it was run on the main build: what reading the report later is worth once the early report is read in full. Published to be read, not rerun here (see below). |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `DATASHEET.md` | Datasheet (Gebru et al., 2021). |
@@ -288,6 +290,17 @@ current at a cutoff come from `rebuild.py` called with a different cutoff, and `
 project's module shipped unchanged, because those rules are part of what the paper claims. Each script prints
 the figures this repository already publishes as a control, so you can see the plumbing is right before
 reading anything new off it.
+
+**One analysis in this release cannot be rerun here, and it is the newest.** Plan Y asks what reading the report
+at one hour instead of six is worth to a model that already reads every status the six-hour report publishes.
+Its script is published as `league/scripts/cutoff_f7_main_build.py`, unchanged from the run, and its result as
+`results/paper2_cutoff_f7.json`, but it reads the originating project's paths rather than this rebuild's, so
+there is no public-path control for it and none is shipped. What does run here is the part that goes wrong
+quietly: the encoding is vendored as `league/public/cutoff_encoding.py` with the thirteen cases it was built
+against in `league/tests/test_cutoff_encoding.py`, among them that a report printed exactly on the cutoff counts,
+that a team which had not filed is unknown rather than healthy, and that a player the report does not list is
+charged nothing even though "Available" carries a sit-out rate of its own. Porting the analysis onto this
+rebuild is the obvious next step and has not been done.
 
 Three results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
 minutes back to 240 does not return this build's reference minutes for 32,118 of 182,004 rows, where on the

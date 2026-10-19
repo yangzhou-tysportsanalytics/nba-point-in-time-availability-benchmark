@@ -1,0 +1,213 @@
+{
+ "plan": "docs/plans/paper2_Y_f7_at_the_cutoffs.md",
+ "plan_sha256": "86e1f0558da1746ae691f3dab21b49aa0123dcc104460c2e2bf1f6ae2fa76027",
+ "seed": 20260921,
+ "reps": 2000,
+ "fixed_games": 5181,
+ "note": "The rotation, the reference minutes, the prior efficiency and the per-status sit-out rates are the six-hour build's; only the status is re-read at the later cutoff.",
+ "controls": {
+  "f1_six_hours": {
+   "n": 4131,
+   "gain": 0.1852,
+   "inflation": 0.0502,
+   "gain_ci": [
+    0.1255,
+    0.2447
+   ],
+   "inflation_ci": [
+    -0.0113,
+    0.1096
+   ]
+  },
+  "f1_paired_one_hour": {
+   "n": 4131,
+   "point": 0.0666,
+   "ci95_home": [
+    0.0305,
+    0.1031
+   ],
+   "ci95_two_way": [
+    0.0096,
+    0.1223
+   ],
+   "ci95_season": [
+    0.0182,
+    0.1208
+   ]
+  },
+  "f7_six_hours": {
+   "n": 4131,
+   "gain": 0.2198,
+   "inflation": 0.0156,
+   "gain_ci": [
+    0.15,
+    0.2885
+   ],
+   "inflation_ci": [
+    -0.0317,
+    0.0627
+   ]
+  },
+  "expected": {
+   "gain_F1_6h": 0.1852,
+   "infl_6h": 0.0502,
+   "paired_F1": 0.0666,
+   "paired_F1_ci": [
+    0.0305,
+    0.1031
+   ],
+   "n": 4131,
+   "strict_F7_gain": 0.2198
+  },
+  "Y-a": "pass",
+  "Y-b": "pass"
+ },
+ "full_sample": {
+  "f1_paired": {
+   "n": 4131,
+   "point": 0.0666,
+   "ci95_home": [
+    0.0305,
+    0.1031
+   ],
+   "ci95_two_way": [
+    0.0096,
+    0.1223
+   ],
+   "ci95_season": [
+    0.0182,
+    0.1208
+   ]
+  },
+  "f7_paired": {
+   "n": 4131,
+   "point": 0.0297,
+   "ci95_home": [
+    0.0057,
+    0.0528
+   ],
+   "ci95_two_way": [
+    -0.0045,
+    0.0663
+   ],
+   "ci95_season": [
+    0.0038,
+    0.0562
+   ]
+  },
+  "difference": {
+   "n": 4131,
+   "point": -0.0369,
+   "ci95_home": [
+    -0.06,
+    -0.0157
+   ],
+   "ci95_two_way": [
+    -0.0755,
+    0.0017
+   ],
+   "ci95_season": [
+    -0.0776,
+    -0.0002
+   ]
+  },
+  "f7_paired_rates_reestimated": {
+   "n": 4131,
+   "point": 0.0297,
+   "ci95_home": [
+    0.0057,
+    0.0528
+   ],
+   "ci95_two_way": [
+    -0.0045,
+    0.0663
+   ],
+   "ci95_season": [
+    0.0038,
+    0.0562
+   ]
+  },
+  "difference_rates_reestimated": {
+   "n": 4131,
+   "point": -0.0369,
+   "ci95_home": [
+    -0.06,
+    -0.0157
+   ],
+   "ci95_two_way": [
+    -0.0755,
+    0.0017
+   ],
+   "ci95_season": [
+    -0.0776,
+    -0.0002
+   ]
+  }
+ },
+ "archive_covered": {
+  "n_games": 4179,
+  "share": 0.8066,
+  "f1_paired": {
+   "n": 3322,
+   "point": 0.0638,
+   "ci95_home": [
+    0.0274,
+    0.1004
+   ],
+   "ci95_two_way": [
+    0.0069,
+    0.1146
+   ],
+   "ci95_season": [
+    0.0088,
+    0.1287
+   ]
+  },
+  "f7_paired": {
+   "n": 3322,
+   "point": 0.0305,
+   "ci95_home": [
+    0.0093,
+    0.0514
+   ],
+   "ci95_two_way": [
+    -0.001,
+    0.0649
+   ],
+   "ci95_season": [
+    0.0038,
+    0.0591
+   ]
+  },
+  "difference": {
+   "n": 3322,
+   "point": -0.0333,
+   "ci95_home": [
+    -0.056,
+    -0.0102
+   ],
+   "ci95_two_way": [
+    -0.0675,
+    0.0045
+   ],
+   "ci95_season": [
+    -0.079,
+    0.0055
+   ]
+  }
+ },
+ "transitions": {
+  "listed_rows_six_hours": 57457,
+  "listed_rows_one_hour": 64102,
+  "rows_that_change": 14198,
+  "not_listed_at_six_then_out": 5111,
+  "listed_short_of_out_then_out": 3051,
+  "out_at_six_then_softened": 475,
+  "team_games_with_a_change": 5620
+ },
+ "rule_verdicts": {
+  "Y-c (most of waiting is hardening)": true,
+  "Y-d (waiting carries news under both)": false,
+  "Y-e (the encodings cannot be ordered at this cutoff)": false
+ }
+}
