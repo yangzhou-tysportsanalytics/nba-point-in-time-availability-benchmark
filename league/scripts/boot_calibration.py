@@ -214,7 +214,16 @@ def calibrate(b: np.ndarray, comps: dict, scenario: str, rng) -> dict:
     mu = comps['_mu']
     sd_team = np.sqrt(comps['team']) if scenario == 'fitted' else 0.0
     sd_ts = np.sqrt(comps['team_season']) if scenario == 'fitted' else 0.0
-    sd_game = np.sqrt(comps['total'] - (comps['team'] + comps['team_season'] if scenario == 'fitted' else 0.0))
+    # each side of a game contributes one draw of each effect, so each variance enters Var(d_g) twice and
+    # the game noise must take twice as much out. Subtracting once generated a distribution wider than the
+    # fitted one by team + team_season, which was 0.28% of the variance here (plan X)
+    _structure = 2 * (comps['team'] + comps['team_season']) if scenario == 'fitted' else 0.0
+    sd_game = np.sqrt(comps['total'] - _structure)
+    # what the draws will actually have, against what was fitted: equal by construction once the factor of
+    # two is right, and a loud failure rather than a clamp if some other data cannot admit the allocation
+    _generated = _structure + sd_game ** 2
+    assert sd_game > 0, f'no game variance left for the fitted components: {comps}'
+    assert abs(_generated - comps['total']) < 1e-9 * max(1.0, comps['total']), (_generated, comps['total'])
 
     def make(r):
         u = r.normal(0, sd_team, n_teams) if sd_team else np.zeros(n_teams)
