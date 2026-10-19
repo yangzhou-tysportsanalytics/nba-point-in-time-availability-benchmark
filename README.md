@@ -144,7 +144,7 @@ estimate and do not call it resolved under any of the three.
   report value of 0.197 and a premium of 0.059; charging only his margin over a replacement gives 0.162
   (0.102-0.223) and 0.038 (-0.004 to 0.079), so the premium falls by about a third of itself between the two.
   A third feature, built from per-minute plus-minus, gives 0.051 (0.014-0.086) and -0.030 (-0.053 to -0.004),
-  but it is not a third valuation of the absences: it correlates -0.03 with the feature it would revalue,
+  but these data cannot separate it from team strength: it correlates -0.03 with the feature it would revalue,
   enters the model with the opposite sign, and keeps 3% of its coefficient once the same measure over the
   whole reference rotation is controlled for, so its answer is not evidence about valuing an absence. The
   report's value is positive and clear of zero under both valuations and under that feature as well.
@@ -246,8 +246,9 @@ resampling counts has variance near 2.6 where an ordinary bootstrap weight has 1
 has almost no team structure to justify the extra width — under 1% of its variance.
 
 On one season that costs power and buys nothing, so the registration was amended before the season's first game
-to decide on an iid game bootstrap, which covers at the nominal level here. Both studies run on the released
-build:
+to decide on an iid game bootstrap, which covers at the nominal level here. The calibration scores six designs:
+the four bootstraps above, the away-team x season mirror of the reported one, and the analytic dyadic estimator,
+which are the readings the paper reports from it. Both studies run on the released build:
 
 ```
 python league/scripts/boot_calibration.py     # -> results/paper2_boot_calibration_public.json
