@@ -47,7 +47,6 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
 | `league/scripts/parse_injury_pdf.py` | The injury-report parser. |
 | `league/public/pit_rules.py` | Name matching, reason classes and reference minutes, copied verbatim from the project code. |
-| `league/public/cutoff_encoding.py` | How a report is read at a cutoff under either compliant encoding, copied verbatim from the project code, with its tests in `league/tests/`. |
 | `league/scripts/cutoff_f7_main_build.py` | Plan Y as it was run on the main build: what reading the report later is worth once the early report is read in full. Published to be read, not rerun here (see below). |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
@@ -177,8 +176,9 @@ estimate and do not call it resolved under any of the three.
   Entering each component as its own regressor instead, so the data chooses its weight, keeps the first at
   0.069 (0.029-0.109) and leaves the other two with nothing: the never-listed component reads -0.013 (-0.025
   to -0.000), which a Diebold-Mariano test would call significantly worse at p = 0.04 and the Clark-West
-  adjustment puts at p = 0.83, because a nested model cannot be worse in population and that negative is the
-  price of the extra parameter.
+  adjustment puts at p = 0.83. A nested model cannot be worse in population, so a negative here is one of
+  the things a finite sample produces for a feature in which nothing is detected; the nesting bounds the
+  population comparison and does not identify what the loss is made of.
 - **What a buyer should ask for.** The gap between a model's own backtest and the accuracy it delivers when
   handed only the pregame report, pooled over the four holdouts, is 0.068 (0.015-0.120) with narrow features
   and 0.100 (0.064-0.135) with wide ones; 0.086 (0.035-0.137) on this rebuild. It is not steady across
@@ -315,7 +315,7 @@ at one hour instead of six is worth to a model that already reads every status t
 Its script is published as `league/scripts/cutoff_f7_main_build.py`, unchanged from the run, and its result as
 `results/paper2_cutoff_f7.json`, but it reads the originating project's paths rather than this rebuild's, so
 there is no public-path control for it and none is shipped. What does run here is the part that goes wrong
-quietly: the encoding is vendored as `league/public/cutoff_encoding.py` with the thirteen cases it was built
+quietly: the encoding is shipped as `src/cutoff_encoding.py` with the thirteen cases it was built
 against in `league/tests/test_cutoff_encoding.py`, among them that a report printed exactly on the cutoff counts,
 that a team which had not filed is unknown rather than healthy, and that a player the report does not list is
 charged nothing even though "Available" carries a sit-out rate of its own. Porting the analysis onto this
