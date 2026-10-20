@@ -91,5 +91,6 @@
     0.0091
    ]
   }
- }
+ },
+ "note_superseded_definition": "Historical result. This file was produced before 2026-10-20, when decomposition.py computed 'all three' as F1 plus the three components minus the player-games the compliant feature calls Out who then played. That closes the identity and makes the feature the leaky one, which is why fixed_weight['all three'] equals reference['F1 vs F2'] here, by construction rather than by result, and why neither is the paper's 'all three'. The script now computes both and names them apart; rerunning it after a rebuild replaces this file."
 }
