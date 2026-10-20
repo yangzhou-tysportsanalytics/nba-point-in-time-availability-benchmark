@@ -1,0 +1,256 @@
+{
+ "plan": "docs/plans/paper2_Z_paired_build_paths.md",
+ "plan_sha256": "4caa7484a7e10ac82179c8064c0cc55e27b0d3caa66e04611d458d5c2fedeecc",
+ "seed": 20260921,
+ "reps": 10000,
+ "note": "One sample, one outcome, one split and one pair of controls; the arms differ only in which build the availability features come from, and the premiums are differenced inside the same bootstrap draw.",
+ "control": {
+  "n": 4846,
+  "gain_F1": 0.1966,
+  "inflation": 0.0588,
+  "expected": {
+   "gain_F1": 0.1966,
+   "inflation": 0.0588
+  },
+  "Z-a": "pass"
+ },
+ "sample": {
+  "n_common_games": 6033,
+  "kept_by_main_only": 23,
+  "kept_by_public_only": 2,
+  "games_with_a_different_F1": 5911,
+  "games_with_a_different_F2": 6033,
+  "games_with_a_different_strength_control": 128
+ },
+ "main_controls": {
+  "label": "one sample, the main build's controls",
+  "n": 4833,
+  "by_origin": {
+   "2023": {
+    "train": 1200,
+    "test": 1207
+   },
+   "2024": {
+    "train": 2407,
+    "test": 1197
+   },
+   "2025": {
+    "train": 3604,
+    "test": 1208
+   },
+   "2026": {
+    "train": 4812,
+    "test": 1221
+   }
+  },
+  "main_gain": {
+   "point": 0.1973,
+   "ci95_home": [
+    0.1324,
+    0.2624
+   ],
+   "ci95_two": [
+    0.0845,
+    0.3049
+   ],
+   "ci95_season": [
+    0.1266,
+    0.2658
+   ]
+  },
+  "public_gain": {
+   "point": 0.1948,
+   "ci95_home": [
+    0.1304,
+    0.2585
+   ],
+   "ci95_two": [
+    0.0828,
+    0.3008
+   ],
+   "ci95_season": [
+    0.1227,
+    0.2636
+   ]
+  },
+  "main_premium": {
+   "point": 0.0567,
+   "ci95_home": [
+    -0.0014,
+    0.1153
+   ],
+   "ci95_two": [
+    -0.0346,
+    0.1503
+   ],
+   "ci95_season": [
+    -0.0371,
+    0.1482
+   ]
+  },
+  "public_premium": {
+   "point": 0.0736,
+   "ci95_home": [
+    0.0124,
+    0.1359
+   ],
+   "ci95_two": [
+    -0.0162,
+    0.1625
+   ],
+   "ci95_season": [
+    -0.0116,
+    0.1611
+   ]
+  },
+  "premium_main_minus_public": {
+   "point": -0.017,
+   "ci95_home": [
+    -0.0384,
+    0.0043
+   ],
+   "ci95_two": [
+    -0.0476,
+    0.0142
+   ],
+   "ci95_season": [
+    -0.048,
+    0.0101
+   ]
+  },
+  "gain_main_minus_public": {
+   "point": 0.0025,
+   "ci95_home": [
+    -0.0088,
+    0.0137
+   ],
+   "ci95_two": [
+    -0.0162,
+    0.0221
+   ],
+   "ci95_season": [
+    -0.0129,
+    0.0169
+   ]
+  }
+ },
+ "public_controls": {
+  "label": "one sample, the released path's controls",
+  "n": 4833,
+  "by_origin": {
+   "2023": {
+    "train": 1200,
+    "test": 1207
+   },
+   "2024": {
+    "train": 2407,
+    "test": 1197
+   },
+   "2025": {
+    "train": 3604,
+    "test": 1208
+   },
+   "2026": {
+    "train": 4812,
+    "test": 1221
+   }
+  },
+  "main_gain": {
+   "point": 0.1981,
+   "ci95_home": [
+    0.1332,
+    0.2634
+   ],
+   "ci95_two": [
+    0.0852,
+    0.3053
+   ],
+   "ci95_season": [
+    0.1271,
+    0.2671
+   ]
+  },
+  "public_gain": {
+   "point": 0.1956,
+   "ci95_home": [
+    0.1312,
+    0.2598
+   ],
+   "ci95_two": [
+    0.084,
+    0.301
+   ],
+   "ci95_season": [
+    0.1232,
+    0.2645
+   ]
+  },
+  "main_premium": {
+   "point": 0.0564,
+   "ci95_home": [
+    -0.0016,
+    0.1153
+   ],
+   "ci95_two": [
+    -0.0351,
+    0.1504
+   ],
+   "ci95_season": [
+    -0.0374,
+    0.1478
+   ]
+  },
+  "public_premium": {
+   "point": 0.0735,
+   "ci95_home": [
+    0.0122,
+    0.1359
+   ],
+   "ci95_two": [
+    -0.016,
+    0.1624
+   ],
+   "ci95_season": [
+    -0.0119,
+    0.1615
+   ]
+  },
+  "premium_main_minus_public": {
+   "point": -0.0171,
+   "ci95_home": [
+    -0.0386,
+    0.0041
+   ],
+   "ci95_two": [
+    -0.0477,
+    0.0142
+   ],
+   "ci95_season": [
+    -0.048,
+    0.01
+   ]
+  },
+  "gain_main_minus_public": {
+   "point": 0.0025,
+   "ci95_home": [
+    -0.0088,
+    0.0138
+   ],
+   "ci95_two": [
+    -0.0162,
+    0.0221
+   ],
+   "ci95_season": [
+    -0.0129,
+    0.0168
+   ]
+  }
+ },
+ "rule_verdicts": {
+  "Z-c (the two paths cannot be ordered)": true,
+  "Z-d (the constructions differ on a fixed sample)": false,
+  "Z-e (the gain does not simply reproduce)": false,
+  "Z-f (the controls matter)": false,
+  "controls_swap_moves_the_difference_by": 0.0001
+ }
+}

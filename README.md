@@ -291,7 +291,19 @@ project's module shipped unchanged, because those rules are part of what the pap
 the figures this repository already publishes as a control, so you can see the plumbing is right before
 reading anything new off it.
 
-**One analysis in this release cannot be rerun here, and it is the newest.** Plan Y asks what reading the report
+**The shipped decomposition result predates a correction to this script.** Until 2026-10-20 the script
+subtracted a fourth term from its "all three" feature --- the player-games the compliant feature calls Out
+who then played --- which closes the identity and makes that feature the leaky one exactly. So in
+`results/paper2_decomposition_public.json` the `all three` put-back is 0.0736 and so is the `F1 vs F2`
+reference row, to the last digit, by construction rather than by result, and neither is the paper's `all
+three`, which is 0.057 on the main build because it keeps that fourth term in. The script now computes both
+and names them apart; rerunning it after a rebuild produces the corrected file.
+
+**Two analyses in this release cannot be rerun here.** The first compares this build's availability features with
+the main build's on the games both keep, with one outcome, one rolling split and one pair of controls, and
+differences the two premiums inside the same bootstrap draw: it needs both builds' game-level tables and
+this repository ships one of them. Its script is `league/scripts/paired_paths_main_build.py`, published as it
+was run, and its result is `results/paper2_paired_paths.json`. The second is newer. Plan Y asks what reading the report
 at one hour instead of six is worth to a model that already reads every status the six-hour report publishes.
 Its script is published as `league/scripts/cutoff_f7_main_build.py`, unchanged from the run, and its result as
 `results/paper2_cutoff_f7.json`, but it reads the originating project's paths rather than this rebuild's, so
