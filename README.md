@@ -51,6 +51,8 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/cutoff_f7_main_build.py` | Plan Y as it was run on the main build: what reading the report later is worth once the early report is read in full. Published to be read, not rerun here (see below). |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
+| `src/` | The project modules the two published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, and the cutoff encoding. |
+| `docs/plans/` | The plans those two scripts were run to, each pinned by hash inside the script. |
 | `DATASHEET.md` | Datasheet (Gebru et al., 2021). |
 | `croissant.json` | Croissant 1.0 metadata for the two released data tables (validated with `mlcroissant`). |
 | `requirements.txt` | Pinned environment. |
@@ -182,9 +184,12 @@ estimate and do not call it resolved under any of the three.
   and 0.100 (0.064-0.135) with wide ones; 0.086 (0.035-0.137) on this rebuild. It is not steady across
   seasons, and no single season reproduced it.
 - **Who played, not how long.** Once participation is known, realized minutes add nothing.
-- **No market edge.** No model built from availability beats the closing line, and a model handed the closing
-  price shows no improvement from adding availability. Against the opening price the premium is clear of zero
-  in both lined seasons with opposite signs, which is a sharper failure to replicate than an unresolved one.
+- **No market edge.** No model built *without* the price beats the closing line. A model handed the closing
+  price is not established either to improve on it with availability or to fail to: the point estimates
+  favour the model and the intervals contain zero. Against the opening price the premium is clear of zero in
+  both lined seasons with opposite signs, which the paper no longer reads as a failure to replicate: the two
+  seasons cover different parts of the calendar, overlapping in three months, and use different price
+  products, and restricting to the overlap lowers the later estimate and widens it without reconciling the two.
 
 ## Reproducing the numbers
 
@@ -303,7 +308,9 @@ and names them apart; rerunning it after a rebuild produces the corrected file.
 the main build's on the games both keep, with one outcome, one rolling split and one pair of controls, and
 differences the two premiums inside the same bootstrap draw: it needs both builds' game-level tables and
 this repository ships one of them. Its script is `league/scripts/paired_paths_main_build.py`, published as it
-was run, and its result is `results/paper2_paired_paths.json`. The second is newer. Plan Y asks what reading the report
+was run, with the modules it imports in `src/` and the plan it was run to in `docs/plans/`, and its
+result is `results/paper2_paired_paths.json`. What is missing in both cases is a table, not a file of
+ours. The second is newer. Plan Y asks what reading the report
 at one hour instead of six is worth to a model that already reads every status the six-hour report publishes.
 Its script is published as `league/scripts/cutoff_f7_main_build.py`, unchanged from the run, and its result as
 `results/paper2_cutoff_f7.json`, but it reads the originating project's paths rather than this rebuild's, so
