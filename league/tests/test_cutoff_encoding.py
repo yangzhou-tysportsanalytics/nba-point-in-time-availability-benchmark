@@ -2,17 +2,16 @@
 
 Vendored from the originating project as `league/public/cutoff_encoding.py`. The analysis that uses it needs
 the player-level table the rebuild writes on the reader's machine, so it cannot be rerun here; this module
-is the part of it that goes wrong quietly, and these are the cases it was built against. The last test
-checks the vendored copy has not drifted from the project's, and skips where the project code is absent, as
-in this repository.
+is the part of it that goes wrong quietly, and these are the cases it was built against. That it has not drifted from the project's copy is checked in the project, which is the only
+place both repositories exist.
 """
 import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / 'league/public'))
-from cutoff_encoding import selected_time, weight, team_value  # noqa: E402
+sys.path.insert(0, str(ROOT))
+from src.cutoff_encoding import selected_time, weight, team_value  # noqa: E402
 
 
 class SelectedReport(unittest.TestCase):
@@ -91,15 +90,6 @@ class TeamValue(unittest.TestCase):
         # the report lists players the rotation does not contain; the feature is a sum over the rotation
         s = {'a': 'Out', 'z': 'Out'}
         self.assertAlmostEqual(team_value(self.PLAYERS, s, self.RATES, 'out_only'), 10.0)
-
-
-class Vendored(unittest.TestCase):
-    def test_the_vendored_module_matches_the_project(self):
-        p = ROOT / 'src/cutoff_encoding.py'
-        if not p.exists():
-            self.skipTest('project code not present (public repo)')
-        here = (ROOT / 'league/public/cutoff_encoding.py').read_text(encoding='utf-8')
-        self.assertEqual(here, p.read_text(encoding='utf-8'))
 
 
 if __name__ == '__main__':
