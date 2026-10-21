@@ -58,6 +58,15 @@ BASE = ['strength_diff', 'rest_diff']
 STATUSES = ['Out', 'Doubtful', 'Questionable', 'Probable', 'Available']
 CUTS = (6, 1)
 GAME_HOURS = 2.5          # the main build's end-of-game proxy, so a rate never uses an unfinished game
+# An eighth external review pointed out that `start + 2.5h` is a proxy for the end of a game and not the
+# end of a game: it is the wall-clock length of a regulation game, and a game that went to overtime was
+# still being played when the proxy says it had finished. The sit-out rates are built only from games the
+# proxy calls finished, so a rate at a cutoff can be contaminated by a game that had not ended. These are
+# the three definitions the run compares. `overtime_aware` adds a quarter of an hour per extra period, read
+# off the box score's own minutes, and `safety_margin` is long enough that no game of any length is inside
+# it.
+END_VARIANTS = {'published': 2.5, 'overtime_aware': 2.5, 'safety_margin': 4.0}
+OT_HOURS = 0.25
 # what the main build found, for the report and not for a rule: no rule below is read off the distance
 MAIN = {'f1_paired': 0.0666, 'f7_paired': 0.0297, 'difference': -0.0369,
         'difference_ci95_home': [-0.06, -0.0157], 'n': 4131}
@@ -78,6 +87,10 @@ if len(R) != _n_ref:
     raise SystemExit(f'{_n_ref - len(R)} reference player-games are for a game the Kaggle table does not '
                      f'hold; a rate cannot be dated without a tip-off and these rows are not dropped')
 start_of = g.set_index('game_id').start
+# extra periods per game: a team's minutes divided by five is the game's length, 48 in regulation, and the
+# source rounds each player's minutes so regulation reads 46 to 48
+_len = box.groupby(['game_id', 'team'])['min'].sum().groupby('game_id').max() / 5.0
+OT = ((_len - 48) / 5).round().clip(lower=0)
 if start_of.reindex(G.game_id).isna().any():
     raise SystemExit('a benchmark game has no tip-off in the Kaggle table')
 print(f'  {len(G):,} benchmark games, {len(R):,} reference player-games', flush=True)
@@ -89,10 +102,17 @@ print(f'  {len(G):,} benchmark games, {len(R):,} reference player-games', flush=
 # fallback where a team had not filed --- the same column the main build's rates are estimated on. Evaluated
 # for every status at every game's cutoff, not only for the status the player carried there, because a later
 # report can move him to any of them.
-def rate_table(cut_hours: float) -> pd.DataFrame:
+def _ends(variant: str) -> np.ndarray:
+    """When each player-game's own game had finished, under one of the three definitions."""
+    hours = pd.Series(np.full(len(R), END_VARIANTS[variant]), index=R.index)
+    if variant == 'overtime_aware':
+        hours = hours + OT_HOURS * R.game_id.map(OT).fillna(0).values
+    return (R.start + pd.to_timedelta(hours, unit='h')).values.astype('datetime64[ns]')
+
+
+def rate_table(cut_hours: float, variant: str = 'published') -> pd.DataFrame:
     cuts = (start_of.reindex(G.game_id) - pd.Timedelta(hours=cut_hours)).values.astype('datetime64[ns]')
-    ends = (R.start + pd.Timedelta(hours=GAME_HOURS)).values.astype('datetime64[ns]')
-    q = rolling_rates(R.status.values, R.out_real.values, ends, STATUSES, cuts)
+    q = rolling_rates(R.status.values, R.out_real.values, _ends(variant), STATUSES, cuts)
     return pd.DataFrame(q, columns=STATUSES, index=G.game_id.values)
 
 
@@ -326,6 +346,58 @@ def main() -> int:
           f"  (main build {MAIN['difference']} {MAIN['difference_ci95_home']})", flush=True)
     print(f"  F7 gain at six hours {f7_6['gain']} {f7_6['gain_ci']} against F1's {c1[6]['gain']} "
           f"{c1[6]['gain_ci']}", flush=True)
+
+    # ---- the end-of-game proxy, which an eighth review asked to be checked rather than assumed
+    base_ends = _ends('published')
+    cuts6 = (start_of.reindex(G.game_id) - pd.Timedelta(hours=6)).values.astype('datetime64[ns]')
+    sens = {}
+    for variant in END_VARIANTS:
+        e = _ends(variant)
+        # A player-game is exposed at a cutoff when the two definitions disagree about whether its game
+        # had finished by then. The rates are read at every game's own six-hour cutoff, so the count is
+        # over (player-game, cutoff) pairs: for each row, the cutoffs in [min(end), max(end)), which is
+        # where the comparison `end <= cutoff` flips. Checked against the pairwise comparison itself on a
+        # sample of rows, because an off-by-one in the side of the search returns zero and looks tidy.
+        _lo = np.minimum(base_ends, e)
+        _hi = np.maximum(base_ends, e)
+        _sorted = np.sort(cuts6)
+        flips = int((np.searchsorted(_sorted, _hi, 'left')
+                     - np.searchsorted(_sorted, _lo, 'left')).sum())
+        _k = np.random.default_rng(0).choice(len(e), min(2000, len(e)), replace=False)
+        _bf = int(((base_ends[_k][:, None] <= _sorted[None, :])
+                   != (e[_k][:, None] <= _sorted[None, :])).sum())
+        _ss = int((np.searchsorted(_sorted, _hi[_k], 'left')
+                   - np.searchsorted(_sorted, _lo[_k], 'left')).sum())
+        if _bf != _ss:
+            raise SystemExit(f'the exposure count disagrees with the comparison it stands for: '
+                             f'{_ss} against {_bf} on 2,000 rows')
+        q6 = rate_table(6, variant)
+        worst = float((q6 - Q6).abs().max().max())
+        v, _ = team_values(6, 'all_statuses', q6)
+        H['F7_6_v'] = fdiff(v)[fixed]
+        v, _ = team_values(1, 'all_statuses', q6)
+        H['F7_1_v'] = fdiff(v)[fixed]
+        pr = paired('F7_1_v', 'F7_6_v')
+        pd_ = paired_difference(late7='F7_1_v')
+        # the difference uses F7_6 for the early arm, so rebuild it against this variant's own early arm
+        sens[variant] = {'end_hours': END_VARIANTS[variant],
+                         'overtime_aware': variant == 'overtime_aware',
+                         'player_game_cutoff_pairs_reclassified': flips,
+                         'player_game_cutoff_pairs': int(len(e) * len(cuts6)),
+                         'player_games_in_an_overtime_game': int((R.game_id.map(OT).fillna(0) > 0).sum()),
+                         'worst_rate_difference_from_published': round(worst, 6),
+                         'f7_paired': pr, 'difference': pd_}
+        print(f"  end proxy {variant:<15} worst rate difference {worst:.2e}, "
+              f"F7 paired {pr['point']} {pr['ci95_home']}, difference {pd_['point']} "
+              f"{pd_['ci95_home']}", flush=True)
+    out['end_of_game_proxy'] = {
+        'note': 'The sit-out rates are built from games the proxy calls finished. `published` is the main '
+                "build's fixed 2.5 hours; `overtime_aware` adds a quarter of an hour per extra period, "
+                "read off the box score's own minutes; `safety_margin` is 4 hours, longer than any game. "
+                'The contrast under each is reported so that the figure the paper prints is not resting on '
+                'the proxy being exact.',
+        'overtime_games': int((OT > 0).sum()), 'games': int(len(OT)),
+        'variants': sens}
 
     dif, dre = d['difference'], d['difference_rates_reestimated']
     lo, hi = dif['ci95_home']
