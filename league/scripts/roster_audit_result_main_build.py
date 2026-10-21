@@ -82,7 +82,15 @@ OUT = ROOT / 'results/paper2_roster_audit_result.json'
 SEED, REPS = 20261021, 10000
 FLAGGED = ['A_high_value', 'B_near_transaction', 'C_flagged_random']
 CONTROL = 'D_control'
-MEASURES = {'stints': None, 'rows': 'rows_counted_absent', 'value': 'absence_value_carried'}
+# The measures, all three on the same row set. The worksheet's own `rows_counted_absent` and
+# `absence_value_carried` are whole-stint totals over every absence in that (player, team, season), which
+# is the right question to put to an auditor and the wrong numerator for an error rate: a player who left
+# in February has genuine absences in December, and the denominator the paper quotes --- the absence value
+# of rows where the proxy can be read --- is a different row set again. So the measures below are rebuilt
+# per stint from the player-level table, restricted to the readable rows, with the artefact part being the
+# rows at or after the confirmed departure.
+MEASURES = {'stints': None, 'rows': 'abs_rows_readable', 'value': 'abs_value_readable'}
+ARTEFACT = {'stints': None, 'rows': 'art_rows_readable', 'value': 'art_value_readable'}
 VALUE_TOLERANCE = 0.10          # how far the weighted estimate of the flagged value may sit from the total
 
 
@@ -111,15 +119,69 @@ def cells(stint: pd.DataFrame, ctrl: pd.DataFrame) -> tuple[dict[str, str], dict
 
 
 def rate(w: pd.DataFrame, weights: dict[str, float], measure: str | None, which: list[str],
-         errors: np.ndarray) -> float:
-    """A post-stratified share: the cell weight times the measure, errors over everything."""
+         errors: np.ndarray, artefact: str | None = None) -> float:
+    """A post-stratified share on one row set: the artefact part over the whole of it.
+
+    For stints the numerator counts the stints in error. For rows and value the numerator is the part of
+    the stint the confirmed departure accounts for, not the whole stint, and the denominator is the same
+    rows; `errors` selects which stints contribute a numerator at all, so the two readings of
+    `cannot_confirm` differ in whether an unconfirmable stint contributes its whole readable self.
+    """
     num = den = 0.0
     for c in which:
         pick = (w.cell == c).values
-        m = np.ones(int(pick.sum())) if measure is None else w[measure].values[pick].astype(float)
-        num += weights[c] * float(m[errors[pick]].sum())
+        if measure is None:
+            m = np.ones(int(pick.sum()))
+            a = m
+        else:
+            m = w[measure].values[pick].astype(float)
+            # a stint selected as an error by a reading that has no departure date for it (an
+            # unconfirmable one) contributes all of its readable absence, which is the reading
+            a = np.where(np.isnan(w[artefact].values[pick].astype(float)), m,
+                         w[artefact].values[pick].astype(float))
+        num += weights[c] * float(a[errors[pick]].sum())
         den += weights[c] * float(m.sum())
     return float('nan') if den == 0 else num / den
+
+
+def clopper_pearson_upper(k: int, n: int, alpha: float = 0.05) -> float:
+    """The one-sided upper confidence limit for a binomial rate, which 0 of n needs and a bootstrap of it
+    cannot give: resampling zero errors returns zero every time."""
+    from scipy.stats import beta
+    return 1.0 if k >= n else float(beta.ppf(1 - alpha, k + 1, n - k))
+
+
+def per_stint_measures(w: pd.DataFrame, R: pd.DataFrame) -> pd.DataFrame:
+    """Rebuild each sampled stint's absence rows and value, and the part a confirmed departure accounts for.
+
+    Readable means the rows the paper's denominator is built from, those with ten team-games still to come.
+    The artefact part is the absence rows at or after `left_date`; it is NaN where there is no date, which
+    is how the unconfirmable reading knows to take the whole stint instead.
+    """
+    R = R.copy()
+    R['sid'] = [f'{p}_{t}_{int(s)}' for p, t, s in zip(R.espn_player_id, R.team, R.season_year)]
+    R = R[R.sid.isin(set(w.stint_id)) & R.out_real.values]
+    readable = (R.remaining_games >= 10).values
+    left = {r.stint_id: pd.Timestamp(r.left_date).tz_localize('UTC')
+            for r in w.itertuples() if r.verdict == 'had_left'}
+    after = np.array([s in left and ts >= left[s] for s, ts in zip(R.sid, R.start)])
+
+    R = R.assign(_rd=readable, _af=after)
+    R['_v'] = R.value.values
+    R['_rdv'] = R._v * R._rd
+    R['_arv'] = R._v * (R._rd & R._af)
+    R['_arr'] = (R._rd & R._af).astype(int)
+    R['_rdr'] = R._rd.astype(int)
+    out = R.groupby('sid').agg(abs_rows_all=('_v', 'size'), abs_value_all=('_v', 'sum'),
+                               abs_rows_readable=('_rdr', 'sum'), abs_value_readable=('_rdv', 'sum'),
+                               art_rows_readable=('_arr', 'sum'), art_value_readable=('_arv', 'sum'))
+    m = w.merge(out, left_on='stint_id', right_index=True, how='left')
+    for c in ('abs_rows_all', 'abs_value_all', 'abs_rows_readable', 'abs_value_readable'):
+        m[c] = m[c].fillna(0.0)
+    # no date means no artefact part; NaN is the signal, not zero
+    for c in ('art_rows_readable', 'art_value_readable'):
+        m[c] = np.where(m.verdict.values == 'had_left', m[c].fillna(0.0).values, np.nan)
+    return m
 
 
 EXT = ROOT / 'data/league/paper2_ext'
@@ -243,6 +305,7 @@ def main() -> int:
     # ---- control 1: every drawn stint is in the population it was drawn from
     unknown = [s for s in w.stint_id if s not in cell_of]
     w['cell'] = [cell_of.get(s, '') for s in w.stint_id]
+    w = per_stint_measures(w, _R)
     n = {k: int((w.cell == k).sum()) for k in N}
     weights = {k: N[k] / n[k] for k in N if n[k]}
 
@@ -294,17 +357,23 @@ def main() -> int:
     for name, err in readings.items():
         block: dict = {}
         for mname, mcol in MEASURES.items():
-            point = rate(w, weights, mcol, FLAGGED, err(w))
-            boot = [rate(d, weights, mcol, FLAGGED, err(d)) for d in draws]
-            cpoint = rate(w, weights, mcol, [CONTROL], err(w))
-            cboot = [rate(d, weights, mcol, [CONTROL], err(d)) for d in draws]
+            acol = ARTEFACT[mname]
+            point = rate(w, weights, mcol, FLAGGED, err(w), acol)
+            boot = [rate(d, weights, mcol, FLAGGED, err(d), acol) for d in draws]
+            cpoint = rate(w, weights, mcol, [CONTROL], err(w), acol)
+            cboot = [rate(d, weights, mcol, [CONTROL], err(d), acol) for d in draws]
             diff = [a - b for a, b in zip(cboot, boot)]
             by = {}
             for c in N:
                 pick = (w.cell == c).values
-                m = np.ones(int(pick.sum())) if mcol is None else w[mcol].values[pick].astype(float)
+                if mcol is None:
+                    m = a = np.ones(int(pick.sum()))
+                else:
+                    m = w[mcol].values[pick].astype(float)
+                    a = np.where(np.isnan(w[acol].values[pick].astype(float)), m,
+                                 w[acol].values[pick].astype(float))
                 e = err(w)[pick]
-                by[c] = {'rate': round(float(m[e].sum() / m.sum()), 4) if m.sum() else None,
+                by[c] = {'rate': round(float(a[e].sum() / m.sum()), 4) if m.sum() else None,
                          'n_stints': int(pick.sum())}
             block[mname] = {
                 'flagged': round(point, 4),
@@ -315,9 +384,14 @@ def main() -> int:
                 'control_minus_flagged_ci': [round(float(np.percentile(diff, q)), 4) for q in (2.5, 97.5)],
                 'by_cell': by}
         # the quantity the paper cares about: the share of the readable absence value that is an artefact
-        art = sum(weights[c] * float(w.absence_value_carried[(w.cell == c) & err(w)].sum()) for c in FLAGGED)
-        art_boot = [sum(weights[c] * float(d.absence_value_carried[(d.cell == c) & err(d)].sum())
-                        for c in FLAGGED) for d in draws]
+        def _art(d):
+            v = np.where(np.isnan(d.art_value_readable.values.astype(float)),
+                         d.abs_value_readable.values.astype(float),
+                         d.art_value_readable.values.astype(float))
+            return sum(weights[c] * float(v[((d.cell == c) & err(d)).values].sum()) for c in FLAGGED)
+
+        art = _art(w)
+        art_boot = [_art(d) for d in draws]
         block['artefact_share_of_readable_absence_value'] = {
             'point': round(art / den_readable, 4),
             'ci': [round(float(np.percentile(art_boot, q)) / den_readable, 4) for q in (2.5, 97.5)],
@@ -342,6 +416,21 @@ def main() -> int:
 
     # ---- section 5.4: the corrected build, as a new result beside the old (AA-f)
     out['corrected_build'] = corrected_build(w)
+
+    # the control stratum found no departure, so its bootstrap interval is [0, 0] by construction; the
+    # quantity a reader needs is the one-sided limit that 0 of n supports
+    k_ctrl = int(((w.cell == CONTROL) & (w.verdict == 'had_left')).sum())
+    n_ctrl = int((w.cell == CONTROL).sum())
+    out['control_stratum_binomial'] = {
+        'had_left': k_ctrl, 'of': n_ctrl,
+        'one_sided_95_upper_on_the_stint_rate': round(clopper_pearson_upper(k_ctrl, n_ctrl), 4),
+        'note': 'A bootstrap of a stratum with no errors resamples no errors, so the [0, 0] interval '
+                'above is an artefact of the resampling and not a statement that the unflagged rate is '
+                'zero. This limit is for the stint rate under independent sampling; it is not the '
+                'value-weighted quantity the paper reports, and it is the reason the audit is not read as '
+                'an upper bound on the error in the unflagged population.'}
+    print(f"\n  control stratum: {k_ctrl} of {n_ctrl} had left; one-sided 95% upper on the stint rate "
+          f"{clopper_pearson_upper(k_ctrl, n_ctrl):.3f}")
 
     key = res['cannot_confirm_not_an_error']['value']
     lo, hi = key['control_minus_flagged_ci']

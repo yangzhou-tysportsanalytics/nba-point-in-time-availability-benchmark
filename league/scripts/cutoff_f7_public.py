@@ -241,13 +241,16 @@ def paired(late, early, mask=None):
                 ci95_season=_ci([st(w) for w in W3]))
 
 
-def paired_difference(mask=None, late7='F7_1'):
+def paired_difference(mask=None, late7='F7_1', early7='F7_6'):
     """(F7 late - F7 early) - (F1 late - F1 early), inside one set of draws.
 
     The two encodings' contrasts are each other's comparison, so the quantity is their difference in the same
     draw and not the overlap of two intervals.
     """
-    y, P, Rk = _fit({'f7_late': [late7], 'f7_early': ['F7_6'],
+    # Both arms of the F7 contrast have to come from the same build of the feature: pairing a variant's
+    # late arm with the published early arm is not the difference of two paired contrasts, and the
+    # end-of-game sensitivity below passes both.
+    y, P, Rk = _fit({'f7_late': [late7], 'f7_early': [early7],
                      'f1_late': ['F1_1'], 'f1_early': ['F1_6']}, mask)
     W1, W2, W3 = _draws(Rk)
 
@@ -378,8 +381,7 @@ def main() -> int:
         v, _ = team_values(1, 'all_statuses', q6)
         H['F7_1_v'] = fdiff(v)[fixed]
         pr = paired('F7_1_v', 'F7_6_v')
-        pd_ = paired_difference(late7='F7_1_v')
-        # the difference uses F7_6 for the early arm, so rebuild it against this variant's own early arm
+        pd_ = paired_difference(late7='F7_1_v', early7='F7_6_v')
         sens[variant] = {'end_hours': END_VARIANTS[variant],
                          'overtime_aware': variant == 'overtime_aware',
                          'player_game_cutoff_pairs_reclassified': flips,

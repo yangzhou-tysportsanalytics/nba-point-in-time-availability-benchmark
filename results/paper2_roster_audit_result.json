@@ -134,20 +134,20 @@
     }
    },
    "rows": {
-    "flagged": 0.2917,
+    "flagged": 0.2704,
     "flagged_ci": [
-     0.1999,
-     0.383
+     0.1792,
+     0.3601
     ],
     "control": 0.0,
     "control_ci": [
      0.0,
      0.0
     ],
-    "control_minus_flagged": -0.2917,
+    "control_minus_flagged": -0.2704,
     "control_minus_flagged_ci": [
-     -0.383,
-     -0.1999
+     -0.3601,
+     -0.1792
     ],
     "by_cell": {
      "A_high_value": {
@@ -155,7 +155,7 @@
       "n_stints": 54
      },
      "B_near_transaction": {
-      "rate": 0.4336,
+      "rate": 0.3976,
       "n_stints": 64
      },
      "C_flagged_random": {
@@ -169,20 +169,20 @@
     }
    },
    "value": {
-    "flagged": 0.2152,
+    "flagged": 0.2035,
     "flagged_ci": [
-     0.1398,
-     0.2948
+     0.1271,
+     0.2866
     ],
     "control": 0.0,
     "control_ci": [
      0.0,
      0.0
     ],
-    "control_minus_flagged": -0.2152,
+    "control_minus_flagged": -0.2035,
     "control_minus_flagged_ci": [
-     -0.2948,
-     -0.1398
+     -0.2866,
+     -0.1271
     ],
     "by_cell": {
      "A_high_value": {
@@ -190,7 +190,7 @@
       "n_stints": 54
      },
      "B_near_transaction": {
-      "rate": 0.3709,
+      "rate": 0.336,
       "n_stints": 64
      },
      "C_flagged_random": {
@@ -204,12 +204,12 @@
     }
    },
    "artefact_share_of_readable_absence_value": {
-    "point": 0.0689,
+    "point": 0.0605,
     "ci": [
-     0.0444,
-     0.0954
+     0.0375,
+     0.0859
     ],
-    "absence_value": 23350.95,
+    "absence_value": 20490.38,
     "readable_denominator": 338881.0,
     "note": "The flagged stints carry 32.7% of this denominator; this is the part of it the audit judges to be a roster artefact."
    }
@@ -251,28 +251,28 @@
     }
    },
    "rows": {
-    "flagged": 0.2961,
+    "flagged": 0.274,
     "flagged_ci": [
-     0.2042,
-     0.387
+     0.1819,
+     0.3637
     ],
-    "control": 0.0363,
+    "control": 0.0211,
     "control_ci": [
      0.0,
-     0.1034
+     0.0655
     ],
-    "control_minus_flagged": -0.2598,
+    "control_minus_flagged": -0.253,
     "control_minus_flagged_ci": [
-     -0.3613,
-     -0.1468
+     -0.3497,
+     -0.1518
     ],
     "by_cell": {
      "A_high_value": {
-      "rate": 0.0275,
+      "rate": 0.0255,
       "n_stints": 54
      },
      "B_near_transaction": {
-      "rate": 0.4336,
+      "rate": 0.3976,
       "n_stints": 64
      },
      "C_flagged_random": {
@@ -280,34 +280,34 @@
       "n_stints": 2
      },
      "D_control": {
-      "rate": 0.0363,
+      "rate": 0.0211,
       "n_stints": 30
      }
     }
    },
    "value": {
-    "flagged": 0.2257,
+    "flagged": 0.2119,
     "flagged_ci": [
-     0.1489,
-     0.3074
+     0.1346,
+     0.2954
     ],
-    "control": 0.0355,
+    "control": 0.0221,
     "control_ci": [
      0.0,
-     0.1063
+     0.0725
     ],
-    "control_minus_flagged": -0.1902,
+    "control_minus_flagged": -0.1898,
     "control_minus_flagged_ci": [
-     -0.2832,
-     -0.086
+     -0.2785,
+     -0.0986
     ],
     "by_cell": {
      "A_high_value": {
-      "rate": 0.0284,
+      "rate": 0.0249,
       "n_stints": 54
      },
      "B_near_transaction": {
-      "rate": 0.3709,
+      "rate": 0.336,
       "n_stints": 64
      },
      "C_flagged_random": {
@@ -315,18 +315,18 @@
       "n_stints": 2
      },
      "D_control": {
-      "rate": 0.0355,
+      "rate": 0.0221,
       "n_stints": 30
      }
     }
    },
    "artefact_share_of_readable_absence_value": {
-    "point": 0.0722,
+    "point": 0.063,
     "ci": [
-     0.0471,
-     0.0992
+     0.0397,
+     0.0885
     ],
-    "absence_value": 24483.87,
+    "absence_value": 21340.25,
     "readable_denominator": 338881.0,
     "note": "The flagged stints carry 32.7% of this denominator; this is the part of it the audit judges to be a roster artefact."
    }
@@ -390,6 +390,12 @@
   "AA-a (within the Monte-Carlo error of a bound: the headline does not move)": true,
   "AA-b (larger than that: both are reported)": false,
   "AA-c (larger than half the premium: roster precision is first order)": false
+ },
+ "control_stratum_binomial": {
+  "had_left": 0,
+  "of": 30,
+  "one_sided_95_upper_on_the_stint_rate": 0.095,
+  "note": "A bootstrap of a stratum with no errors resamples no errors, so the [0, 0] interval above is an artefact of the resampling and not a statement that the unflagged rate is zero. This limit is for the stint rate under independent sampling; it is not the value-weighted quantity the paper reports, and it is the reason the audit is not read as an upper bound on the error in the unflagged population."
  },
  "AA-d (the proxy does not select errors: the control is not separable)": false
 }
