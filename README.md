@@ -351,8 +351,10 @@ transactions rather than anything derivable from the sources. The result files c
 population counts, the strata and the seed in the first, and in the second the error rates by stints, by
 rows and by absence value, the control stratum's rate beside them, both readings of the unconfirmable, and
 the corrected build. 26 of the 150 had left. Reweighted to the flagged population that is 32.6%
-(22.6-42.7) of stints and 21.5% (14.0-29.5) of the absence value, against 0.0% in the control, so the proxy
-does select errors; and correcting the 26 moves the pooled premium from 0.059 to 0.058, a move of 0.0009.
+(22.6-42.7) of stints; counting only the absences at or after the day each departure took effect, and only in
+the rows where the proxy can be read, 27.0% (17.9-36.0) of those rows and 20.3% (12.7-28.7) of their
+absence value, which is 6.0% (3.8-8.6) of that row set as a whole. In the control nothing had left, so the
+proxy does enrich confirmed departures; and correcting the 26 moves the pooled premium from 0.059 to 0.058, a move of 0.0009.
 On the benchmark sample the premium moves by 0.0001 and the never-listed put-back, where 428 of the 429
 corrected rows sat, by 0.0004. All three are smaller than the Monte-Carlo error of a reported bound,
 0.006, which is the threshold rule AA-a fixed in advance; the moves are reported rather than read as
