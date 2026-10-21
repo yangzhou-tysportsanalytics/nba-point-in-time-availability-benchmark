@@ -13,6 +13,13 @@ only a sampling device; the control stratum is drawn from stints the proxy does 
 makes a non-zero rate among the flagged ones readable at all; and the worksheet carries no indication of
 what any answer is expected to be.
 
+Import names: the originating project's layout is `src/roster_precision.py` (shipped here as
+`src/roster_precision.py`), `league/scripts/p6_ds_roster_precision.py` (here
+`league/scripts/roster_precision_main_build.py`) and `league/scripts/p6_ds_roster_audit_sample.py` (here
+`league/scripts/roster_audit_sample_main_build.py`). The import and `importlib` paths below are the
+project's, not this repository's, which is one reason these three are published to be read rather than
+run.
+
 The original header follows.
 
 Plan AA (docs/plans/paper2_AA_roster_audit.md): draw the sample for the human roster audit.

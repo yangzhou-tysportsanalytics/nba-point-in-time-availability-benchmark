@@ -13,6 +13,13 @@ estimate of the flagged absence value comes back within 2% of the population tot
 that fired: AA-a, the corrected premium moves by less than the Monte-Carlo error of a bound, so the audit is
 reported as a bound on this error and the headline does not move.
 
+Import names: the originating project's layout is `src/roster_precision.py` (shipped here as
+`src/roster_precision.py`), `league/scripts/p6_ds_roster_precision.py` (here
+`league/scripts/roster_precision_main_build.py`) and `league/scripts/p6_ds_roster_audit_sample.py` (here
+`league/scripts/roster_audit_sample_main_build.py`). The import and `importlib` paths below are the
+project's, not this repository's, which is one reason these three are published to be read rather than
+run.
+
 The original header follows.
 
 Plan AA section 5: what the returned roster audit says, under the rules fixed in section 6.

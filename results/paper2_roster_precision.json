@@ -1,0 +1,65 @@
+{
+ "plan": "docs/plans/paper2_V_server_time_and_strict.md",
+ "plan_sha256": "eb870b9cd8ec42965ceba49257cfbdeb8eb3343866c937f9d7b5ae0eb0687ab8",
+ "removal_rule": {
+  "source": "data/league/paper2_ext/rebuild/code/league/src/build.py",
+  "membership": "team_at(pid, cutoff) returns the team of the last event at or before the cutoff, None if that event is a 'leave' or is more than HIST_DAYS old; roster() keeps a candidate when team_at equals the team, or when the report lists him and team_at is None",
+  "history_window_days": 365,
+  "leave_events_emitted_for": [
+   "Waive"
+  ],
+  "join_events_emitted_for": "any transaction with a destination team",
+  "gaps": [
+   "a transaction that is neither a waiver nor has a destination team emits no event, so the player stays on his previous team's list until an appearance elsewhere or 365 days pass",
+   "a player whose name cannot be matched to an identifier is skipped, so none of his movements register at all",
+   "a transaction is stamped at 12:00Z on its date, so one announced later in the day is treated as known at a cutoff six hours before an evening tip"
+  ],
+  "movement_log": "the league player-movement feed, stats.nba.com/js/data/playermovement/NBA_Player_Movement.json, as fetched by the originating project",
+  "movement_log_inside_this_repository": false,
+  "movement_rows": 6716,
+  "movement_types": {
+   "Signing": 3128,
+   "Waive": 2146,
+   "Trade": 1292,
+   "ContractConverted": 108,
+   "AwardOnWaivers": 42
+  }
+ },
+ "note": "The proxy is a reference-rotation player who never appears for that team again in the season. It is not an error on its own, so the quantity rule V-e reads is the ratio between team-games near a transaction and team-games away from one.",
+ "rotation_rows": 175699,
+ "transaction_window_days": 7,
+ "teams_with_transactions": 30,
+ "boundary": {
+  "note": "The proxy is vacuously true in a team's last game, so the rule reads the rows with games still to come.",
+  "min_remaining_games": 10,
+  "rows_with_chances_left": 153975
+ },
+ "proxy": {
+  "n_near_transaction": 59720,
+  "n_away_from_transaction": 94255,
+  "rate_near": 0.0572,
+  "rate_away": 0.040794,
+  "ratio": 1.4022
+ },
+ "proxy_all_rows": {
+  "n_near_transaction": 68179,
+  "n_away_from_transaction": 107520,
+  "rate_near": 0.077575,
+  "rate_away": 0.059319,
+  "ratio": 1.3078
+ },
+ "overall_rate": 0.066403,
+ "overall_rate_with_chances_left": 0.047157,
+ "flagged": {
+  "rows": 7261,
+  "share_of_rotation_rows": 0.047157,
+  "share_absent_in_the_end": 0.9441,
+  "share_out_at_the_cutoff": 0.4101,
+  "absence_value_share_of_F2": 0.134739,
+  "never_listed_rows": 3879
+ },
+ "rule_verdicts": {
+  "V-e: the proxy near a transaction is no more than 2 times the baseline": true
+ },
+ "rule_V_e": "The proxy is not concentrated near transactions, so the removal rule is not visibly leaking; Table 1 states the rule and this is reported as a negative result."
+}
