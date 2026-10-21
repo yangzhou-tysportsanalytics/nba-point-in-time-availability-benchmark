@@ -8,8 +8,8 @@ and the rebuild writes its player-level table on the reader's own machine, so th
 rebuilt copy and no public-path result for it. `results/paper2_cutoff_f7.json` is the main build's result
 file.
 
-What can be checked here is the part that goes wrong quietly. The encoding is vendored as
-`league/public/cutoff_encoding.py` with the thirteen tests it was built against, in
+What can be checked here is the part that goes wrong quietly. The encoding is shipped as
+`src/cutoff_encoding.py` with the thirteen tests it was built against, in
 `league/tests/test_cutoff_encoding.py`, which run in this repository: a report printed exactly on the cutoff
 counts, a team that had not filed is unknown rather than healthy, a player the report does not list is
 charged nothing even though "Available" carries a sit-out rate of its own, a status that softens between two
