@@ -51,6 +51,7 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/cutoff_f7_public.py` | Plan BB: the same crossing on this rebuild, with the controls the plan required before anything could be read off it. |
 | `league/scripts/roster_audit_sample_main_build.py` | Plan AA as it was run: drawing the sample for the human audit of the roster rule. Published to be read; the sample is a player-level table and is not shipped. |
 | `league/scripts/roster_audit_result_main_build.py` | Plan AA section 5 as it was run: the error rates, the control stratum and the corrected build. |
+| `league/scripts/roster_audit_reruns_main_build.py` | Plan AA section 5.4 as it was run: the strict headline and the never-listed put-back on the corrected build. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `src/` | The project modules the published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, the cutoff encoding, and the rolling per-status sit-out rates the all-status encoding weights a report with. |
@@ -351,9 +352,15 @@ population counts, the strata and the seed in the first, and in the second the e
 rows and by absence value, the control stratum's rate beside them, both readings of the unconfirmable, and
 the corrected build. 26 of the 150 had left. Reweighted to the flagged population that is 32.6%
 (22.6-42.7) of stints and 21.5% (14.0-29.5) of the absence value, against 0.0% in the control, so the proxy
-does select errors; and correcting the 26 moves the pooled premium from 0.059 to 0.058, a move of 0.0009
-against a Monte-Carlo error of 0.006, which is rule AA-a: the audit is a bound on this error and the
-headline does not move.
+does select errors; and correcting the 26 moves the pooled premium from 0.059 to 0.058, a move of 0.0009.
+On the benchmark sample the premium moves by 0.0001 and the never-listed put-back, where 428 of the 429
+corrected rows sat, by 0.0004. All three are smaller than the Monte-Carlo error of a reported bound,
+0.006, which is the threshold rule AA-a fixed in advance; the moves are reported rather than read as
+equivalence, since more bootstrap replicates would shrink that error and leave the moves where they are,
+and the correction is of the confirmed stints and not of the population. The audit is not an upper bound on
+the population's error: the control found no departure in 30 stints, which is consistent with a stint rate
+up to 9.5%, and the 21 `other` stints are counted as no error throughout although some hold roster artefact
+that no single departure date describes.
 
 Three results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
 minutes back to 240 does not return this build's reference minutes for 32,118 of 182,004 rows, where on the

@@ -1,0 +1,94 @@
+{
+ "plan": "docs/plans/paper2_AA_roster_audit.md",
+ "plan_sha256": "b2accd0a0fb4206050e667f3caa76bbbae14cd3761612ccb94d6acc7683fdec7",
+ "seed": 20260921,
+ "reps": 2000,
+ "note": "Plan AA section 5.4, the two reruns that re-read the report series. The correction is of the confirmed departures only, so these are the confirmed part of the error and not an estimate of all of it.",
+ "correction": {
+  "stints": 26,
+  "absences_removed": 429,
+  "absences_total": 55036,
+  "never_listed_before": 22495,
+  "never_listed_after": 22067
+ },
+ "controls": {
+  "strict_rebuilt": {
+   "n": 4131,
+   "gain": 0.1852,
+   "inflation": 0.0502,
+   "gain_ci": [
+    0.1255,
+    0.2447
+   ],
+   "inflation_ci": [
+    -0.0113,
+    0.1096
+   ]
+  },
+  "putback_rebuilt": {
+   "n": 4846,
+   "point": -0.0332,
+   "ci95_home": [
+    -0.0583,
+    -0.0097
+   ]
+  },
+  "expected": {
+   "strict_gain": 0.1852,
+   "strict_infl": 0.0502,
+   "strict_n": 4131,
+   "putback_never": -0.0332
+  },
+  "participation_feature_worst_difference": 2.842170943040401e-14,
+  "verdict": "pass"
+ },
+ "strict_headline": {
+  "published": {
+   "n": 4131,
+   "gain": 0.1852,
+   "inflation": 0.0502,
+   "gain_ci": [
+    0.1255,
+    0.2447
+   ],
+   "inflation_ci": [
+    -0.0113,
+    0.1096
+   ]
+  },
+  "corrected": {
+   "n": 4131,
+   "gain": 0.1852,
+   "inflation": 0.0503,
+   "gain_ci": [
+    0.1255,
+    0.2447
+   ],
+   "inflation_ci": [
+    -0.0105,
+    0.1093
+   ]
+  },
+  "premium_moves_by": 0.0001,
+  "gain_moves_by": 0.0
+ },
+ "never_listed_putback": {
+  "published": {
+   "n": 4846,
+   "point": -0.0332,
+   "ci95_home": [
+    -0.0583,
+    -0.0097
+   ]
+  },
+  "corrected": {
+   "n": 4846,
+   "point": -0.0336,
+   "ci95_home": [
+    -0.0572,
+    -0.0115
+   ]
+  },
+  "moves_by": 0.0004
+ }
+}
