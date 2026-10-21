@@ -1,0 +1,7 @@
+# The published analyses verify their plan by the SHA-256 of the file's bytes and refuse to run if it has
+# changed since the rules were fixed. Git's own line-ending conversion is such a change: with
+# core.autocrlf=true, which is the default on Windows installs, a fresh clone writes these files with CRLF
+# and every plan-pinned script stops with "the plan has changed since the rules were fixed". Checked by
+# cloning this repository on 2026-10-21, where all three plans hashed to values none of the scripts expect.
+# These paths are therefore never converted, in either direction.
+docs/plans/*.md -text
