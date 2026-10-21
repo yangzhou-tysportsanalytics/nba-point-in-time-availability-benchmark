@@ -207,6 +207,133 @@
   "out_at_six_then_softened": 472,
   "team_games_with_a_change": 5611
  },
+ "end_of_game_proxy": {
+  "note": "The sit-out rates are built from games the proxy calls finished. `published` is the main build's fixed 2.5 hours; `overtime_aware` adds a quarter of an hour per extra period, read off the box score's own minutes; `safety_margin` is 4 hours, longer than any game. The contrast under each is reported so that the figure the paper prints is not resting on the proxy being exact.",
+  "overtime_games": 435,
+  "games": 8285,
+  "variants": {
+   "published": {
+    "end_hours": 2.5,
+    "overtime_aware": false,
+    "player_game_cutoff_pairs_reclassified": 0,
+    "player_game_cutoff_pairs": 1118596584,
+    "player_games_in_an_overtime_game": 9105,
+    "worst_rate_difference_from_published": 0.0,
+    "f7_paired": {
+     "n": 4117,
+     "point": 0.0211,
+     "ci95_home": [
+      -0.0014,
+      0.0433
+     ],
+     "ci95_two_way": [
+      -0.0111,
+      0.0556
+     ],
+     "ci95_season": [
+      -0.0066,
+      0.0505
+     ]
+    },
+    "difference": {
+     "n": 4117,
+     "point": -0.0381,
+     "ci95_home": [
+      -0.0613,
+      -0.0178
+     ],
+     "ci95_two_way": [
+      -0.0756,
+      0.0009
+     ],
+     "ci95_season": [
+      -0.0775,
+      -0.0018
+     ]
+    }
+   },
+   "overtime_aware": {
+    "end_hours": 2.5,
+    "overtime_aware": true,
+    "player_game_cutoff_pairs_reclassified": 32,
+    "player_game_cutoff_pairs": 1118596584,
+    "player_games_in_an_overtime_game": 9105,
+    "worst_rate_difference_from_published": 0.000746,
+    "f7_paired": {
+     "n": 4117,
+     "point": 0.0211,
+     "ci95_home": [
+      -0.0014,
+      0.0433
+     ],
+     "ci95_two_way": [
+      -0.0111,
+      0.0556
+     ],
+     "ci95_season": [
+      -0.0066,
+      0.0505
+     ]
+    },
+    "difference": {
+     "n": 4117,
+     "point": -0.0381,
+     "ci95_home": [
+      -0.0613,
+      -0.0178
+     ],
+     "ci95_two_way": [
+      -0.0756,
+      0.0009
+     ],
+     "ci95_season": [
+      -0.0775,
+      -0.0018
+     ]
+    }
+   },
+   "safety_margin": {
+    "end_hours": 4.0,
+    "overtime_aware": false,
+    "player_game_cutoff_pairs_reclassified": 1848,
+    "player_game_cutoff_pairs": 1118596584,
+    "player_games_in_an_overtime_game": 9105,
+    "worst_rate_difference_from_published": 0.008777,
+    "f7_paired": {
+     "n": 4117,
+     "point": 0.0211,
+     "ci95_home": [
+      -0.0014,
+      0.0433
+     ],
+     "ci95_two_way": [
+      -0.0111,
+      0.0556
+     ],
+     "ci95_season": [
+      -0.0066,
+      0.0505
+     ]
+    },
+    "difference": {
+     "n": 4117,
+     "point": -0.0381,
+     "ci95_home": [
+      -0.0613,
+      -0.0178
+     ],
+     "ci95_two_way": [
+      -0.0756,
+      0.0009
+     ],
+     "ci95_season": [
+      -0.0775,
+      -0.0018
+     ]
+    }
+   }
+  }
+ },
  "rule_verdicts": {
   "BB-d (not corroborated: the interval contains zero, or the point is positive)": false,
   "BB-e (corroborated: negative and resolved)": true,
