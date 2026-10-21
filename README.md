@@ -49,6 +49,8 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/public/pit_rules.py` | Name matching, reason classes and reference minutes, copied verbatim from the project code. |
 | `league/scripts/cutoff_f7_main_build.py` | Plan Y as it was run on the main build: what reading the report later is worth once the early report is read in full. Published to be read as it ran; the next row runs the same question here. |
 | `league/scripts/cutoff_f7_public.py` | Plan BB: the same crossing on this rebuild, with the controls the plan required before anything could be read off it. |
+| `league/scripts/roster_audit_sample_main_build.py` | Plan AA as it was run: drawing the sample for the human audit of the roster rule. Published to be read; the sample is a player-level table and is not shipped. |
+| `league/scripts/roster_audit_result_main_build.py` | Plan AA section 5 as it was run: the error rates, the control stratum and the corrected build. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `src/` | The project modules the published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, the cutoff encoding, and the rolling per-status sit-out rates the all-status encoding weights a report with. |
@@ -332,6 +334,26 @@ The encoding both scripts read the report with is `src/cutoff_encoding.py`, with
 built against in `league/tests/test_cutoff_encoding.py`, among them that a report printed exactly on the
 cutoff counts, that a team which had not filed is unknown rather than healthy, and that a player the report
 does not list is charged nothing even though "Available" carries a sit-out rate of its own.
+
+**The roster audit is here as a result, not as a worksheet.** The paper's roster rule keeps a player on his
+last known team's list until something moves him off it, and the error that rule can make --- a player kept
+after he has left --- is not visible to a recall check. Plan AA drew 150 stints, one (player, team, season)
+each, in four strata fixed before any was read, including a control stratum the selecting proxy does not
+flag, and an author judged each against the league's transaction record. The two scripts are published as
+they ran, with the plan they were run to (`docs/plans/paper2_AA_roster_audit.md`, hashed inside each) and
+their results in `results/paper2_roster_audit_sample.json` and `results/paper2_roster_audit_result.json`.
+
+The worksheet is not here and will not be: 150 named players with a team, a season and the absence value
+each carries is a player-level table, and the source terms forbid redistributing one. Unlike the other
+player-level analyses, a rebuild cannot reproduce it either, because what it holds is human judgements about
+transactions rather than anything derivable from the sources. The result files carry no player rows: the
+population counts, the strata and the seed in the first, and in the second the error rates by stints, by
+rows and by absence value, the control stratum's rate beside them, both readings of the unconfirmable, and
+the corrected build. 26 of the 150 had left. Reweighted to the flagged population that is 32.6%
+(22.6-42.7) of stints and 21.5% (14.0-29.5) of the absence value, against 0.0% in the control, so the proxy
+does select errors; and correcting the 26 moves the pooled premium from 0.059 to 0.058, a move of 0.0009
+against a Monte-Carlo error of 0.006, which is rule AA-a: the audit is a bound on this error and the
+headline does not move.
 
 Three results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
 minutes back to 240 does not return this build's reference minutes for 32,118 of 182,004 rows, where on the

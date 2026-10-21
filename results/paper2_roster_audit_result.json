@@ -1,0 +1,395 @@
+{
+ "plan": "docs/plans/paper2_AA_roster_audit.md",
+ "plan_sha256": "b2accd0a0fb4206050e667f3caa76bbbae14cd3761612ccb94d6acc7683fdec7",
+ "seed": 20261021,
+ "reps": 10000,
+ "filled": "roster_audit_filled.csv",
+ "verdicts": {
+  "still_on_team": 99,
+  "had_left": 26,
+  "other": 21,
+  "cannot_confirm": 4
+ },
+ "verdicts_by_drawn_stratum": {
+  "A_high_value": {
+   "still_on_team": 43,
+   "other": 5,
+   "cannot_confirm": 2
+  },
+  "B_near_transaction": {
+   "still_on_team": 18,
+   "had_left": 17,
+   "other": 5
+  },
+  "C_flagged_random": {
+   "still_on_team": 15,
+   "had_left": 9,
+   "other": 6
+  },
+  "D_control": {
+   "still_on_team": 23,
+   "other": 5,
+   "cannot_confirm": 2
+  }
+ },
+ "verdicts_by_cell": {
+  "A_high_value": {
+   "still_on_team": 46,
+   "other": 6,
+   "cannot_confirm": 2
+  },
+  "B_near_transaction": {
+   "still_on_team": 30,
+   "had_left": 26,
+   "other": 8
+  },
+  "C_flagged_random": {
+   "other": 2
+  },
+  "D_control": {
+   "still_on_team": 23,
+   "other": 5,
+   "cannot_confirm": 2
+  }
+ },
+ "cannot_confirm_share": 0.0267,
+ "AA-e (inconclusive: more than a third cannot be confirmed)": false,
+ "controls": {
+  "stints_not_in_the_population": [],
+  "drawn_label_against_definitional_cell": {
+   "A_high_value": {
+    "A_high_value": 50
+   },
+   "B_near_transaction": {
+    "B_near_transaction": 37,
+    "A_high_value": 3
+   },
+   "C_flagged_random": {
+    "B_near_transaction": 27,
+    "C_flagged_random": 2,
+    "A_high_value": 1
+   },
+   "D_control": {
+    "D_control": 30
+   }
+  },
+  "population_by_cell": {
+   "A_high_value": 87,
+   "B_near_transaction": 706,
+   "C_flagged_random": 86,
+   "D_control": 2132
+  },
+  "sample_by_cell": {
+   "A_high_value": 54,
+   "B_near_transaction": 64,
+   "C_flagged_random": 2,
+   "D_control": 30
+  },
+  "weights": {
+   "A_high_value": 1.6111,
+   "B_near_transaction": 11.0312,
+   "C_flagged_random": 43.0,
+   "D_control": 71.0667
+  },
+  "flagged_absence_value_weighted_estimate": 108502.57,
+  "flagged_absence_value_population": 110754.11,
+  "ratio": 0.9797,
+  "verdict": "pass"
+ },
+ "rates": {
+  "cannot_confirm_not_an_error": {
+   "stints": {
+    "flagged": 0.3263,
+    "flagged_ci": [
+     0.2259,
+     0.4267
+    ],
+    "control": 0.0,
+    "control_ci": [
+     0.0,
+     0.0
+    ],
+    "control_minus_flagged": -0.3263,
+    "control_minus_flagged_ci": [
+     -0.4267,
+     -0.2259
+    ],
+    "by_cell": {
+     "A_high_value": {
+      "rate": 0.0,
+      "n_stints": 54
+     },
+     "B_near_transaction": {
+      "rate": 0.4062,
+      "n_stints": 64
+     },
+     "C_flagged_random": {
+      "rate": 0.0,
+      "n_stints": 2
+     },
+     "D_control": {
+      "rate": 0.0,
+      "n_stints": 30
+     }
+    }
+   },
+   "rows": {
+    "flagged": 0.2917,
+    "flagged_ci": [
+     0.1999,
+     0.383
+    ],
+    "control": 0.0,
+    "control_ci": [
+     0.0,
+     0.0
+    ],
+    "control_minus_flagged": -0.2917,
+    "control_minus_flagged_ci": [
+     -0.383,
+     -0.1999
+    ],
+    "by_cell": {
+     "A_high_value": {
+      "rate": 0.0,
+      "n_stints": 54
+     },
+     "B_near_transaction": {
+      "rate": 0.4336,
+      "n_stints": 64
+     },
+     "C_flagged_random": {
+      "rate": 0.0,
+      "n_stints": 2
+     },
+     "D_control": {
+      "rate": 0.0,
+      "n_stints": 30
+     }
+    }
+   },
+   "value": {
+    "flagged": 0.2152,
+    "flagged_ci": [
+     0.1398,
+     0.2948
+    ],
+    "control": 0.0,
+    "control_ci": [
+     0.0,
+     0.0
+    ],
+    "control_minus_flagged": -0.2152,
+    "control_minus_flagged_ci": [
+     -0.2948,
+     -0.1398
+    ],
+    "by_cell": {
+     "A_high_value": {
+      "rate": 0.0,
+      "n_stints": 54
+     },
+     "B_near_transaction": {
+      "rate": 0.3709,
+      "n_stints": 64
+     },
+     "C_flagged_random": {
+      "rate": 0.0,
+      "n_stints": 2
+     },
+     "D_control": {
+      "rate": 0.0,
+      "n_stints": 30
+     }
+    }
+   },
+   "artefact_share_of_readable_absence_value": {
+    "point": 0.0689,
+    "ci": [
+     0.0444,
+     0.0954
+    ],
+    "absence_value": 23350.95,
+    "readable_denominator": 338881.0,
+    "note": "The flagged stints carry 32.7% of this denominator; this is the part of it the audit judges to be a roster artefact."
+   }
+  },
+  "cannot_confirm_an_error": {
+   "stints": {
+    "flagged": 0.33,
+    "flagged_ci": [
+     0.2314,
+     0.4285
+    ],
+    "control": 0.0667,
+    "control_ci": [
+     0.0,
+     0.1667
+    ],
+    "control_minus_flagged": -0.2633,
+    "control_minus_flagged_ci": [
+     -0.3863,
+     -0.1238
+    ],
+    "by_cell": {
+     "A_high_value": {
+      "rate": 0.037,
+      "n_stints": 54
+     },
+     "B_near_transaction": {
+      "rate": 0.4062,
+      "n_stints": 64
+     },
+     "C_flagged_random": {
+      "rate": 0.0,
+      "n_stints": 2
+     },
+     "D_control": {
+      "rate": 0.0667,
+      "n_stints": 30
+     }
+    }
+   },
+   "rows": {
+    "flagged": 0.2961,
+    "flagged_ci": [
+     0.2042,
+     0.387
+    ],
+    "control": 0.0363,
+    "control_ci": [
+     0.0,
+     0.1034
+    ],
+    "control_minus_flagged": -0.2598,
+    "control_minus_flagged_ci": [
+     -0.3613,
+     -0.1468
+    ],
+    "by_cell": {
+     "A_high_value": {
+      "rate": 0.0275,
+      "n_stints": 54
+     },
+     "B_near_transaction": {
+      "rate": 0.4336,
+      "n_stints": 64
+     },
+     "C_flagged_random": {
+      "rate": 0.0,
+      "n_stints": 2
+     },
+     "D_control": {
+      "rate": 0.0363,
+      "n_stints": 30
+     }
+    }
+   },
+   "value": {
+    "flagged": 0.2257,
+    "flagged_ci": [
+     0.1489,
+     0.3074
+    ],
+    "control": 0.0355,
+    "control_ci": [
+     0.0,
+     0.1063
+    ],
+    "control_minus_flagged": -0.1902,
+    "control_minus_flagged_ci": [
+     -0.2832,
+     -0.086
+    ],
+    "by_cell": {
+     "A_high_value": {
+      "rate": 0.0284,
+      "n_stints": 54
+     },
+     "B_near_transaction": {
+      "rate": 0.3709,
+      "n_stints": 64
+     },
+     "C_flagged_random": {
+      "rate": 0.0,
+      "n_stints": 2
+     },
+     "D_control": {
+      "rate": 0.0355,
+      "n_stints": 30
+     }
+    }
+   },
+   "artefact_share_of_readable_absence_value": {
+    "point": 0.0722,
+    "ci": [
+     0.0471,
+     0.0992
+    ],
+    "absence_value": 24483.87,
+    "readable_denominator": 338881.0,
+    "note": "The flagged stints carry 32.7% of this denominator; this is the part of it the audit judges to be a roster artefact."
+   }
+  }
+ },
+ "corrected_build": {
+  "note": "Only the 26 stints judged had_left are corrected, out of 879 flagged, so this is the confirmed part of the error. The value-weighted rate above bounds the rest. The strict headline and the never-listed put-back re-read the report series in two other scripts and are not rerun here.",
+  "corrected_stints": 26,
+  "rows_removed_from_the_absence_set": 429,
+  "absence_value_removed": 1999.37,
+  "control_rebuilt_feature_matches": {
+   "worst_absolute_difference": 2.842170943040401e-14,
+   "published": {
+    "gain": 0.197,
+    "inflation": 0.059
+   },
+   "rebuilt": {
+    "n": 4846,
+    "gain": 0.1966,
+    "gain_ci": [
+     0.131,
+     0.262
+    ],
+    "inflation": 0.0588,
+    "inflation_ci": [
+     0.0002,
+     0.1177
+    ]
+   },
+   "verdict": "pass"
+  },
+  "pooled_published": {
+   "n": 4846,
+   "gain": 0.1966,
+   "gain_ci": [
+    0.131,
+    0.262
+   ],
+   "inflation": 0.0588,
+   "inflation_ci": [
+    0.0002,
+    0.1177
+   ]
+  },
+  "pooled_corrected": {
+   "n": 4846,
+   "gain": 0.1966,
+   "gain_ci": [
+    0.131,
+    0.262
+   ],
+   "inflation": 0.0579,
+   "inflation_ci": [
+    -0.0001,
+    0.1158
+   ]
+  },
+  "premium_moves_by": 0.0009,
+  "gain_moves_by": 0.0,
+  "MC_max": 0.006,
+  "AA-a (within the Monte-Carlo error of a bound: the headline does not move)": true,
+  "AA-b (larger than that: both are reported)": false,
+  "AA-c (larger than half the premium: roster precision is first order)": false
+ },
+ "AA-d (the proxy does not select errors: the control is not separable)": false
+}
