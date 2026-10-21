@@ -1,0 +1,6 @@
+query,string,database,date,hits,retrieved,unique_total,screen_basketball_game_prediction
+Q1,"(NBA OR ""National Basketball Association"") AND (prediction OR predicting OR forecasting OR ""machine learning"") AND (game OR games OR match OR outcome OR outcomes OR spread OR ""win probability"")",OpenAlex,2026-09-21,713,713,1812,1084
+Q2,"basketball AND (injury OR injuries OR ""player availability"" OR ""missing players"" OR absence OR absences) AND (prediction OR predicting OR forecast OR forecasting)",OpenAlex,2026-09-21,583,583,1812,1084
+Q3,"(sports OR sport OR basketball OR football OR soccer) AND (""data leakage"" OR ""look-ahead bias"" OR ""lookahead bias"" OR ""information leakage"" OR ""point-in-time"")",OpenAlex,2026-09-21,339,339,1812,1084
+Q4,"(NBA OR basketball) AND (""betting market"" OR ""market efficiency"" OR Vegas OR ""closing line"" OR ""point spread"" OR bookmaker)",OpenAlex,2026-09-21,278,278,1812,1084
+Q5,"(""sports outcome prediction"" OR ""sports prediction"" OR ""match outcome prediction"" OR ""sports forecasting"") AND (review OR survey OR ""systematic review"")",OpenAlex,2026-09-21,41,41,1812,1084
