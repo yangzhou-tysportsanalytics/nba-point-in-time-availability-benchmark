@@ -395,6 +395,39 @@ steady across seasons, and 2025-26, the season the grid uses, is the largest of 
 implied season-to-season standard deviation is 0.068 on each, close to the 0.0675 the inflation carries. The
 narrow feature set runs here; the wide one needs the home and away columns the released file does not carry.
 
+## The literature review's own records
+
+Section 7 of the paper counts how published work handles availability: of 113 included studies, 11 use
+availability information, none could be confirmed to use a timestamped official report with a stated
+cutoff, 17 use statistics of the game being predicted, and the leakage risk reads 24 high, 24 low and 50
+unclear. Those counts are the paper's case that the problem is general rather than hypothetical, so the
+records behind them are here and not summarised.
+
+| File | What it holds |
+| --- | --- |
+| `results/paper2_litreview_search_log.csv` | The five OpenAlex queries as strings, with the database, the date, hits, records retrieved, the de-duplicated total and how many passed the basketball-game-prediction screen. |
+| `results/paper2_litreview_coded.csv` | The main search's 351 screened records, each with its OpenAlex id, DOI, title, year, venue, the screening decision and the reason, and the coding for the 74 that were included. |
+| `results/paper2_litreview_studies.csv` | All 113 included studies across the five sources (74 from the main search, 21 from two remedial re-screens, 11 from citation tracking, 7 from Google Scholar), with the coding for the 98 that could be coded. |
+| `results/paper2_litreview_irr_second_coder.csv` | The second coder's records for the 22 studies recoded against the same codebook. |
+| `results/paper2_litreview_irr_agreement.json` | The agreement and Cohen's kappa per field, with every disagreement listed. |
+
+Three things to know before reading them.
+
+**The join key.** `paper2_litreview_irr_second_coder.csv` keys on `sid`, which is the main search's own
+numbering. `paper2_litreview_studies.csv` carries it as `irr_sid`, filled for the 74 main-search studies
+and blank for the rest. Do not join on the number inside `ref`: the namespaces collide, and `OA-sid#292`
+and `OA#292` are different studies.
+
+**What the second pass covers.** The 22 recoded studies are a 30% random sample of the 74 from the main
+search, so the 39 added by the re-screens, citation tracking and Google Scholar were coded once and not
+checked by a second reader. The sampled fraction is of the main search, not of the 113.
+
+**What the kappas mean for the counts.** Agreement is perfect on factual fields --- whether a study
+compares itself with the market reads kappa = 1.00 --- and poor on the judgement that carries the most
+weight: leakage risk reads kappa = 0.38 on 0.59 raw agreement. The paper reports the leakage-risk counts as
+one coder's reading checked by a second pass rather than as an independently coded variable, and a reader
+who disagrees with a particular study's risk can now find that study and that judgement and say so.
+
 ## Licences and terms
 
 - **Code:** MIT (`LICENSE`).

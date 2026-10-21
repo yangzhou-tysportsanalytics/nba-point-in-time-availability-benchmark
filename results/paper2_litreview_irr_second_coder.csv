@@ -1,0 +1,23 @@
+sid,uses_availability,same_game_stats,validation,market_compared,leakage_risk,reason
+100,no,likely,random,no,high,~90% accuracy with 11 inputs; 200 games randomly selected as test
+103,no,unclear,unclear,no,unclear,CNN on 4147 games; features and split not described
+106,no,no,unclear,yes,unclear,Performance stats forecast ex ante; handicap betting tests; validation not stated
+144,no,no,temporal,yes,low,Rolling 8-game/YTD box-score aggregates; tested on 2019-20 vs sportsbook odds
+146,no,yes,unclear,no,high,Predictors are the game's own points/FG%/rebounds; in-sample model fit (AIC/concordance)
+158,unclear,unclear,unclear,no,unclear,No abstract; team-composition title hints at roster/lineup inputs
+159,unclear,no,unclear,yes,unclear,Team and player-level data; claims pregame info only; MAE vs bookmaker lines; split not stated
+163,no,unclear,random,no,high,Cross-validation vs train&test compared; CV performs better
+218,no,unclear,unclear,no,unclear,Vague: previously played games and variables; no split described
+219,no,no,temporal,no,low,Features from past box scores; predicts unplayed 2018/2019 matches; ~66% accuracy
+220,unclear,likely,unclear,no,high,Player performance and team stats; FG% most important; temporal patterns left for future work
+231,no,no,unclear,yes,unclear,Mean score difference/team strength models for 2015-16; compared to bookies; evaluation scheme unclear
+243,no,likely,unclear,no,high,Technical statistics PCA; deviation under 5% implausible for pregame
+260,no,no,temporal,no,low,Sequential Elo-type rating updates from past MOV; Brier/accuracy on 2013-2023 games
+274,unclear,unclear,random,no,high,Team-based train-test split (non-chronological); shooting efficiency and trades/rest as predictors
+292,no,unclear,unclear,no,unclear,Stacked ensemble on 2021-24 datasets; features and split not described
+312,no,likely,unclear,no,high,Accuracy 0.834 / AUC 0.94 implausibly high for pregame
+337,unclear,no,temporal,yes,unclear,LLM agents retrieve timely unstructured info (possibly injury news); Kelly betting in prediction markets; LLM knowledge leakage possible
+47,yes,no,temporal,yes,low,Player ratings from lineup-based penalized regression; train on earlier games; beats Vegas lines
+68,no,no,unclear,no,unclear,Adjusted efficiencies representations; training settings vary; split not explicit
+86,no,likely,unclear,no,high,Twenty most significant features of the game via chi-square; highly accurate; train/test split unspecified
+96,yes,no,temporal,no,low,Player-level Elo from plus-minus combined to team rating; accounts for injuries/transfers; sequential ratings
