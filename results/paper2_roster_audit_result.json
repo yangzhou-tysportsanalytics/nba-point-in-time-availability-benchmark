@@ -333,7 +333,7 @@
   }
  },
  "corrected_build": {
-  "note": "Only the 26 stints judged had_left are corrected, out of 879 flagged, so this is the confirmed part of the error. The value-weighted rate above bounds the rest. The strict headline and the never-listed put-back re-read the report series in two other scripts and are not rerun here.",
+  "note": "Only the 26 stints judged had_left are corrected, out of 879 flagged, so this is the confirmed part of the error and nothing here bounds the rest: the rates are measured on the stints that were read, the control found no departure in 30, and the `other` stints that hold artefact no single departure date describes count as no error throughout. The strict headline and the never-listed put-back re-read the report series and are rerun in paper2_roster_audit_reruns.json.",
   "corrected_stints": 26,
   "rows_removed_from_the_absence_set": 429,
   "absence_value_removed": 1999.37,

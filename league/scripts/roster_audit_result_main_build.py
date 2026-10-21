@@ -10,8 +10,11 @@ its strata in sequence and excluded what it had already drawn, so the three fram
 each stratum by its own frame counts the population twice over --- the header below gives the number. The
 estimates are post-stratified on the definitional cells instead, and the control is that the weighted
 estimate of the flagged absence value comes back within 2% of the population total. The second is the rule
-that fired: AA-a, the corrected premium moves by less than the Monte-Carlo error of a bound, so the audit is
-reported as a bound on this error and the headline does not move.
+that fired: AA-a, the corrected premium moves by less than the Monte-Carlo error of a reported bound, which
+is the threshold the plan fixed in advance. The move is reported rather than read as equivalence --- more
+bootstrap replicates would shrink that error and leave the move where it is --- and the correction covers
+the stints confirmed to be departures, so neither it nor the rates bound the error in the rest of the
+population. The paper withdrew that reading and so does this file.
 
 Import names: the originating project's layout is `src/roster_precision.py` (shipped here as
 `src/roster_precision.py`), `league/scripts/p6_ds_roster_precision.py` (here
@@ -51,8 +54,11 @@ near-transaction stints. That cell holds 86 stints and 11,724 of the flagged abs
 here rests on two judgements. The intervals carry it; the text should say it.
 
 What the rates are and are not: the proxy that selected the flagged stints reads the rest of the season, so
-it is a sampling device, not a roster rule, and these rates bound one error in one direction. A player
-wrongly removed from a list is invisible here.
+it is a sampling device and not a roster rule, and these rates measure one error in one direction among the
+stints that were read. They do not bound it in the population: enrichment among the flagged stints says
+nothing about what the unflagged ones hide, the control found no departure in 30 stints and a bootstrap of a
+stratum with no errors resamples none, and the `other` stints that hold artefact no single departure date
+describes are counted as no error throughout. A player wrongly removed from a list is invisible here.
 """
 from __future__ import annotations
 
@@ -224,9 +230,11 @@ def corrected_build(w: pd.DataFrame) -> dict:
     """The participation feature with the confirmed departures removed from the cutoff onward.
 
     Only the stints this audit judged `had_left` are corrected, 26 of the 879 flagged, so this is the
-    confirmed part of the error and not an estimate of all of it: the value-weighted rate above is what
-    bounds the rest. The feature is rebuilt from the player-level table rather than edited in place, and
-    the control is that rebuilding it without any correction reproduces the published figures.
+    confirmed part of the error and not an estimate of all of it. Nothing here bounds the rest: the rates
+    above are measured on the stints that were read, and the reasons they do not extend to the population
+    are in this module's own header. The feature is rebuilt from the player-level table rather than edited
+    in place, and the control is that rebuilding it without any correction reproduces the published
+    figures.
     """
     R = pd.read_csv(EXT / 'bench_ref_players.csv', dtype={'game_id': str, 'espn_player_id': str})
     G = pd.read_csv(EXT / 'bench_games.csv', dtype={'game_id': str})
@@ -261,9 +269,11 @@ def corrected_build(w: pd.DataFrame) -> dict:
     moved = abs(cor['inflation'] - pub['inflation'])
     o = {
         'note': 'Only the 26 stints judged had_left are corrected, out of 879 flagged, so this is the '
-                'confirmed part of the error. The value-weighted rate above bounds the rest. The strict '
-                'headline and the never-listed put-back re-read the report series in two other scripts '
-                'and are not rerun here.',
+                'confirmed part of the error and nothing here bounds the rest: the rates are measured on '
+                'the stints that were read, the control found no departure in 30, and the `other` stints '
+                'that hold artefact no single departure date describes count as no error throughout. The '
+                'strict headline and the never-listed put-back re-read the report series and are rerun in '
+                'paper2_roster_audit_reruns.json.',
         'corrected_stints': len(left),
         'rows_removed_from_the_absence_set': int((gone & R.out_real.values).sum()),
         'absence_value_removed': round(float(R.val.values[gone & R.out_real.values].sum()), 2),
