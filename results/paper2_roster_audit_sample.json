@@ -1,0 +1,28 @@
+{
+ "plan": "docs/plans/paper2_AA_roster_audit.md",
+ "plan_sha256": "b2accd0a0fb4206050e667f3caa76bbbae14cd3761612ccb94d6acc7683fdec7",
+ "seed": 20261020,
+ "near_days": 7,
+ "min_remaining_games": 10,
+ "population": {
+  "rotation_rows": 175699,
+  "flagged_rows": 7261,
+  "flagged_stints": 879,
+  "control_stints": 2132,
+  "absence_value_total": 396006.63,
+  "absence_value_readable": 338881.0,
+  "absence_value_flagged": 110754.11,
+  "share_of_readable": 0.3268,
+  "share_of_all_rows": 0.2797,
+  "note": "share_of_readable is the figure the paper quotes: the denominator is the absence value of rows where the proxy can be read, those with ten team-games still to come. share_of_all_rows divides by every row."
+ },
+ "strata": {
+  "A_high_value": 50,
+  "B_near_transaction": 40,
+  "C_flagged_random": 30,
+  "D_control": 30
+ },
+ "top_decile_cut_absence_value": 303.13,
+ "worksheet": "docs/paper/audit/roster_audit_worksheet.csv",
+ "note": "Stints, not rows: one judgement per (player, team, season), mapped back onto its rows when the rates are computed. The proxy reads the rest of the season and is a sampling device and a post-hoc sensitivity only, never a roster rule."
+}
