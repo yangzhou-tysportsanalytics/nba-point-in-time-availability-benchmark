@@ -47,11 +47,12 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
 | `league/scripts/parse_injury_pdf.py` | The injury-report parser. |
 | `league/public/pit_rules.py` | Name matching, reason classes and reference minutes, copied verbatim from the project code. |
-| `league/scripts/cutoff_f7_main_build.py` | Plan Y as it was run on the main build: what reading the report later is worth once the early report is read in full. Published to be read, not rerun here (see below). |
+| `league/scripts/cutoff_f7_main_build.py` | Plan Y as it was run on the main build: what reading the report later is worth once the early report is read in full. Published to be read as it ran; the next row runs the same question here. |
+| `league/scripts/cutoff_f7_public.py` | Plan BB: the same crossing on this rebuild, with the controls the plan required before anything could be read off it. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
-| `src/` | The project modules the two published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, and the cutoff encoding. |
-| `docs/plans/` | The plans those two scripts were run to, each pinned by hash inside the script. |
+| `src/` | The project modules the published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, the cutoff encoding, and the rolling per-status sit-out rates the all-status encoding weights a report with. |
+| `docs/plans/` | The plans those scripts were run to, each pinned by hash inside the script. |
 | `DATASHEET.md` | Datasheet (Gebru et al., 2021). |
 | `croissant.json` | Croissant 1.0 metadata for the two released data tables (validated with `mlcroissant`). |
 | `requirements.txt` | Pinned environment. |
@@ -288,6 +289,7 @@ python league/scripts/cutoff_curve.py           # the curve, and the twelve-hour
 python league/scripts/decomposition.py          # the three components, both readings of the put-backs
 python league/scripts/replacement_mechanism.py  # the curve and the put-backs under all three valuations
 python league/scripts/pooled_headline.py        # the pooled rolling headline on this rebuild
+python league/scripts/cutoff_f7_public.py       # plan BB: the two encodings crossed with two cutoffs
 ```
 
 None of them reimplements the build: the report rows, the name matching and the rule for which report is
@@ -304,22 +306,32 @@ reference row, to the last digit, by construction rather than by result, and nei
 three`, which is 0.057 on the main build because it keeps that fourth term in. The script now computes both
 and names them apart; rerunning it after a rebuild produces the corrected file.
 
-**Two analyses in this release cannot be rerun here.** The first compares this build's availability features with
+**One analysis in this release cannot be rerun here.** It compares this build's availability features with
 the main build's on the games both keep, with one outcome, one rolling split and one pair of controls, and
 differences the two premiums inside the same bootstrap draw: it needs both builds' game-level tables and
 this repository ships one of them. Its script is `league/scripts/paired_paths_main_build.py`, published as it
 was run, with the modules it imports in `src/` and the plan it was run to in `docs/plans/`, and its
-result is `results/paper2_paired_paths.json`. What is missing in both cases is a table, not a file of
-ours. The second is newer. Plan Y asks what reading the report
-at one hour instead of six is worth to a model that already reads every status the six-hour report publishes.
-Its script is published as `league/scripts/cutoff_f7_main_build.py`, unchanged from the run, and its result as
-`results/paper2_cutoff_f7.json`, but it reads the originating project's paths rather than this rebuild's, so
-there is no public-path control for it and none is shipped. What does run here is the part that goes wrong
-quietly: the encoding is shipped as `src/cutoff_encoding.py` with the thirteen cases it was built
-against in `league/tests/test_cutoff_encoding.py`, among them that a report printed exactly on the cutoff counts,
-that a team which had not filed is unknown rather than healthy, and that a player the report does not list is
-charged nothing even though "Available" carries a sit-out rate of its own. Porting the analysis onto this
-rebuild is the obvious next step and has not been done.
+result is `results/paper2_paired_paths.json`. What is missing there is a table, not a file of ours.
+
+**Plan Y's crossing was the second, and has now been ported.** It asks what reading the report at one hour
+instead of six is worth to a model that already reads every status the six-hour report publishes. The run on
+the main build is still published as `league/scripts/cutoff_f7_main_build.py`, unchanged, with its result in
+`results/paper2_cutoff_f7.json`, and it reads the originating project's paths. Beside it,
+`league/scripts/cutoff_f7_public.py` asks the same question of this rebuild, to a plan fixed before the code
+(`docs/plans/paper2_BB_f7_public_path.md`, hashed inside the script), and writes
+`results/paper2_cutoff_f7_public.json`. Its two controls passed: the out-or-not arm reproduces the published
+cutoff curve at both cutoffs to the fourth decimal, and the rolling sit-out rates agree exactly with a direct
+count. On this build the five hours are worth 0.059 (0.025-0.095) to a model that reads the report as
+out-or-not and 0.021 (-0.001 to 0.043) to one that reads it in full, a difference inside one set of draws of
+-0.038 (-0.061 to -0.018) against the main build's -0.037 (-0.060 to -0.016). The rule the plan fixed in
+advance is met, so the ordering of the two encodings does not depend on the main build's roster attribution,
+its tip-off times or its name matching. One reading does not carry: the full reader's own contrast reaches
+zero here where on the main build it does not, so what this corroborates is the difference between the
+encodings and not that waiting is worth something resolved to a model that already reads the report in full.
+The encoding both scripts read the report with is `src/cutoff_encoding.py`, with the thirteen cases it was
+built against in `league/tests/test_cutoff_encoding.py`, among them that a report printed exactly on the
+cutoff counts, that a team which had not filed is unknown rather than healthy, and that a player the report
+does not list is charged nothing even though "Available" carries a sit-out rate of its own.
 
 Three results differ on this build and the scripts say so rather than leaving you to notice. Rescaling the raw
 minutes back to 240 does not return this build's reference minutes for 32,118 of 182,004 rows, where on the
