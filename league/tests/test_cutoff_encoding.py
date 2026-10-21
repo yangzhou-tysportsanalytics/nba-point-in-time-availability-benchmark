@@ -1,7 +1,9 @@
 """The encoding plan Y reads the report with, and the cases it has to get right.
 
-Vendored from the originating project as `league/public/cutoff_encoding.py`. The analysis that uses it needs
-the player-level table the rebuild writes on the reader's machine, so it cannot be rerun here; this module
+Vendored from the originating project as `src/cutoff_encoding.py`. The analysis that uses it reads the
+originating project's paths rather than this rebuild's, so it is not rerun in this repository as published;
+porting it onto the rebuild needs the player-level table `rebuild.py build` writes on the reader's own
+machine, which is how every other player-level analysis here is run. This module
 is the part of it that goes wrong quietly, and these are the cases it was built against. That it has not drifted from the project's copy is checked in the project, which is the only
 place both repositories exist.
 """
