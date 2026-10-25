@@ -1,0 +1,159 @@
+{
+ "n_holdout_games": 4131,
+ "seasons": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "build": "main",
+ "bench_file": "bench_games.csv",
+ "model": "least squares",
+ "note": "One model, trained on realized participation. Its backtest evaluates it on participation; its deployment hands it the pregame report. The gap is deployment RMSE minus backtest RMSE, so a positive number is what the buyer loses.",
+ "feature_sets": {
+  "narrow": {
+   "backtest_rmse": 13.8839,
+   "deployed_rmse": 13.9405,
+   "gap": 0.0566,
+   "dyadic_se": 0.0279,
+   "dyadic_ci95": [
+    0.002,
+    0.1112
+   ],
+   "iid_ci95": [
+    -0.0008,
+    0.1135
+   ],
+   "per_season": {
+    "2023": -0.0146,
+    "2024": -0.0005,
+    "2025": 0.046,
+    "2026": 0.1809
+   },
+   "season_mean": 0.0529,
+   "season_sd": 0.0891,
+   "season_ci95_t3": [
+    -0.0889,
+    0.1948
+   ],
+   "implied_season_component": 0.0696,
+   "within_season_se": 0.0557,
+   "designs": {
+    "home_season_cluster": {
+     "reps": 10000,
+     "seeds": [
+      20261005,
+      20261006,
+      20261007
+     ],
+     "ci95": [
+      -0.0045,
+      0.1193
+     ],
+     "lower_range": [
+      -0.0047,
+      -0.0043
+     ],
+     "upper_range": [
+      0.1178,
+      0.1206
+     ],
+     "lower_crosses_zero": true
+    },
+    "season_then_cluster": {
+     "reps": 10000,
+     "seeds": [
+      20261005,
+      20261006,
+      20261007
+     ],
+     "ci95": [
+      -0.0415,
+      0.1546
+     ],
+     "lower_range": [
+      -0.0423,
+      -0.0412
+     ],
+     "upper_range": [
+      0.1527,
+      0.1556
+     ],
+     "lower_crosses_zero": true
+    }
+   }
+  },
+  "wide": {
+   "backtest_rmse": 13.8975,
+   "deployed_rmse": 13.9932,
+   "gap": 0.0957,
+   "dyadic_se": 0.0208,
+   "dyadic_ci95": [
+    0.0549,
+    0.1366
+   ],
+   "iid_ci95": [
+    0.0287,
+    0.1606
+   ],
+   "per_season": {
+    "2023": -0.0003,
+    "2024": 0.0648,
+    "2025": 0.1061,
+    "2026": 0.1981
+   },
+   "season_mean": 0.0922,
+   "season_sd": 0.0831,
+   "season_ci95_t3": [
+    -0.04,
+    0.2244
+   ],
+   "implied_season_component": 0.0719,
+   "within_season_se": 0.0417,
+   "designs": {
+    "home_season_cluster": {
+     "reps": 10000,
+     "seeds": [
+      20261005,
+      20261006,
+      20261007
+     ],
+     "ci95": [
+      0.0239,
+      0.1687
+     ],
+     "lower_range": [
+      0.0238,
+      0.0239
+     ],
+     "upper_range": [
+      0.1676,
+      0.1705
+     ],
+     "lower_crosses_zero": false
+    },
+    "season_then_cluster": {
+     "reps": 10000,
+     "seeds": [
+      20261005,
+      20261006,
+      20261007
+     ],
+     "ci95": [
+      -0.0101,
+      0.1921
+     ],
+     "lower_range": [
+      -0.0105,
+      -0.0095
+     ],
+     "upper_range": [
+      0.1903,
+      0.1933
+     ],
+     "lower_crosses_zero": true
+    }
+   }
+  }
+ }
+}

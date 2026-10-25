@@ -52,6 +52,7 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/roster_audit_sample_main_build.py` | Plan AA as it was run: drawing the sample for the human audit of the roster rule. Published to be read; the sample is a player-level table and is not shipped. |
 | `league/scripts/roster_audit_result_main_build.py` | Plan AA section 5 as it was run: the error rates, the control stratum and the corrected build. |
 | `league/scripts/roster_audit_reruns_main_build.py` | Plan AA section 5.4 as it was run: the strict headline and the never-listed put-back on the corrected build. |
+| `results/paper2_deployment_pooled_strict.json` | The deployment gap on the benchmark sample, which the paper reports beside the fallback one. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `src/` | The project modules the published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, the cutoff encoding, and the rolling per-status sit-out rates the all-status encoding weights a report with. |
@@ -141,7 +142,7 @@ second and third columns as (0.091-0.300) and (-0.037 to 0.428); that interval w
 error that an external review found inflated wherever the season-to-season spread is smaller than the
 sampling noise inside a season, which is the case for this quantity.
 
-**The report's own value is the stable part. The premium is not resolved under any reading.** Its lower bound
+**The report's own value is the stable part. The premium is not resolved under the primary specification.** Several readings do put it clear of zero and the paper lists them with the reason each is not the headline. Its lower bound
 for these four seasons is zero to within the bootstrap's own Monte-Carlo error: across five seeds at 10,000
 replicates it runs -0.0017 to 0.0012, above zero in three of the five and below it in two. Averaged over
 seasons it is 0.057 (-0.079 to 0.192) and for one unseen season 0.057 (-0.246 to 0.359). We report the point
@@ -162,8 +163,8 @@ estimate and do not call it resolved under any of the three.
 - **It depends on the cutoff.** On the games where both teams had filed at six hours, the report is worth
   0.185 (0.126-0.245) six hours out and 0.258 (0.185-0.333) thirty minutes out. Read at one hour instead of
   six, on the same games, the compliant feature gains 0.067 (0.030-0.103); at thirty minutes, 0.073
-  (0.026-0.119). At thirty minutes the premium is -0.022 (-0.058 to 0.014): the report is already level with
-  knowing who played.
+  (0.026-0.119). At thirty minutes the premium is -0.022 (-0.058 to 0.014), which contains zero: at
+  that cutoff this sample does not separate the report from knowing who played, in either direction.
 - **The twelve-hour point needs care.** On the games where both teams had actually filed that early, the
   report is worth 0.153 (0.089-0.216) and the premium is 0.054 (-0.010 to 0.125). Computed on all games,
   imputing health for the teams that had not filed, the same pair reads 0.108 and 0.128 - which is the mistake
