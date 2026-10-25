@@ -1,0 +1,137 @@
+{
+ "n_holdout_games": 4131,
+ "seasons": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "note": "Flag is the absence value of rotation players who did not play in their team previous game, on the same rotation and valuation as F1. The first game of a season has no previous game and contributes nothing, which understates the baseline slightly.",
+ "share_games_with_any_lagged_absence": 0.9898,
+ "contrasts": {
+  "F0_vs_Flag": {
+   "point": 0.0852,
+   "ci95_home": [
+    0.045,
+    0.1251
+   ],
+   "dyadic_se": 0.0284,
+   "dyadic_ci95": [
+    0.0295,
+    0.1408
+   ],
+   "iid_ci95": [
+    0.0459,
+    0.1265
+   ],
+   "description": "what last night's box score alone is worth"
+  },
+  "Flag_vs_F1": {
+   "point": 0.1,
+   "ci95_home": [
+    0.047,
+    0.1521
+   ],
+   "dyadic_se": 0.0282,
+   "dyadic_ci95": [
+    0.0448,
+    0.1553
+   ],
+   "iid_ci95": [
+    0.0442,
+    0.1573
+   ],
+   "description": "the report instead of the lagged feature: two alternative models, not an increment"
+  },
+  "Flag_vs_JointFlagF1": {
+   "point": 0.1037,
+   "ci95_home": [
+    0.0543,
+    0.1526
+   ],
+   "dyadic_se": 0.0262,
+   "dyadic_ci95": [
+    0.0524,
+    0.155
+   ],
+   "iid_ci95": [
+    0.0514,
+    0.1574
+   ],
+   "description": "what the report adds to a model that keeps the lagged feature: nested, so CW applies"
+  },
+  "F0_vs_F1": {
+   "point": 0.1852,
+   "ci95_home": [
+    0.1244,
+    0.245
+   ],
+   "dyadic_se": 0.0352,
+   "dyadic_ci95": [
+    0.1162,
+    0.2541
+   ],
+   "iid_ci95": [
+    0.1197,
+    0.2546
+   ],
+   "description": "the paper's headline, for reference"
+  },
+  "F1_vs_F2": {
+   "point": 0.0502,
+   "ci95_home": [
+    -0.0081,
+    0.1113
+   ],
+   "dyadic_se": 0.0273,
+   "dyadic_ci95": [
+    -0.0033,
+    0.1036
+   ],
+   "iid_ci95": [
+    -0.0035,
+    0.1037
+   ],
+   "description": "the inflation, for reference"
+  }
+ },
+ "per_season": {
+  "2023": {
+   "F0_vs_Flag": 0.0087,
+   "Flag_vs_F1": 0.0996,
+   "Flag_vs_JointFlagF1": 0.0945,
+   "F0_vs_F1": 0.1083,
+   "F1_vs_F2": -0.0344
+  },
+  "2024": {
+   "F0_vs_Flag": 0.0839,
+   "Flag_vs_F1": 0.1153,
+   "Flag_vs_JointFlagF1": 0.1163,
+   "F0_vs_F1": 0.1992,
+   "F1_vs_F2": 0.0085
+  },
+  "2025": {
+   "F0_vs_Flag": 0.0854,
+   "Flag_vs_F1": 0.1133,
+   "Flag_vs_JointFlagF1": 0.1163,
+   "F0_vs_F1": 0.1987,
+   "F1_vs_F2": 0.0396
+  },
+  "2026": {
+   "F0_vs_Flag": 0.1513,
+   "Flag_vs_F1": 0.0746,
+   "Flag_vs_JointFlagF1": 0.0889,
+   "F0_vs_F1": 0.2259,
+   "F1_vs_F2": 0.1715
+  }
+ },
+ "nested_test_report_over_lag": {
+  "note": "Flag against Flag+F1, home-team x season clusters. The nested pair the sentence in Section 3.4 needs; DM is undersized against the larger model here, so CW is the fair test.",
+  "dm_mean": 2.9002,
+  "dm_t": 4.15,
+  "dm_p_two_sided": 0.0,
+  "cw_mean": 5.7988,
+  "cw_t": 8.28,
+  "cw_p_one_sided": 0.0
+ }
+}

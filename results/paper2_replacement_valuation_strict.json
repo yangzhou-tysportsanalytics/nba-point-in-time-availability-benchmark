@@ -1,0 +1,102 @@
+{
+ "plan": "docs/plans/paper2_P_replacement_valuation.md",
+ "plan_sha256": "ed59385950dfa617b60eee2fff542c0a1a57e9f494c85b4d8e30b682fd3c31ce",
+ "reps": 10000,
+ "seed": 20260921,
+ "diagnostics": {
+  "plan_sha256": "ed59385950dfa617b60eee2fff542c0a1a57e9f494c85b4d8e30b682fd3c31ce",
+  "q_replacement": 0.2,
+  "rotation_rows": 178421,
+  "rows_without_a_level": 58,
+  "rows_without_a_team_level": 393,
+  "level_mean": 0.40118,
+  "level_sd": 0.00855,
+  "level_team_mean": 0.40217,
+  "share_below_replacement": 0.2482,
+  "share_below_replacement_team": 0.2484,
+  "games": 5181,
+  "sd_F1_rep": 8.549,
+  "sd_F2_rep": 9.662,
+  "corr_F2_rep_with_existing": 0.8613,
+  "corr_F1_rep_with_existing": 0.89,
+  "sd_F1_reptm": 8.585,
+  "sd_F2_reptm": 9.829,
+  "corr_F2_reptm_with_existing": 0.842,
+  "corr_F1_reptm_with_existing": 0.8751
+ },
+ "estimates": {
+  "report_replacement": {
+   "point": 0.1601,
+   "ci95_home": [
+    0.1053,
+    0.2165
+   ],
+   "ci95_season": [
+    0.0942,
+    0.2238
+   ],
+   "description": "the report's value, replacement valuation"
+  },
+  "premium_replacement": {
+   "point": 0.0347,
+   "ci95_home": [
+    -0.0091,
+    0.0768
+   ],
+   "ci95_season": [
+    -0.0271,
+    0.0953
+   ],
+   "description": "the premium, replacement valuation"
+  },
+  "report_replacement_team": {
+   "point": 0.1618,
+   "ci95_home": [
+    0.1076,
+    0.2153
+   ],
+   "ci95_season": [
+    0.0874,
+    0.2298
+   ],
+   "description": "the report's value, team-level sensitivity"
+  },
+  "premium_replacement_team": {
+   "point": 0.0377,
+   "ci95_home": [
+    -0.0032,
+    0.0774
+   ],
+   "ci95_season": [
+    -0.0199,
+    0.0944
+   ],
+   "description": "the premium, team-level sensitivity"
+  },
+  "report_existing": {
+   "point": 0.1852,
+   "ci95_home": [
+    0.1263,
+    0.245
+   ],
+   "ci95_season": [
+    0.1087,
+    0.2554
+   ],
+   "description": "the report's value, existing valuation, same draws"
+  },
+  "premium_existing": {
+   "point": 0.0502,
+   "ci95_home": [
+    -0.0089,
+    0.1092
+   ],
+   "ci95_season": [
+    -0.0446,
+    0.1448
+   ],
+   "description": "the premium, existing valuation, same draws"
+  }
+ },
+ "seed_checks": {}
+}

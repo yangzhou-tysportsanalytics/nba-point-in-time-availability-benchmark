@@ -53,6 +53,7 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/roster_audit_result_main_build.py` | Plan AA section 5 as it was run: the error rates, the control stratum and the corrected build. |
 | `league/scripts/roster_audit_reruns_main_build.py` | Plan AA section 5.4 as it was run: the strict headline and the never-listed put-back on the corrected build. |
 | `results/paper2_deployment_pooled_strict.json` | The deployment gap on the benchmark sample, which the paper reports beside the fallback one. |
+| `results/paper2_*_strict.json`, `results/paper2_strict_sample.json` | The benchmark-sample companions to the four-season runs: the sample's own definition and game ids, the all-status encoding, the lagged baseline and the replacement-level valuation. The paper's Section 3 figures on the benchmark sample are read from these. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `src/` | The project modules the published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, the cutoff encoding, and the rolling per-status sit-out rates the all-status encoding weights a report with. |
@@ -185,9 +186,11 @@ estimate and do not call it resolved under any of the three.
   the things a finite sample produces for a feature in which nothing is detected; the nesting bounds the
   population comparison and does not identify what the loss is made of.
 - **What a buyer should ask for.** The gap between a model's own backtest and the accuracy it delivers when
-  handed only the pregame report, pooled over the four holdouts, is 0.068 (0.015-0.120) with narrow features
-  and 0.100 (0.064-0.135) with wide ones; 0.086 (0.035-0.137) on this rebuild. It is not steady across
-  seasons, and no single season reproduced it.
+  handed only the pregame report, pooled over the four holdouts, is 0.068 (0.006-0.130) with narrow features
+  and 0.100 (0.029-0.171) with wide ones; 0.086 (0.022-0.150) on this rebuild. Those are home-team x season
+  clusters, the design the paper reports for a quantity stated over these four seasons; the result files also
+  carry the iid-game interval and the dyadic one the paper withdrew, which is narrower. It is not steady
+  across seasons, and no single season reproduced it.
 - **Who played, not how long.** Once participation is known, realized minutes add nothing.
 - **No market edge.** No model built *without* the price beats the closing line. A model handed the closing
   price is not established either to improve on it with availability or to fail to: the point estimates
@@ -210,7 +213,11 @@ Every number in the paper is generated from a file in `results/`. The main ones:
 | Plus-minus valuation | `paper2_impact_valuation.json` | `estimates` |
 | Without the 240-minute rescaling | `paper2_valuation_robustness.json` | `estimates` |
 | Model grid, deployment gap | `paper2_models.json`, `paper2_models_extra.json` | `A_main`, `B_five_seasons` |
-| Deployment gap, pooled over four holdouts | `paper2_deployment_pooled.json` | `feature_sets` |
+| Deployment gap, pooled over four holdouts | `paper2_deployment_pooled.json` | `feature_sets`; the reported interval is `designs.home_season_cluster` |
+| The benchmark sample itself, and its game ids | `paper2_strict_sample.json` | `n_holdout_games`, `by_season`, `game_ids` |
+| Benchmark-sample all-status encoding | `paper2_pooled_secondary_strict.json` | `pooled` |
+| Benchmark-sample lagged baseline | `paper2_lagged_baseline_strict.json` | `contrasts.Flag_vs_JointFlagF1` is the nested comparison, `ci95_home` the reported interval |
+| Benchmark-sample replacement-level valuation | `paper2_replacement_valuation_strict.json` | `estimates` |
 | Market section | `paper2_close_line.json`, `paper2_open_line.json` | `rmse_vs_lines`, `estimates` |
 | Public rebuild against the main build | `paper2_public_path.json`, `paper2_public_path_compare.json` | — |
 
@@ -391,8 +398,10 @@ reruns it here:
 python league/scripts/deployment_pooled.py    # -> results/paper2_deployment_pooled_public.json
 ```
 
-On the released build the gap is 0.086 points of margin RMSE (0.035 to 0.137) for these four seasons, against
-0.068 (0.015 to 0.120) on the main build; both exclude zero. Neither build resolves it as a statement about an
+On the released build the gap is 0.086 points of margin RMSE (0.022 to 0.150) for these four seasons, against
+0.068 (0.006 to 0.130) on the main build, both under home-team x season clusters; both exclude zero. Each file
+also carries the iid-game interval and the dyadic one the paper withdrew (0.035 to 0.137 and 0.015 to 0.120),
+under `dyadic_ci95` and `iid_ci95`; the reported design is under `designs.home_season_cluster`. Neither build resolves it as a statement about an
 NBA season in general -- 0.084 (-0.052 to 0.220) here, 0.065 (-0.072 to 0.203) there -- because the gap is not
 steady across seasons, and 2025-26, the season the grid uses, is the largest of the four on both builds. The
 implied season-to-season standard deviation is 0.068 on each, close to the 0.0675 the inflation carries. The
