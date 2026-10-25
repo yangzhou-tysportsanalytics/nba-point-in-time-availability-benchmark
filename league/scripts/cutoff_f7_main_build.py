@@ -225,7 +225,13 @@ def _draws(Rk, reps=REPS, seed=SEED):
         c = np.bincount(rng.integers(0, len(teams), len(teams)), minlength=len(teams)).astype(float)
         W2.append(c[hi_] * c[ai_])
     W3 = list(_weight_bank(rng, 'season_then_cluster', reps, _cluster_keys(Rk)))
-    return W1, W2, W3
+    # The away mirror and the iid game bootstrap, which the calibration scores beside the reported design
+    # and cannot order against it. The paper shows elsewhere that the side can move the premium across
+    # zero, so the quantities it leads on are reported under all of them (eleventh review).
+    _k = _cluster_keys(Rk)
+    W4 = list(_weight_bank(rng, 'away_season_cluster', reps, _k))
+    W5 = list(_weight_bank(rng, 'iid_game', reps, _k))
+    return W1, W2, W3, W4, W5
 
 
 def _ci(v):
@@ -238,7 +244,7 @@ def _rmse(y, p, w):
 
 def gain_and_inflation(col, mask=None):
     y, P, Rk = _fit({'F0': [], 'F': [col], 'F2': ['F2_diff']}, mask)
-    W1, _, _ = _draws(Rk)
+    W1, _, _, _, _ = _draws(Rk)
 
     def st(w):
         r = {k: _rmse(y, q, w) for k, q in P.items()}
@@ -253,14 +259,15 @@ def gain_and_inflation(col, mask=None):
 def paired(late, early, mask=None):
     """RMSE(early) - RMSE(late), inside the same draws: what the later report adds under this encoding."""
     y, P, Rk = _fit({'late': [late], 'early': [early]}, mask)
-    W1, W2, W3 = _draws(Rk)
+    W1, W2, W3, W4, W5 = _draws(Rk)
 
     def st(w):
         return _rmse(y, P['early'], w) - _rmse(y, P['late'], w)
 
     return dict(n=int(len(y)), point=round(st(np.ones(len(y))), 4),
                 ci95_home=_ci([st(w) for w in W1]), ci95_two_way=_ci([st(w) for w in W2]),
-                ci95_season=_ci([st(w) for w in W3]))
+                ci95_season=_ci([st(w) for w in W3]), ci95_away=_ci([st(w) for w in W4]),
+                ci95_iid=_ci([st(w) for w in W5]))
 
 
 def paired_difference(mask=None, late7='F7_1'):
@@ -271,7 +278,7 @@ def paired_difference(mask=None, late7='F7_1'):
     """
     y, P, Rk = _fit({'f7_late': [late7], 'f7_early': ['F7_6'],
                      'f1_late': ['F1_1'], 'f1_early': ['F1_6']}, mask)
-    W1, W2, W3 = _draws(Rk)
+    W1, W2, W3, W4, W5 = _draws(Rk)
 
     def st(w):
         r = {k: _rmse(y, q, w) for k, q in P.items()}
@@ -279,7 +286,8 @@ def paired_difference(mask=None, late7='F7_1'):
 
     return dict(n=int(len(y)), point=round(st(np.ones(len(y))), 4),
                 ci95_home=_ci([st(w) for w in W1]), ci95_two_way=_ci([st(w) for w in W2]),
-                ci95_season=_ci([st(w) for w in W3]))
+                ci95_season=_ci([st(w) for w in W3]), ci95_away=_ci([st(w) for w in W4]),
+                ci95_iid=_ci([st(w) for w in W5]))
 
 
 # ---------------------------------------------------------------- the archive-coverage subsample
