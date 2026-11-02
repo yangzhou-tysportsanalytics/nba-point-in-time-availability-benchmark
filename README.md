@@ -14,7 +14,34 @@ regular-season game from 2021-22 to 2025-26, kept apart from what happened after
 | --- | --- |
 | **Use the benchmark** | `data/bench_games_public.csv` — one row per game, with the compliant and leaky absence features already built. |
 | **Check a number in the paper** | `results/` holds the file behind every number. The map is in [Reproducing the numbers](#reproducing-the-numbers). |
-| **Rebuild everything from public sources** | Four commands, below. Roughly two hours and 2 GB, no account needed. |
+| **Rebuild everything from public sources** | Four commands, below. About nine hours and 1.9 GB, no account needed. The fetch is the slow part: it is deliberately polite to the league's server and runs at roughly 1.2 seconds a file. |
+
+## For a reviewer checking the open-source requirement
+
+A conference or journal that requires the data behind the paper should read this section first.
+
+**What is here.** The game-level benchmark in compliant and leaky versions, every number behind every figure
+and table in `results/`, the code and its tests, a pinned environment, a datasheet, Croissant metadata, the
+analysis history, and `league/public/sources.csv`: the URL, byte count and SHA-256 of all 23,485 injury-report
+PDFs and the two Kaggle files the paper is built from. Nothing needs an account.
+
+**What is not here, and why it is a licensing limit rather than a privacy one.** No player-level table is
+redistributed. The constraint is the sources' terms, not confidentiality: these are published availability
+statuses of named professional athletes, so there is nothing to anonymise and anonymising would destroy the
+data's meaning. A requirement to "anonymise personal information before sharing" therefore does not apply
+here, and we cannot use it to release what the terms forbid.
+
+**What you run instead.** `fetch_sources.py` downloads the sources from their public URLs and verifies every
+SHA-256 against that list; `rebuild.py` then writes the player-level tables on your machine, which the terms
+allow. Every released analysis script reads the table from there and carries the published figures as a
+control, so a rebuild announces immediately whether it matches ours.
+
+**Verified from a clean clone on 2026-11-02**, on Windows 11 with Python 3.12: a fresh `git clone` of this
+repository, a new virtual environment and `pip install -r requirements.txt` took 1 minute 42 seconds; the
+no-download quick check below ran in 6.5 seconds and reproduced all 50 numeric estimates of
+`results/paper2_public_path.json` exactly; `fetch_sources.py` fetched and hash-verified its first 123 PDFs at
+1.2 seconds a file, which is where the nine-hour figure above comes from. The full fetch-and-rebuild was not
+re-run for that check; it is the run that produced the released files.
 
 ## What is not here, and why
 
@@ -74,14 +101,18 @@ pip install -r requirements.txt
 python league/scripts/rebuild.py model --bench data/bench_games_public.csv
 ```
 
-This refits the headline model on the released table and writes `results/paper2_public_path_check.json`, which
-should match `results/paper2_public_path.json`.
+This refits the headline model on the released table and writes `results/paper2_public_path_check.json`.
+Every numeric estimate in it matches `results/paper2_public_path.json` exactly — 50 of 50 when the two are
+compared leaf by leaf. The released file is not byte-identical, because it also carries the parse statistics
+that only the full rebuild produces and it records a different input path, so compare the estimates and not
+the whole file.
 
 ## Full rebuild from public sources
 
 ```
 pip install -r requirements.txt
-python league/scripts/fetch_sources.py                # ~1.5 GB of PDFs + ~400 MB of Kaggle CSVs; verifies SHA-256
+python league/scripts/fetch_sources.py                # 1.5 GB of PDFs + 0.4 GB of Kaggle CSVs; verifies SHA-256
+                                                      # about 8 hours: 23,485 files at ~1.2 s each, and it resumes
 python league/scripts/rebuild.py parse 3600   # re-run until it prints "done" (4 processes, about an hour)
 python league/scripts/rebuild.py build
 python league/scripts/rebuild.py model
