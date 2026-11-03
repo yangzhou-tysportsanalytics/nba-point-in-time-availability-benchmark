@@ -51,10 +51,10 @@
   "https://creativecommons.org/licenses/by/4.0/",
   "https://opensource.org/licenses/MIT"
  ],
- "url": "https://github.com/yangzhou-tysportsanalytics/nba-point-in-time-availability-benchmark",
+ "url": "https://anonymous.4open.science/r/nba-point-in-time-availability-benchmark-B045",
  "version": "1.0.0",
  "datePublished": "2026-09-22",
- "citeAs": "PIT-Avail: a point-in-time NBA player availability benchmark, version 1.0.0. Accompanies \"Who Was Really Out? A Point-in-Time NBA Availability Benchmark, and What It Says About Hindsight\" (under review). https://github.com/yangzhou-tysportsanalytics/nba-point-in-time-availability-benchmark",
+ "citeAs": "PIT-Avail: a point-in-time NBA player availability benchmark, version 1.0.0. Accompanies \"Who Was Really Out? A Point-in-Time NBA Availability Benchmark, and What It Says About Hindsight\" (under review). https://anonymous.4open.science/r/nba-point-in-time-availability-benchmark-B045",
  "creator": {
   "@type": "sc:Organization",
   "name": "Anonymised for review"
