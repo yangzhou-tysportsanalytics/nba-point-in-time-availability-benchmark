@@ -70,6 +70,77 @@
    ]
   }
  },
+ "closing_2026_strict": {
+  "n_train": 2079,
+  "n_holdout": 888,
+  "label": "holdout 2025-26, both teams filed at six hours, trained on the same restriction",
+  "report_adds_to_M2": {
+   "point": 0.019,
+   "ci95_home": [
+    -0.0086,
+    0.046
+   ],
+   "ci95_two_way": [
+    -0.028,
+    0.0729
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": 0.0382,
+   "ci95_home": [
+    0.0076,
+    0.067
+   ],
+   "ci95_two_way": [
+    -0.0149,
+    0.0905
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": 0.0192,
+   "ci95_home": [
+    -0.0022,
+    0.0406
+   ],
+   "ci95_two_way": [
+    -0.0189,
+    0.0555
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": 0.0069,
+   "ci95_home": [
+    -0.0288,
+    0.0444
+   ],
+   "ci95_two_way": [
+    -0.0493,
+    0.0708
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": 0.0262,
+   "ci95_home": [
+    -0.0086,
+    0.0616
+   ],
+   "ci95_two_way": [
+    -0.0282,
+    0.0837
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": -0.012,
+   "ci95_home": [
+    -0.0385,
+    0.0156
+   ],
+   "ci95_two_way": [
+    -0.0655,
+    0.0368
+   ]
+  }
+ },
  "opening_2026": {
   "n_train": 1853,
   "n_holdout": 977,
@@ -282,6 +353,205 @@
     0.0233
    ]
   }
+ },
+ "opening_month_coverage": {
+  "2022": {
+   "1": 229,
+   "2": 163,
+   "3": 232,
+   "4": 80,
+   "10": 84,
+   "11": 213,
+   "12": 205
+  },
+  "2023": {
+   "1": 125,
+   "10": 88,
+   "11": 208,
+   "12": 226
+  },
+  "2026": {
+   "1": 232,
+   "2": 168,
+   "3": 237,
+   "4": 100,
+   "11": 44,
+   "12": 196
+  }
+ },
+ "opening_2026_matched": {
+  "n_train": 1853,
+  "n_holdout": 472,
+  "label": "holdout 2025-26, opening price, restricted to the months 2022-23 covers",
+  "months": [
+   1,
+   10,
+   11,
+   12
+  ],
+  "month_counts": {
+   "1": 232,
+   "11": 44,
+   "12": 196
+  },
+  "report_adds_to_M2": {
+   "point": 0.1082,
+   "ci95_home": [
+    -0.0408,
+    0.2536
+   ],
+   "ci95_two_way": [
+    -0.1156,
+    0.3417
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": 0.1529,
+   "ci95_home": [
+    -0.0052,
+    0.3003
+   ],
+   "ci95_two_way": [
+    -0.113,
+    0.4067
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": 0.0447,
+   "ci95_home": [
+    -0.0294,
+    0.1243
+   ],
+   "ci95_two_way": [
+    -0.0971,
+    0.1912
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": 0.1703,
+   "ci95_home": [
+    0.0126,
+    0.3283
+   ],
+   "ci95_two_way": [
+    -0.0583,
+    0.4219
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": 0.215,
+   "ci95_home": [
+    0.0516,
+    0.3719
+   ],
+   "ci95_two_way": [
+    -0.0603,
+    0.4896
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": 0.0621,
+   "ci95_home": [
+    0.0195,
+    0.1021
+   ],
+   "ci95_two_way": [
+    -0.0148,
+    0.1344
+   ]
+  }
+ },
+ "opening_2026_rest": {
+  "n_train": 1853,
+  "n_holdout": 505,
+  "label": "holdout 2025-26, opening price, the months 2022-23 does not cover",
+  "months": [
+   2,
+   3,
+   4
+  ],
+  "month_counts": {
+   "2": 168,
+   "3": 237,
+   "4": 100
+  },
+  "report_adds_to_M2": {
+   "point": 0.1193,
+   "ci95_home": [
+    -0.0014,
+    0.2446
+   ],
+   "ci95_two_way": [
+    -0.095,
+    0.3768
+   ]
+  },
+  "participation_adds_to_M2": {
+   "point": 0.2795,
+   "ci95_home": [
+    0.1334,
+    0.4125
+   ],
+   "ci95_two_way": [
+    0.0037,
+    0.5682
+   ]
+  },
+  "inflation_on_top_of_price": {
+   "point": 0.1602,
+   "ci95_home": [
+    0.0563,
+    0.2638
+   ],
+   "ci95_two_way": [
+    -0.0508,
+    0.3572
+   ]
+  },
+  "M2_F1_vs_raw_price": {
+   "point": 0.0313,
+   "ci95_home": [
+    -0.104,
+    0.1692
+   ],
+   "ci95_two_way": [
+    -0.1728,
+    0.2725
+   ]
+  },
+  "M2_F2_vs_raw_price": {
+   "point": 0.1915,
+   "ci95_home": [
+    0.0405,
+    0.3363
+   ],
+   "ci95_two_way": [
+    -0.0733,
+    0.4738
+   ]
+  },
+  "M2_price_only_vs_raw_price": {
+   "point": -0.088,
+   "ci95_home": [
+    -0.1294,
+    -0.0467
+   ],
+   "ci95_two_way": [
+    -0.1807,
+    -0.0004
+   ]
+  }
+ },
+ "price_provider_by_season": {
+  "2022": [
+   "SBRO"
+  ],
+  "2023": [
+   "SBRO"
+  ],
+  "2026": [
+   "DraftKings"
+  ]
  },
  "betting": {
   "F1": {

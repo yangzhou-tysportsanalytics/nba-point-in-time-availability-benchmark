@@ -79,6 +79,12 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/roster_audit_sample_main_build.py` | Plan AA as it was run: drawing the sample for the human audit of the roster rule. Published to be read; the sample is a player-level table and is not shipped. |
 | `league/scripts/roster_audit_result_main_build.py` | Plan AA section 5 as it was run: the error rates, the control stratum and the corrected build. |
 | `league/scripts/roster_audit_reruns_main_build.py` | Plan AA section 5.4 as it was run: the strict headline and the never-listed put-back on the corrected build. |
+| `league/scripts/lagged_baseline_main_build.py` | The baseline that needs no report, as it was run: the absence value of rotation players who did not play in their team's previous game. Published to be read as it ran. Corrected on 2026-11-03, after an external check found it ordering a team's games by ESPN game id, which is not monotone in date; it now reads the previous game by tip-off time and that game's box score. |
+| `league/scripts/market_main_build.py` | The three market comparisons as they were run, against the opening and the closing price, with the sensitivity that restricts them to games where both teams had filed at six hours. |
+| `league/scripts/example_aggregate_main_build.py` | Where the exposure concentrates, as it was run: the fifty games whose late Out news differs most between the two teams, against the rest. |
+| `league/scripts/server_time_main_build.py` | Selecting each report by the server's modification time instead of the time printed on it, on the games both rules serve. |
+| `league/scripts/cluster_side_main_build.py` | The same interval computed on home-side and on away-side clusters, which the paper reports as a choice its calibration cannot settle. |
+| `league/scripts/cutoff_units_main_build.py` | The paired cutoff contrast restated in decision units: log loss, Brier score and correct winners per 100 games. |
 | `results/paper2_deployment_pooled_strict.json` | The deployment gap on the benchmark sample, which the paper reports beside the fallback one. |
 | `results/paper2_*_strict.json`, `results/paper2_strict_sample.json` | The benchmark-sample companions to the four-season runs: the sample's own definition and game ids, the all-status encoding, the lagged baseline and the replacement-level valuation. The paper's Section 3 figures on the benchmark sample are read from these. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
@@ -204,8 +210,11 @@ estimate and do not call it resolved under any of the three.
 - **Stronger compliant baselines close part of it.** Weighting every listed status by its sit-out rate (F7) is
   worth 0.224 (0.152-0.296) against F1's 0.197, and the premium measured against F7 falls to 0.031 (-0.017 to
   0.077). A baseline that needs no report at all - the rotation players who did not play in their team's
-  previous game - is worth 0.092 (0.050-0.133), and the report added to a model that keeps it is worth
-  0.109 (0.056-0.163), a nested comparison rather than a swap of one feature for the other.
+  previous game - is worth 0.116 (0.068-0.163), and the report added to a model that keeps it is worth
+  0.091 (0.040-0.142), a nested comparison rather than a swap of one feature for the other. Both were
+  corrected on 2026-11-03: the feature had ordered a team's games by ESPN game id, which is not monotone
+  in date, so some rows read a later game. `league/scripts/lagged_baseline_main_build.py` carries the
+  corrected rule and its result files the check behind it.
 - **Which absences carry it.** The difference between the two features decomposes exactly into absence declared
   Out after the cutoff, absence listed later but not as Out, and absence on no report we hold, minus players
   Out at the cutoff who played. A retrospective put-back of the first is worth 0.070 (0.026-0.115); the

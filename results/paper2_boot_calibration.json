@@ -1,4 +1,6 @@
 {
+ "plan": "docs/plans/paper2_X_variance_allocation.md",
+ "plan_sha256": "c11e0f218798cb6a66408f6efe646c56f627a8a3e79d3fe8c4358d318605b072",
  "n_games": 4846,
  "n_teams": 30,
  "sims": 300,
@@ -13,12 +15,14 @@
     "total": 4369.553959,
     "team": 0.0,
     "team_season": 12.278257,
-    "game": 4357.275701,
+    "game": 4344.997444,
     "cov_same_season": 7.974701,
     "cov_across_seasons": -4.303556,
     "share_team": 0.0,
     "share_team_season": 0.0028,
-    "share_game": 0.9972
+    "share_structure_both_sides": 0.0056,
+    "share_game": 0.9944,
+    "note": "team and team_season are per-effect variances; a game carries one draw of each per side, so total = 2*(team + team_season) + game and share_structure_both_sides is the share of a game's variance that the two sides carry between them"
    },
    "dyadic_se": 0.0313,
    "dyadic_ci95": [
@@ -95,38 +99,38 @@
     "fitted": {
      "scenario": "fitted",
      "true_value": 0.1964,
-     "true_sd": 0.0402,
-     "nominal_width": 0.1575,
+     "true_sd": 0.0401,
+     "nominal_width": 0.1574,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.893,
-       "mean_width": 0.1364,
+       "mean_width": 0.1362,
        "width_over_true": 0.866
       },
       "two_way_team": {
        "coverage": 1.0,
-       "mean_width": 0.2343,
-       "width_over_true": 1.488
+       "mean_width": 0.2341,
+       "width_over_true": 1.487
       },
       "season_then_cluster": {
        "coverage": 0.97,
-       "mean_width": 0.1856,
+       "mean_width": 0.1854,
        "width_over_true": 1.178
       },
       "iid_game": {
        "coverage": 0.883,
-       "mean_width": 0.1301,
+       "mean_width": 0.1299,
        "width_over_true": 0.826
       },
       "dyadic": {
        "coverage": 0.87,
-       "mean_width": 0.1423,
+       "mean_width": 0.1421,
        "width_over_true": 0.903
       },
       "away_season_cluster": {
        "coverage": 0.897,
-       "mean_width": 0.1356,
-       "width_over_true": 0.861
+       "mean_width": 0.1354,
+       "width_over_true": 0.86
       }
      }
     },
@@ -177,12 +181,14 @@
     "total": 2596.460744,
     "team": 0.0,
     "team_season": 7.187427,
-    "game": 2589.273316,
+    "game": 2582.085889,
     "cov_same_season": 5.965213,
     "cov_across_seasons": -1.222214,
     "share_team": 0.0,
     "share_team_season": 0.0028,
-    "share_game": 0.9972
+    "share_structure_both_sides": 0.0055,
+    "share_game": 0.9945,
+    "note": "team and team_season are per-effect variances; a game carries one draw of each per side, so total = 2*(team + team_season) + game and share_structure_both_sides is the share of a game's variance that the two sides carry between them"
    },
    "dyadic_se": 0.0271,
    "dyadic_ci95": [
@@ -260,36 +266,36 @@
      "scenario": "fitted",
      "true_value": 0.0587,
      "true_sd": 0.0313,
-     "nominal_width": 0.1228,
+     "nominal_width": 0.1227,
      "designs": {
       "home_season_cluster": {
        "coverage": 0.9,
-       "mean_width": 0.106,
-       "width_over_true": 0.863
+       "mean_width": 0.1058,
+       "width_over_true": 0.862
       },
       "two_way_team": {
        "coverage": 1.0,
-       "mean_width": 0.1846,
-       "width_over_true": 1.503
+       "mean_width": 0.1844,
+       "width_over_true": 1.502
       },
       "season_then_cluster": {
        "coverage": 0.963,
-       "mean_width": 0.144,
+       "mean_width": 0.1438,
        "width_over_true": 1.172
       },
       "iid_game": {
        "coverage": 0.897,
-       "mean_width": 0.1016,
+       "mean_width": 0.1014,
        "width_over_true": 0.827
       },
       "dyadic": {
        "coverage": 0.873,
-       "mean_width": 0.1108,
+       "mean_width": 0.1107,
        "width_over_true": 0.902
       },
       "away_season_cluster": {
        "coverage": 0.893,
-       "mean_width": 0.1058,
+       "mean_width": 0.1056,
        "width_over_true": 0.861
       }
      }
@@ -336,6 +342,9 @@
   }
  },
  "schedule_deflation": {
+  "independent_coverage": 0.869,
+  "independent_coverage_reps": 4000,
+  "independent_coverage_note": "Coverage of a nominal 0.95 dyadic interval for the mean of independent values on this schedule: no team, season or time structure of any kind.",
   "ordered_pairs_sharing_a_team": 3067798,
   "per_game": 633.1,
   "variance_factor": 0.8692,

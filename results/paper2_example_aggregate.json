@@ -1,32 +1,70 @@
 {
- "top50": {
-  "n": 50,
-  "mean_late_out_value": 48.02,
-  "mean_abs_pred_gap": 2.36,
-  "mae_compliant": 13.86,
-  "mae_leaky": 12.86,
-  "mean_abs_line_move": 2.22,
-  "median_abs_line_move": 1.0,
-  "mean_abs_margin": 15.58
+ "ranking_quantity": "late_out_value: the absolute home-minus-away difference of the absence value newly ruled Out between the six-hour cutoff and thirty minutes before tip-off. Not the total value ruled Out: two teams losing the same value rank near zero.",
+ "strict": {
+  "n": 888,
+  "top50": {
+   "n": 50,
+   "mean_late_out_value": 37.05,
+   "mean_abs_pred_gap": 3.64,
+   "mae_compliant": 12.37,
+   "mae_leaky": 11.25,
+   "mean_abs_line_move": 2.4,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 13.06
+  },
+  "rest": {
+   "n": 838,
+   "mean_late_out_value": 5.8,
+   "mean_abs_pred_gap": 1.08,
+   "mae_compliant": 11.39,
+   "mae_leaky": 11.32,
+   "mean_abs_line_move": 1.45,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 13.33
+  },
+  "note": "2025-26 holdout, priced games where both teams had filed at six hours; models trained on the same restriction of 2023-24 and 2024-25. The block the figure shows.",
+  "difference": {
+   "mean_late_out_value": 31.25,
+   "mean_abs_pred_gap": 2.56,
+   "mae_compliant": 0.98,
+   "mae_leaky": -0.07,
+   "mean_abs_line_move": 0.95,
+   "median_abs_line_move": 0.0,
+   "mean_abs_margin": -0.27
+  }
  },
- "rest": {
-  "n": 927,
-  "mean_late_out_value": 7.42,
-  "mean_abs_pred_gap": 1.15,
-  "mae_compliant": 11.51,
-  "mae_leaky": 11.42,
-  "mean_abs_line_move": 1.45,
-  "median_abs_line_move": 1.0,
-  "mean_abs_margin": 13.32
- },
- "note": "2025-26 holdout, 977 games with both an opening and a closing price; models trained on 2023-24 and 2024-25. late_out_value is the absolute home-minus-away absence value ruled Out between the six-hour cutoff and thirty minutes before tip-off.",
- "difference": {
-  "mean_late_out_value": 40.6,
-  "mean_abs_pred_gap": 1.21,
-  "mae_compliant": 2.35,
-  "mae_leaky": 1.44,
-  "mean_abs_line_move": 0.77,
-  "median_abs_line_move": 0.0,
-  "mean_abs_margin": 2.26
+ "all_priced": {
+  "n": 977,
+  "top50": {
+   "n": 50,
+   "mean_late_out_value": 48.02,
+   "mean_abs_pred_gap": 2.36,
+   "mae_compliant": 13.86,
+   "mae_leaky": 12.86,
+   "mean_abs_line_move": 2.22,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 15.58
+  },
+  "rest": {
+   "n": 927,
+   "mean_late_out_value": 7.42,
+   "mean_abs_pred_gap": 1.15,
+   "mae_compliant": 11.51,
+   "mae_leaky": 11.42,
+   "mean_abs_line_move": 1.45,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 13.32
+  },
+  "note": "2025-26 holdout, every game with an opening and a closing price; models trained on 2023-24 and 2024-25. Reported beside the strict block as the original analysis.",
+  "difference": {
+   "mean_late_out_value": 40.6,
+   "mean_abs_pred_gap": 1.21,
+   "mae_compliant": 2.35,
+   "mae_leaky": 1.44,
+   "mean_abs_line_move": 0.77,
+   "median_abs_line_move": 0.0,
+   "mean_abs_margin": 2.26
+  },
+  "top50_with_a_team_that_had_not_filed_at_six_hours": 32
  }
 }

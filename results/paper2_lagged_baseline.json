@@ -6,57 +6,74 @@
   2025,
   2026
  ],
- "note": "Flag is the absence value of rotation players who did not play in their team previous game, on the same rotation and valuation as F1. The first game of a season has no previous game and contributes nothing, which understates the baseline slightly.",
- "share_games_with_any_lagged_absence": 0.9912,
+ "previous_game_rule": {
+  "rule": "the team's previous game in the same season, by recorded tip-off time; its box score decides who played",
+  "rows": 178421,
+  "rows_with_a_previous_game": 176420,
+  "rows_flagged_absent": 53665,
+  "rows_where_the_previous_game_is_later_in_time": 0,
+  "max_days_back": 9.17,
+  "regression_example": {
+   "game_id": "401584691",
+   "team": "ATL",
+   "date": "2023-10-25",
+   "previous_game": null,
+   "previous_date": null,
+   "is_season_opener": true,
+   "note": "Atlanta's first game of 2023-24, so there is no previous game and the feature is zero. The game_id ordering used until 2026-11-03 gave it one: 401584143, played 2023-11-29, five weeks later."
+  }
+ },
+ "note": "Flag is the absence value of rotation players who did not play in their team previous game, on the same rotation and valuation as F1. The previous game is the team previous game by tip-off time and its box score decides who played (previous_game_rule). The first game of a season has no previous game and contributes nothing, which understates the baseline slightly.",
+ "share_games_with_any_lagged_absence": 0.9901,
  "contrasts": {
   "F0_vs_Flag": {
-   "point": 0.0916,
+   "point": 0.1162,
    "ci95_home": [
-    0.0501,
-    0.1325
+    0.0683,
+    0.1634
    ],
-   "dyadic_se": 0.0255,
+   "dyadic_se": 0.0245,
    "dyadic_ci95": [
-    0.0416,
-    0.1417
+    0.0682,
+    0.1642
    ],
    "iid_ci95": [
-    0.0526,
-    0.1316
+    0.0728,
+    0.1607
    ],
    "description": "what last night's box score alone is worth"
   },
   "Flag_vs_F1": {
-   "point": 0.1049,
+   "point": 0.0804,
    "ci95_home": [
-    0.0478,
-    0.1619
+    0.023,
+    0.1382
    ],
-   "dyadic_se": 0.0288,
+   "dyadic_se": 0.0307,
    "dyadic_ci95": [
-    0.0485,
-    0.1614
+    0.0203,
+    0.1405
    ],
    "iid_ci95": [
-    0.0479,
-    0.1597
+    0.0233,
+    0.1356
    ],
    "description": "the report instead of the lagged feature: two alternative models, not an increment"
   },
   "Flag_vs_JointFlagF1": {
-   "point": 0.1094,
+   "point": 0.0911,
    "ci95_home": [
-    0.0558,
-    0.1626
+    0.0399,
+    0.1423
    ],
-   "dyadic_se": 0.0265,
+   "dyadic_se": 0.0264,
    "dyadic_ci95": [
-    0.0575,
-    0.1614
+    0.0394,
+    0.1428
    ],
    "iid_ci95": [
-    0.0552,
-    0.1615
+    0.0403,
+    0.1398
    ],
    "description": "what the report adds to a model that keeps the lagged feature: nested, so CW applies"
   },
@@ -97,41 +114,41 @@
  },
  "per_season": {
   "2023": {
-   "F0_vs_Flag": 0.0177,
-   "Flag_vs_F1": 0.1315,
-   "Flag_vs_JointFlagF1": 0.1256,
+   "F0_vs_Flag": 0.0172,
+   "Flag_vs_F1": 0.132,
+   "Flag_vs_JointFlagF1": 0.121,
    "F0_vs_F1": 0.1491,
    "F1_vs_F2": -0.022
   },
   "2024": {
-   "F0_vs_Flag": 0.0809,
-   "Flag_vs_F1": 0.1285,
-   "Flag_vs_JointFlagF1": 0.1292,
+   "F0_vs_Flag": 0.1026,
+   "Flag_vs_F1": 0.1068,
+   "Flag_vs_JointFlagF1": 0.1105,
    "F0_vs_F1": 0.2093,
    "F1_vs_F2": 0.0116
   },
   "2025": {
-   "F0_vs_Flag": 0.1116,
-   "Flag_vs_F1": 0.0882,
-   "Flag_vs_JointFlagF1": 0.0931,
+   "F0_vs_Flag": 0.1422,
+   "Flag_vs_F1": 0.0576,
+   "Flag_vs_JointFlagF1": 0.0717,
    "F0_vs_F1": 0.1997,
    "F1_vs_F2": 0.064
   },
   "2026": {
-   "F0_vs_Flag": 0.1491,
-   "Flag_vs_F1": 0.075,
-   "Flag_vs_JointFlagF1": 0.092,
+   "F0_vs_Flag": 0.1932,
+   "Flag_vs_F1": 0.0309,
+   "Flag_vs_JointFlagF1": 0.0647,
    "F0_vs_F1": 0.2241,
    "F1_vs_F2": 0.1725
   }
  },
  "nested_test_report_over_lag": {
   "note": "Flag against Flag+F1, home-team x season clusters. The nested pair the sentence in Section 3.4 needs; DM is undersized against the larger model here, so CW is the fair test.",
-  "dm_mean": 3.0847,
-  "dm_t": 4.08,
-  "dm_p_two_sided": 0.0,
-  "cw_mean": 6.4708,
-  "cw_t": 8.54,
+  "dm_mean": 2.5661,
+  "dm_t": 3.58,
+  "dm_p_two_sided": 0.0003,
+  "cw_mean": 5.5024,
+  "cw_t": 7.7,
   "cw_p_one_sided": 0.0
  }
 }

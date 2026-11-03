@@ -88,7 +88,7 @@
    ]
   }
  },
- "note": "gain_k = RMSE(F0) - RMSE(Fk); inflation_F2 = RMSE(F1) - RMSE(F2); ratio_F2 = gain_F2 / gain_F1; bootstrap resamples home-team clusters (2,000).",
+ "note": "gain_k = RMSE(F0) - RMSE(Fk); inflation_F2 = RMSE(F1) - RMSE(F2); ratio_F2 = gain_F2 / gain_F1; bootstrap resamples home-team clusters (10,000).",
  "status_table": [
   {
    "status": "Out",

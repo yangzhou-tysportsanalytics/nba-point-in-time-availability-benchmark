@@ -1,0 +1,133 @@
+{
+ "plan": "docs/plans/paper2_V_server_time_and_strict.md",
+ "plan_sha256": "eb870b9cd8ec42965ceba49257cfbdeb8eb3343866c937f9d7b5ae0eb0687ab8",
+ "seed": 20260921,
+ "reps": 2000,
+ "note": "The header convention uses a report's printed time; the server convention uses the later of that and the file's Last-Modified time. The published run in Section 4.6 evaluated the server-time feature on the header convention's sample, so a team whose qualifying report the server rule removes contributed no absentees. The common sample keeps only games where both teams are served under both conventions.",
+ "control": {
+  "header_six_hour": {
+   "reproduced": true,
+   "got": {
+    "n": 4131,
+    "gain_F1": 0.1852,
+    "inflation": 0.0502
+   },
+   "published": {
+    "n": 4131,
+    "gain_F1": 0.1852,
+    "inflation": 0.0502
+   }
+  },
+  "server_time_as_published": {
+   "reproduced": true,
+   "got": {
+    "n": 4131,
+    "gain_F1": 0.1367,
+    "inflation": 0.0987
+   },
+   "published": {
+    "n": 4131,
+    "gain_F1": 0.1367,
+    "inflation": 0.0987
+   }
+  }
+ },
+ "common_sample": {
+  "n_games": 4802,
+  "n_holdout_rows": 3813,
+  "header": {
+   "n": 3813,
+   "gain_F1": 0.1743,
+   "inflation": 0.0511,
+   "gain_F1_ci": [
+    0.1033,
+    0.2401
+   ],
+   "inflation_ci": [
+    -0.009,
+    0.1136
+   ]
+  },
+  "server": {
+   "n": 3813,
+   "gain_F1": 0.1748,
+   "inflation": 0.0506,
+   "gain_F1_ci": [
+    0.1055,
+    0.2407
+   ],
+   "inflation_ci": [
+    -0.0093,
+    0.114
+   ]
+  },
+  "server_minus_header_gain_F1": {
+   "point": 0.0005,
+   "ci95_home": [
+    -0.0066,
+    0.0082
+   ]
+  },
+  "server_minus_header_inflation": {
+   "point": -0.0005,
+   "ci95_home": [
+    -0.0082,
+    0.0066
+   ]
+  }
+ },
+ "server_lag_seconds": {
+  "files": 23469,
+  "median": 4.0,
+  "max": 142.0,
+  "max_file": "Injury-Report_2025-01-18_10AM.pdf",
+  "over_59s": 11,
+  "served_before_printed": 2,
+  "min": -1.0,
+  "ambiguous_hour_files": 1,
+  "ambiguous_hour_file": "Injury-Report_2021-11-07_01AM.pdf",
+  "raw_max_before_resolving": 3604.0,
+  "note": "The selection rule takes the later of the two times either way, so no estimate depends on this. The ambiguous-hour file is on the fall-back date; its apparent hour is a clock, not a delay."
+ },
+ "coverage": {
+  "team_games_in_scope": 12112,
+  "header_served": 11224,
+  "server_served": 10796,
+  "header_share": 0.9267,
+  "server_share": 0.8913,
+  "lost_to_server_rule": 428,
+  "gained_by_server_rule": 0,
+  "games_both_teams_header": 5181,
+  "games_both_teams_server": 4802,
+  "games_both_teams_both_conventions": 4802
+ },
+ "disagreement": {
+  "team_games_compared": 10796,
+  "different_report": 4363,
+  "share_different": 0.4041,
+  "served_by_one_only": 428,
+  "served_by_header_only": 428,
+  "served_by_server_only": 0,
+  "absence_value_change_on_changed_team_games": {
+   "mean": -0.3244,
+   "median": 0.0,
+   "p05": 0.0,
+   "p95": 0.0,
+   "share_zero": 0.9743,
+   "mean_abs": 0.3525
+  },
+  "out_count_change_on_changed_team_games": {
+   "mean": -0.0275,
+   "median": 0.0,
+   "p05": 0.0,
+   "p95": 0.0,
+   "share_zero": 0.9748,
+   "mean_abs": 0.0325
+  }
+ },
+ "rule_V_a": "The convention does not move the premium by more than the Monte-Carlo error of a bound on a fixed sample, so the published rise is the missing-report handling and the paper may say so.",
+ "rule_verdicts": {
+  "V-b: the common sample is large enough to attribute": true,
+  "V-a: the timestamp convention leaves the premium unchanged on a fixed sample": true
+ }
+}

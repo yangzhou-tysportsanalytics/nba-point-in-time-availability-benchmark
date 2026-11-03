@@ -1,0 +1,169 @@
+{
+ "plan": "docs/plans/paper2_W_cluster_side.md",
+ "plan_sha256": "6a50361451d3b73084722aa0ef2f6a785bfd2346d76901a2ca2b0617c8f4727d",
+ "n": 4846,
+ "reps": 10000,
+ "seeds": [
+  20260921,
+  1,
+  2,
+  3,
+  4
+ ],
+ "n_home_clusters": 120,
+ "n_away_clusters": 120,
+ "note": "The two designs are the same two lines of src/boot_designs.py applied to the home-side and away-side cluster codes, so a difference between the readings comes from the data.",
+ "point": {
+  "gain_F1": 0.1966,
+  "inflation": 0.0588
+ },
+ "sides": {
+  "home_season_cluster": {
+   "gain_F1": {
+    "ci95": [
+     0.1316,
+     0.2618
+    ],
+    "lower_range": [
+     0.1302,
+     0.1331
+    ],
+    "upper_range": [
+     0.261,
+     0.2627
+    ],
+    "lower_above_zero_on_all_seeds": true
+   },
+   "inflation": {
+    "ci95": [
+     -0.0007,
+     0.1183
+    ],
+    "lower_range": [
+     -0.0012,
+     0.0002
+    ],
+    "upper_range": [
+     0.1177,
+     0.119
+    ],
+    "lower_above_zero_on_all_seeds": false
+   }
+  },
+  "away_season_cluster": {
+   "gain_F1": {
+    "ci95": [
+     0.1235,
+     0.268
+    ],
+    "lower_range": [
+     0.1219,
+     0.1251
+    ],
+    "upper_range": [
+     0.2674,
+     0.269
+    ],
+    "lower_above_zero_on_all_seeds": true
+   },
+   "inflation": {
+    "ci95": [
+     0.0108,
+     0.1075
+    ],
+    "lower_range": [
+     0.0107,
+     0.011
+    ],
+    "upper_range": [
+     0.1067,
+     0.1082
+    ],
+    "lower_above_zero_on_all_seeds": true
+   }
+  }
+ },
+ "icc": {
+  "permutations": 2000,
+  "note": "One-way ICC of the per-game loss difference, by side, against a within-season permutation reference that keeps the season structure and the cluster sizes and destroys any real clustering.",
+  "gain_F1": {
+   "home": {
+    "icc": -0.00055,
+    "permuted_mean": -0.00044,
+    "permuted_sd": 0.00323,
+    "z": -0.03
+   },
+   "away": {
+    "icc": 0.00666,
+    "permuted_mean": -0.00046,
+    "permuted_sd": 0.00324,
+    "z": 2.2
+   }
+  },
+  "inflation": {
+   "home": {
+    "icc": 0.00877,
+    "permuted_mean": 0.00105,
+    "permuted_sd": 0.00329,
+    "z": 2.35
+   },
+   "away": {
+    "icc": -0.00248,
+    "permuted_mean": 0.00107,
+    "permuted_sd": 0.00322,
+    "z": -1.1
+   }
+  }
+ },
+ "control": {
+  "published": {
+   "gain_F1": [
+    0.131,
+    0.262
+   ],
+   "inflation": [
+    0.0002,
+    0.1177
+   ]
+  },
+  "got": {
+   "gain_F1": [
+    0.1316,
+    0.2618
+   ],
+   "inflation": [
+    -0.0007,
+    0.1183
+   ]
+  },
+  "reproduced": true
+ },
+ "placebo": {
+  "note": "Run by p6_ds_boot_calibration.py with away_season_cluster added to its design list; both scenarios, same seed and replicate count as the published run.",
+  "from_file": "results/paper2_boot_calibration.json",
+  "gain_F1": {
+   "no_team": {
+    "home_season_cluster": 0.96,
+    "away_season_cluster": 0.957,
+    "difference": -0.003
+   },
+   "fitted": {
+    "home_season_cluster": 0.893,
+    "away_season_cluster": 0.897,
+    "difference": 0.004
+   }
+  },
+  "infl": {
+   "no_team": {
+    "home_season_cluster": 0.963,
+    "away_season_cluster": 0.96,
+    "difference": -0.003
+   },
+   "fitted": {
+    "home_season_cluster": 0.9,
+    "away_season_cluster": 0.893,
+    "difference": -0.007
+   }
+  }
+ }
+}

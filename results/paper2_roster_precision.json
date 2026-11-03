@@ -14,7 +14,7 @@
    "a player whose name cannot be matched to an identifier is skipped, so none of his movements register at all",
    "a transaction is stamped at 12:00Z on its date, so one announced later in the day is treated as known at a cutoff six hours before an evening tip"
   ],
-  "movement_log": "the league player-movement feed, stats.nba.com/js/data/playermovement/NBA_Player_Movement.json, as fetched by the originating project",
+  "movement_log": "D:\\Paper_A\\data\\checkpoints\\phase1_2019-07-01_2026-08-28\\v2_source\\raw\\nba_player_movements_raw.csv",
   "movement_log_inside_this_repository": false,
   "movement_rows": 6716,
   "movement_types": {
