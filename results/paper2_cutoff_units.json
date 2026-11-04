@@ -372,5 +372,5 @@
    "resolved_in_log_loss": false
   }
  },
- "built_from_note": "Run on the merged report series of results/paper2_late_window.json: the collected series plus the 1,787 files of the window from 90 minutes before each day's last tip-off to the tip itself. The script was run unchanged except for the series directory and its one-hour control, which is restated to the value the recomputed cutoff curve produced independently on the same merged series. Its six-hour controls are the published ones and reproduced exactly."
+ "built_from_note": "Run on the merged report series of results/paper2_late_window.json: the collected series plus the 1,787 files of the window from 90 minutes before each day's last tip-off to the tip itself. Produced by the late-window runner, league/scripts/late_window_runs.py in the released repository, which runs plan Y's build over the two series read as one and restates the one-hour control of that script, which this collection moves; plan CC's own control carries the recomputed value and holds. The six-hour controls are the published ones and reproduced exactly."
 }

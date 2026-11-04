@@ -172,7 +172,7 @@
    "one_hour_n_games": 4179,
    "thirty_minutes_share": 0.7163,
    "thirty_minutes_n_games": 3711,
-   "note": "Before this collection the late cutoffs had to be read on the subset of games whose collected series continued past the cutoff for both teams, and were labelled exploratory for that reason. That subset is now the whole sample."
+   "note": "Before this collection the late cutoffs were read on all 4,131 holdout games. The collected series reached one hour for both teams in 80.7% of the 5,181 strict games and thirty minutes in 71.6%; in the rest the reading was the last report held rather than the last one published. The subsets whose series did reach the cutoff, 3,322 and 2,951 holdout games, were reported beside the full-sample figures as a check. Those subsets are now the whole sample."
   }
  },
  "nothing_earlier_can_move": {

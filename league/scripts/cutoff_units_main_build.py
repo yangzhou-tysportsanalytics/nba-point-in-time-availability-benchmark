@@ -41,7 +41,13 @@ PLAN = ROOT / 'docs/plans/paper2_CC_cutoff_decision_units.md'
 OUT = HERE / 'results/paper2_cutoff_units.json'
 
 # Plan CC's controls, read off the committed result files. Nothing is interpreted unless all of them hold.
-CONTROL = {'paired_F1': 0.0666, 'paired_F1_ci': [0.0305, 0.1031], 'paired_F7': 0.030,
+# The one-hour paired contrast read 0.0666 [0.0305, 0.1031] before the late window of Section 4 was
+# collected. It moved on the same 4,131 games, which are now read at the last report published before the
+# cutoff rather than the last one held; the pre-collection values stand in the frozen
+# results/paper2_cutoff_curve.json. This file belongs to the conference paper alone and was replaced
+# rather than duplicated, so the control is restated against what the script now writes. The other three
+# did not move: paired_F7 is the rounded form and holds inside its own tolerance.
+CONTROL = {'paired_F1': 0.0655, 'paired_F1_ci': [0.0291, 0.1018], 'paired_F7': 0.030,
            'f7_gain_6h': 0.2198, 'n': 4131}
 TOL = {'paired_F1': 0.0001, 'paired_F1_ci': 0.0001, 'paired_F7': 0.002, 'f7_gain_6h': 0.002}
 

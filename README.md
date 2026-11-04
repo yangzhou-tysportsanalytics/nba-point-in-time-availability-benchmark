@@ -87,6 +87,7 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/server_time_main_build.py` | Selecting each report by the server's modification time instead of the time printed on it, on the games both rules serve. |
 | `league/scripts/cluster_side_main_build.py` | The same interval computed on home-side and on away-side clusters, which the paper reports as a choice its calibration cannot settle. |
 | `league/scripts/cutoff_units_main_build.py` | The paired cutoff contrast restated in decision units: log loss, Brier score and correct winners per 100 games. |
+| `league/scripts/late_window_runs.py` | The four recomputations the late window reaches, as they were run: the cutoff curve, the worked-example aggregate, the F7 crossing and the decision units, each from its own source with the report series read whole. |
 | `results/paper2_deployment_pooled_strict.json` | The deployment gap on the benchmark sample, which the paper reports beside the fallback one. |
 | `results/paper2_*_strict.json`, `results/paper2_strict_sample.json` | The benchmark-sample companions to the four-season runs: the sample's own definition and game ids, the all-status encoding, the lagged baseline and the replacement-level valuation. The paper's Section 3 figures on the benchmark sample are read from these. |
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
@@ -378,7 +379,12 @@ What the window does reach is the one-hour and thirty-minute readings. Those are
 `results/paper2_cutoff_curve_late_window.json`, `results/paper2_cutoff_f7_late_window.json` and
 `results/paper2_example_aggregate_late_window.json`, each beside the frozen file of the same name without
 the suffix. **The frozen files are not superseded**: they are the runs the journal manuscript reports, and
-it pins this repository by commit.
+it pins this repository by commit. `league/scripts/late_window_runs.py` is what produced those three and
+`results/paper2_cutoff_units.json`, which is replaced rather than suffixed because it belongs to the
+conference paper alone. It runs each script from its own committed source over the two series read as one,
+with the substitutions listed in it and nothing else, and stops if one of them no longer matches; it reads
+the originating project's paths, so like the other `*_main_build.py` scripts it records how the numbers were
+produced rather than being rerun here.
 
 **Plan Y's crossing was the second, and has now been ported.** It asks what reading the report at one hour
 instead of six is worth to a model that already reads every status the six-hour report publishes. The run on
