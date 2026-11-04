@@ -23,7 +23,8 @@ A conference or journal that requires the data behind the paper should read this
 **What is here.** The game-level benchmark in compliant and leaky versions, every number behind every figure
 and table in `results/`, the code and its tests, a pinned environment, a datasheet, Croissant metadata, the
 analysis history, and `league/public/sources.csv`: the URL, byte count and SHA-256 of all 23,485 injury-report
-PDFs and the two Kaggle files the paper is built from. Nothing needs an account.
+PDFs and the two Kaggle files the paper is built from. `league/public/sources_late_window.csv` does the same
+for the 1,787 further reports described below. Nothing needs an account.
 
 **What is not here, and why it is a licensing limit rather than a privacy one.** No player-level table is
 redistributed. The constraint is the sources' terms, not confidentiality: these are published availability
@@ -69,7 +70,8 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `data/status_table_public.csv` | Pregame status against whether the player played (public build). |
 | `results/*.json` | Every result file behind the paper's numbers: the rolling-origin holdouts, the cutoff curve, the decomposition and the put-back tests, the valuation runs, the model grid, the market section. |
 | `results/figures/` | The cutoff-curve figure, as it appears in the paper and in the abstract. |
-| `league/public/sources.csv` | Every source file with URL, size and SHA-256. |
+| `league/public/sources.csv` | Every source file of the main build, with URL, size and SHA-256. |
+| `league/public/sources_late_window.csv` | The same for the 1,787 reports of the late window, which the main build does not read. |
 | `league/scripts/fetch_sources.py` | Downloads the sources and verifies every hash. |
 | `league/scripts/rebuild.py` | Parses the PDFs, applies the point-in-time rules, builds the tables, runs the model. |
 | `league/scripts/parse_injury_pdf.py` | The injury-report parser. |
@@ -363,6 +365,20 @@ differences the two premiums inside the same bootstrap draw: it needs both build
 this repository ships one of them. Its script is `league/scripts/paired_paths_main_build.py`, published as it
 was run, with the modules it imports in `src/` and the plan it was run to in `docs/plans/`, and its
 result is `results/paper2_paired_paths.json`. What is missing there is a table, not a file of ours.
+
+**The late window.** The report series of the paper's Section 2 runs from midnight Eastern to 90 minutes
+before each game day's last tip-off. That endpoint is where collection stopped, not where the league stops
+publishing: the server serves reports through tip-off itself. The remaining window was collected afterwards
+for all five seasons - 1,787 slots, and the server held a report at every one of them - and is listed in
+`league/public/sources_late_window.csv` in the same form as the main manifest. `fetch_sources.py` and
+`rebuild.py` do not read it, because the benchmark is defined at a six-hour cutoff that no file printed
+after that endpoint can satisfy; quantities at six hours and at ninety minutes are identical whether or not
+the window is folded in, and `results/paper2_late_window.json` records both the collection and that check.
+What the window does reach is the one-hour and thirty-minute readings. Those are republished as
+`results/paper2_cutoff_curve_late_window.json`, `results/paper2_cutoff_f7_late_window.json` and
+`results/paper2_example_aggregate_late_window.json`, each beside the frozen file of the same name without
+the suffix. **The frozen files are not superseded**: they are the runs the journal manuscript reports, and
+it pins this repository by commit.
 
 **Plan Y's crossing was the second, and has now been ported.** It asks what reading the report at one hour
 instead of six is worth to a model that already reads every status the six-hour report publishes. The run on

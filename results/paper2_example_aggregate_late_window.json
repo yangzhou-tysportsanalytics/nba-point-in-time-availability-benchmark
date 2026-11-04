@@ -1,0 +1,71 @@
+{
+ "ranking_quantity": "late_out_value: the absolute home-minus-away difference of the absence value newly ruled Out between the six-hour cutoff and thirty minutes before tip-off. Not the total value ruled Out: two teams losing the same value rank near zero.",
+ "strict": {
+  "n": 888,
+  "top50": {
+   "n": 50,
+   "mean_late_out_value": 38.4,
+   "mean_abs_pred_gap": 3.87,
+   "mae_compliant": 11.82,
+   "mae_leaky": 10.87,
+   "mean_abs_line_move": 2.5,
+   "median_abs_line_move": 1.5,
+   "mean_abs_margin": 12.9
+  },
+  "rest": {
+   "n": 838,
+   "mean_late_out_value": 6.33,
+   "mean_abs_pred_gap": 1.07,
+   "mae_compliant": 11.42,
+   "mae_leaky": 11.34,
+   "mean_abs_line_move": 1.44,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 13.34
+  },
+  "note": "2025-26 holdout, priced games where both teams had filed at six hours; models trained on the same restriction of 2023-24 and 2024-25. The block the figure shows.",
+  "difference": {
+   "mean_late_out_value": 32.07,
+   "mean_abs_pred_gap": 2.8,
+   "mae_compliant": 0.4,
+   "mae_leaky": -0.47,
+   "mean_abs_line_move": 1.06,
+   "median_abs_line_move": 0.5,
+   "mean_abs_margin": -0.44
+  }
+ },
+ "all_priced": {
+  "n": 977,
+  "top50": {
+   "n": 50,
+   "mean_late_out_value": 49.42,
+   "mean_abs_pred_gap": 2.64,
+   "mae_compliant": 12.97,
+   "mae_leaky": 12.21,
+   "mean_abs_line_move": 2.18,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 15.16
+  },
+  "rest": {
+   "n": 927,
+   "mean_late_out_value": 7.99,
+   "mean_abs_pred_gap": 1.14,
+   "mae_compliant": 11.56,
+   "mae_leaky": 11.45,
+   "mean_abs_line_move": 1.45,
+   "median_abs_line_move": 1.0,
+   "mean_abs_margin": 13.34
+  },
+  "note": "2025-26 holdout, every game with an opening and a closing price; models trained on 2023-24 and 2024-25. Reported beside the strict block as the original analysis.",
+  "difference": {
+   "mean_late_out_value": 41.43,
+   "mean_abs_pred_gap": 1.5,
+   "mae_compliant": 1.41,
+   "mae_leaky": 0.76,
+   "mean_abs_line_move": 0.73,
+   "median_abs_line_move": 0.0,
+   "mean_abs_margin": 1.82
+  },
+  "top50_with_a_team_that_had_not_filed_at_six_hours": 30
+ },
+ "late_window_note": "league/scripts/p6_ds_example_aggregate.py, run on the merged report series: the collected series of league/public/sources.csv plus the 1,787 files of league/public/sources_late_window.csv, which cover the window from 90 minutes before each game day's last tip-off to the tip itself. The frozen counterpart without the `_late_window` suffix is the collected-series run that the journal manuscript reports. Quantities at six hours and at ninety minutes are identical in the two by construction, and results/paper2_late_window.json records that check."
+}

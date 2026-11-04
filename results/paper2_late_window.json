@@ -1,0 +1,196 @@
+{
+ "what_this_is": "The report series of Section 2 is collected from midnight Eastern to 90 minutes before each game day's last tip-off. That endpoint is where collection stopped, not where the league stops publishing. This is the collection of the remaining window - every slot from that endpoint to the tip-off itself - and the recomputation of the quantities it can reach.",
+ "collection": {
+  "slots_enumerated": 1787,
+  "files_downloaded": 1787,
+  "slots_with_no_file": 0,
+  "note": "Every enumerated slot had a report on the server. The gap is systematic, not occasional. Slots are hourly before 22 December 2025 and quarter-hourly from it, matching the league's own publishing cadence.",
+  "parse": {
+   "files": 1787,
+   "files_error": 0,
+   "files_empty": 0,
+   "files_no_header": 0
+  },
+  "rows_added": 251433,
+  "blocks_added": 52643,
+  "rows_whose_player_name_the_build_never_mapped": 1920,
+  "out_rows_unmapped": 1687,
+  "unmapped_note": "A row whose player name the six-hour build never matched to an ESPN id cannot enter the feature. These are counted rather than dropped silently; they are 0.8% of the new rows."
+ },
+ "what_it_changes_in_the_selected_report": {
+  "note": "Per team-game, on the games meeting the strict six-hour rule: how often the merged series selects a newer report at each cutoff, and how often that changes the status of a reference-rotation player. Six hours and ninety minutes are the control: they must be zero.",
+  "by_cutoff_hours": {
+   "6": {
+    "team_games_with_a_selection": 11224,
+    "team_games_selecting_a_newer_report": 0,
+    "team_games_selecting_an_older_report": 0,
+    "games_with_a_newer_report_for_either_team": 0,
+    "team_games_where_the_out_set_changes": 0,
+    "games_where_the_out_set_changes": 0,
+    "team_games_where_any_rotation_status_changes": 0,
+    "games_where_any_rotation_status_changes": 0,
+    "rotation_players_newly_out": 0,
+    "rotation_players_no_longer_out": 0,
+    "median_minutes_the_selection_moves": null
+   },
+   "1.5": {
+    "team_games_with_a_selection": 12210,
+    "team_games_selecting_a_newer_report": 0,
+    "team_games_selecting_an_older_report": 0,
+    "games_with_a_newer_report_for_either_team": 0,
+    "team_games_where_the_out_set_changes": 0,
+    "games_where_the_out_set_changes": 0,
+    "team_games_where_any_rotation_status_changes": 0,
+    "games_where_any_rotation_status_changes": 0,
+    "rotation_players_newly_out": 0,
+    "rotation_players_no_longer_out": 0,
+    "median_minutes_the_selection_moves": null
+   },
+   "1": {
+    "team_games_with_a_selection": 12211,
+    "team_games_selecting_a_newer_report": 270,
+    "team_games_selecting_an_older_report": 0,
+    "games_with_a_newer_report_for_either_team": 135,
+    "team_games_where_the_out_set_changes": 40,
+    "games_where_the_out_set_changes": 32,
+    "team_games_where_any_rotation_status_changes": 74,
+    "games_where_any_rotation_status_changes": 62,
+    "rotation_players_newly_out": 63,
+    "rotation_players_no_longer_out": 1,
+    "median_minutes_the_selection_moves": 30.0
+   },
+   "0.5": {
+    "team_games_with_a_selection": 12217,
+    "team_games_selecting_a_newer_report": 1642,
+    "team_games_selecting_an_older_report": 0,
+    "games_with_a_newer_report_for_either_team": 830,
+    "team_games_where_the_out_set_changes": 323,
+    "games_where_the_out_set_changes": 288,
+    "team_games_where_any_rotation_status_changes": 661,
+    "games_where_any_rotation_status_changes": 531,
+    "rotation_players_newly_out": 451,
+    "rotation_players_no_longer_out": 6,
+    "median_minutes_the_selection_moves": 60.0
+   }
+  }
+ },
+ "recomputed_late_cutoffs": {
+  "one_hour_out_or_not": {
+   "n": 4131,
+   "point": 0.0655,
+   "ci95_home": [
+    0.0291,
+    0.1018
+   ],
+   "ci95_two_way": [
+    0.0084,
+    0.1209
+   ],
+   "ci95_season": [
+    0.0179,
+    0.1176
+   ]
+  },
+  "one_hour_all_statuses": {
+   "n": 4131,
+   "point": 0.0288,
+   "ci95_home": [
+    0.0049,
+    0.0517
+   ],
+   "ci95_two_way": [
+    -0.0057,
+    0.0659
+   ],
+   "ci95_season": [
+    0.0027,
+    0.0555
+   ],
+   "ci95_away": [
+    0.0082,
+    0.0498
+   ],
+   "ci95_iid": [
+    0.0053,
+    0.0525
+   ]
+  },
+  "one_hour_difference": {
+   "n": 4131,
+   "point": -0.0367,
+   "ci95_home": [
+    -0.0599,
+    -0.0162
+   ],
+   "ci95_two_way": [
+    -0.0737,
+    0.0015
+   ],
+   "ci95_season": [
+    -0.0775,
+    -0.0002
+   ],
+   "ci95_away": [
+    -0.0591,
+    -0.0155
+   ],
+   "ci95_iid": [
+    -0.0599,
+    -0.0144
+   ]
+  },
+  "thirty_minutes_out_or_not": {
+   "n": 4131,
+   "point": 0.0755,
+   "ci95_home": [
+    0.0296,
+    0.1219
+   ],
+   "ci95_two_way": [
+    0.002,
+    0.1481
+   ],
+   "ci95_season": [
+    0.0135,
+    0.1413
+   ]
+  },
+  "coverage_now": {
+   "one_hour": {
+    "share": 1.0,
+    "n_games": 5181,
+    "n_holdout": 4131
+   },
+   "thirty_minutes": {
+    "share": 1.0,
+    "n_games": 5181,
+    "n_holdout": 4131
+   }
+  },
+  "coverage_before": {
+   "one_hour_share": 0.8066,
+   "one_hour_n_games": 4179,
+   "thirty_minutes_share": 0.7163,
+   "thirty_minutes_n_games": 3711,
+   "note": "Before this collection the late cutoffs had to be read on the subset of games whose collected series continued past the cutoff for both teams, and were labelled exploratory for that reason. That subset is now the whole sample."
+  }
+ },
+ "nothing_earlier_can_move": {
+  "argument": "A file printed after (last tip - 90 min) cannot satisfy a cutoff of six hours or ninety minutes before its own tip-off, so no quantity defined at those cutoffs can change. This is the empirical check of that argument.",
+  "cutoff_curve_leaves_total": 371,
+  "cutoff_curve_leaves_identical": 247,
+  "cutoff_curve_leaves_changed": 124,
+  "changed_leaves_not_at_the_late_cutoffs": 0,
+  "six_hour_controls_reproduced": {
+   "gain_F1": 0.1852,
+   "inflation": 0.0502,
+   "n": 4131,
+   "note": "Identical to the frozen run. The F7 build, the decision-units build and the roster audit each check the same three independently before they write."
+  },
+  "ninety_minute_point_unchanged": {
+   "inflation_at_1_5_hours": -0.0006,
+   "note": "Where the two lines of Figure 3 cross. It is one of the quantities that cannot move, and it reproduced to the fourth decimal."
+  }
+ },
+ "what_is_not_recomputed_here": "The mechanism decomposition, the put-back components and the replacement-level valuation read the thirty-minute report as their late side, so the merged series moves them too. Those scripts refuse to write when their published controls do not reproduce, which is what they did. The paper reports them on the collected series and says so where they appear."
+}
