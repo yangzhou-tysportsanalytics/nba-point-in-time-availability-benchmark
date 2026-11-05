@@ -315,10 +315,12 @@ on whether to exclude a game in 99.7% of cases.
 ## The prospective test
 
 The estimates in this repository are retrospective: the seasons were over and their outcomes were known when the
-analyses were designed. A confirmatory test on the 2026-27 regular season was registered on OSF on 2026-09-30,
-twenty days before that season's first game, with its data, rules, models, metrics and decision criteria fixed:
-[osf.io/fxtup](https://osf.io/fxtup). It is embargoed until 2027-05-31, after the season it tests has ended, so
-the page states the timestamp and opens then. The registration pins this repository at commit `04385c9`.
+analyses were designed. A confirmatory test on the 2026-27 regular season was registered with an external
+registry on 2026-09-30, twenty days before that season's first game, with its data, rules, models, metrics and
+decision criteria fixed. It is embargoed until 2027-05-31, after the season it tests has ended, so the registry
+holds the timestamp and opens the text then. **The registry and the identifier are withheld here while review is
+blind**, because the registration names the authors; they are given in the paper's camera-ready version. The
+registration pins this repository at commit `04385c9`.
 
 `league/scripts/prospective_poll.py` is the collector that test relies on, published here because it is the part
 that cannot be reconstructed afterwards. The benchmark above dates each report by the time printed on it, which is
