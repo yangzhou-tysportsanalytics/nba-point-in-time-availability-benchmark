@@ -266,6 +266,33 @@ Every number in the paper is generated from a file in `results/`. The main ones:
 
 The files in `results/` keep the names the analysis pipeline writes, so what is published here is what the code produces. A few of them carry that pipeline's own stage names (`paper2_1b_*`, `paper2_stage0_*`, `paper2_text_numbers.json`); they hold the parsing gates, the source inventory and the counts quoted in the dataset section, and they are included because the paper prints numbers from them.
 
+
+### Sample, training window and replicate count, per quantity
+
+A reader checking a number should start here. *Rolling* is the paper's main design — train on every earlier
+season, test on each of the four holdouts, pooled — and rows not read on it name what they were read on
+instead. Intervals are over home-and-season clusters at the replicate count given, except in single-season
+rows, where the clusters are home-team only. Each file is `results/paper2_<name>.json`; a `_late_window`
+suffix is the run on the merged report series, beside the frozen file of the same name without it.
+`cutoff_units` is read on that series too, replaced rather than suffixed. Samples and training windows
+differ between rows, and comparisons are paired only within a row.
+
+| Quantity | Sample; training window; reps | File |
+| --- | --- | --- |
+| Report's value 0.185, premium 0.050, twelve-hour contrast 0.128 and 0.054; with the fallback 0.197 and 0.059 | 4,131 strict, 3,401 both filed for the contrast, 4,846 with the fallback; rolling; 2,000 | cutoff_curve, pooled_secondary |
+| The paired cutoff contrast in decision units | 4,131 strict; rolling; 2,000 | cutoff_units |
+| Cutoff contrasts 0.066, 0.029, -0.037, 0.076, on the late window | 4,131 strict; 1,787 files; rolling; 2,000 | cutoff_f7_late_window, late_window |
+| Lagged baseline 0.110, 0.075, 0.086; deployment gap 0.057 | 4,131 strict; rolling; 10,000 | lagged_baseline_strict, deployment_pooled_strict |
+| Paired build paths, -0.017 | 4,833 both paths keep; rolling; 10,000 | paired_paths |
+| Season tests, p = 0.12 and p = 0.04; the month profile | 4,846; rolling; 10,000 and 1,000 | inference, robustness2 |
+| Server-time sensitivity, 0.0005 | 3,813 under both rules; rolling; 2,000 | server_time |
+| The three market comparisons | 977, 472 and 647 priced games; each with its own training window | market2, close_line, sloan_numbers |
+| The published statuses' play rates; the 43.7% and 29.0% shares | 2023-24 to 2025-26, descriptive | sloan_numbers |
+| Embedded injury field, 0.258 | 1,222 of 2025-26; 2023-24, 2024-25; 2,000 | embedded |
+| Where the error concentrated | 888 priced, both filed; 2023-24, 2024-25 | example_aggregate_late_window |
+| Interval calibration | 4,846; real schedule; 300 per cell, 600 draws | boot_calibration |
+| Roster audit | 120 flagged of 879, and 30 controls; 10,000, rerun 2,000 | roster_audit_result, _reruns |
+
 ## Differences from the paper's main build
 
 - Tip-off is the scheduled time.
