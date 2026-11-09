@@ -41,10 +41,10 @@ paper "Who Was Really Out? A Point-in-Time NBA Availability Benchmark, and What 
 **Cutoff definition.**
 - A team's status comes from the last official report whose printed (header) time is at least 6 hours before scheduled
   tip-off and in which that team's block is submitted.
-- If no such report exists, the 90-minute cutoff is used. This is the "hybrid" sample; 1,082 team-games (8.8%) use
-  it.
-- If still no report exists, every player is coded `no_report`: status unknown, **not** healthy. This affects 98
-  team-games (0.8%). Games with a `no_report` team are excluded from the benchmark models (97 games of 6,153).
+- If no such report exists, the 90-minute cutoff is used. This is the "hybrid" sample. Of 1,082 team-games
+  (8.8%) requiring the fallback, 984 (8.0%) were served by a report at 90 minutes; 98 remained without one.
+- Those 98 (0.8%) have every player coded `no_report`: status unknown, **not** healthy. Games with a
+  `no_report` team are excluded from the benchmark models (97 games of 6,153).
 
 **Status and reason.**
 - Status is one of Out, Doubtful, Questionable, Probable or Available, as printed. Players on the roster but absent

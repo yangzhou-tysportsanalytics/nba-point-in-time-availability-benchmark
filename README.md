@@ -310,7 +310,7 @@ behind its figures. Everything not listed here is in the table above.
 | Reading at one hour instead of six, 0.066 (0.029 to 0.102), Out-or-not | `paper2_cutoff_curve_late_window.json` | `paired_1h_minus_6h` |
 | The same comparisons in log loss and correct winners per 100 games | `paper2_cutoff_units.json` | by contrast |
 | All statuses at six hours, 0.220 (0.150 to 0.289) | `paper2_cutoff_f7.json` | `controls.f7_six_hours` |
-| The deployment gap, 0.057 (-0.004 to 0.119) on the benchmark | `paper2_deployment_pooled_strict.json` | top level |
+| The deployment gap, 0.057 (-0.004 to 0.119) on the benchmark | `paper2_deployment_pooled_strict.json` | `feature_sets.narrow.gap`; the interval at `feature_sets.narrow.designs.home_season_cluster.ci95` |
 | The baseline ladder, four alternative baselines on the 977 priced games (plans M4 and O5) | `paper2_ladder_example.json` | `ladder`, the `_ci_home` columns |
 | The status table: play rates and the share of lost rotation minutes | `paper2_sloan_numbers.json` | `status_table` |
 | File-name timing picks a post-cutoff report for 53.6% of the team-games it can serve, 3,846 of 7,171 | `paper2_nametiming.json` | `share` |
