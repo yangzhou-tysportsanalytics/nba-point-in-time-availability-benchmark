@@ -93,7 +93,7 @@ Nothing here is fetched from ESPN or from stats.nba.com.
 | `league/scripts/prospective_poll.py` | The collector for the prospective test described below. Not part of the rebuild. |
 | `league/tests/` | Tests for the public path. |
 | `src/` | The project modules the published scripts import, copied verbatim: bootstrap designs, the two build paths' alignment and paired contrast, the join between them, the cutoff encoding, and the rolling per-status sit-out rates the all-status encoding weights a report with. |
-| `docs/plans/` | The plans those scripts were run to, each pinned by hash inside the script. |
+| `docs/plans/` | The plans those scripts were run to, each pinned by hash inside the script. Plans M and O also govern two analyses whose scripts belong to the main build and are not here: the baseline ladder of plan M4, read under the one-sample rule of plan O5, whose results are in `results/paper2_ladder_example.json`. |
 | `DATASHEET.md` | Datasheet (Gebru et al., 2021). |
 | `croissant.json` | Croissant 1.0 metadata for the two released data tables (validated with `mlcroissant`). |
 | `requirements.txt` | Pinned environment. |
@@ -235,9 +235,14 @@ estimate and do not call it resolved under any of the three.
   carry the iid-game interval and the dyadic one the paper withdrew, which is narrower. It is not steady
   across seasons, and no single season reproduced it.
 - **Who played, not how long.** Once participation is known, realized minutes add nothing.
-- **No market edge.** No model built *without* the price beats the closing line. A model handed the closing
-  price is not established either to improve on it with availability or to fail to: the point estimates
-  favour the model and the intervals contain zero. Against the opening price the premium is clear of zero in
+- **No market edge.** No model built *without* the price beats the closing line. Over a model handed the
+  closing price the two availability inputs do not behave alike, and the difference matters for what can be
+  claimed (`results/paper2_market2.json`, `closing_2026`, home-team clusters): **the report's own increment
+  does not resolve**, 0.025 (-0.015 to 0.070), while **realized participation does improve the model**,
+  0.045 (0.008 to 0.082). The difference between the two is 0.020 (-0.008 to 0.047), which contains zero,
+  so this does not establish that participation is worth more than the report over that baseline -- only
+  that the report's increment is the one that does not resolve. Under the two-way design none of the three
+  excludes zero. Against the opening price the premium is clear of zero in
   both lined seasons with opposite signs, which the paper no longer reads as a failure to replicate: the two
   seasons cover different parts of the calendar, overlapping in three months, and use different price
   products, and restricting to the overlap lowers the later estimate and widens it without reconciling the two.
@@ -292,6 +297,29 @@ differ between rows, and comparisons are paired only within a row.
 | Where the error concentrated | 888 priced, both filed; 2023-24, 2024-25 | example_aggregate_late_window |
 | Interval calibration | 4,846; real schedule; 300 per cell, 600 draws | boot_calibration |
 | Roster audit | 120 flagged of 879, and 30 controls; 10,000, rerun 2,000 | roster_audit_result, _reruns |
+
+## The short conference version's numbers
+
+The provenance table above is written for the journal paper. The short conference version leads on the
+benchmark sample rather than the fallback one and adds two analyses of its own, so these are the files
+behind its figures. Everything not listed here is in the table above.
+
+| Quantity in the short version | File | Key |
+| --- | --- | --- |
+| The report's value 0.185 (0.126 to 0.245) and the hindsight premium 0.050 (-0.011 to 0.110), on the 4,131-game benchmark | `paper2_cutoff_curve_late_window.json` | `curve.6.pooled_rolling` |
+| Reading at one hour instead of six, 0.066 (0.029 to 0.102), Out-or-not | `paper2_cutoff_curve_late_window.json` | `paired_1h_minus_6h` |
+| The same comparisons in log loss and correct winners per 100 games | `paper2_cutoff_units.json` | by contrast |
+| All statuses at six hours, 0.220 (0.150 to 0.289) | `paper2_cutoff_f7.json` | `controls.f7_six_hours` |
+| The deployment gap, 0.057 (-0.004 to 0.119) on the benchmark | `paper2_deployment_pooled_strict.json` | top level |
+| The baseline ladder, four alternative baselines on the 977 priced games (plans M4 and O5) | `paper2_ladder_example.json` | `ladder`, the `_ci_home` columns |
+| The status table: play rates and the share of lost rotation minutes | `paper2_sloan_numbers.json` | `status_table` |
+| File-name timing picks a post-cutoff report for 53.6% of the team-games it can serve, 3,846 of 7,171 | `paper2_nametiming.json` | `share` |
+| The two inputs over a closing price, on the wider training set | `paper2_market2.json` | `closing_2026` |
+| The public path, strict 4,117 games and fallback 4,835 | `paper2_cutoff_f7_public.json`, `paper2_public_pooled.json` | `six_hour_levels`; `public` |
+| Interval coverage under the two placebo processes | `paper2_boot_calibration.json` | by method |
+
+The benchmark-sample companions to the four-season runs are the `paper2_*_strict.json` files listed under
+[What is here](#what-is-here).
 
 ## Differences from the paper's main build
 

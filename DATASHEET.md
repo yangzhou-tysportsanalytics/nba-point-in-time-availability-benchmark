@@ -90,6 +90,16 @@ paper "Who Was Really Out? A Point-in-Time NBA Availability Benchmark, and What 
 - **ESPN embedded injury field.** ESPN game pages embed an injury field that is a snapshot taken when the page is
   fetched, not a pregame record. It must not be used as a pregame feature (results/paper2_embedded.md).
 
+**Two ways to select the strict six-hour sample, and how far they differ.** `team_games_public.csv`
+carries a `variant` column recording which report a team-game's status was finally taken from, `6h` or
+`90m`. That is not the same test as the six-hour rule the analyses apply, which re-reads the parsed report
+rows for a submitted block from both teams at the six-hour mark and then drops the games flagged
+`any_block_missing` (`league/scripts/cutoff_curve.py`, `league/scripts/cutoff_f7_public.py`). On this build
+the released rule keeps 5,158 games over the five seasons and 4,117 of them in a holdout season; filtering
+on `variant == '6h'` for both teams keeps 5,154 and 4,115. Four games apart, two of them in a holdout. The
+published strict figures are the released rule's, so a rebuild that filters on `variant` will not match
+them exactly.
+
 **Confidential or sensitive data.**
 - Injury reasons are health-related information that the NBA itself publishes about public figures.
 - No private data is added. Users should not use the data to make claims about individuals' health beyond what the
