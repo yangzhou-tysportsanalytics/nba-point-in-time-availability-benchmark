@@ -317,6 +317,8 @@ behind its figures. Everything not listed here is in the table above.
 | The two inputs over a closing price, on the wider training set | `paper2_market2.json` | `closing_2026` |
 | The public path, strict 4,117 games and fallback 4,835 | `paper2_cutoff_f7_public.json`, `paper2_public_pooled.json` | `six_hour_levels`; `public` |
 | Interval coverage under the two placebo processes | `paper2_boot_calibration.json` | by method |
+| The literature review: 113 studies found, 98 classified, 11 using absence information and 6 more that may, 17 using statistics from the game being predicted and 31 unclear | `paper2_litreview_studies.csv` | one row per study; `final` empty for the 15 not classified, then `uses_availability` and `same_game_stats`. The 351-row `paper2_litreview_coded.csv` is the screening stage before it, and the counts above are not read off that file |
+| What a model fitted on realized participation scores at the cutoff, 13.941 against the 13.884 its backtest reports | `paper2_deployment_pooled_strict.json` | `feature_sets.narrow.deployed_rmse`; `feature_sets.narrow.backtest_rmse` |
 
 The benchmark-sample companions to the four-season runs are the `paper2_*_strict.json` files listed under
 [What is here](#what-is-here).
